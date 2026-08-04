@@ -15,11 +15,15 @@ import (
 //  3. The compiled-in default, which tracks the repo's VERSION file.
 var Version = ""
 
+// fileDefault is the compiled-in fallback version. It must match the
+// repo's VERSION file; TestFileDefaultMatchesVERSION enforces that, so a
+// release bump cannot land in one place and not the other.
+const fileDefault = "0.1.2"
+
 // currentVersion returns the resolved version string (no commit / build
 // info). Used by callers that need a single token, such as the records'
 // scanner_version field and the HTTP sink's User-Agent.
 func currentVersion() string {
-	const fileDefault = "0.1.1"
 	if v := strings.TrimSpace(Version); v != "" {
 		return v
 	}
