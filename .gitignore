@@ -2,8 +2,15 @@
 *.test
 *.out
 *.ndjson
-.idea/
-.vscode/
+
+# Editor config for THIS checkout only. These are anchored with a leading
+# slash on purpose: an unanchored ".vscode/" also matches
+# cmd/bumblebee/selftest/fixtures/editorext-fixture/.vscode/..., which
+# silently kept that fixture out of the repo. The file still existed
+# locally, so `bumblebee selftest` passed on the machine that wrote it
+# and failed everywhere else.
+/.idea/
+/.vscode/
 
 # goreleaser output
 /dist/

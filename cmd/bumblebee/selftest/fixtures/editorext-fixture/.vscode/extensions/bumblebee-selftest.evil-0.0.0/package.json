@@ -1,0 +1,8 @@
+{
+  "name": "evil",
+  "publisher": "bumblebee-selftest",
+  "version": "0.0.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  }
+}
