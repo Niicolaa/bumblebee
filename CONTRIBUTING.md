@@ -59,6 +59,26 @@ format that breaks existing consumers is a breaking change. Land it as a
 new version directory (e.g. `docs/schema/v0.3.0/`) and bump
 `model.SchemaVersion` together; do not edit a published schema in place.
 
+One deliberate exception: **adding a value to the `ecosystem` enum is
+widening, not breaking**, and is done in place on the current schema
+version. A new ecosystem adds records a consumer has never seen, which is
+the same situation as a consumer meeting a package manager it does not
+handle — it does not change the meaning or shape of any existing field.
+Forcing a version bump per ecosystem would either stall coverage behind a
+schema release or leave the tool emitting values its own published schema
+rejects, which is what happened when `agent-skill` shipped without a
+schema update. Everything else about a published schema stays frozen.
+
+Older version directories are historical and are never widened: a record
+stamped `schema_version: 0.1.0` came from a binary that could not emit
+the newer ecosystems anyway. Use the current version for new catalogs.
+
+When adding an ecosystem, update the enum in all three of
+`package-record.schema.json`, `finding-record.schema.json`, and
+`exposure-catalog.schema.json` under the current version directory. They
+must agree with `supportedEcosystemOrder` in
+[`internal/model/model.go`](internal/model/model.go).
+
 ## Security issues
 
 Do not file public issues for vulnerabilities. See `SECURITY.md`.

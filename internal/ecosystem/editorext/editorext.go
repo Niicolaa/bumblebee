@@ -35,15 +35,22 @@ type Scanner struct {
 // extensionRootSegments are the trailing path segments (joined with "/") of
 // known per-user extension roots. The walker tests path containment against
 // these so we don't need to enumerate every cross-platform absolute root.
+// Each editor appears with both its local tree and the remote/SSH tree its
+// server build installs into; extensions installed on a remote host are
+// still installed extensions. VS Code Insiders has used both server-dir
+// spellings across versions, so both are matched.
 var extensionRootSegments = []string{
 	".vscode/extensions",
 	".vscode-server/extensions",
 	".vscode-insiders/extensions",
+	".vscode-server-insiders/extensions",
+	".vscode-insiders-server/extensions",
 	".cursor/extensions",
 	".cursor-server/extensions",
 	".windsurf/extensions",
 	".windsurf-server/extensions",
 	".vscodium/extensions",
+	".vscodium-server/extensions",
 }
 
 // IsExtensionPackageJSON returns (true, extensionRoot, extensionDir) if path

@@ -245,6 +245,13 @@ func baselineHomeCandidates(home string) []scanner.Root {
 	// packages live under these, but a developer's source tree does not.
 	add(filepath.Join(home, "go"), model.RootKindUserPackage)
 	add(filepath.Join(home, ".cargo"), model.RootKindUserPackage)
+	// The NuGet global package cache is the .NET analogue of
+	// node_modules or site-packages: every restored package is extracted
+	// under <id>/<version>/. On Windows endpoints this is usually the
+	// largest real inventory on the machine.
+	add(filepath.Join(home, ".nuget", "packages"), model.RootKindUserPackage)
+	// Maven's local repository, laid out as <group>/<artifact>/<version>/.
+	add(filepath.Join(home, ".m2", "repository"), model.RootKindUserPackage)
 	add(filepath.Join(home, ".rbenv"), model.RootKindUserPackage)
 	add(filepath.Join(home, ".rvm"), model.RootKindUserPackage)
 	add(filepath.Join(home, ".pyenv", "versions"), model.RootKindUserPackage)
@@ -255,16 +262,24 @@ func baselineHomeCandidates(home string) []scanner.Root {
 	}
 	add(filepath.Join(home, ".local", "share", "pipx", "venvs"), model.RootKindUserPackage)
 
-	// Editor extension trees.
+	// Editor extension trees. Each editor has a local tree and a
+	// remote/SSH counterpart installed by its server build; a remote
+	// install is just as much an installed extension as a local one.
+	// VS Code Insiders has shipped its server dir under both spellings
+	// depending on version, so both are listed — a home that has
+	// neither simply contributes no root.
 	for _, seg := range []string{
 		".vscode/extensions",
 		".vscode-insiders/extensions",
 		".vscode-server/extensions",
+		".vscode-server-insiders/extensions",
+		".vscode-insiders-server/extensions",
 		".cursor/extensions",
 		".cursor-server/extensions",
 		".windsurf/extensions",
 		".windsurf-server/extensions",
 		".vscodium/extensions",
+		".vscodium-server/extensions",
 	} {
 		add(filepath.Join(home, filepath.FromSlash(seg)), model.RootKindEditorExtension)
 	}

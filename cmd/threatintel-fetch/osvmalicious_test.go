@@ -105,3 +105,44 @@ func TestFetchOSVMalicious_Npm(t *testing.T) {
 		}
 	}
 }
+
+// TestFetchOSVMalicious_VSCode covers the VSCode bucket, which
+// internal/osv maps to bumblebee's editor-extension ecosystem
+// (`publisher.name` marketplace ids).
+func TestFetchOSVMalicious_VSCode(t *testing.T) {
+	dir := t.TempDir()
+	buildOSVZip(t, dir, "VSCode", map[string]string{
+		"MAL-2025-191157.json": `{
+			"id": "MAL-2025-191157",
+			"summary": "Malicious code in cline-ai-main.cline-ai-agent (VSCode)",
+			"affected": [{
+				"package": {"ecosystem": "VSCode", "name": "cline-ai-main.cline-ai-agent"},
+				"versions": ["3.1.3"]
+			}]
+		}`,
+		// npm record in the same zip — filtered out by Options.Ecosystems.
+		"MAL-2024-200.json": `{
+			"id": "MAL-2024-200",
+			"affected": [{"package": {"ecosystem": "npm", "name": "skipped"}, "versions": ["1.0.0"]}]
+		}`,
+	})
+
+	c, err := fetchOSVMalicious(context.Background(),
+		osvEcosystem{bumblebee: model.EcosystemEditorExtension, osv: "VSCode"}, dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got, want := len(c.Entries), 1; got != want {
+		t.Fatalf("entry count: got=%d want=%d", got, want)
+	}
+	e := c.Entries[0]
+	if e.Ecosystem != model.EcosystemEditorExtension {
+		t.Errorf("ecosystem = %q", e.Ecosystem)
+	}
+	if e.Package != "cline-ai-main.cline-ai-agent" {
+		t.Errorf("package = %q", e.Package)
+	}
+	if len(e.Versions) != 1 || e.Versions[0] != "3.1.3" {
+		t.Errorf("versions = %v", e.Versions)
+	}
+}

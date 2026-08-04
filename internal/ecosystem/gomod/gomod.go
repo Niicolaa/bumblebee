@@ -1,9 +1,21 @@
-// Package gomod scans Go module artifacts: go.sum and go.mod.
+// Package gomod scans Go module artifacts: go.sum, go.mod, go.work.sum,
+// and vendor/modules.txt.
 //
 // go.sum is the most reliable inventory source because it lists exactly the
 // modules at the versions Go fetched, with their content hashes. go.mod
 // requirements are also recorded (lower-confidence: they may not all end up
 // in the final build set).
+//
+// go.work.sum uses the identical line format to go.sum and covers a
+// multi-module workspace, whose members are otherwise reported only if
+// each member module's own go.sum happens to be under a configured root.
+// vendor/modules.txt is the only inventory a vendored tree has: those
+// trees carry no go.sum of their own, so without it a fully vendored
+// repository reads as having no Go dependencies at all.
+//
+// go.work itself is not parsed: it holds `use` directives pointing at
+// local directories and carries no module versions, so it cannot produce
+// a package record.
 //
 // No `go` commands are executed. Dispatch is filename-based, so any
 // `go.sum` / `go.mod` reachable from a configured root is parsed —
@@ -36,7 +48,34 @@ type Scanner struct {
 func IsGoSum(base string) bool { return base == "go.sum" }
 func IsGoMod(base string) bool { return base == "go.mod" }
 
+// IsGoWorkSum reports whether a basename is a Go workspace sum file. Its
+// line format is identical to go.sum.
+func IsGoWorkSum(base string) bool { return base == "go.work.sum" }
+
+// IsVendorModulesTxt returns true if path is a `vendor/modules.txt`. The
+// parent directory must actually be named `vendor` — `modules.txt` is a
+// generic enough name that matching it anywhere would misparse unrelated
+// files.
+func IsVendorModulesTxt(path string) bool {
+	if filepath.Base(path) != "modules.txt" {
+		return false
+	}
+	return filepath.Base(filepath.Dir(path)) == "vendor"
+}
+
 func (s *Scanner) ScanGoSum(path string, base model.Record) error {
+	return s.scanSumFile(path, base, "go-sum", "high")
+}
+
+// ScanGoWorkSum parses a go.work.sum. Confidence is medium rather than
+// high: a workspace sum accumulates hashes for the union of every member
+// module's graph, so an entry is weaker evidence that this particular
+// tree builds against that version than a single module's go.sum is.
+func (s *Scanner) ScanGoWorkSum(path string, base model.Record) error {
+	return s.scanSumFile(path, base, "go-work-sum", "medium")
+}
+
+func (s *Scanner) scanSumFile(path string, base model.Record, sourceType, confidence string) error {
 	data, err := s.readBounded(path)
 	if err != nil {
 		return err
@@ -70,7 +109,64 @@ func (s *Scanner) ScanGoSum(path string, base model.Record) error {
 		r.Version = version
 		r.ProjectPath = projectPath
 		r.PackageManager = "go"
-		r.SourceType = "go-sum"
+		r.SourceType = sourceType
+		r.SourceFile = path
+		r.Confidence = confidence
+		s.Emit(r)
+	}
+	return nil
+}
+
+// ScanVendorModulesTxt parses a `vendor/modules.txt`. Module lines look
+// like:
+//
+//	# github.com/foo/bar v1.2.3
+//	## explicit; go 1.21
+//	github.com/foo/bar/pkg
+//
+// Only the `# <module> <version>` lines carry identity, and a vendored
+// tree is by definition present on disk at that version, so these are
+// high confidence. `# <module> => <replacement>` replace directives are
+// skipped: the left side is not what is vendored.
+func (s *Scanner) ScanVendorModulesTxt(path string, base model.Record) error {
+	data, err := s.readBounded(path)
+	if err != nil {
+		return err
+	}
+	projectPath := filepath.Dir(filepath.Dir(path)) // strip vendor/
+	seen := make(map[string]struct{})
+
+	sc := bufio.NewScanner(bytes.NewReader(data))
+	sc.Buffer(make([]byte, 0, 64*1024), 4*1024*1024)
+	for sc.Scan() {
+		line := sc.Text()
+		// "## explicit" annotations and bare package lines carry no version.
+		if !strings.HasPrefix(line, "# ") {
+			continue
+		}
+		fields := strings.Fields(strings.TrimPrefix(line, "# "))
+		if len(fields) != 2 {
+			// Includes "=> replacement" forms and malformed lines.
+			continue
+		}
+		module, version := fields[0], fields[1]
+		if module == "" || !strings.HasPrefix(version, "v") {
+			continue
+		}
+		key := module + "\x00" + version
+		if _, dup := seen[key]; dup {
+			continue
+		}
+		seen[key] = struct{}{}
+
+		r := base
+		r.Ecosystem = Ecosystem
+		r.PackageName = module
+		r.NormalizedName = strings.ToLower(module)
+		r.Version = version
+		r.ProjectPath = projectPath
+		r.PackageManager = "go"
+		r.SourceType = "go-vendor-modules-txt"
 		r.SourceFile = path
 		r.Confidence = "high"
 		s.Emit(r)

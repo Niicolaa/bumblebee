@@ -1,0 +1,10 @@
+PODS:
+  - BumblebeeSelftestEvil (0.0.0)
+
+DEPENDENCIES:
+  - BumblebeeSelftestEvil
+
+SPEC CHECKSUMS:
+  BumblebeeSelftestEvil: 0000000000000000000000000000000000000000
+
+COCOAPODS: 1.15.2

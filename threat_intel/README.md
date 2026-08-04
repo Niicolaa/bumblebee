@@ -29,7 +29,19 @@ Sources:
 | `auto-extsentry-browser-extensions.json` | [ExtSentry/ExtSentry.github.io](https://github.com/ExtSentry/ExtSentry.github.io) (rebuilt hourly from [mthcht/awesome-lists](https://github.com/mthcht/awesome-lists)) | `browser-extension` (Chrome/Chromium IDs; carries CRX SHA256 and per-row severity/category) |
 | `auto-vsxsentry-editor-extensions.json` | [mthcht/awesome-lists VSCODE Extensions](https://github.com/mthcht/awesome-lists/tree/main/Lists/VSCODE%20Extensions) | `editor-extension` (VS Code `publisher.name`) |
 | `auto-osv-malicious-npm-NN.json` (×4 shards) and `auto-osv-malicious-{pypi,go,rubygems,packagist}.json` | [ossf/malicious-packages](https://github.com/ossf/malicious-packages) (mirrored via [osv.dev](https://osv.dev)) | one file per ecosystem; npm is sharded by `FNV32(package) % 4` so each shard stays under ~25 MB |
+| `auto-osv-malicious-editor-extension.json` | same, OSV's `VSCode` ecosystem | `editor-extension` (marketplace `publisher.name`, Open VSX and VS Code Marketplace) |
 | `auto-datadog-malicious-{npm,pypi}.json` | [DataDog/malicious-software-packages-dataset](https://github.com/DataDog/malicious-software-packages-dataset) | flagged by Datadog's [GuardDog](https://github.com/DataDog/guarddog) static-analysis pipeline — independent detector relative to OSV |
+| `auto-datadog-malicious-editor-extension.json` | same, `samples/ide_extensions` | `editor-extension` (`publisher.name`) |
+| `auto-datadog-malicious-agent-skill.json` | same, `samples/ai-skills` | `agent-skill` — see the name note below |
+
+Upstream's `ai-skills` manifest keys are the skill source flattened with
+hyphens (`Charpup-skill-security-auditor-backdoor-skill`), while the
+agent-skill scanner records the lock file's `owner/repo` source slug.
+That flattening is not reversible, so the catalog carries the raw key
+plus one candidate per hyphen position (`Charpup/skill-security-…`,
+`Charpup-skill/security-…`, …). Candidate entries are marked
+`indicators.name_reconstructed: true` and keep the upstream key in
+`indicators.upstream_package`.
 
 Auto-generated entries use `versions: ["*"]` when the upstream feed
 treats package presence (extension ID, package name) as the IOC and

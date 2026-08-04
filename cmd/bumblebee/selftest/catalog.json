@@ -46,6 +46,132 @@
       "versions": ["0.0.0"],
       "severity": "critical",
       "source": "bumblebee selftest"
+    },
+    {
+      "id": "selftest-go-evil",
+      "name": "bumblebee selftest fixture (go)",
+      "ecosystem": "go",
+      "package": "github.com/bumblebee-selftest/evil",
+      "versions": ["v0.0.0"],
+      "severity": "critical",
+      "source": "bumblebee selftest"
+    },
+    {
+      "id": "selftest-rubygems-evil",
+      "name": "bumblebee selftest fixture (rubygems)",
+      "ecosystem": "rubygems",
+      "package": "bumblebee-selftest-evil",
+      "versions": ["0.0.0"],
+      "severity": "critical",
+      "source": "bumblebee selftest"
+    },
+    {
+      "id": "selftest-packagist-evil",
+      "name": "bumblebee selftest fixture (packagist)",
+      "ecosystem": "packagist",
+      "package": "bumblebee-selftest/evil",
+      "versions": ["0.0.0"],
+      "severity": "critical",
+      "source": "bumblebee selftest"
+    },
+    {
+      "id": "selftest-pypi-poetry-evil",
+      "name": "bumblebee selftest fixture (pypi poetry lock)",
+      "ecosystem": "pypi",
+      "package": "bumblebee-selftest-poetry-evil",
+      "versions": ["0.0.0"],
+      "severity": "critical",
+      "source": "bumblebee selftest"
+    },
+    {
+      "id": "selftest-agent-skill-evil",
+      "name": "bumblebee selftest fixture (agent skill)",
+      "ecosystem": "agent-skill",
+      "package": "bumblebee-selftest/evil-skills",
+      "versions": ["*"],
+      "severity": "critical",
+      "source": "bumblebee selftest"
+    },
+    {
+      "id": "selftest-editor-extension-evil",
+      "name": "bumblebee selftest fixture (editor extension)",
+      "ecosystem": "editor-extension",
+      "package": "bumblebee-selftest.evil",
+      "versions": ["0.0.0"],
+      "severity": "critical",
+      "source": "bumblebee selftest"
+    },
+    {
+      "id": "selftest-browser-extension-evil",
+      "name": "bumblebee selftest fixture (browser extension)",
+      "ecosystem": "browser-extension",
+      "package": "abcdefghijklmnopabcdefghijklmnop",
+      "versions": ["0.0.0"],
+      "severity": "critical",
+      "source": "bumblebee selftest"
+    },
+    {
+      "id": "selftest-nuget-evil",
+      "name": "bumblebee selftest fixture (nuget)",
+      "ecosystem": "nuget",
+      "package": "Bumblebee.Selftest.Evil",
+      "versions": ["0.0.0"],
+      "severity": "critical",
+      "source": "bumblebee selftest"
+    },
+    {
+      "id": "selftest-cargo-evil",
+      "name": "bumblebee selftest fixture (cargo)",
+      "ecosystem": "cargo",
+      "package": "bumblebee_selftest_evil",
+      "versions": ["0.0.0"],
+      "severity": "critical",
+      "source": "bumblebee selftest"
+    },
+    {
+      "id": "selftest-maven-evil",
+      "name": "bumblebee selftest fixture (maven)",
+      "ecosystem": "maven",
+      "package": "com.bumblebee.selftest:evil",
+      "versions": ["0.0.0"],
+      "severity": "critical",
+      "source": "bumblebee selftest"
+    },
+    {
+      "id": "selftest-swift-evil",
+      "name": "bumblebee selftest fixture (swift)",
+      "ecosystem": "swift",
+      "package": "bumblebee-selftest-evil",
+      "versions": ["0.0.0"],
+      "severity": "critical",
+      "source": "bumblebee selftest"
+    },
+    {
+      "id": "selftest-cocoapods-evil",
+      "name": "bumblebee selftest fixture (cocoapods)",
+      "ecosystem": "cocoapods",
+      "package": "BumblebeeSelftestEvil",
+      "versions": ["0.0.0"],
+      "severity": "critical",
+      "source": "bumblebee selftest"
+    },
+    {
+      "id": "selftest-pub-evil",
+      "name": "bumblebee selftest fixture (pub)",
+      "ecosystem": "pub",
+      "package": "bumblebee_selftest_evil",
+      "versions": ["0.0.0"],
+      "severity": "critical",
+      "source": "bumblebee selftest"
+    },
+    {
+      "id": "selftest-hex-evil",
+      "name": "bumblebee selftest fixture (hex)",
+      "ecosystem": "hex",
+      "package": "bumblebee_selftest_evil",
+      "versions": ["0.0.0"],
+      "severity": "critical",
+      "source": "bumblebee selftest"
     }
   ]
 }

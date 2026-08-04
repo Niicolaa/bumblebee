@@ -130,8 +130,15 @@ var DefaultExcludes = []string{
 	".npm/_cacache",
 	".pnpm-store",
 	".yarn/cache",
+	// .gradle, .ivy2 and .sbt hold build state and resolved-artifact
+	// caches with no per-package identity we can read cheaply, so they
+	// stay excluded. ~/.m2 is deliberately NOT in this list: its
+	// repository/ subtree is a real package inventory laid out as
+	// <group>/<artifact>/<version>/, the direct analogue of
+	// ~/go/pkg/mod and ~/.nuget/packages, which are both scanned. Like
+	// the Go module cache, it can dominate a baseline run on a
+	// Java-heavy host — see docs/inventory-sources.md.
 	".gradle",
-	".m2",
 	".ivy2",
 	".sbt",
 	"__pycache__",

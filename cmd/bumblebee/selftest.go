@@ -22,13 +22,22 @@ import (
 var selftestFS embed.FS
 
 // expectedSelftestFindings is the count of catalog-matched findings the
-// embedded fixtures must produce. One npm package-lock.json entry, one
-// PyPI dist-info METADATA file, one MCP config naming a pinned docker
-// image, one Homebrew formula receipt, and one Homebrew cask metadata
-// marker — each matched against the embedded catalog: five findings. The
-// MCP and Homebrew fixtures guard scanner integration for basename/path
-// dispatch and catalog matching.
-const expectedSelftestFindings = 5
+// embedded fixtures must produce: one per fixture tree under
+// selftest/fixtures, each matched against exactly one entry in the
+// embedded catalog.
+//
+// The fixtures cover every supported ecosystem in
+// model.SupportedEcosystems (npm, pypi, go, rubygems, packagist, mcp,
+// editor-extension, browser-extension, homebrew, agent-skill, nuget,
+// cargo, maven, swift, cocoapods, pub, hex) plus two extra Homebrew
+// shapes (formula receipt and cask marker) and a second PyPI shape
+// (poetry.lock, on top of dist-info METADATA). Together they guard
+// basename dispatch, path-shaped dispatch, parsing, name normalization,
+// and catalog matching end to end.
+//
+// TestSelftestCoversEverySupportedEcosystem keeps the catalog honest
+// when a new ecosystem is added.
+const expectedSelftestFindings = 19
 
 // runSelftest extracts the embedded fixture tree to a temp directory,
 // runs the scanner with the embedded exposure catalog, and asserts the

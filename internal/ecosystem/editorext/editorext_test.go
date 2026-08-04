@@ -16,6 +16,11 @@ func TestIsExtensionPackageJSON(t *testing.T) {
 		{"/home/u/.vscode/extensions/ms-python.python-2024.0.0/package.json", true},
 		{"/home/u/.cursor/extensions/some.ext-1.0.0/package.json", true},
 		{"/home/u/.windsurf-server/extensions/x.y-1.0.0/package.json", true},
+		// Remote/SSH server trees for the remaining editors: a remote
+		// install is still an installed extension.
+		{"/home/u/.vscodium-server/extensions/x.y-1.0.0/package.json", true},
+		{"/home/u/.vscode-server-insiders/extensions/x.y-1.0.0/package.json", true},
+		{"/home/u/.vscode-insiders-server/extensions/x.y-1.0.0/package.json", true},
 		{"/home/u/proj/node_modules/lodash/package.json", false},
 		{"/home/u/.vscode/extensions/somefile.txt", false},
 	}
@@ -23,6 +28,25 @@ func TestIsExtensionPackageJSON(t *testing.T) {
 		ok, _, _ := IsExtensionPackageJSON(c.in)
 		if ok != c.ok {
 			t.Errorf("IsExtensionPackageJSON(%q) = %v, want %v", c.in, ok, c.ok)
+		}
+	}
+}
+
+// The remote server trees must report the same host as their local
+// counterpart, so a fleet query for "vscodium extensions" does not
+// silently miss every remote install.
+func TestHostFromExtRootCoversServerTrees(t *testing.T) {
+	cases := map[string]string{
+		"/home/u/.vscodium/extensions":               "vscodium",
+		"/home/u/.vscodium-server/extensions":        "vscodium",
+		"/home/u/.cursor-server/extensions":          "cursor",
+		"/home/u/.windsurf-server/extensions":        "windsurf",
+		"/home/u/.vscode-server-insiders/extensions": "vscode",
+		"/home/u/.vscode-insiders-server/extensions": "vscode",
+	}
+	for in, want := range cases {
+		if got := hostFromExtRoot(in); got != want {
+			t.Errorf("hostFromExtRoot(%q) = %q, want %q", in, got, want)
 		}
 	}
 }
