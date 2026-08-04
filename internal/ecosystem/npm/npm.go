@@ -118,7 +118,11 @@ func IsNodeModulesPackageJSON(path string) (bool, string) {
 		// misleading; "." is the sane relative-root marker.
 		projectPath = "."
 	}
-	return true, projectPath
+	// The path was slash-normalized above so the segment matching is
+	// separator-independent. Convert back so project_path is emitted as a
+	// native path — on Windows a record must carry C:\src\app, not
+	// C:/src/app, or receivers cannot join it against other host paths.
+	return true, filepath.FromSlash(projectPath)
 }
 
 // ScanLockfile parses an npm lockfile at path and emits records.

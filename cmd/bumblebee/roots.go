@@ -300,6 +300,12 @@ func baselineHomeCandidates(home string) []scanner.Root {
 		appdata := windowsRoamingAppData(home)
 		add(filepath.Join(appdata, "Claude"), model.RootKindMCPConfig)
 		add(filepath.Join(appdata, "Continue"), model.RootKindMCPConfig)
+		// Per-user Python. The python.org installer's default (non
+		// all-users) mode installs here, so this is where dist-info
+		// metadata lives on most Windows developer machines.
+		for _, p := range globExisting(filepath.Join(windowsLocalAppData(home), "Programs", "Python", "Python*", "Lib", "site-packages")) {
+			add(p, model.RootKindUserPackage)
+		}
 	}
 
 	// Agent-skill lock locations. ~/.agents holds the global
@@ -367,12 +373,22 @@ func systemRoots() []scanner.Root {
 		}
 		return roots
 	case "windows":
-		// Windows has no Homebrew/usr-lib analog. Global package
-		// install locations exist (per-machine Python under
-		// %ProgramFiles%, NuGet global cache under %USERPROFILE%\.nuget)
-		// but those either belong to per-user candidates or are not yet
-		// in scope.
-		return nil
+		// Windows has no Homebrew/usr-lib analog, and per-user roots are
+		// added by baselineHomeCandidates. What does belong here is the
+		// machine-wide Python install: the python.org installer's
+		// all-users mode writes to %ProgramFiles%\PythonNN, whose
+		// Lib\site-packages holds dist-info metadata the PyPI scanner
+		// reads.
+		var roots []scanner.Root
+		for _, base := range []string{os.Getenv("ProgramFiles"), os.Getenv("ProgramFiles(x86)")} {
+			if strings.TrimSpace(base) == "" {
+				continue
+			}
+			for _, p := range globExisting(filepath.Join(base, "Python*", "Lib", "site-packages")) {
+				roots = append(roots, scanner.Root{Path: p, Kind: model.RootKindGlobalPackage})
+			}
+		}
+		return roots
 	}
 	return nil
 }

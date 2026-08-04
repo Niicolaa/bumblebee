@@ -110,6 +110,21 @@ var DefaultExcludes = []string{
 	"Pictures/Photos Library.photoslibrary",
 	"Pictures/Photo Booth Library",
 
+	// Windows AppData — OS-managed state, per-app caches, and installer
+	// scratch space. These are the Windows analogue of the macOS Library
+	// entries above: large, churn-heavy, and holding no inventory the
+	// scanner can use. The curated Windows roots in cmd/bumblebee point
+	// directly at the few AppData subpaths that do matter (Claude's MCP
+	// config, per-profile browser extension trees), so excluding the
+	// parents here does not cost coverage even when an operator passes
+	// --root "%USERPROFILE%" for a deep sweep.
+	"AppData/Local/Temp",
+	"AppData/Local/Microsoft",
+	"AppData/Local/Packages",
+	"AppData/LocalLow",
+	"AppData/Local/CrashDumps",
+	"AppData/Local/Google/Chrome/User Data/Default/Cache",
+
 	// Generic caches and high-cost build/dependency cache trees.
 	".cache",
 	".npm/_cacache",

@@ -295,3 +295,16 @@ packages:
 		t.Errorf("expected DirectDependency nil, got %v", *out[0].DirectDependency)
 	}
 }
+
+// Regression for upstream issue #1 — same native-path requirement as npm.
+func TestPnpmStoreProjectPathIsNative(t *testing.T) {
+	path := filepath.Join("srv", "app", "node_modules", ".pnpm", "lodash@4.17.21", "node_modules", "lodash", "package.json")
+	ok, projectPath, _, _ := IsPnpmStorePackageJSON(path)
+	if !ok {
+		t.Fatalf("IsPnpmStorePackageJSON(%q) = false", path)
+	}
+	want := filepath.Join("srv", "app")
+	if projectPath != want {
+		t.Errorf("projectPath = %q, want native %q", projectPath, want)
+	}
+}

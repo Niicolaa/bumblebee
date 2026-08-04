@@ -47,6 +47,11 @@ jobs:
         run: go build -buildvcs=false ./cmd/bumblebee
 
       - name: bumblebee selftest
+        # windows-latest defaults to PowerShell, where invoking an
+        # extensionless build output does not work the way it does in a
+        # POSIX shell. Pin bash so this step behaves identically on all
+        # three runners.
+        shell: bash
         run: |
           go build -buildvcs=false -o ./bumblebee ./cmd/bumblebee
           ./bumblebee selftest

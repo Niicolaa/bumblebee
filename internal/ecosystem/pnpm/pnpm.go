@@ -90,7 +90,10 @@ func IsPnpmStorePackageJSON(path string) (ok bool, projectPath, name, version st
 		// the relative-root marker rather than the absolute "/".
 		projectPath = "."
 	}
-	return true, projectPath, name, version
+	// Slash normalization above only makes the segment matching
+	// separator-independent; project_path must be emitted natively so
+	// Windows records carry C:\src\app rather than C:/src/app.
+	return true, filepath.FromSlash(projectPath), name, version
 }
 
 // splitPnpmStoreDir splits a pnpm store-dir name into (name, version).
