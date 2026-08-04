@@ -7,10 +7,10 @@
 //
 // Subcommands:
 //
-//	bumblebee scan     [--profile P] ...    run a scan and emit NDJSON records
-//	bumblebee roots    [--profile P] ...    print the resolved scan roots and exit
-//	bumblebee selftest [flags]              scan embedded fixtures and verify detection
-//	bumblebee version                       print version and exit
+//	bumblebee scan                 [--profile P] ...    run a scan and emit NDJSON records
+//	bumblebee roots                [--profile P] ...    print the resolved scan roots and exit
+//	bumblebee selftest             [flags]              scan embedded fixtures and verify detection
+//	bumblebee version                                   print version and exit
 //
 // Subcommand implementations and their support code live in sibling files:
 //
@@ -86,10 +86,10 @@ func usage(w io.Writer) {
 	fmt.Fprintln(w, `bumblebee — endpoint package inventory collector
 
 usage:
-  bumblebee scan     [flags]   run a scan and emit NDJSON records
-  bumblebee roots    [flags]   print the resolved scan roots and exit
-  bumblebee selftest [flags]   scan embedded fixtures and verify detection
-  bumblebee version            print version and exit
+  bumblebee scan                 [flags]   run a scan and emit NDJSON records
+  bumblebee roots                [flags]   print the resolved scan roots and exit
+  bumblebee selftest             [flags]   scan embedded fixtures and verify detection
+  bumblebee version                        print version and exit
 
 run "bumblebee scan --help" for scan flags, including --profile.`)
 }

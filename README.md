@@ -283,9 +283,24 @@ The [`threat_intel/`](threat_intel/) directory holds maintained exposure
 catalogs built from public threat-intelligence reporting on recent
 supply-chain campaigns, assembled with
 [Perplexity Computer](https://www.perplexity.ai/computer) and updated
-via PRs as new campaigns are reported. See
+via PRs as new campaigns are reported. Additional `auto-*.json`
+catalogs are produced daily by `cmd/threatintel-fetch` from public
+feeds (MalExt Sentry, ExtSentry, VSXSentry, OSV malicious-packages,
+DataDog malicious-software-packages-dataset). See
 [`threat_intel/README.md`](threat_intel/README.md) for the current
-catalog list and review guidance.
+catalog list, review guidance, and the auto-source map.
+
+Operators using a release binary can pull the current snapshot without
+cloning the repo:
+
+```
+curl -fsSLO https://github.com/<owner>/<repo>/releases/latest/download/threat-intel-latest.tar.gz
+tar -xzf threat-intel-latest.tar.gz
+```
+
+The daily `threat-intel-YYYY-MM-DD` release carries the whole directory
+as a tarball plus each catalog as an individual asset and a
+`SHA256SUMS` manifest.
 
 ## License
 

@@ -8,6 +8,79 @@ PRs as fresh campaigns are reported.
 Pass a catalog to a scan with `--exposure-catalog <path>`. Review
 the entries against current advisories before production use.
 
+## Auto-generated catalogs (`auto-*.json`)
+
+Files named `auto-*.json` are produced by the `threatintel-fetch` tool
+(`cmd/threatintel-fetch`) and refreshed daily by the
+[`threat-intel-sync`](../.github/workflows/threat-intel-sync.yml) GitHub
+Actions workflow. Do not hand-edit them — your changes will be
+overwritten on the next run. To fix a false positive, open an issue
+upstream against the source feed.
+
+Upstream license and attribution notices for each source are collected
+in [`NOTICES.md`](NOTICES.md) — preserve that file when redistributing
+this directory.
+
+Sources:
+
+| File pattern | Upstream | Ecosystem |
+|---|---|---|
+| `auto-malext-sentry-browser-extensions.json` | [toborrm9/malicious_extension_sentry](https://github.com/toborrm9/malicious_extension_sentry) | `browser-extension` (Chrome/Chromium IDs) |
+| `auto-extsentry-browser-extensions.json` | [ExtSentry/ExtSentry.github.io](https://github.com/ExtSentry/ExtSentry.github.io) (rebuilt hourly from [mthcht/awesome-lists](https://github.com/mthcht/awesome-lists)) | `browser-extension` (Chrome/Chromium IDs; carries CRX SHA256 and per-row severity/category) |
+| `auto-vsxsentry-editor-extensions.json` | [mthcht/awesome-lists VSCODE Extensions](https://github.com/mthcht/awesome-lists/tree/main/Lists/VSCODE%20Extensions) | `editor-extension` (VS Code `publisher.name`) |
+| `auto-osv-malicious-npm-NN.json` (×4 shards) and `auto-osv-malicious-{pypi,go,rubygems,packagist}.json` | [ossf/malicious-packages](https://github.com/ossf/malicious-packages) (mirrored via [osv.dev](https://osv.dev)) | one file per ecosystem; npm is sharded by `FNV32(package) % 4` so each shard stays under ~25 MB |
+| `auto-datadog-malicious-{npm,pypi}.json` | [DataDog/malicious-software-packages-dataset](https://github.com/DataDog/malicious-software-packages-dataset) | flagged by Datadog's [GuardDog](https://github.com/DataDog/guarddog) static-analysis pipeline — independent detector relative to OSV |
+
+Auto-generated entries use `versions: ["*"]` when the upstream feed
+treats package presence (extension ID, package name) as the IOC and
+does not enumerate affected versions — see the schema note in
+`internal/exposure/exposure.go`.
+
+## Fetching the catalogs
+
+The [`threat-intel-sync`](../.github/workflows/threat-intel-sync.yml)
+workflow publishes a GitHub Release named `threat-intel-YYYY-MM-DD` on
+every day the feeds change. Assets are CDN-cached and need no auth or
+API token:
+
+```
+# Whole set (fixed name — always the newest snapshot):
+curl -fsSLO https://github.com/<owner>/<repo>/releases/latest/download/threat-intel-latest.tar.gz
+tar -xzf threat-intel-latest.tar.gz
+
+# One file:
+curl -fsSLO https://github.com/<owner>/<repo>/releases/latest/download/auto-osv-malicious-npm-00.json
+
+# Integrity check:
+curl -fsSLO https://github.com/<owner>/<repo>/releases/latest/download/SHA256SUMS
+sha256sum -c SHA256SUMS
+```
+
+The tarball is the whole directory including `NOTICES.md`, so a daily
+`curl | tar` is the entire update procedure — the snapshot is atomic by
+construction and there is nothing to reconcile against local state.
+
+Every daily release is retained as a point-in-time snapshot; pin to a
+dated tag (`releases/download/threat-intel-2026-08-04/…`) instead of
+`latest` when reproducibility matters.
+
+Cloning the repo works too — `threat_intel/` on `main` is the same
+content the release is cut from.
+
+### How the daily sync stays safe without a PR review
+
+The workflow commits straight to `main` — no PR gate. What makes that
+safe is the shrink guard in
+[`cmd/threatintel-fetch/guard.go`](../cmd/threatintel-fetch/guard.go):
+before anything is committed, each catalog's new entry count is compared
+against its previous count, and the run fails if any catalog drops below
+50% (or disappears entirely). That's the failure mode that actually
+matters here — an upstream renaming a CSV column or serving an error
+page yields a catalog that parses cleanly but is empty, which no human
+skimming a 200k-line diff would reliably catch either. Override with
+`--min-ratio=0` (or the `min_ratio` workflow-dispatch input) when a
+large drop is legitimate.
+
 ## Catalogs
 
 | File | Campaign | Source |
