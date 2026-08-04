@@ -40,6 +40,22 @@ archives:
       - README.md
       - threat_intel/**
 
+  # Raw, un-archived binaries alongside the tarballs. Fetchers that pull
+  # a single file by URL and verify a hash — Velociraptor tool
+  # definitions, MDM payloads, container builds — cannot unpack a
+  # tar.gz, so they need the binary itself as a release asset.
+  #
+  # This is deliberately a separate archive rather than a replacement:
+  # the tarballs carry LICENSE, README, and a threat_intel snapshot,
+  # which is the right artifact for a human doing a manual install.
+  # `files:` is ignored for the binary format, so the raw assets are the
+  # executable and nothing else.
+  - id: raw-binary
+    formats:
+      - binary
+    name_template: >-
+      bumblebee_{{ .Version }}_{{ .Os }}_{{ .Arch }}
+
 checksum:
   name_template: checksums.txt
   algorithm: sha256
