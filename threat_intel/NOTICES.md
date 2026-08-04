@@ -26,6 +26,8 @@ https://www.apache.org/licenses/LICENSE-2.0 for the full license text.
 - **Repository:** https://github.com/DataDog/malicious-software-packages-dataset
 - **License:** Apache License, Version 2.0
 - **Detector:** Datadog [GuardDog](https://github.com/DataDog/guarddog)
+- **Dataset segments used:** `samples/npm`, `samples/pypi`,
+  `samples/ide_extensions`, `samples/ai-skills`
 
 Upstream `NOTICE` file (reproduced per Apache-2.0 §4(d)):
 

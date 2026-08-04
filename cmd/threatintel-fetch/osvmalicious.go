@@ -38,6 +38,9 @@ var osvEcosystems = []osvEcosystem{
 	{bumblebee: model.EcosystemGo, osv: "Go"},
 	{bumblebee: model.EcosystemRubyGems, osv: "RubyGems"},
 	{bumblebee: model.EcosystemPackagist, osv: "Packagist"},
+	// OSV's "VSCode" ecosystem carries `publisher.name` marketplace ids,
+	// which internal/osv already maps to bumblebee's editor-extension.
+	{bumblebee: model.EcosystemEditorExtension, osv: "VSCode"},
 }
 
 // osvShardCount marks ecosystems whose unshard'd auto-* catalog would
