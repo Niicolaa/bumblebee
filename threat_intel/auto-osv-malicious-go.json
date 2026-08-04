@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.2.0",
+  "_comment": "OSV malicious-packages MAL-* advisories for the go ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
+  "_generated_utc": "2026-08-04T09:11:33Z",
+  "_source": "https://github.com/ossf/malicious-packages",
+  "entries": [
+    {"id":"MAL-2025-2544","name":"Malicious code in github.com/belatedplanet/hypert (Go)","ecosystem":"go","package":"github.com/belatedplanet/hypert","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-2544"},
+    {"id":"MAL-2025-2545","name":"Malicious code in github.com/boltdb-go/bolt (Go)","ecosystem":"go","package":"github.com/boltdb-go/bolt","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-2545"},
+    {"id":"MAL-2025-2546","name":"Malicious code in github.com/ornatedoctrin/layout (Go)","ecosystem":"go","package":"github.com/ornatedoctrin/layout","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-2546"},
+    {"id":"MAL-2025-2547","name":"Malicious code in github.com/shadowybulk/hypert (Go)","ecosystem":"go","package":"github.com/shadowybulk/hypert","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-2547"},
+    {"id":"MAL-2025-2548","name":"Malicious code in github.com/shallowmulti/hypert (Go)","ecosystem":"go","package":"github.com/shallowmulti/hypert","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-2548"},
+    {"id":"MAL-2025-2549","name":"Malicious code in github.com/thankfulmai/hypert (Go)","ecosystem":"go","package":"github.com/thankfulmai/hypert","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-2549"},
+    {"id":"MAL-2025-2550","name":"Malicious code in github.com/utilizedsun/layout (Go)","ecosystem":"go","package":"github.com/utilizedsun/layout","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-2550"},
+    {"id":"MAL-2025-2551","name":"Malicious code in github.com/vainreboot/layout (Go)","ecosystem":"go","package":"github.com/vainreboot/layout","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-2551"},
+    {"id":"MAL-2026-3620","name":"Malicious code in github.com/BufferZoneCorp/config-loader (Go)","ecosystem":"go","package":"github.com/BufferZoneCorp/config-loader","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3620"},
+    {"id":"MAL-2026-3621","name":"Malicious code in github.com/BufferZoneCorp/go-envconfig (Go)","ecosystem":"go","package":"github.com/BufferZoneCorp/go-envconfig","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3621"},
+    {"id":"MAL-2026-3622","name":"Malicious code in github.com/BufferZoneCorp/go-metrics-sdk (Go)","ecosystem":"go","package":"github.com/BufferZoneCorp/go-metrics-sdk","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3622"},
+    {"id":"MAL-2026-3623","name":"Malicious code in github.com/BufferZoneCorp/go-retryablehttp (Go)","ecosystem":"go","package":"github.com/BufferZoneCorp/go-retryablehttp","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3623"},
+    {"id":"MAL-2026-3624","name":"Malicious code in github.com/BufferZoneCorp/go-stdlib-ext (Go)","ecosystem":"go","package":"github.com/BufferZoneCorp/go-stdlib-ext","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3624"},
+    {"id":"MAL-2026-3625","name":"Malicious code in github.com/BufferZoneCorp/go-stdlog (Go)","ecosystem":"go","package":"github.com/BufferZoneCorp/go-stdlog","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3625"},
+    {"id":"MAL-2026-3626","name":"Malicious code in github.com/BufferZoneCorp/go-weather-sdk (Go)","ecosystem":"go","package":"github.com/BufferZoneCorp/go-weather-sdk","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3626"},
+    {"id":"MAL-2026-3627","name":"Malicious code in github.com/BufferZoneCorp/grpc-client (Go)","ecosystem":"go","package":"github.com/BufferZoneCorp/grpc-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3627"},
+    {"id":"MAL-2026-3628","name":"Malicious code in github.com/BufferZoneCorp/log-core (Go)","ecosystem":"go","package":"github.com/BufferZoneCorp/log-core","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3628"},
+    {"id":"MAL-2026-3629","name":"Malicious code in github.com/BufferZoneCorp/net-helper (Go)","ecosystem":"go","package":"github.com/BufferZoneCorp/net-helper","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3629"}
+  ]
+}

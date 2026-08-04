@@ -1,0 +1,160 @@
+name: threat-intel-sync
+
+# Daily refresh of threat_intel/. One job does everything:
+#
+#   fetch feeds → validate → shrink-guard → commit to main → publish Release
+#
+# There is no PR step. The shrink guard (cmd/threatintel-fetch/guard.go)
+# is what makes that safe: a renamed upstream column or an error page
+# served in place of a CSV yields a catalog that still parses but is
+# empty, and the guard fails the run before anything is committed or
+# published. A human reviewing a 200k-line diff would not have caught
+# that any more reliably.
+#
+# Release assets (see the `publish release` step):
+#   * one asset per threat_intel/*.json
+#   * threat-intel-latest.tar.gz — fixed name, whole-directory bundle
+#   * SHA256SUMS                 — integrity manifest
+
+on:
+  schedule:
+    # Daily ~06:17 UTC (off-peak; GitHub-recommended jitter from :00).
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  # Never let two syncs race on the same branch/tag.
+  group: threat-intel-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          # Job commits to main and creates a release tag.
+          persist-credentials: true
+
+      - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
+        with:
+          go-version: "1.25"
+          check-latest: true
+
+      - name: fetch upstream threat-intel feeds
+        run: go run ./cmd/threatintel-fetch all
+
+      - name: validate every catalog parses
+        run: go test ./internal/exposure/... -run TestLoad -count=1
+
+      - name: commit to main
+        id: commit
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- threat_intel/; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No upstream changes; skipping commit."
+            exit 0
+          fi
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+          # Stash the generated catalogs outside git's view. Each retry
+          # below starts from a pristine checkout of the newest main and
+          # lays these back on top, so a concurrent push to main can
+          # never leave us in a half-finished rebase — the failure mode
+          # a plain `pull --rebase` retry loop wedges on.
+          GENERATED=$(mktemp -d)
+          cp threat_intel/auto-*.json "${GENERATED}/"
+
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+
+            # Clean tree at the newest main, then overlay only the files
+            # this job generates. Copying `auto-*.json` specifically (not
+            # the whole directory) means a hand-curated catalog someone
+            # added to main mid-run is preserved rather than reverted.
+            git checkout -f --detach origin/main
+            cp "${GENERATED}"/auto-*.json threat_intel/
+
+            git add threat_intel/
+            if git diff --cached --quiet; then
+              echo "Catalogs already current on main; nothing to push."
+              exit 0
+            fi
+            git commit -m "chore(threat-intel): daily auto-sync $(date -u +%Y-%m-%d)"
+
+            if git push origin HEAD:main; then
+              echo "Pushed to main on attempt ${attempt}."
+              exit 0
+            fi
+            echo "Push attempt ${attempt} lost the race; retrying in $((attempt * 5))s."
+            sleep $((attempt * 5))
+          done
+          echo "Failed to push to main after 5 attempts."
+          exit 1
+
+      - name: publish release
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          DATE=$(date -u +%Y-%m-%d)
+          TAG="threat-intel-${DATE}"
+
+          # Fixed-name tarball so releases/latest/download/threat-intel-latest.tar.gz
+          # always resolves. Internal directory is date-stamped so an
+          # operator keeping several snapshots can tell them apart.
+          mkdir -p "threat-intel-${DATE}"
+          cp threat_intel/*.json threat_intel/*.md "threat-intel-${DATE}/"
+          tar -czf "threat-intel-latest.tar.gz" "threat-intel-${DATE}"
+
+          ( cd threat_intel && sha256sum *.json | LC_ALL=C sort ) > SHA256SUMS
+          sha256sum threat-intel-latest.tar.gz >> SHA256SUMS
+
+          mkdir -p release-assets
+          cp threat_intel/*.json release-assets/
+          cp threat-intel-latest.tar.gz SHA256SUMS release-assets/
+
+          COUNT=$(ls -1 threat_intel/*.json | wc -l | tr -d ' ')
+
+          NOTES=$(cat <<EOF
+          Daily snapshot of \`threat_intel/\` — ${COUNT} catalog files.
+
+          **Fetch the whole set:**
+          \`\`\`
+          curl -fsSLO https://github.com/${{ github.repository }}/releases/latest/download/threat-intel-latest.tar.gz
+          tar -xzf threat-intel-latest.tar.gz
+          \`\`\`
+
+          **Stable "latest" URLs:**
+          - Bundle: \`https://github.com/${{ github.repository }}/releases/latest/download/threat-intel-latest.tar.gz\`
+          - Single file: \`https://github.com/${{ github.repository }}/releases/latest/download/<filename.json>\`
+          - Integrity: \`https://github.com/${{ github.repository }}/releases/latest/download/SHA256SUMS\`
+
+          **Pinned URLs** (this snapshot, tag \`${TAG}\`):
+          \`https://github.com/${{ github.repository }}/releases/download/${TAG}/<filename.json>\`
+
+          Upstream license attribution is in \`threat_intel/NOTICES.md\` (included
+          in the tarball). Bumblebee itself is Apache-2.0.
+          EOF
+          )
+
+          # Idempotent: a same-day re-run replaces the release rather than
+          # failing on tag-already-exists.
+          if gh release view "${TAG}" >/dev/null 2>&1; then
+            gh release delete "${TAG}" --yes --cleanup-tag
+          fi
+
+          gh release create "${TAG}" \
+            --title "Threat intel snapshot ${DATE}" \
+            --notes "${NOTES}" \
+            --latest \
+            release-assets/*
