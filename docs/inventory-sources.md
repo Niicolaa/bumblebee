@@ -8,7 +8,8 @@ by recent supply-chain incidents — see the [Why these ecosystems](#why-these-e
 section at the bottom for the reporting that informed it.
 
 The `ecosystem` field on every record matches OSV ecosystem identifiers
-where one exists (`npm`, `pypi`, `go`, `rubygems`, `packagist`, ...). `mcp`,
+where one exists (`npm`, `pypi`, `go`, `rubygems`, `packagist`, `nuget`,
+`cargo`, `maven`, `swift`, `cocoapods`, `pub`, `hex`, ...). `mcp`,
 `agent-skill`, and `editor-extension` are project-local values for
 execution surfaces that do not map cleanly to a package registry; all
 three are emitted without resolved package versions.
@@ -29,7 +30,7 @@ Each scan profile reads from a different slice of the sources below:
 
 | Profile     | Sources walked                                                                                                                                                                                                |
 |-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `baseline` | Homebrew `Cellar` / `Caskroom` install metadata and lib prefixes; `/Library/Python`; Linux system Python (`/usr/lib/python*`, plus `/usr/local/lib`); user Python (`~/.local/lib/python*`, `~/.local/share/pipx/venvs`, `pyenv`); language version managers (`asdf`, `nvm`, `rbenv`, `rvm`); `~/.cargo`; `~/go`; editor-extension trees; MCP config locations; agent-skill lock locations (`~/.agents`, `$XDG_STATE_HOME/skills`); per-profile browser-extension trees (Chromium-family + Firefox-family, including common snap/flatpak paths). No project trees.   |
+| `baseline` | Homebrew `Cellar` / `Caskroom` install metadata and lib prefixes; `/Library/Python`; Linux system Python (`/usr/lib/python*`, plus `/usr/local/lib`); user Python (`~/.local/lib/python*`, `~/.local/share/pipx/venvs`, `pyenv`); language version managers (`asdf`, `nvm`, `rbenv`, `rvm`); `~/.cargo` (incl. the registry source cache); `~/go`; `~/.nuget/packages`; `~/.m2/repository`; editor-extension trees; MCP config locations; agent-skill lock locations (`~/.agents`, `$XDG_STATE_HOME/skills`); per-profile browser-extension trees (Chromium-family + Firefox-family, including common snap/flatpak paths). No project trees.   |
 | `project`   | Configured developer/project roots (`~/code`, `~/src`, `~/Developer`, `~/Projects`, `~/workspace`, and any explicit `--root`). All ecosystem parsers below apply within those trees.                            |
 | `deep`      | Operator-supplied roots, typically a bare home directory during a campaign. Same ecosystem parsers; recommended only in combination with `--exposure-catalog` to emit `record_type=finding` records.            |
 
@@ -81,8 +82,13 @@ References:
 
 Files read:
 
-- `package-lock.json`, `npm-shrinkwrap.json`, `node_modules/.package-lock.json`
+- `package-lock.json`, `npm-shrinkwrap.json`, `.package-lock.json`
   — lockfileVersion 1, 2, and 3 are all supported via a single union schema.
+  All three are matched on basename at any depth. npm itself only writes
+  `.package-lock.json` inside `node_modules/`, but the match is
+  deliberately not restricted to that placement: the file lists real
+  installed packages and versions wherever it is found, and in an
+  exposure scan a missed match is worse than an unusually located one.
 - `node_modules/<pkg>/package.json` and `node_modules/@scope/<pkg>/package.json`
   — bounded to those two depths. Subtree under `node_modules/<pkg>/` is not
   enumerated.
@@ -200,6 +206,64 @@ References:
 - PEP 610 (direct URL origin): <https://peps.python.org/pep-0610/>
 - PEP 503 (name normalization): <https://peps.python.org/pep-0503/>
 
+## PyPI lock and requirement files
+
+The section above covers *installed* state. These files cover *declared*
+state — what a project resolved to, which is not proof that this tree has
+it installed. Both emit `ecosystem: pypi`; `source_type` and `confidence`
+are what tell them apart.
+
+Files read:
+
+- `requirements.txt` and the `requirements-*.txt` / `*-requirements.txt`
+  variants — `source_type: pypi-requirements-txt`. **Only `name==version`
+  pins carry a version, at medium confidence.** Every other specifier
+  (`>=`, `~=`, `==1.2.*`, unpinned, URL, VCS) emits the name with an
+  empty version at low confidence. This distinction is the point:
+  `requests>=2.0` is not evidence that a compromised 2.32.4 is present,
+  and emitting it as though it were would manufacture false positives
+  across a fleet. Option lines (`-r`, `-e`, `--index-url`) are skipped,
+  and environment markers (`; python_version < "3.12"`) are stripped
+  before parsing.
+- `Pipfile.lock` — JSON. `default` maps to `install_scope: prod`,
+  `develop` to `dev`. Versions are stored as `"==2.32.3"` and the
+  operator is stripped. `source_type: pypi-pipfile-lock`.
+- `poetry.lock` — `[[package]]` tables. `source_type: pypi-poetry-lock`.
+- `uv.lock` — `[[package]]` tables. `source_type: pypi-uv-lock`.
+- `pylock.toml` (PEP 751) — `[[packages]]` tables, note the plural.
+  `source_type: pypi-pylock-toml`.
+
+The three TOML formats are read with the restricted reader in
+[`internal/toml`](../internal/toml/toml.go) — see "TOML parsing" below.
+Lock entries are medium confidence: the version is exact, but a lockfile
+records resolution, not installation.
+
+References:
+
+- PEP 508 (dependency specification): <https://peps.python.org/pep-0508/>
+- PEP 751 (pylock.toml): <https://peps.python.org/pep-0751/>
+
+## TOML parsing
+
+Cargo, poetry, uv, and PEP 751 lockfiles are TOML, and the Go standard
+library has no TOML support. Rather than take a dependency — the
+zero-dependency guarantee is a hard constraint — these are read with a
+restricted reader in [`internal/toml`](../internal/toml/toml.go) covering
+the subset lockfiles actually use: arrays of tables holding flat scalar
+and string-array values.
+
+The failure behaviour matters more than the feature list. Structural
+damage (a malformed table header, an assignment with no `=`) is a hard
+error and the file produces **no records at all**, so a receiver never
+mistakes a truncated parse for a complete inventory. A value whose syntax
+is outside the subset — poetry's `files = [{file = ..., hash = ...}]`,
+for instance — is recorded as an explicitly unsupported value rather than
+dropped, so the `name` and `version` on the same table still parse while
+nothing is silently lost.
+
+Not supported: inline tables, multi-line basic strings, dotted keys in
+assignments, dates, floats.
+
 ## Go modules
 
 Files read:
@@ -211,6 +275,23 @@ Files read:
 - `go.mod` — the `require` block. Direct vs indirect is inferred from the
   `// indirect` trailing comment. Lower confidence than `go.sum` because
   `go.mod` requires may not all be in the final build set.
+- `go.work.sum` — identical line format to `go.sum`, covering a
+  multi-module workspace. Emitted as `source_type: go-work-sum` at
+  medium confidence: a workspace sum accumulates hashes for the union of
+  every member module's graph, so an entry is weaker evidence about any
+  one tree than that module's own `go.sum`.
+- `vendor/modules.txt` — the `# <module> <version>` lines only. Emitted
+  as `source_type: go-vendor-modules-txt` at high confidence, since a
+  vendored tree is present on disk at exactly that version. `#  <module>
+  => <replacement>` replace directives and the `## explicit` / package
+  lines produce no records. This is the only inventory a fully vendored
+  repository has — it carries no `go.sum` of its own — so without it such
+  a tree reads as having no Go dependencies at all. `project_path` is the
+  module root, not the `vendor/` directory.
+
+`go.work` itself is not parsed: it contains `use` directives pointing at
+local directories and no module versions, so it cannot produce a package
+record.
 
 Baseline includes `~/go` (and therefore `~/go/pkg/mod`, the per-user
 module cache) when it exists. Each cached module checks in as
@@ -598,6 +679,136 @@ References:
 
 - VS Code extension `package.json`: <https://code.visualstudio.com/api/references/extension-manifest>
 - VS Code extension on-disk layout: <https://code.visualstudio.com/docs/configure/extensions/extension-marketplace#_where-are-extensions-installed>
+
+## NuGet / .NET
+
+Files read:
+
+- `~/.nuget/packages/<id>/<version>/<id>.nuspec` — the global package
+  cache. This is the .NET analogue of `site-packages` or `node_modules`:
+  the package is extracted on disk at that exact version, so records are
+  high confidence. The directory layout carries the id and version, so
+  the `.nuspec` is used only as a marker file and its XML is never read —
+  that keeps a cache sweep to one path check per package instead of an
+  XML parse of every package on the machine. `source_type:
+  nuget-global-cache`.
+- `packages.lock.json` — the resolved lock for a project. The file groups
+  dependencies by target framework and the same package usually appears
+  under several targets, so records are deduped on (id, version). Entries
+  of `"type": "Project"` are project references with no resolved registry
+  version and drop to low confidence. `source_type:
+  nuget-packages-lock-json`.
+- `packages.config` — the legacy pre-PackageReference project list, XML.
+  `source_type: nuget-packages-config`.
+
+`*.deps.json` is deliberately **not** read. It is the runtime dependency
+graph emitted next to a *built* application, which answers "what
+shipped" — the SBOM question this collector explicitly does not try to
+answer — and on a developer machine it duplicates the cache entries with
+worse provenance.
+
+NuGet package ids are case-insensitive, so `normalized_name` is
+lowercased.
+
+## Cargo / crates.io
+
+Files read:
+
+- `Cargo.lock` — `[[package]]` tables. The v1 and v2/v3/v4 layouts differ
+  only in how checksums and `dependencies` entries are written, neither
+  of which is emitted, so one parser covers all of them. An entry with no
+  `source` key is a workspace member or path dependency rather than a
+  crates.io crate: it exists at that version, but no registry advisory
+  can name it, so it drops to medium confidence. `source_type:
+  cargo-lock`.
+- `~/.cargo/registry/src/<index>/<crate>-<version>/Cargo.toml` — the
+  extracted registry cache. As with NuGet, the directory name is
+  authoritative and the manifest is only a marker; a crate's own
+  `Cargo.toml` lists semver ranges, not resolved versions. Crate names
+  contain hyphens, so the name/version split is on the last hyphen
+  followed by something version-shaped. `source_type:
+  cargo-registry-src`.
+
+`Cargo.toml` outside the registry cache is not read: its
+`[dependencies]` are semver ranges and cannot say which version is
+present.
+
+crates.io treats `-` and `_` as equivalent for uniqueness, so
+`normalized_name` lowercases and folds hyphens to underscores.
+
+## Java / JVM (Maven, Gradle)
+
+Files read:
+
+- `*.gradle.lockfile` and `gradle.lockfile` — Gradle dependency locking.
+  Lines are `group:artifact:version=configurations`; `empty=conf` markers
+  are skipped. Fully resolved, so high confidence. `source_type:
+  maven-gradle-lockfile`.
+- `pom.xml` — the declared `<dependencies>` block only, at **low
+  confidence**. A pom states intent, not resolution: Maven resolves
+  transitive dependencies and property placeholders at build time. A
+  version that is an unresolved property (`${spring.version}`) is emitted
+  as an empty version rather than the literal text, which could never
+  match a catalog while still looking like real data. `<scope>` maps to
+  `install_scope` (`test`/`provided` → `dev`). `<dependencyManagement>`
+  is ignored: it is version policy for child modules, not a dependency of
+  this module. `source_type: maven-pom-xml`.
+- `~/.m2/repository/<group path>/<artifact>/<version>/<artifact>-<version>.pom`
+  — the local Maven repository. The layout carries the coordinates, so
+  the `.pom` is a marker and is not parsed. `source_type:
+  maven-local-repository`.
+
+`package_name` is the `group:artifact` coordinate.
+
+Note that `~/.m2` is **not** in the walker's default excludes, while
+`.gradle`, `.ivy2`, and `.sbt` are. The Maven local repository is a real
+package inventory with per-package identity in its layout, the same as
+`~/go/pkg/mod` and `~/.nuget/packages`; the other three are build state
+with nothing cheaply readable. Like the Go module cache, `~/.m2` can
+dominate a baseline run on a Java-heavy host — scope with `--ecosystem`
+or `--exclude .m2` if that is not wanted.
+
+JAR/WAR/EAR archives are not opened. Reading embedded
+`META-INF/maven/.../pom.properties` would mean decompressing archives
+during a walk, a different cost and risk profile from the plain metadata
+reads everything else here does.
+
+## Swift (SwiftPM) and CocoaPods
+
+These are separate ecosystems (`swift` and `cocoapods`) because a pod and
+a Swift package sharing a name are different things, and an advisory
+names one or the other.
+
+Files read:
+
+- `Package.resolved` — JSON, in two layouts. v1 nests pins under
+  `object.pins` and names them `package`; v2/v3 use a top-level `pins`
+  array and `identity`. Both are handled. A pin to a branch or a bare
+  revision has no released version and drops to low confidence.
+  `source_type: swift-package-resolved`.
+- `Podfile.lock` — the `PODS:` section only. Entries are
+  `  - Name (version)` at two-space indent; lines indented further are
+  that pod's own dependencies and are skipped so transitive deps are not
+  double-counted as their own pods. Subspecs (`Firebase/Core`) are kept
+  under their full name. Read line-wise rather than by adding a YAML
+  parser, the same approach the `Gemfile.lock` reader takes.
+  `source_type: cocoapods-podfile-lock`.
+
+## Dart (pub) and Elixir (Hex)
+
+Files read:
+
+- `pubspec.lock` — the `packages:` map. `version` and `source` are read
+  per entry; a `path` or `git` source has no pub.dev release to match an
+  advisory against and drops to low confidence. `dependency: "direct
+  main"` maps to `install_scope: prod`, `"direct dev"` to `dev`. Read
+  line-wise by indentation rather than with a YAML parser. `source_type:
+  pub-pubspec-lock`.
+- `mix.lock` — an Elixir map literal, one entry per line. For `:hex`
+  entries the name and version are the second and third tuple elements.
+  Non-hex entries (`:git`, `:path`) name a real dependency with no hex.pm
+  version and are emitted at low confidence. `source_type:
+  hex-mix-lock`.
 
 ## Why these ecosystems
 

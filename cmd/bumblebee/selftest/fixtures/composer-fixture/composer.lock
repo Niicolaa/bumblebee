@@ -1,0 +1,11 @@
+{
+  "_readme": ["bumblebee selftest fixture - not a real project"],
+  "content-hash": "0000000000000000000000000000000000",
+  "packages": [
+    {
+      "name": "bumblebee-selftest/evil",
+      "version": "0.0.0"
+    }
+  ],
+  "packages-dev": []
+}

@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bumblebee-selftest-evil (0.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bumblebee-selftest-evil
+
+BUNDLED WITH
+   2.5.9

@@ -62,6 +62,14 @@ type packageJSON struct {
 }
 
 // IsLockfile reports whether a basename is an npm lockfile we should parse.
+//
+// `.package-lock.json` is matched on basename at any depth, not only at
+// `node_modules/.package-lock.json` where npm writes it. That is
+// deliberate: the file lists real installed packages and versions
+// wherever it turns up (copies, vendored trees, relocated installs), and
+// for an exposure scan a missed match costs more than a record from an
+// unusual location. The record's source_file always says where it came
+// from, so a receiver can filter if it wants to.
 func IsLockfile(base string) bool {
 	switch base {
 	case "package-lock.json", "npm-shrinkwrap.json", ".package-lock.json":

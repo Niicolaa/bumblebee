@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net8.0": {
+      "Bumblebee.Selftest.Evil": {
+        "type": "Direct",
+        "requested": "[0.0.0, )",
+        "resolved": "0.0.0"
+      }
+    }
+  }
+}

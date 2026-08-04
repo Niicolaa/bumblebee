@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "bumblebee-selftest-evil",
+      "kind" : "remoteSourceControl",
+      "location" : "https://example.invalid/bumblebee-selftest/evil.git",
+      "state" : {
+        "revision" : "0000000000000000000000000000000000000000",
+        "version" : "0.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}

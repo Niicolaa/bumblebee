@@ -1,0 +1,11 @@
+{
+  "version": 3,
+  "skills": {
+    "bumblebee-selftest-skill": {
+      "source": "bumblebee-selftest/evil-skills",
+      "sourceType": "github",
+      "skillFolderHash": "0000000000000000000000000000000000000000",
+      "ref": "main"
+    }
+  }
+}

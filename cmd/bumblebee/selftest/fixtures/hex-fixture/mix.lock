@@ -1,0 +1,3 @@
+%{
+  "bumblebee_selftest_evil": {:hex, :bumblebee_selftest_evil, "0.0.0", "0000", [:mix], [], "hexpm", "0000"},
+}

@@ -40,15 +40,23 @@ know what they are looking for.
 | pnpm | `npm` | `pnpm-lock.yaml`, `.pnpm/.../package.json` |
 | Yarn | `npm` | `yarn.lock` (Classic + Berry) |
 | Bun | `npm` | `bun.lock`; `bun.lockb` presence as diagnostic |
-| PyPI | `pypi` | `*.dist-info/METADATA`, `INSTALLER`, `direct_url.json`, `*.egg-info/PKG-INFO` |
-| Go modules | `go` | `go.sum`, `go.mod` |
+| PyPI (installed) | `pypi` | `*.dist-info/METADATA`, `INSTALLER`, `direct_url.json`, `*.egg-info/PKG-INFO` |
+| PyPI (declared) | `pypi` | `requirements*.txt`, `Pipfile.lock`, `poetry.lock`, `uv.lock`, `pylock.toml` (PEP 751) |
+| Go modules | `go` | `go.sum`, `go.mod`, `go.work.sum`, `vendor/modules.txt` |
 | RubyGems | `rubygems` | `Gemfile.lock`, installed `*.gemspec` |
 | Composer | `packagist` | `composer.lock`, `vendor/composer/installed.json` |
 | MCP | `mcp` | JSON host configs: `mcp.json`, `.mcp.json`, `claude_desktop_config.json`, `mcp_config.json`, `mcp_settings.json`, `cline_mcp_settings.json`, plus `~/.gemini/settings.json` (Gemini CLI / Code Assist) and `~/.claude.json` (Claude Code user- and project-scoped `mcpServers`). Non-JSON configs (Codex `config.toml`, Continue YAML) are not parsed in v0.1. |
 | Agent skills | `agent-skill` | `skills.sh` / `vercel-labs/skills` lock files: global `~/.agents/.skill-lock.json` (or `$XDG_STATE_HOME/skills/.skill-lock.json`) and project-local `skills-lock.json`. Loose `SKILL.md` directories without a lock file are not enumerated. |
-| Editor extensions | `editor-extension` | VS Code, Cursor, Windsurf, VSCodium manifests |
+| Editor extensions | `editor-extension` | VS Code, Cursor, Windsurf, VSCodium manifests, including each editor's remote/SSH server tree |
 | Browser extensions | `browser-extension` | Chromium-family (`manifest.json`) and Firefox (`extensions.json`) per profile |
 | Homebrew | `homebrew` | Formula `INSTALL_RECEIPT.json` files and cask `.metadata` install markers |
+| NuGet | `nuget` | `~/.nuget/packages/<id>/<version>/` cache, `packages.lock.json`, `packages.config` |
+| Cargo | `cargo` | `Cargo.lock`, `~/.cargo/registry/src/<index>/<crate>-<version>/` |
+| Maven / Gradle | `maven` | `*.gradle.lockfile`, `pom.xml` (declared only), `~/.m2/repository/` |
+| SwiftPM | `swift` | `Package.resolved` (v1 and v2/v3 layouts) |
+| CocoaPods | `cocoapods` | `Podfile.lock` (`PODS:` section) |
+| Dart | `pub` | `pubspec.lock` |
+| Elixir | `hex` | `mix.lock` |
 
 Per-ecosystem detail: [docs/inventory-sources.md](docs/inventory-sources.md).
 
@@ -61,7 +69,7 @@ Requires Go 1.25+. Zero non-stdlib dependencies.
 go install github.com/perplexityai/bumblebee/cmd/bumblebee@latest
 
 # Or pin a specific tag.
-go install github.com/perplexityai/bumblebee/cmd/bumblebee@v0.1.1
+go install github.com/perplexityai/bumblebee/cmd/bumblebee@v0.1.2
 ```
 
 To build from a checkout:
@@ -74,7 +82,7 @@ go test ./...
 Stamp an explicit version at build time:
 
 ```sh
-go build -ldflags "-X main.Version=v0.1.1" -o bumblebee ./cmd/bumblebee
+go build -ldflags "-X main.Version=v0.1.2" -o bumblebee ./cmd/bumblebee
 ```
 
 `bumblebee version` prints the version plus the VCS revision, build
@@ -90,7 +98,7 @@ fixtures:
 
 ```sh
 bumblebee selftest
-# selftest OK (2 findings in 1ms)
+# selftest OK (19 findings in 1ms)
 ```
 
 The fixtures live inside the binary, use deliberately fake package
@@ -112,6 +120,11 @@ receivers can keep populations separate.
 | `deep` | Explicit `--root` paths, including broad roots like `$HOME`. | On-demand incident or campaign checks, usually with `--ecosystem`, `--exposure-catalog`, and `--findings-only`. |
 
 `baseline` and `project` refuse bare-home roots; only `deep` walks them.
+On Windows this also covers drive roots and bare `<drive>:\Users\<name>`
+homes. Default roots are platform-aware: on Windows, MCP host configs
+under `%APPDATA%`, Chromium-family extensions under `%LOCALAPPDATA%`,
+and Firefox profiles under `%APPDATA%\Mozilla` are resolved in place of
+their macOS/Linux equivalents.
 
 ## Quick start
 
@@ -148,8 +161,12 @@ optional for the other profiles. `--ecosystem` is repeatable and
 comma-separated. `--exposure-catalog` accepts a JSON file or a directory
 of `*.json` catalogs (merged non-recursively, all files must share
 `schema_version`). `--findings-only` requires `--exposure-catalog` and
-suppresses package records while keeping findings. `bumblebee scan --help`
-lists every flag.
+suppresses package records while keeping findings. `--exclude` adds a
+directory name or suffix path to skip (repeatable). `--all-users` is
+macOS-only and expands per-user default roots across every
+`/Users/<name>/` home; on other platforms it is accepted but has no
+effect and is reported as a diagnostic. `bumblebee scan --help` lists
+every flag.
 
 ## Output
 
@@ -295,13 +312,44 @@ Operators using a release binary can pull the current snapshot without
 cloning the repo:
 
 ```
-curl -fsSLO https://github.com/<owner>/<repo>/releases/latest/download/threat-intel-latest.tar.gz
+curl -fsSLO https://github.com/perplexityai/bumblebee/releases/latest/download/threat-intel-latest.tar.gz
 tar -xzf threat-intel-latest.tar.gz
 ```
 
 The daily `threat-intel-YYYY-MM-DD` release carries the whole directory
 as a tarball plus each catalog as an individual asset and a
 `SHA256SUMS` manifest.
+
+## Documentation
+
+- [docs/inventory-sources.md](docs/inventory-sources.md) — per-ecosystem
+  list of the exact files read and the fields derived from each.
+- [docs/state-model.md](docs/state-model.md) — receiver-side current-state
+  model, `record_id` identity, and dedupe guidance.
+- [docs/transport.md](docs/transport.md) — stdout/file/HTTPS output modes,
+  batching, and auth (`bearer`, `hmac-sha256`).
+- [docs/deployment-macos.md](docs/deployment-macos.md) — `launchd`/MDM
+  scheduling patterns per profile.
+- [docs/schema/](docs/schema/) — published JSON Schemas for records and
+  the exposure-catalog format (`v0.1.0`, `v0.2.0`). Published schema
+  versions are never edited in place; see
+  [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Repository layout
+
+| Path | What it is |
+|---|---|
+| `cmd/bumblebee` | The scanner CLI (`scan`, `roots`, `selftest`, `version`). |
+| `cmd/threatintel-fetch` | Daily automation that builds the `auto-*.json` catalogs from public feeds. |
+| `tools/osvcatalog` | Offline generator that turns OSV data into an exposure catalog. |
+| `internal/` | Ecosystem parsers, walker, exposure matching, endpoint metadata, output sinks. |
+| `threat_intel/` | Shipped and auto-generated exposure catalogs. |
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the local build/test loop and
+the requirements for adding an exposure catalog. Report vulnerabilities
+privately as described in [SECURITY.md](SECURITY.md).
 
 ## License
 

@@ -45,21 +45,19 @@ const (
 	EcosystemBrowserExtension = "browser-extension"
 	EcosystemHomebrew         = "homebrew"
 	EcosystemAgentSkill       = "agent-skill"
+	EcosystemNuGet            = "nuget"
+	EcosystemCargo            = "cargo"
+	EcosystemMaven            = "maven"
+	EcosystemSwift            = "swift"
+	EcosystemCocoaPods        = "cocoapods"
+	EcosystemPub              = "pub"
+	EcosystemHex              = "hex"
 )
 
-var supportedEcosystems = map[string]struct{}{
-	EcosystemNPM:              {},
-	EcosystemPyPI:             {},
-	EcosystemGo:               {},
-	EcosystemRubyGems:         {},
-	EcosystemPackagist:        {},
-	EcosystemMCP:              {},
-	EcosystemEditorExtension:  {},
-	EcosystemBrowserExtension: {},
-	EcosystemHomebrew:         {},
-	EcosystemAgentSkill:       {},
-}
-
+// supportedEcosystemOrder is the single source of truth for which emitted
+// ecosystem values exist, and for the order they are shown in --help. The
+// lookup set below is derived from it, so adding an ecosystem means editing
+// exactly one list.
 var supportedEcosystemOrder = []string{
 	EcosystemNPM,
 	EcosystemPyPI,
@@ -71,7 +69,22 @@ var supportedEcosystemOrder = []string{
 	EcosystemBrowserExtension,
 	EcosystemHomebrew,
 	EcosystemAgentSkill,
+	EcosystemNuGet,
+	EcosystemCargo,
+	EcosystemMaven,
+	EcosystemSwift,
+	EcosystemCocoaPods,
+	EcosystemPub,
+	EcosystemHex,
 }
+
+var supportedEcosystems = func() map[string]struct{} {
+	m := make(map[string]struct{}, len(supportedEcosystemOrder))
+	for _, e := range supportedEcosystemOrder {
+		m[e] = struct{}{}
+	}
+	return m
+}()
 
 // SupportedEcosystems returns the emitted ecosystem values supported by v0.1.
 func SupportedEcosystems() []string {

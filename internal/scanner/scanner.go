@@ -20,16 +20,22 @@ import (
 
 	"github.com/perplexityai/bumblebee/internal/ecosystem/browserext"
 	"github.com/perplexityai/bumblebee/internal/ecosystem/bun"
+	"github.com/perplexityai/bumblebee/internal/ecosystem/cargo"
 	"github.com/perplexityai/bumblebee/internal/ecosystem/composer"
+	"github.com/perplexityai/bumblebee/internal/ecosystem/dartelixir"
 	"github.com/perplexityai/bumblebee/internal/ecosystem/editorext"
 	"github.com/perplexityai/bumblebee/internal/ecosystem/gomod"
 	"github.com/perplexityai/bumblebee/internal/ecosystem/homebrew"
+	"github.com/perplexityai/bumblebee/internal/ecosystem/maven"
 	"github.com/perplexityai/bumblebee/internal/ecosystem/mcp"
 	"github.com/perplexityai/bumblebee/internal/ecosystem/npm"
+	"github.com/perplexityai/bumblebee/internal/ecosystem/nuget"
 	"github.com/perplexityai/bumblebee/internal/ecosystem/pnpm"
+	"github.com/perplexityai/bumblebee/internal/ecosystem/pylock"
 	"github.com/perplexityai/bumblebee/internal/ecosystem/pypi"
 	"github.com/perplexityai/bumblebee/internal/ecosystem/rubygems"
 	"github.com/perplexityai/bumblebee/internal/ecosystem/skills"
+	"github.com/perplexityai/bumblebee/internal/ecosystem/swiftpkg"
 	"github.com/perplexityai/bumblebee/internal/ecosystem/yarn"
 	"github.com/perplexityai/bumblebee/internal/exposure"
 	"github.com/perplexityai/bumblebee/internal/model"
@@ -244,27 +250,10 @@ func Run(ctx context.Context, cfg Config) (Result, error) {
 	}
 	diag := cfg.Emitter.Diag
 
-	npmS := &npm.Scanner{MaxFileSize: cfg.MaxFileSize, Emit: emit, Diag: diag}
-	pyS := &pypi.Scanner{MaxFileSize: cfg.MaxFileSize, Emit: emit, Diag: diag}
-	pnpmS := &pnpm.Scanner{MaxFileSize: cfg.MaxFileSize, Emit: emit, Diag: diag}
-	yarnS := &yarn.Scanner{MaxFileSize: cfg.MaxFileSize, Emit: emit, Diag: diag}
-	bunS := &bun.Scanner{MaxFileSize: cfg.MaxFileSize, Emit: emit, Diag: diag}
-	goS := &gomod.Scanner{MaxFileSize: cfg.MaxFileSize, Emit: emit, Diag: diag}
-	rbS := &rubygems.Scanner{MaxFileSize: cfg.MaxFileSize, Emit: emit, Diag: diag}
-	cmpS := &composer.Scanner{MaxFileSize: cfg.MaxFileSize, Emit: emit, Diag: diag}
-	mcpS := &mcp.Scanner{MaxFileSize: cfg.MaxFileSize, Emit: emit, Diag: diag}
-	skillS := &skills.Scanner{MaxFileSize: cfg.MaxFileSize, Emit: emit, Diag: diag}
-	extS := &editorext.Scanner{MaxFileSize: cfg.MaxFileSize, Emit: emit, Diag: diag}
-	bxS := &browserext.Scanner{MaxFileSize: cfg.MaxFileSize, Emit: emit, Diag: diag}
-	hbS := &homebrew.Scanner{MaxFileSize: cfg.MaxFileSize, Emit: emit, Diag: diag}
+	p := newParsers(cfg.MaxFileSize, emit, diag)
+	handlers := p.handlers()
+	bunS := p.bun
 
-	type job struct {
-		kind        string
-		path        string
-		projectPath string
-		extra1      string // generic slot 1 (e.g., extRoot, name)
-		extra2      string // generic slot 2 (e.g., extDir, version)
-	}
 	jobs := make(chan job, 256)
 
 	var wg sync.WaitGroup
@@ -285,51 +274,15 @@ func Run(ctx context.Context, cfg Config) (Result, error) {
 					return
 				}
 				var err error
-				switch j.kind {
-				case "npm-lock":
-					err = npmS.ScanLockfile(j.path, cfg.BaseRecord)
-				case "npm-pj":
-					err = npmS.ScanNodeModulesPackageJSON(j.path, j.projectPath, cfg.BaseRecord)
-				case "py-dist":
-					err = pyS.ScanDistInfo(j.path, j.projectPath, cfg.BaseRecord)
-				case "py-egg":
-					err = pyS.ScanEggInfo(j.path, j.projectPath, cfg.BaseRecord)
-				case "pnpm-lock":
-					err = pnpmS.ScanLockfile(j.path, cfg.BaseRecord)
-				case "pnpm-pj":
-					err = pnpmS.ScanStorePackageJSON(j.path, j.projectPath, j.extra1, j.extra2, cfg.BaseRecord)
-				case "yarn-lock":
-					err = yarnS.ScanLockfile(j.path, cfg.BaseRecord)
-				case "bun-lock":
-					err = bunS.ScanTextLockfile(j.path, cfg.BaseRecord)
-				case "go-sum":
-					err = goS.ScanGoSum(j.path, cfg.BaseRecord)
-				case "go-mod":
-					err = goS.ScanGoMod(j.path, cfg.BaseRecord)
-				case "rb-lock":
-					err = rbS.ScanGemfileLock(j.path, cfg.BaseRecord)
-				case "rb-spec":
-					err = rbS.ScanGemspec(j.path, j.projectPath, cfg.BaseRecord)
-				case "composer-lock":
-					err = cmpS.ScanComposerLock(j.path, cfg.BaseRecord)
-				case "composer-installed":
-					err = cmpS.ScanInstalledJSON(j.path, cfg.BaseRecord)
-				case "mcp-config":
-					err = mcpS.ScanConfig(j.path, cfg.BaseRecord)
-				case "mcp-claude-config":
-					err = mcpS.ScanClaudeConfig(j.path, cfg.BaseRecord)
-				case "skill-lock":
-					err = skillS.ScanLockFile(j.path, cfg.BaseRecord)
-				case "editor-ext":
-					err = extS.ScanExtension(j.path, j.extra1, j.extra2, cfg.BaseRecord)
-				case "chromium-ext":
-					err = bxS.ScanChromiumExtension(j.path, j.extra1, j.extra2, j.projectPath, cfg.BaseRecord)
-				case "firefox-ext":
-					err = bxS.ScanFirefoxExtensions(j.path, cfg.BaseRecord)
-				case "homebrew-formula":
-					err = hbS.ScanFormulaReceipt(j.path, j.extra1, j.extra2, j.projectPath, cfg.BaseRecord)
-				case "homebrew-cask":
-					err = hbS.ScanCaskMetadata(j.path, j.extra1, j.extra2, j.projectPath, cfg.BaseRecord)
+				if h, ok := handlers[j.kind]; ok {
+					err = h(j, cfg.BaseRecord)
+				} else {
+					// Unreachable unless a new jobKind is dispatched
+					// without a handler. Say so loudly rather than
+					// dropping the file: a silent skip here is a false
+					// negative in an exposure scan.
+					cfg.Emitter.Diag("error", j.path,
+						"internal: no handler registered for job kind "+string(j.kind))
 				}
 				if err != nil {
 					cfg.Emitter.Diag("error", j.path, err.Error())
@@ -409,48 +362,92 @@ func Run(ctx context.Context, cfg Config) (Result, error) {
 		filesConsidered++
 		switch {
 		case enabled(model.EcosystemNPM) && npm.IsLockfile(base):
-			send(job{kind: "npm-lock", path: path})
+			send(job{kind: jobNPMLock, path: path})
 		case enabled(model.EcosystemNPM) && pnpm.IsLockfile(base):
-			send(job{kind: "pnpm-lock", path: path})
+			send(job{kind: jobPnpmLock, path: path})
 		case enabled(model.EcosystemNPM) && yarn.IsLockfile(base):
-			send(job{kind: "yarn-lock", path: path})
+			send(job{kind: jobYarnLock, path: path})
 		case enabled(model.EcosystemNPM) && bun.IsTextLockfile(base):
-			send(job{kind: "bun-lock", path: path})
+			send(job{kind: jobBunLock, path: path})
 		case enabled(model.EcosystemNPM) && bun.IsBinaryLockfile(base):
 			bunS.NoteBinaryLockfile(path)
+		case enabled(model.EcosystemMaven) && maven.IsGradleLockfile(base):
+			send(job{kind: jobGradleLockfile, path: path})
+		case enabled(model.EcosystemMaven) && maven.IsPomXML(base):
+			send(job{kind: jobPomXML, path: path})
+		case enabled(model.EcosystemMaven) && strings.HasSuffix(base, ".pom"):
+			if ok, name, version, verDir := maven.IsLocalRepoPom(path); ok {
+				send(job{kind: jobMavenLocalRepo, path: path, projectPath: verDir, extra1: name, extra2: version})
+			}
+		case enabled(model.EcosystemSwift) && swiftpkg.IsPackageResolved(base):
+			send(job{kind: jobPackageResolved, path: path})
+		case enabled(model.EcosystemCocoaPods) && swiftpkg.IsPodfileLock(base):
+			send(job{kind: jobPodfileLock, path: path})
+		case enabled(model.EcosystemPub) && dartelixir.IsPubspecLock(base):
+			send(job{kind: jobPubspecLock, path: path})
+		case enabled(model.EcosystemHex) && dartelixir.IsMixLock(base):
+			send(job{kind: jobMixLock, path: path})
+		case enabled(model.EcosystemNuGet) && nuget.IsPackagesLockJSON(base):
+			send(job{kind: jobNuGetPackagesLock, path: path})
+		case enabled(model.EcosystemNuGet) && nuget.IsPackagesConfig(base):
+			send(job{kind: jobNuGetPackagesCfg, path: path})
+		case enabled(model.EcosystemNuGet) && strings.HasSuffix(strings.ToLower(base), ".nuspec"):
+			if ok, id, version, pkgDir := nuget.IsCacheNuspec(path); ok {
+				send(job{kind: jobNuGetCache, path: path, projectPath: pkgDir, extra1: id, extra2: version})
+			}
+		case enabled(model.EcosystemCargo) && cargo.IsCargoLock(base):
+			send(job{kind: jobCargoLock, path: path})
+		case enabled(model.EcosystemCargo) && base == "Cargo.toml":
+			if ok, name, version, crateDir := cargo.IsRegistrySrcMarker(path); ok {
+				send(job{kind: jobCargoRegistrySrc, path: path, projectPath: crateDir, extra1: name, extra2: version})
+			}
+		case enabled(model.EcosystemPyPI) && pylock.IsPipfileLock(base):
+			send(job{kind: jobPyPipfileLock, path: path})
+		case enabled(model.EcosystemPyPI) && pylock.IsPoetryLock(base):
+			send(job{kind: jobPyPoetryLock, path: path})
+		case enabled(model.EcosystemPyPI) && pylock.IsUVLock(base):
+			send(job{kind: jobPyUVLock, path: path})
+		case enabled(model.EcosystemPyPI) && pylock.IsPylockTOML(base):
+			send(job{kind: jobPyPylockTOML, path: path})
+		case enabled(model.EcosystemPyPI) && pylock.IsRequirementsTxt(base):
+			send(job{kind: jobPyRequirements, path: path})
 		case enabled(model.EcosystemGo) && gomod.IsGoSum(base):
-			send(job{kind: "go-sum", path: path})
+			send(job{kind: jobGoSum, path: path})
 		case enabled(model.EcosystemGo) && gomod.IsGoMod(base):
-			send(job{kind: "go-mod", path: path})
+			send(job{kind: jobGoMod, path: path})
+		case enabled(model.EcosystemGo) && gomod.IsGoWorkSum(base):
+			send(job{kind: jobGoWorkSum, path: path})
+		case enabled(model.EcosystemGo) && base == "modules.txt" && gomod.IsVendorModulesTxt(path):
+			send(job{kind: jobGoVendorModules, path: path})
 		case enabled(model.EcosystemRubyGems) && rubygems.IsGemfileLock(base):
-			send(job{kind: "rb-lock", path: path})
+			send(job{kind: jobGemfileLock, path: path})
 		case enabled(model.EcosystemRubyGems) && rubygems.IsGemspec(base):
 			if ok, gemsDir := rubygems.IsInstalledGemspec(path); ok {
-				send(job{kind: "rb-spec", path: path, projectPath: gemsDir})
+				send(job{kind: jobGemspec, path: path, projectPath: gemsDir})
 			}
 		case enabled(model.EcosystemPackagist) && composer.IsComposerLock(base):
-			send(job{kind: "composer-lock", path: path})
+			send(job{kind: jobComposerLock, path: path})
 		case enabled(model.EcosystemPackagist) && base == "installed.json" && composer.IsInstalledJSON(path):
-			send(job{kind: "composer-installed", path: path})
+			send(job{kind: jobComposerInstalled, path: path})
 		case enabled(model.EcosystemMCP) && mcp.IsKnownMCPConfig(base):
-			send(job{kind: "mcp-config", path: path})
+			send(job{kind: jobMCPConfig, path: path})
 		case enabled(model.EcosystemMCP) && base == "settings.json" && mcp.IsGeminiSettingsJSON(path):
-			send(job{kind: "mcp-config", path: path})
+			send(job{kind: jobMCPConfig, path: path})
 		case enabled(model.EcosystemMCP) && mcp.IsClaudeConfigJSON(path):
-			send(job{kind: "mcp-claude-config", path: path})
+			send(job{kind: jobMCPClaudeConfig, path: path})
 		case enabled(model.EcosystemAgentSkill) && skills.IsKnownLockFile(base):
-			send(job{kind: "skill-lock", path: path})
+			send(job{kind: jobSkillLock, path: path})
 		case enabled(model.EcosystemBrowserExtension) && base == "manifest.json":
 			if ok, extID, verDir, profDir := browserext.IsChromiumExtensionManifest(path); ok {
-				send(job{kind: "chromium-ext", path: path, projectPath: profDir, extra1: extID, extra2: verDir})
+				send(job{kind: jobChromiumExtension, path: path, projectPath: profDir, extra1: extID, extra2: verDir})
 			}
 		case enabled(model.EcosystemBrowserExtension) && base == "extensions.json":
 			if browserext.IsFirefoxExtensionsJSON(path) {
-				send(job{kind: "firefox-ext", path: path})
+				send(job{kind: jobFirefoxExtensions, path: path})
 			}
 		case enabled(model.EcosystemHomebrew) && base == "INSTALL_RECEIPT.json":
 			if ok, name, version, cellarDir := homebrew.IsFormulaReceipt(path); ok {
-				send(job{kind: "homebrew-formula", path: path, projectPath: cellarDir, extra1: name, extra2: version})
+				send(job{kind: jobHomebrewFormula, path: path, projectPath: cellarDir, extra1: name, extra2: version})
 			}
 		case enabled(model.EcosystemHomebrew) && homebrew.LooksLikeCaskMetadataMarker(path):
 			// This one intentionally does a tiny sibling check in the walker
@@ -459,13 +456,13 @@ func Run(ctx context.Context, cfg Config) (Result, error) {
 			// I/O to cask marker dispatch, but typical Caskroom cardinality is
 			// small and avoiding duplicate records keeps downstream state clean.
 			if ok, token, version, caskroomDir := homebrew.IsCaskMetadataMarker(path); ok {
-				send(job{kind: "homebrew-cask", path: path, projectPath: caskroomDir, extra1: token, extra2: version})
+				send(job{kind: jobHomebrewCask, path: path, projectPath: caskroomDir, extra1: token, extra2: version})
 			}
 		case base == "package.json":
 			// Prefer extension match over node_modules.
 			if enabled(model.EcosystemEditorExtension) {
 				if ok, extRoot, extDir := editorext.IsExtensionPackageJSON(path); ok {
-					send(job{kind: "editor-ext", path: path, extra1: extRoot, extra2: extDir})
+					send(job{kind: jobEditorExtension, path: path, extra1: extRoot, extra2: extDir})
 					break
 				}
 			}
@@ -473,19 +470,19 @@ func Run(ctx context.Context, cfg Config) (Result, error) {
 				break
 			}
 			if ok, proj, name, ver := pnpm.IsPnpmStorePackageJSON(path); ok {
-				send(job{kind: "pnpm-pj", path: path, projectPath: proj, extra1: name, extra2: ver})
+				send(job{kind: jobPnpmPackageJSON, path: path, projectPath: proj, extra1: name, extra2: ver})
 				break
 			}
 			if ok, proj := npm.IsNodeModulesPackageJSON(path); ok {
-				send(job{kind: "npm-pj", path: path, projectPath: proj})
+				send(job{kind: jobNPMPackageJSON, path: path, projectPath: proj})
 			}
 		case enabled(model.EcosystemPyPI) && base == "METADATA":
 			if ok, dir := pypi.IsDistInfoMetadata(path); ok {
-				send(job{kind: "py-dist", path: path, projectPath: dir})
+				send(job{kind: jobPyDistInfo, path: path, projectPath: dir})
 			}
 		case enabled(model.EcosystemPyPI) && base == "PKG-INFO":
 			if ok, dir := pypi.IsEggInfoPKGInfo(path); ok {
-				send(job{kind: "py-egg", path: path, projectPath: dir})
+				send(job{kind: jobPyEggInfo, path: path, projectPath: dir})
 			}
 		}
 		return nil
