@@ -1,0 +1,13 @@
+# Go tooling assumes LF line endings.
+#
+# On windows-latest, actions/checkout inherits git's default
+# core.autocrlf=true and rewrites checked-out files to CRLF. gofmt treats
+# a CRLF file as unformatted, so the repo-wide `gofmt -l .` step in CI
+# reports every .go file in the tree — not just changed ones — and the
+# job fails for reasons unrelated to any actual formatting problem.
+#
+# Pinning LF keeps the check meaningful on all three runners, and matches
+# what gofmt itself writes when a contributor runs it on Windows.
+*.go text eol=lf
+go.mod text eol=lf
+go.sum text eol=lf
