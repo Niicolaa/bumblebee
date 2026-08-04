@@ -132,6 +132,7 @@ func classifyRoot(path, profile string) string {
 	case strings.HasSuffix(p, "/Profiles") && containsAny(p, "Firefox", "LibreWolf", "Waterfox"):
 		return model.RootKindBrowserExtension
 	case strings.Contains(p, "Library/Application Support/Claude") ||
+		strings.Contains(p, "AppData/Roaming/Claude") ||
 		strings.HasSuffix(p, "/.cursor") ||
 		strings.HasSuffix(p, "/.codeium/windsurf") ||
 		strings.HasSuffix(p, "/.claude") ||
@@ -196,6 +197,32 @@ func isBroadHomeRoot(path string) bool {
 		return true
 	}
 	if dir, _ := filepath.Split(abs); dir == "/Users/" || dir == "/home/" {
+		return true
+	}
+	if runtime.GOOS == "windows" && isWindowsBroadHome(abs) {
+		return true
+	}
+	return false
+}
+
+// isWindowsBroadHome recognises Windows bare-home and drive-root paths:
+// `<drive>:\`, `<drive>:\Users`, and `<drive>:\Users\<single-name>`.
+// The drive letter is arbitrary; comparisons are case-insensitive
+// because Windows filesystems are.
+func isWindowsBroadHome(abs string) bool {
+	vol := filepath.VolumeName(abs)
+	if vol == "" {
+		return false
+	}
+	if abs == vol || abs == vol+`\` {
+		return true
+	}
+	rel := strings.Trim(filepath.ToSlash(strings.TrimPrefix(abs, vol)), "/")
+	if rel == "" {
+		return true
+	}
+	parts := strings.Split(rel, "/")
+	if len(parts) <= 2 && strings.EqualFold(parts[0], "Users") {
 		return true
 	}
 	return false
@@ -264,6 +291,21 @@ func baselineHomeCandidates(home string) []scanner.Root {
 		add(filepath.Join(home, ".config", "Claude"), model.RootKindMCPConfig)
 		add(filepath.Join(home, ".config", "Claude Code"), model.RootKindMCPConfig)
 		add(filepath.Join(home, ".continue"), model.RootKindMCPConfig)
+	case "windows":
+		// Claude Desktop's claude_desktop_config.json lives under
+		// %APPDATA%\Claude (Roaming). Other Windows MCP hosts (Cursor,
+		// Windsurf, VS Code) already land via the cross-platform
+		// ~/.cursor, ~/.codeium/windsurf, and editor-extension dotfile
+		// roots added above.
+		appdata := windowsRoamingAppData(home)
+		add(filepath.Join(appdata, "Claude"), model.RootKindMCPConfig)
+		add(filepath.Join(appdata, "Continue"), model.RootKindMCPConfig)
+		// Per-user Python. The python.org installer's default (non
+		// all-users) mode installs here, so this is where dist-info
+		// metadata lives on most Windows developer machines.
+		for _, p := range globExisting(filepath.Join(windowsLocalAppData(home), "Programs", "Python", "Python*", "Lib", "site-packages")) {
+			add(p, model.RootKindUserPackage)
+		}
 	}
 
 	// Agent-skill lock locations. ~/.agents holds the global
@@ -330,8 +372,47 @@ func systemRoots() []scanner.Root {
 			}
 		}
 		return roots
+	case "windows":
+		// Windows has no Homebrew/usr-lib analog, and per-user roots are
+		// added by baselineHomeCandidates. What does belong here is the
+		// machine-wide Python install: the python.org installer's
+		// all-users mode writes to %ProgramFiles%\PythonNN, whose
+		// Lib\site-packages holds dist-info metadata the PyPI scanner
+		// reads.
+		var roots []scanner.Root
+		for _, base := range []string{os.Getenv("ProgramFiles"), os.Getenv("ProgramFiles(x86)")} {
+			if strings.TrimSpace(base) == "" {
+				continue
+			}
+			for _, p := range globExisting(filepath.Join(base, "Python*", "Lib", "site-packages")) {
+				roots = append(roots, scanner.Root{Path: p, Kind: model.RootKindGlobalPackage})
+			}
+		}
+		return roots
 	}
 	return nil
+}
+
+// windowsRoamingAppData returns the absolute path to %APPDATA% (the
+// per-user Roaming AppData directory). It prefers the env var so a
+// machine-configured non-default location is honoured, and falls back
+// to `<home>\AppData\Roaming` which matches the default Windows layout.
+// Callers should only invoke this on Windows.
+func windowsRoamingAppData(home string) string {
+	if v := strings.TrimSpace(os.Getenv("APPDATA")); v != "" {
+		return v
+	}
+	return filepath.Join(home, "AppData", "Roaming")
+}
+
+// windowsLocalAppData returns the absolute path to %LOCALAPPDATA% (the
+// per-user Local AppData directory). Browser extension trees live here
+// on Windows. Callers should only invoke this on Windows.
+func windowsLocalAppData(home string) string {
+	if v := strings.TrimSpace(os.Getenv("LOCALAPPDATA")); v != "" {
+		return v
+	}
+	return filepath.Join(home, "AppData", "Local")
 }
 
 func globExisting(pattern string) []string {
@@ -553,6 +634,14 @@ func browserExtensionCandidateRoots(home string) []string {
 			filepath.Join(home, ".var", "app", "com.microsoft.Edge", "config", "microsoft-edge"),
 		}
 		chromiumBases["vivaldi"] = []string{filepath.Join(cfg, "vivaldi")}
+	case "windows":
+		local := windowsLocalAppData(home)
+		chromiumBases["chrome"] = []string{filepath.Join(local, "Google", "Chrome", "User Data")}
+		chromiumBases["chromium"] = []string{filepath.Join(local, "Chromium", "User Data")}
+		chromiumBases["brave"] = []string{filepath.Join(local, "BraveSoftware", "Brave-Browser", "User Data")}
+		chromiumBases["edge"] = []string{filepath.Join(local, "Microsoft", "Edge", "User Data")}
+		chromiumBases["vivaldi"] = []string{filepath.Join(local, "Vivaldi", "User Data")}
+		chromiumBases["arc"] = []string{filepath.Join(local, "Arc", "User Data")}
 	}
 	for _, bases := range chromiumBases {
 		for _, b := range bases {
@@ -582,6 +671,13 @@ func browserExtensionCandidateRoots(home string) []string {
 			filepath.Join(home, ".librewolf"),
 			filepath.Join(home, ".var", "app", "io.gitlab.librewolf-community", ".librewolf"),
 			filepath.Join(home, ".waterfox"),
+		)
+	case "windows":
+		appdata := windowsRoamingAppData(home)
+		roots = append(roots,
+			filepath.Join(appdata, "Mozilla", "Firefox", "Profiles"),
+			filepath.Join(appdata, "LibreWolf", "Profiles"),
+			filepath.Join(appdata, "Waterfox", "Profiles"),
 		)
 	}
 	return roots

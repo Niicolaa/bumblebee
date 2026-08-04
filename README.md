@@ -1,7 +1,8 @@
 # bumblebee
 
 Bumblebee is a read-only inventory collector for package, extension,
-and developer-tool metadata on macOS and Linux developer endpoints.
+and developer-tool metadata on macOS, Linux, and Windows developer
+endpoints.
 
 It answers a narrow supply-chain response question: when an advisory
 names a package, extension, or version, which developer machines show

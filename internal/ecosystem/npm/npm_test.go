@@ -224,3 +224,23 @@ func TestMalformedLockfile(t *testing.T) {
 		t.Errorf("no records expected")
 	}
 }
+
+// Regression for upstream issue #1: project_path must be emitted as a
+// native path. The matcher slash-normalizes internally so its segment
+// logic is separator-independent, but the value it returns must be
+// converted back or Windows records carry C:/src/app instead of
+// C:\src\app and receivers cannot join them against other host paths.
+func TestNodeModulesProjectPathIsNative(t *testing.T) {
+	path := filepath.Join("srv", "app", "node_modules", "lodash", "package.json")
+	ok, projectPath := IsNodeModulesPackageJSON(path)
+	if !ok {
+		t.Fatalf("IsNodeModulesPackageJSON(%q) = false", path)
+	}
+	want := filepath.Join("srv", "app")
+	if projectPath != want {
+		t.Errorf("projectPath = %q, want native %q", projectPath, want)
+	}
+	if strings.Contains(projectPath, "/") && filepath.Separator != '/' {
+		t.Errorf("projectPath %q still contains forward slashes on this platform", projectPath)
+	}
+}

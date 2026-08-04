@@ -59,12 +59,18 @@ func TestSplitPnpmStoreDir(t *testing.T) {
 }
 
 func TestIsPnpmStorePackageJSON(t *testing.T) {
+	// The matcher slash-normalizes internally so its segment logic is
+	// separator-independent, but projectPath is returned as a native
+	// path. The expectation has to be converted too: on Windows this is
+	// `\x\proj`, not `/x/proj`.
+	wantProj := filepath.FromSlash("/x/proj")
+
 	ok, proj, name, ver := IsPnpmStorePackageJSON("/x/proj/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/package.json")
-	if !ok || proj != "/x/proj" || name != "lodash" || ver != "4.17.21" {
+	if !ok || proj != wantProj || name != "lodash" || ver != "4.17.21" {
 		t.Errorf("got ok=%v proj=%q name=%q ver=%q", ok, proj, name, ver)
 	}
 	ok, proj, name, ver = IsPnpmStorePackageJSON("/x/proj/node_modules/.pnpm/@tanstack+query-core@5.0.0/node_modules/@tanstack/query-core/package.json")
-	if !ok || name != "@tanstack/query-core" || ver != "5.0.0" || proj != "/x/proj" {
+	if !ok || name != "@tanstack/query-core" || ver != "5.0.0" || proj != wantProj {
 		t.Errorf("scoped: got ok=%v proj=%q name=%q ver=%q", ok, proj, name, ver)
 	}
 	if ok, _, _, _ := IsPnpmStorePackageJSON("/x/proj/node_modules/lodash/package.json"); ok {
@@ -293,5 +299,18 @@ packages:
 	}
 	if out[0].DirectDependency != nil {
 		t.Errorf("expected DirectDependency nil, got %v", *out[0].DirectDependency)
+	}
+}
+
+// Regression for upstream issue #1 — same native-path requirement as npm.
+func TestPnpmStoreProjectPathIsNative(t *testing.T) {
+	path := filepath.Join("srv", "app", "node_modules", ".pnpm", "lodash@4.17.21", "node_modules", "lodash", "package.json")
+	ok, projectPath, _, _ := IsPnpmStorePackageJSON(path)
+	if !ok {
+		t.Fatalf("IsPnpmStorePackageJSON(%q) = false", path)
+	}
+	want := filepath.Join("srv", "app")
+	if projectPath != want {
+		t.Errorf("projectPath = %q, want native %q", projectPath, want)
 	}
 }

@@ -27,7 +27,10 @@ func Current(deviceID string) model.Endpoint {
 	if u, err := user.Current(); err == nil {
 		ep.Username = u.Username
 		ep.UID = u.Uid
-	} else {
+	} else if runtime.GOOS != "windows" {
+		// os.Getuid() returns -1 on Windows; leave UID empty there
+		// rather than emitting a misleading "-1" sentinel. On Unix
+		// the numeric uid is the right fallback.
 		ep.UID = strconv.Itoa(os.Getuid())
 	}
 	return ep
