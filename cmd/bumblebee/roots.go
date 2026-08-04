@@ -255,16 +255,33 @@ func baselineHomeCandidates(home string) []scanner.Root {
 	}
 	add(filepath.Join(home, ".local", "share", "pipx", "venvs"), model.RootKindUserPackage)
 
+	// Per-user package roots for the newer ecosystems. Only locations
+	// that actually contain metadata one of the scanners can read are
+	// listed: the NuGet global cache keeps a per-version `.nuspec`, and
+	// Julia keeps a `Manifest.toml` per environment.
+	//
+	// Deliberately NOT included: `~/.m2/repository` and
+	// `~/.gradle/caches` (both are in walk.DefaultExcludes as high-cost
+	// dependency caches — opening every cached JAR is far too expensive
+	// for a profile meant to run 6-hourly), and the Pub/Hex/Conan/Swift
+	// caches, which hold extracted sources or tarballs rather than any
+	// lock or manifest file this scanner parses. All of them remain
+	// reachable through an explicit --root or a deep sweep.
+	add(filepath.Join(home, ".nuget", "packages"), model.RootKindUserPackage)
+	add(filepath.Join(home, ".julia", "environments"), model.RootKindUserPackage)
+
 	// Editor extension trees.
 	for _, seg := range []string{
 		".vscode/extensions",
 		".vscode-insiders/extensions",
 		".vscode-server/extensions",
+		".vscode-insiders-server/extensions",
 		".cursor/extensions",
 		".cursor-server/extensions",
 		".windsurf/extensions",
 		".windsurf-server/extensions",
 		".vscodium/extensions",
+		".vscodium-server/extensions",
 	} {
 		add(filepath.Join(home, filepath.FromSlash(seg)), model.RootKindEditorExtension)
 	}

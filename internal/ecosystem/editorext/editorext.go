@@ -44,6 +44,11 @@ var extensionRootSegments = []string{
 	".windsurf/extensions",
 	".windsurf-server/extensions",
 	".vscodium/extensions",
+	// Remote/SSH installs write into a "-server" sibling of the local
+	// extension root. The Insiders and VSCodium variants were missing
+	// while their local counterparts were present.
+	".vscode-insiders-server/extensions",
+	".vscodium-server/extensions",
 }
 
 // IsExtensionPackageJSON returns (true, extensionRoot, extensionDir) if path
