@@ -37,6 +37,13 @@ func IsGoSum(base string) bool { return base == "go.sum" }
 func IsGoMod(base string) bool { return base == "go.mod" }
 
 func (s *Scanner) ScanGoSum(path string, base model.Record) error {
+	return s.scanSumFile(path, "go-sum", base)
+}
+
+// scanSumFile parses the shared go.sum / go.work.sum line format: one
+// "module version hash" triple per line, with "/go.mod" pseudo-entries
+// skipped because the module's own entry already covers it.
+func (s *Scanner) scanSumFile(path, sourceType string, base model.Record) error {
 	data, err := s.readBounded(path)
 	if err != nil {
 		return err
@@ -70,7 +77,7 @@ func (s *Scanner) ScanGoSum(path string, base model.Record) error {
 		r.Version = version
 		r.ProjectPath = projectPath
 		r.PackageManager = "go"
-		r.SourceType = "go-sum"
+		r.SourceType = sourceType
 		r.SourceFile = path
 		r.Confidence = "high"
 		s.Emit(r)

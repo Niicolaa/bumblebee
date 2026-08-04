@@ -308,6 +308,11 @@ anywhere under a configured root):
 - Linux Claude Desktop: `~/.config/Claude/claude_desktop_config.json`,
   `~/.config/Claude Code/claude_desktop_config.json`
 - Windows Claude Desktop: `%APPDATA%\Claude\claude_desktop_config.json`
+- Codex user-home: `~/.codex/config.toml` (TOML, `[mcp_servers.<id>]`
+  tables; the `mcpServers` spelling is also accepted). The basename
+  `config.toml` is too generic to match anywhere, so the immediate parent
+  must be `.codex`. As with every other MCP source, `env` values and key
+  names are dropped.
 - Per-project: `.mcp.json` at a repo root
 
 Recognized envelopes:
@@ -648,16 +653,78 @@ strong installed-state correlation tooling today.
 - No secret extraction. MCP `env` values and key names are both dropped.
   `.env` / `.envrc` are skipped even outside excluded directories.
 
+## Additional ecosystems
+
+These were added after v0.1 and share the same rules as everything above:
+filename-based dispatch, no package-manager execution, no source-file
+reads.
+
+| Ecosystem | Files | Confidence |
+|---|---|---|
+| `crates.io` | `Cargo.lock` | high; entries with no `source` are path/workspace members and get `install_scope=local` |
+| `nuget` | `packages.lock.json`, `packages.config`, `*.deps.json` | high |
+| `nuget` | `<id>/<version>/<id>.nuspec` in the global packages folder (`~/.nuget/packages`) | high — installed state, the NuGet analogue of an installed `*.gemspec`. The per-version directory shape is required so an authoring `.nuspec` in a source tree, whose `<version>` is often a `$token$`, is not mistaken for an install |
+| `nuget` | `Directory.Packages.props`, `Packages.props` | medium — a declared central version is what the build asked for, not what it restored. MSBuild property references (`$(Foo)`) and version ranges are skipped |
+| `maven` | `*gradle.lockfile`, `*.sbt.lock` | high |
+| `maven` | `pom.xml` | medium — a declaration, not a resolved graph. `${...}` properties resolve one level against the pom's own `<properties>`; unresolved references and ranges are skipped rather than guessed |
+| `maven` | `.jar` / `.war` / `.ear` / `.par` | high — read from the embedded `META-INF/maven/*/pom.properties`. Archives without it (shaded uber-jars) yield nothing rather than a filename-derived guess |
+| `swift` | `Package.resolved` | high for a version pin; low for a branch/revision pin, where the revision is recorded as the version |
+| `cocoapods` | `Podfile.lock` | high, from the `PODS:` section. Subspecs keep their `Parent/Child` name |
+| `pub` | `pubspec.lock` | high for `source: hosted`; low plus `install_scope=local` for `path`/`git`/`sdk` sources |
+| `hex` | `mix.lock` | high. Only `:hex` entries are recorded — a `:git` entry's third field is a revision, not a version |
+| `conan` | `conan.lock` | high. `@user/channel`, `#revision`, and `%timestamp` are stripped from the reference |
+| `julia` | `Manifest.toml` | high. Standard-library entries carry a uuid but no version and are skipped |
+
+Python declaration and lock files (`pypi`), complementing the installed
+`dist-info`/`egg-info` sources documented above:
+
+| File | Confidence |
+|---|---|
+| `Pipfile.lock`, `poetry.lock`, `uv.lock`, `pylock.toml` | high — resolved locks with exact versions |
+| `requirements*.txt` with a `==` pin | medium — the version is exact, but the file is a request rather than a record of an install |
+| `requirements*.txt` with any other specifier | low — no single version; the raw specifier is preserved in `requested_spec` and `version` is left empty |
+
+Option lines (`-r`, `-e`, `--index-url`), bare URLs, and local paths in a
+requirements file carry no package identity and are skipped. Environment
+markers, extras, and inline `--hash` values are stripped before parsing.
+
+Additional Go sources beyond `go.mod`/`go.sum`:
+
+| File | Notes |
+|---|---|
+| `go.work.sum` | Same line format as `go.sum`; appears at a multi-module workspace root |
+| `vendor/modules.txt` | The only inventory source for a tree built with `-mod=vendor`. A `=>` replace directive records the original module coordinates, which is the identity an advisory names |
+| Compiled Go binaries | Read via `debug/buildinfo` from the standard library. `go install` writes tools into `~/go/bin` and nothing else on disk records what went into them |
+
+Go binary detection is deliberately narrow: a candidate must sit in a
+directory named `bin` and be executable (or carry a Windows executable
+extension on Windows). Files that are not Go binaries fail fast inside
+`buildinfo` and are skipped silently — on a populated `bin/` directory
+most candidates are expected to be something else, so a diagnostic per
+miss would be noise. Binaries reporting `(devel)` are local builds with
+no release version and are not emitted. The scanner's `--max-file-size`
+bound governs metadata text files that are read end to end; `buildinfo`
+seeks to the embedded section instead of reading the whole file, so a
+separate 512 MiB ceiling applies to binaries.
+
 ## Not currently covered
 
-- Cargo (`Cargo.lock`).
-- Maven / Gradle (`pom.xml`, lockfiles).
-- NuGet (`packages.lock.json`).
-- Hex (`mix.lock`).
-- Swift PM (`Package.resolved`).
+- Continue's YAML host config. Codex's `config.toml` **is** now parsed
+  (see the MCP section above).
+- `~/.m2/repository` and `~/.gradle/caches` as *baseline* roots. Both are
+  in `walk.DefaultExcludes` as high-cost dependency caches, and opening
+  every cached JAR is far too expensive for a profile intended to run
+  6-hourly. The JAR parser still covers them under an explicit `--root`
+  or a deep sweep, and covers build output inside project trees.
+- The Pub, Hex, Conan, and Swift package caches as baseline roots: they
+  hold extracted sources or tarballs rather than any lock or manifest
+  file this scanner parses, so walking them yields nothing.
 - Yarn PnP (`.pnp.data.json`); the `yarn.lock` parser still covers PnP
   installs because PnP keeps `yarn.lock`.
 - Bun binary `bun.lockb` decoder. Bun 1.1+ defaults to text `bun.lock`.
+- Maven parent-pom inheritance. Resolving a version declared in a parent
+  POM would require reading the parent chain from a repository, which
+  this collector deliberately does not do.
 - Safari extensions. Safari's on-disk layout
   (`~/Library/Safari/Extensions/`, `~/Library/Containers/<bundle-id>`)
   is TCC-protected and is not enumerated.

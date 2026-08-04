@@ -40,15 +40,34 @@ know what they are looking for.
 | pnpm | `npm` | `pnpm-lock.yaml`, `.pnpm/.../package.json` |
 | Yarn | `npm` | `yarn.lock` (Classic + Berry) |
 | Bun | `npm` | `bun.lock`; `bun.lockb` presence as diagnostic |
-| PyPI | `pypi` | `*.dist-info/METADATA`, `INSTALLER`, `direct_url.json`, `*.egg-info/PKG-INFO` |
-| Go modules | `go` | `go.sum`, `go.mod` |
+| PyPI | `pypi` | Installed: `*.dist-info/METADATA`, `INSTALLER`, `direct_url.json`, `*.egg-info/PKG-INFO`. Declared: `requirements*.txt`, `Pipfile.lock`, `poetry.lock`, `uv.lock`, `pylock.toml` (PEP 751) |
+| Go modules | `go` | `go.sum`, `go.mod`, `go.work.sum`, `vendor/modules.txt`, and build info embedded in compiled Go binaries under `bin/` |
 | RubyGems | `rubygems` | `Gemfile.lock`, installed `*.gemspec` |
 | Composer | `packagist` | `composer.lock`, `vendor/composer/installed.json` |
+<<<<<<< HEAD
 | MCP | `mcp` | JSON host configs: `mcp.json`, `.mcp.json`, `claude_desktop_config.json`, `mcp_config.json`, `mcp_settings.json`, `cline_mcp_settings.json`, plus `~/.gemini/settings.json` (Gemini CLI / Code Assist) and `~/.claude.json` (Claude Code user- and project-scoped `mcpServers`). Non-JSON configs (Codex `config.toml`, Continue YAML) are not parsed in v0.1. |
 | Agent skills | `agent-skill` | `skills.sh` / `vercel-labs/skills` lock files: global `~/.agents/.skill-lock.json` (or `$XDG_STATE_HOME/skills/.skill-lock.json`) and project-local `skills-lock.json`. Loose `SKILL.md` directories without a lock file are not enumerated. |
 | Editor extensions | `editor-extension` | VS Code, Cursor, Windsurf, VSCodium manifests |
+=======
+| Cargo | `crates.io` | `Cargo.lock` |
+| NuGet / .NET | `nuget` | `packages.lock.json`, `packages.config`, `*.deps.json`, `Directory.Packages.props` / `Packages.props`, and installed `<id>/<version>/<id>.nuspec` in the global packages folder |
+| Maven / Gradle / sbt | `maven` | `pom.xml`, `*gradle.lockfile`, `*.sbt.lock`, and `META-INF/maven/*/pom.properties` inside `.jar`/`.war`/`.ear`/`.par` |
+| Swift PM | `swift` | `Package.resolved` (v1 and v2/v3) |
+| CocoaPods | `cocoapods` | `Podfile.lock` |
+| Dart / Flutter | `pub` | `pubspec.lock` |
+| Elixir | `hex` | `mix.lock` (`:hex` entries) |
+| Conan | `conan` | `conan.lock` (v1 graph and v2 flat) |
+| Julia | `julia` | `Manifest.toml` (format 1.0 and 2.0) |
+| MCP | `mcp` | JSON host configs: `mcp.json`, `.mcp.json`, `claude_desktop_config.json`, `mcp_config.json`, `mcp_settings.json`, `cline_mcp_settings.json`, plus `~/.gemini/settings.json` (Gemini CLI / Code Assist) and `~/.codex/config.toml` (Codex, TOML). Continue YAML is still not parsed. |
+| Editor extensions | `editor-extension` | VS Code, Cursor, Windsurf, VSCodium manifests, including the remote/SSH `-server` variants |
+>>>>>>> 9b2b58b (feat(ecosystems): add TOML reader plus 9 ecosystems and 20+ new sources)
 | Browser extensions | `browser-extension` | Chromium-family (`manifest.json`) and Firefox (`extensions.json`) per profile |
 | Homebrew | `homebrew` | Formula `INSTALL_RECEIPT.json` files and cask `.metadata` install markers |
+
+Emitted `ecosystem` values follow the lowercased [OSV](https://ossf.github.io/osv-schema/)
+ecosystem identifiers, so an exposure catalog derived from an advisory
+feed needs no translation table. The two extension families have no OSV
+equivalent and use Bumblebee's own names.
 
 Per-ecosystem detail: [docs/inventory-sources.md](docs/inventory-sources.md).
 

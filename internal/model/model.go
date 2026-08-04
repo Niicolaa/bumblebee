@@ -34,12 +34,25 @@ const (
 	FindingTypePackageExposure = "package_exposure"
 )
 
+// Emitted ecosystem values. Names follow the lowercased OSV ecosystem
+// identifiers so an exposure catalog built from an advisory feed can be
+// used without a translation table. The two extension ecosystems have no
+// OSV equivalent and use bumblebee's own names.
 const (
 	EcosystemNPM              = "npm"
 	EcosystemPyPI             = "pypi"
 	EcosystemGo               = "go"
 	EcosystemRubyGems         = "rubygems"
 	EcosystemPackagist        = "packagist"
+	EcosystemCratesIO         = "crates.io"
+	EcosystemNuGet            = "nuget"
+	EcosystemMaven            = "maven"
+	EcosystemSwift            = "swift"
+	EcosystemCocoaPods        = "cocoapods"
+	EcosystemPub              = "pub"
+	EcosystemHex              = "hex"
+	EcosystemConan            = "conan"
+	EcosystemJulia            = "julia"
 	EcosystemMCP              = "mcp"
 	EcosystemEditorExtension  = "editor-extension"
 	EcosystemBrowserExtension = "browser-extension"
@@ -53,6 +66,15 @@ var supportedEcosystems = map[string]struct{}{
 	EcosystemGo:               {},
 	EcosystemRubyGems:         {},
 	EcosystemPackagist:        {},
+	EcosystemCratesIO:         {},
+	EcosystemNuGet:            {},
+	EcosystemMaven:            {},
+	EcosystemSwift:            {},
+	EcosystemCocoaPods:        {},
+	EcosystemPub:              {},
+	EcosystemHex:              {},
+	EcosystemConan:            {},
+	EcosystemJulia:            {},
 	EcosystemMCP:              {},
 	EcosystemEditorExtension:  {},
 	EcosystemBrowserExtension: {},
@@ -66,6 +88,15 @@ var supportedEcosystemOrder = []string{
 	EcosystemGo,
 	EcosystemRubyGems,
 	EcosystemPackagist,
+	EcosystemCratesIO,
+	EcosystemNuGet,
+	EcosystemMaven,
+	EcosystemSwift,
+	EcosystemCocoaPods,
+	EcosystemPub,
+	EcosystemHex,
+	EcosystemConan,
+	EcosystemJulia,
 	EcosystemMCP,
 	EcosystemEditorExtension,
 	EcosystemBrowserExtension,
