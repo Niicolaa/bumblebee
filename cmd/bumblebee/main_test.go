@@ -481,7 +481,16 @@ func fakeUsersDir(t *testing.T, users []string, services []string) (string, []st
 func TestAllUsersHomesFiltersServiceAndHiddenEntries(t *testing.T) {
 	usersDir, realHomes := fakeUsersDir(t,
 		[]string{"alice", "bob"},
-		[]string{"Shared", "Guest", "root", "Deleted Users", ".localized"})
+		[]string{
+			// macOS service entries.
+			"Shared", "Guest", "root", "Deleted Users", ".localized",
+			// Windows service and template profiles. These sit right
+			// next to real profiles under <drive>:\Users and are not
+			// people; scanning them attributes records to accounts that
+			// do not exist.
+			"Public", "Default", "Default User", "All Users",
+			"defaultapppool", "systemprofile",
+		})
 	got := allUsersHomes(usersDir)
 	if len(got) != len(realHomes) {
 		t.Fatalf("allUsersHomes returned %d entries, want %d (got=%v real=%v)", len(got), len(realHomes), got, realHomes)
@@ -511,8 +520,8 @@ func TestAllUsersHomesEmptyOrMissing(t *testing.T) {
 // expands per-user known subdirectories across /Users/<name>/, includes
 // system roots once, and never adds a bare /Users/<name>/ as a root.
 func TestResolveRootsBaselineAllUsersExpansion(t *testing.T) {
-	if runtime.GOOS != "darwin" {
-		t.Skip("--all-users expansion is darwin-only")
+	if !allUsersSupported() {
+		t.Skip("--all-users expansion is macOS/Windows only")
 	}
 	usersDir, realHomes := fakeUsersDir(t,
 		[]string{"alice", "bob"},
@@ -625,8 +634,8 @@ func TestResolveRootsAllUsersRejectsDeepProfile(t *testing.T) {
 }
 
 func TestResolveRootsAllUsersUnsupportedPlatformsNote(t *testing.T) {
-	if runtime.GOOS == "darwin" {
-		t.Skip("--all-users expands on darwin")
+	if allUsersSupported() {
+		t.Skip("--all-users expands on this platform")
 	}
 	home := t.TempDir()
 	setHomeDir(t, home)
@@ -650,8 +659,8 @@ func TestResolveRootsAllUsersUnsupportedPlatformsNote(t *testing.T) {
 }
 
 func TestResolveRootsProjectAllUsersExpansion(t *testing.T) {
-	if runtime.GOOS != "darwin" {
-		t.Skip("--all-users expansion is darwin-only")
+	if !allUsersSupported() {
+		t.Skip("--all-users expansion is macOS/Windows only")
 	}
 	usersDir, realHomes := fakeUsersDir(t, []string{"alice", "bob"}, nil)
 	t.Setenv("BUMBLEBEE_USERS_DIR", usersDir)
@@ -760,5 +769,76 @@ func TestRunRootsRejectsUnknownProfile(t *testing.T) {
 	code := runRoots([]string{"--profile", "scheduled"})
 	if code != 2 {
 		t.Fatalf("runRoots --profile=scheduled exit = %d, want 2 (unknown profile)", code)
+	}
+}
+
+// TestResolveRootsAllUsersRescuesServiceAccountHome reproduces the
+// failure a fleet agent hits: the process runs as root or SYSTEM, whose
+// own home holds no developer trees, while the real users' homes do.
+// Without --all-users expansion, baseline/project resolve to zero roots
+// and the scan exits with "found no default roots on this host" rather
+// than scanning the machine it was pointed at. This is exactly what a
+// Velociraptor client (SYSTEM, home
+// C:\Windows\system32\config\systemprofile) produced on Windows.
+func TestResolveRootsAllUsersRescuesServiceAccountHome(t *testing.T) {
+	if !allUsersSupported() {
+		t.Skip("--all-users expansion is macOS/Windows only")
+	}
+	usersDir, realHomes := fakeUsersDir(t, []string{"alice"}, nil)
+	t.Setenv("BUMBLEBEE_USERS_DIR", usersDir)
+
+	// The agent's own profile: exists, but contains no project trees.
+	serviceHome := t.TempDir()
+	setHomeDir(t, serviceHome)
+
+	// A real user does have one.
+	aliceCode := filepath.Join(realHomes[0], "code")
+	if err := os.MkdirAll(aliceCode, 0o755); err != nil {
+		t.Fatal(err)
+	}
+
+	// Without expansion the run fails outright.
+	if _, _, err := resolveRoots(model.ProfileProject, nil, rootsOpts{}); err == nil {
+		t.Fatal("service-account home with no project trees should yield no default roots")
+	}
+
+	// With expansion it finds the real user's tree.
+	roots, _, err := resolveRoots(model.ProfileProject, nil, rootsOpts{AllUsers: true})
+	if err != nil {
+		t.Fatalf("resolveRoots project --all-users: %v", err)
+	}
+	var found bool
+	for _, r := range roots {
+		if r.Path == aliceCode {
+			found = true
+		}
+		// A bare user home must never become a root for project/baseline.
+		if r.Path == realHomes[0] {
+			t.Errorf("bare user home %q must not be a scan root", r.Path)
+		}
+	}
+	if !found {
+		t.Errorf("expected %q among roots, got %v", aliceCode, roots)
+	}
+}
+
+// defaultUsersDir must follow %SystemDrive% rather than assuming C:,
+// because a machine imaged onto another drive letter still keeps Users
+// at the root of the system drive. Exercised for real on the Windows CI
+// runner.
+func TestDefaultUsersDir(t *testing.T) {
+	if runtime.GOOS != "windows" {
+		if got := defaultUsersDir(); got != "/Users" {
+			t.Errorf("defaultUsersDir() = %q, want /Users", got)
+		}
+		return
+	}
+	t.Setenv("SystemDrive", "D:")
+	if got := defaultUsersDir(); got != `D:\Users` {
+		t.Errorf(`defaultUsersDir() = %q, want D:\Users`, got)
+	}
+	t.Setenv("SystemDrive", "")
+	if got := defaultUsersDir(); got != `C:\Users` {
+		t.Errorf(`defaultUsersDir() = %q, want C:\Users fallback`, got)
 	}
 }

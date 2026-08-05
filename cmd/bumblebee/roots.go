@@ -18,12 +18,18 @@
 // baseline and project refuse bare-home roots (`$HOME`, `/Users/<name>`,
 // `/home/<name>`, `/`) outright. deep accepts them.
 //
-// --all-users expansion (baseline, project) lets a root-owned baseline
-// run enumerate per-user known subdirectories under /Users/<name>/ on
-// macOS without ever passing a bare home root. The
-// set of per-user subdirectories expanded is the same one a logged-in
-// user would resolve; only the home prefix is varied. System/Homebrew
-// roots are still included.
+// --all-users expansion (baseline, project) lets an agent-owned run
+// enumerate per-user known subdirectories under every real user home
+// (macOS /Users/<name>, Windows <drive>:\Users\<name>) without ever
+// passing a bare home root. The set of per-user subdirectories expanded
+// is the same one a logged-in user would resolve; only the home prefix
+// is varied. System/Homebrew roots are still included.
+//
+// This is what makes an agent-run scan useful at all: a fleet agent runs
+// as root or SYSTEM, and SYSTEM's profile
+// (C:\Windows\system32\config\systemprofile) contains no developer
+// trees, so without expansion baseline and project resolve to nothing
+// and the run exits with "found no default roots on this host".
 package main
 
 import (
@@ -41,11 +47,12 @@ import (
 // option here is preferred over growing resolveRoots' positional
 // arguments.
 type rootsOpts struct {
-	// AllUsers, when true on macOS, expands the baseline/project profile
-	// defaults across every real user home under /Users instead of only
-	// the current process owner's home. System/Homebrew roots are still
-	// included exactly once. Has no effect on Linux, where multi-user
-	// fleet runs are not a supported deployment shape.
+	// AllUsers, when true on macOS or Windows, expands the
+	// baseline/project profile defaults across every real user home under
+	// the platform's users directory instead of only the current process
+	// owner's home. System/Homebrew roots are still included exactly
+	// once. Has no effect on Linux, which has no single canonical home
+	// parent to enumerate.
 	AllUsers bool
 }
 
@@ -463,7 +470,7 @@ func baselineDefaultRoots(opts rootsOpts) ([]scanner.Root, []string) {
 
 	present, filterNotes := filterExistingRoots(candidates)
 	notes = append(notes, filterNotes...)
-	if opts.AllUsers && runtime.GOOS == "darwin" {
+	if opts.AllUsers && allUsersSupported() {
 		notes = append(notes, allUsersExpansionNote())
 	} else if opts.AllUsers {
 		notes = append(notes, allUsersUnsupportedNote())
@@ -481,7 +488,7 @@ func projectDefaultRoots(opts rootsOpts) ([]scanner.Root, []string) {
 		candidates = append(candidates, projectHomeCandidates(home)...)
 	}
 	present, notes := filterExistingRoots(candidates)
-	if opts.AllUsers && runtime.GOOS == "darwin" {
+	if opts.AllUsers && allUsersSupported() {
 		notes = append(notes, allUsersExpansionNote())
 	} else if opts.AllUsers {
 		notes = append(notes, allUsersUnsupportedNote())
@@ -491,24 +498,43 @@ func projectDefaultRoots(opts rootsOpts) ([]scanner.Root, []string) {
 
 // homesForExpansion returns the list of home directories whose per-user
 // candidate sets should be expanded for this run. Under --all-users on
-// macOS, it is every real /Users/<name>/ home; otherwise it is the
-// current process owner's home (or empty when that cannot be
-// determined). Linux honors only the current home — multi-user
-// fanout under a single root-owned scan is currently a macOS-only
-// convenience.
+// macOS and Windows, it is every real home under the platform's users
+// directory; otherwise it is the current process owner's home (or empty
+// when that cannot be determined).
+//
+// Windows matters here as much as macOS: an EDR or fleet agent runs as
+// SYSTEM, whose home is C:\Windows\system32\config\systemprofile. That
+// profile has no developer trees, so a baseline or project scan started
+// by an agent finds no default roots at all and exits rather than
+// scanning the humans' profiles it was pointed at. Expanding across
+// <drive>:\Users is what makes an agent-run scan see anything.
+//
+// Linux honors only the current home: there is no single canonical home
+// parent (/home, /var/home, /export/home, ...), and guessing wrong is
+// worse than requiring an explicit --root.
 func homesForExpansion(opts rootsOpts) []string {
-	if opts.AllUsers && runtime.GOOS == "darwin" {
+	if opts.AllUsers && allUsersSupported() {
 		homes := allUsersHomes(usersDirOverride())
 		if len(homes) > 0 {
 			return homes
 		}
-		// Fall back to the current home if /Users enumeration found
-		// nothing usable — never silently degrade to no homes.
+		// Fall back to the current home if enumeration found nothing
+		// usable — never silently degrade to no homes.
 	}
 	if home, _ := os.UserHomeDir(); home != "" {
 		return []string{home}
 	}
 	return nil
+}
+
+// allUsersSupported reports whether --all-users can expand on this OS.
+func allUsersSupported() bool {
+	switch runtime.GOOS {
+	case "darwin", "windows":
+		return true
+	default:
+		return false
+	}
 }
 
 // allUsersExpansionNote returns the human-readable diagnostic line
@@ -530,7 +556,22 @@ func usersDirEffective() string {
 	if d := usersDirOverride(); d != "" {
 		return d
 	}
-	return "/Users"
+	return defaultUsersDir()
+}
+
+// defaultUsersDir is the platform's parent directory for user homes.
+// On Windows it is derived from %SystemDrive% rather than hardcoded to
+// C:, because a machine imaged onto another drive letter still keeps
+// Users at the root of the system drive.
+func defaultUsersDir() string {
+	if runtime.GOOS != "windows" {
+		return "/Users"
+	}
+	drive := strings.TrimSpace(os.Getenv("SystemDrive"))
+	if drive == "" {
+		drive = "C:"
+	}
+	return drive + `\Users`
 }
 
 // usersDirOverride returns a test-only override of the /Users parent
@@ -564,7 +605,7 @@ func usersDirOverride() string {
 // case the production path.
 func allUsersHomes(usersDir string) []string {
 	if usersDir == "" {
-		usersDir = "/Users"
+		usersDir = defaultUsersDir()
 	}
 	entries, err := os.ReadDir(usersDir)
 	if err != nil {
@@ -590,8 +631,8 @@ func allUsersHomes(usersDir string) []string {
 }
 
 // isLikelyUserHomeName returns true for a basename that looks like a
-// real user home under /Users. It is name-based only; the caller still
-// has to confirm the entry is a directory.
+// real user home under the platform's users directory. It is name-based
+// only; the caller still has to confirm the entry is a directory.
 func isLikelyUserHomeName(name string) bool {
 	if name == "" || name == "." || name == ".." {
 		return false
@@ -602,7 +643,18 @@ func isLikelyUserHomeName(name string) bool {
 		return false
 	}
 	switch strings.ToLower(name) {
+	// macOS service entries.
 	case "shared", "guest", "root", "deleted users":
+		return false
+	// Windows service and template profiles. "Default" and "Default
+	// User" are the templates new profiles are copied from, "Public" is
+	// the shared tree, and the *ServiceProfile entries belong to
+	// LOCAL SERVICE / NETWORK SERVICE. None of them is a person, and
+	// scanning them yields records attributed to a user that does not
+	// exist.
+	case "public", "default", "default user", "all users",
+		"defaultapppool", "localservice", "networkservice",
+		"systemprofile":
 		return false
 	}
 	return true

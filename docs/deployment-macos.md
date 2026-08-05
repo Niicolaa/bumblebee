@@ -79,7 +79,15 @@ What `--all-users` does (and does not) do:
   `deep` walks operator-supplied roots and has no such known set, so
   fanning out across users on `deep` means passing `--root /Users/<name>`
   explicitly per user.
-- Is a macOS-only behavior. On Linux, `--all-users` is accepted but
+- Works on macOS and Windows. On Windows the parent is
+  `%SystemDrive%\Users`, and the Windows template/service profiles
+  (`Public`, `Default`, `Default User`, `All Users`, the `*ServiceProfile`
+  entries) are filtered out the same way the macOS ones are. This matters
+  most for agent-run scans: an EDR or Velociraptor client runs as SYSTEM,
+  whose profile is `C:\Windows\system32\config\systemprofile` and holds
+  no developer trees, so without `--all-users` a baseline or project scan
+  exits with "found no default roots on this host".
+- On Linux, `--all-users` is accepted but
   resolves to the current user's home only — multi-user fanout under a
   single root-owned scan is currently a macOS-only convenience.
 

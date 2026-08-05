@@ -144,7 +144,7 @@ func registerScanFlags(fs *flag.FlagSet, o *scanOpts) {
 		"require --exposure-catalog and suppress only record_type=package output while still emitting findings, scan_summary, and diagnostics")
 
 	fs.BoolVar(&o.allUsers, "all-users", false,
-		"on macOS, expand baseline/project per-user default roots across every real /Users/<name>/ home. Useful for root-owned LaunchDaemon runs. Cannot be combined with --root or --profile=deep. System/Homebrew roots are still included once. No effect on Linux.")
+		"on macOS and Windows, expand baseline/project per-user default roots across every real user home (/Users/<name> or <drive>:\\Users\\<name>). Needed when an agent runs as root or SYSTEM, whose own profile holds no developer trees. Cannot be combined with --root or --profile=deep. System roots are still included once. No effect on Linux.")
 
 	fs.StringVar(&o.outputDest, "output", "stdout", "where to send records: stdout, file, or http")
 	fs.StringVar(&o.outputFile, "output-file", "", "path for --output=file (NDJSON; required when --output=file)")
@@ -355,7 +355,7 @@ func runRoots(args []string) int {
 	)
 	fs.StringVar(&profile, "profile", model.ProfileBaseline, "scan profile: baseline, project, or deep")
 	fs.Var(&roots, "root", "filesystem root to scan (repeatable). Overrides profile defaults when set.")
-	fs.BoolVar(&allUsers, "all-users", false, "on macOS, expand per-user defaults across every /Users/<name>/ home. See scan --help.")
+	fs.BoolVar(&allUsers, "all-users", false, "on macOS and Windows, expand per-user defaults across every real user home. See scan --help.")
 	_ = fs.Parse(args)
 
 	var err error

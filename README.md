@@ -162,10 +162,14 @@ comma-separated. `--exposure-catalog` accepts a JSON file or a directory
 of `*.json` catalogs (merged non-recursively, all files must share
 `schema_version`). `--findings-only` requires `--exposure-catalog` and
 suppresses package records while keeping findings. `--exclude` adds a
-directory name or suffix path to skip (repeatable). `--all-users` is
-macOS-only and expands per-user default roots across every
-`/Users/<name>/` home; on other platforms it is accepted but has no
-effect and is reported as a diagnostic. `bumblebee scan --help` lists
+directory name or suffix path to skip (repeatable). `--all-users`
+expands per-user default roots across every real user home
+(`/Users/<name>` on macOS, `<drive>:\Users\<name>` on Windows). It is
+what makes an agent-run scan see anything: a fleet agent runs as root or
+SYSTEM, and SYSTEM's own profile holds no developer trees, so without it
+`baseline` and `project` resolve to nothing. On Linux it is accepted but
+has no effect and is reported as a diagnostic, since there is no single
+canonical home parent to enumerate. `bumblebee scan --help` lists
 every flag.
 
 ## Output
