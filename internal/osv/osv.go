@@ -206,8 +206,12 @@ type Stats struct {
 // (https://osv-vulnerabilities.storage.googleapis.com/ecosystems.txt) to
 // the lowercased values Bumblebee emits on records, so a generated entry
 // matches the scanner's output. Only the registries Bumblebee inventories
-// by package version are mapped; others (crates.io, NuGet, Maven, VSCode,
-// Linux distros, ...) have no equivalent and their records are skipped.
+// by package version are mapped; everything else (Linux distros, GIT,
+// OSS-Fuzz, ...) has no scanner equivalent and those records are skipped.
+//
+// This table must be kept in step with the scanner's ecosystem list: an
+// entry missing here is dropped silently as "unsupported-ecosystem",
+// which looks identical to an ecosystem that simply has no advisories.
 var ecosystemMap = map[string]string{
 	"npm":       "npm",
 	"PyPI":      "pypi",
@@ -215,6 +219,16 @@ var ecosystemMap = map[string]string{
 	"RubyGems":  "rubygems",
 	"Packagist": "packagist",
 	"VSCode":    "editor-extension",
+	"NuGet":     "nuget",
+	"crates.io": "crates.io",
+	"Maven":     "maven",
+	// Published by OSV and inventoried by the scanner, but carrying no
+	// MAL-* advisories as of 2026-08-04. Mapped anyway so that the day
+	// upstream publishes one it flows through instead of being dropped.
+	"Pub":      "pub",
+	"Hex":      "hex",
+	"SwiftURL": "swift",
+	"Julia":    "julia",
 }
 
 // mapEcosystem returns the Bumblebee ecosystem for an OSV ecosystem

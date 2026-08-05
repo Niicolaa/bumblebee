@@ -52,6 +52,13 @@ func TestMapEcosystem(t *testing.T) {
 		"RubyGems":     "rubygems",
 		"Packagist":    "packagist",
 		"VSCode":       "editor-extension",
+		"NuGet":        "nuget",
+		"crates.io":    "crates.io",
+		"Maven":        "maven",
+		"Pub":          "pub",
+		"Hex":          "hex",
+		"SwiftURL":     "swift",
+		"Julia":        "julia",
 		"Go:something": "go", // suffix after ':' is ignored
 	}
 	for osvEco, want := range supported {
@@ -60,9 +67,16 @@ func TestMapEcosystem(t *testing.T) {
 			t.Errorf("mapEcosystem(%q) = (%q, %v), want (%q, true)", osvEco, got, ok, want)
 		}
 	}
-	// OSV identifiers are case-sensitive and several ecosystems have no
-	// Bumblebee equivalent; none of these must map.
-	for _, osvEco := range []string{"pypi", "NPM", "crates.io", "NuGet", "Maven", "vscode", "Debian:11", ""} {
+	// Every mapped value must be an ecosystem the scanner actually emits,
+	// or a generated catalog entry can never match a record.
+	for osvEco, want := range supported {
+		if !model.IsSupportedEcosystem(want) {
+			t.Errorf("mapEcosystem(%q) yields %q, which is not a supported scanner ecosystem", osvEco, want)
+		}
+	}
+	// OSV identifiers are case-sensitive, and ecosystems the scanner does
+	// not inventory must not map.
+	for _, osvEco := range []string{"pypi", "NPM", "nuget", "vscode", "Debian:11", "Alpine", "OSS-Fuzz", ""} {
 		if got, ok := mapEcosystem(osvEco); ok {
 			t.Errorf("mapEcosystem(%q) = (%q, true), want no mapping", osvEco, got)
 		}
@@ -88,7 +102,8 @@ func TestConvertDropsNonMaliciousVuln(t *testing.T) {
 func TestConvertSkipsWithdrawnUnsupportedAndRangeOnly(t *testing.T) {
 	records := []Record{
 		{ID: "MAL-withdrawn", Withdrawn: "2026-01-01T00:00:00Z", Affected: []Affected{{Package: Package{Ecosystem: "npm", Name: "x"}, Versions: []string{"1.0.0"}}}},
-		{ID: "MAL-cargo", Affected: []Affected{{Package: Package{Ecosystem: "crates.io", Name: "y"}, Versions: []string{"1.0.0"}}}},
+		// A distro ecosystem the scanner does not inventory.
+		{ID: "MAL-distro", Affected: []Affected{{Package: Package{Ecosystem: "Alpine", Name: "y"}, Versions: []string{"1.0.0"}}}},
 		{ID: "MAL-rangeonly", Affected: []Affected{{Package: Package{Ecosystem: "npm", Name: "z"}}}},
 		// Empty package name must be dropped: an entry with an empty
 		// package would make exposure.Load reject the whole catalog.
@@ -206,7 +221,7 @@ func TestBuildCatalogCommentDeterministic(t *testing.T) {
 		// Non-malicious + unsupported eco + withdrawn + bad id so all
 		// skip counters are exercised in the comment.
 		{ID: "GHSA-vuln", Affected: []Affected{{Package: Package{Ecosystem: "npm", Name: "b"}, Versions: []string{"1.0.0"}}}},
-		{ID: "MAL-crates", Affected: []Affected{{Package: Package{Ecosystem: "crates.io", Name: "c"}, Versions: []string{"1.0.0"}}}},
+		{ID: "MAL-distro", Affected: []Affected{{Package: Package{Ecosystem: "Debian:11", Name: "c"}, Versions: []string{"1.0.0"}}}},
 		{ID: "MAL-withdrawn", Withdrawn: "2026-01-01T00:00:00Z", Affected: []Affected{{Package: Package{Ecosystem: "npm", Name: "d"}, Versions: []string{"1.0.0"}}}},
 		{ID: "", Affected: []Affected{{Package: Package{Ecosystem: "npm", Name: "e"}, Versions: []string{"1.0.0"}}}}, // bad-id (empty)
 	}

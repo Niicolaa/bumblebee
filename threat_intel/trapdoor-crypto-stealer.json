@@ -6,47 +6,9 @@
     "payload_filename": "trap-core.js",
     "github_pages_host": "ddjidd564.github.io",
     "npm_user": "asdxzxc",
-    "pypi_users": ["asdmini67", "dae5411"]
-  },
-  "_cargo_packages": {
-    "_comment": "Cargo packages from the same campaign; not in entries[] because the schema ecosystem enum does not include 'cargo'.",
-    "packages": [
-      {
-        "package": "move-analyzer-build",
-        "versions": [
-          "0.1.0"
-        ]
-      },
-      {
-        "package": "move-compiler-tools",
-        "versions": [
-          "0.1.0"
-        ]
-      },
-      {
-        "package": "move-project-builder",
-        "versions": [
-          "0.1.0"
-        ]
-      },
-      {
-        "package": "sui-framework-helpers",
-        "versions": [
-          "0.1.0"
-        ]
-      },
-      {
-        "package": "sui-move-build-helper",
-        "versions": [
-          "0.1.1"
-        ]
-      },
-      {
-        "package": "sui-sdk-build-utils",
-        "versions": [
-          "0.1.0"
-        ]
-      }
+    "pypi_users": [
+      "asdmini67",
+      "dae5411"
     ]
   },
   "entries": [
@@ -702,6 +664,72 @@
       "name": "solidity-build-guard (TrapDoor Crypto Stealer cross-ecosystem campaign)",
       "ecosystem": "pypi",
       "package": "solidity-build-guard",
+      "versions": [
+        "0.1.0"
+      ],
+      "severity": "critical",
+      "source": "https://socket.dev/blog/trapdoor-crypto-stealer-npm-pypi-crates"
+    },
+    {
+      "id": "socket-2026-05-24-trapdoor-crates-move-analyzer-build",
+      "name": "move-analyzer-build (TrapDoor Crypto Stealer cross-ecosystem campaign)",
+      "ecosystem": "crates.io",
+      "package": "move-analyzer-build",
+      "versions": [
+        "0.1.0"
+      ],
+      "severity": "critical",
+      "source": "https://socket.dev/blog/trapdoor-crypto-stealer-npm-pypi-crates"
+    },
+    {
+      "id": "socket-2026-05-24-trapdoor-crates-move-compiler-tools",
+      "name": "move-compiler-tools (TrapDoor Crypto Stealer cross-ecosystem campaign)",
+      "ecosystem": "crates.io",
+      "package": "move-compiler-tools",
+      "versions": [
+        "0.1.0"
+      ],
+      "severity": "critical",
+      "source": "https://socket.dev/blog/trapdoor-crypto-stealer-npm-pypi-crates"
+    },
+    {
+      "id": "socket-2026-05-24-trapdoor-crates-move-project-builder",
+      "name": "move-project-builder (TrapDoor Crypto Stealer cross-ecosystem campaign)",
+      "ecosystem": "crates.io",
+      "package": "move-project-builder",
+      "versions": [
+        "0.1.0"
+      ],
+      "severity": "critical",
+      "source": "https://socket.dev/blog/trapdoor-crypto-stealer-npm-pypi-crates"
+    },
+    {
+      "id": "socket-2026-05-24-trapdoor-crates-sui-framework-helpers",
+      "name": "sui-framework-helpers (TrapDoor Crypto Stealer cross-ecosystem campaign)",
+      "ecosystem": "crates.io",
+      "package": "sui-framework-helpers",
+      "versions": [
+        "0.1.0"
+      ],
+      "severity": "critical",
+      "source": "https://socket.dev/blog/trapdoor-crypto-stealer-npm-pypi-crates"
+    },
+    {
+      "id": "socket-2026-05-24-trapdoor-crates-sui-move-build-helper",
+      "name": "sui-move-build-helper (TrapDoor Crypto Stealer cross-ecosystem campaign)",
+      "ecosystem": "crates.io",
+      "package": "sui-move-build-helper",
+      "versions": [
+        "0.1.1"
+      ],
+      "severity": "critical",
+      "source": "https://socket.dev/blog/trapdoor-crypto-stealer-npm-pypi-crates"
+    },
+    {
+      "id": "socket-2026-05-24-trapdoor-crates-sui-sdk-build-utils",
+      "name": "sui-sdk-build-utils (TrapDoor Crypto Stealer cross-ecosystem campaign)",
+      "ecosystem": "crates.io",
+      "package": "sui-sdk-build-utils",
       "versions": [
         "0.1.0"
       ],

@@ -28,7 +28,7 @@ Sources:
 | `auto-malext-sentry-browser-extensions.json` | [toborrm9/malicious_extension_sentry](https://github.com/toborrm9/malicious_extension_sentry) | `browser-extension` (Chrome/Chromium IDs) |
 | `auto-extsentry-browser-extensions.json` | [ExtSentry/ExtSentry.github.io](https://github.com/ExtSentry/ExtSentry.github.io) (rebuilt hourly from [mthcht/awesome-lists](https://github.com/mthcht/awesome-lists)) | `browser-extension` (Chrome/Chromium IDs; carries CRX SHA256 and per-row severity/category) |
 | `auto-vsxsentry-editor-extensions.json` | [mthcht/awesome-lists VSCODE Extensions](https://github.com/mthcht/awesome-lists/tree/main/Lists/VSCODE%20Extensions) | `editor-extension` (VS Code `publisher.name`) |
-| `auto-osv-malicious-npm-NN.json` (×4 shards) and `auto-osv-malicious-{pypi,go,rubygems,packagist}.json` | [ossf/malicious-packages](https://github.com/ossf/malicious-packages) (mirrored via [osv.dev](https://osv.dev)) | one file per ecosystem; npm is sharded by `FNV32(package) % 4` so each shard stays under ~25 MB |
+| `auto-osv-malicious-npm-NN.json` (×4 shards) and `auto-osv-malicious-{pypi,go,rubygems,packagist,nuget,crates.io,maven}.json` | [ossf/malicious-packages](https://github.com/ossf/malicious-packages) (mirrored via [osv.dev](https://osv.dev)) | one file per ecosystem; npm is sharded by `FNV32(package) % 4` so each shard stays under ~25 MB |
 | `auto-datadog-malicious-{npm,pypi}.json` | [DataDog/malicious-software-packages-dataset](https://github.com/DataDog/malicious-software-packages-dataset) | flagged by Datadog's [GuardDog](https://github.com/DataDog/guarddog) static-analysis pipeline — independent detector relative to OSV |
 
 Auto-generated entries use `versions: ["*"]` when the upstream feed
@@ -96,7 +96,7 @@ large drop is legitimate.
 | [`shopsprint-decimal-typosquat.json`](shopsprint-decimal-typosquat.json) | Go `github.com/shopsprint/decimal` v1.3.3 typosquat with DNS TXT backdoor | [Socket, 2026-05-19](https://socket.dev/blog/popular-go-decimal-library-typosquat-dns-backdoor) |
 | [`gemstuffer.json`](gemstuffer.json) | GemStuffer RubyGems exfiltration campaign (123 gems / 155 versions) targeting UK local government | [Socket, 2026-05-13](https://socket.dev/blog/gemstuffer) |
 | [`glassworm.json`](glassworm.json) | GlassWorm self-propagating IDE-extension worm on Open VSX / VS Code (invisible-Unicode loader, transitive extensionPack/Dependencies delivery, Solana memo C2, credential/wallet theft); 243 `editor-extension` packages / 381 versions + 2 npm packages / 2 versions (245 entries / 383 versions) | [Socket GlassWorm v2 campaign CSV](https://socket.dev/supply-chain-attacks/glassworm-v2) and [Socket transitive report, 2026-03-13](https://socket.dev/blog/open-vsx-transitive-glassworm-campaign); supplemented by [Koi Security, 2025-10-18](https://www.koi.ai/blog/glassworm-first-self-propagating-worm-using-invisible-code-hits-openvsx-marketplace), [Checkmarx, 2026-03](https://checkmarx.com/zero-post/glassworm-targets-developer-ides-again-hiding-staged-malware-behind-runtime-rebuilt-loaders/), and [Sonatype, 2026-03-17](https://www.sonatype.com/blog/hijacked-npm-packages-deliver-malware-via-solana-linked-to-glassworm) |
-| [`trapdoor-crypto-stealer.json`](trapdoor-crypto-stealer.json) | TrapDoor Crypto Stealer cross-ecosystem credential/wallet stealer across npm, PyPI, and Cargo/Crates.io (28 npm/PyPI entries / 378 versions; 6 Cargo packages documented under `_cargo_packages`, not matched until Cargo support lands) | [Socket, 2026-05-24](https://socket.dev/blog/trapdoor-crypto-stealer-npm-pypi-crates) |
+| [`trapdoor-crypto-stealer.json`](trapdoor-crypto-stealer.json) | TrapDoor Crypto Stealer cross-ecosystem credential/wallet stealer across npm, PyPI, and Cargo/Crates.io (34 entries: 28 npm/PyPI / 378 versions, plus 6 `crates.io` packages promoted from the former `_cargo_packages` block now that Cargo is inventoried) | [Socket, 2026-05-24](https://socket.dev/blog/trapdoor-crypto-stealer-npm-pypi-crates) |
 
 ## Generating catalogs from OSV
 
@@ -129,7 +129,13 @@ go run ./tools/osvcatalog -o threat_intel/osv-npm-malicious.json npm/all.zip
 Each input path can be a directory tree, an OSV `all.zip` archive, or a
 single `.json` record. Supported OSV ecosystems map to Bumblebee as:
 `npm`, `PyPI` → `pypi`, `Go` → `go`, `RubyGems` → `rubygems`,
-`Packagist` → `packagist`, `VSCode` → `editor-extension`. Records whose
+`Packagist` → `packagist`, `VSCode` → `editor-extension`,
+`NuGet` → `nuget`, `crates.io` → `crates.io`, `Maven` → `maven`,
+`Pub` → `pub`, `Hex` → `hex`, `SwiftURL` → `swift`, `Julia` → `julia`.
+Of those, only npm, PyPI, Go, RubyGems, Packagist, NuGet, crates.io and
+Maven currently carry any `MAL-*` advisories upstream, so only those are
+fetched by `threatintel-fetch`; the rest are mapped so they flow through
+the converter the day upstream publishes one. Records whose
 ranges declare all versions affected (a single `introduced: "0"` event)
 are emitted with `"versions": ["*"]`; records with only bounded ranges
 and no enumerated `affected[].versions` are skipped. Output is

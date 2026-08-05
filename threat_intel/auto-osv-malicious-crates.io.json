@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.2.0",
+  "_comment": "OSV malicious-packages MAL-* advisories for the crates.io ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
+  "_generated_utc": "2026-08-05T06:48:26Z",
+  "_source": "https://github.com/ossf/malicious-packages",
+  "entries": [
+    {"id":"MAL-2022-1","name":"Malicious code in rustdecimal (crates.io)","ecosystem":"crates.io","package":"rustdecimal","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-1"},
+    {"id":"MAL-2023-8429","name":"Malicious code in littest (crates.io)","ecosystem":"crates.io","package":"littest","versions":["0.3.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2023-8429"},
+    {"id":"MAL-2025-49350","name":"Malicious code in replit_ruspty (crates.io)","ecosystem":"crates.io","package":"replit_ruspty","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-49350"},
+    {"id":"MAL-2026-2958","name":"Malicious code in mysten_metrics (crates.io)","ecosystem":"crates.io","package":"mysten-metrics","versions":["9.0.0","9.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2958"},
+    {"id":"MAL-2026-3101","name":"Malicious code in amzn_consolas_client (crates.io)","ecosystem":"crates.io","package":"amzn-consolas-client","versions":["99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3101"},
+    {"id":"MAL-2026-3102","name":"Malicious code in semantic_search_client (crates.io)","ecosystem":"crates.io","package":"semantic-search-client","versions":["99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3102"},
+    {"id":"MAL-2026-3103","name":"Malicious code in amzn_codewhisperer_streaming_client (crates.io)","ecosystem":"crates.io","package":"amzn-codewhisperer-streaming-client","versions":["99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3103"},
+    {"id":"MAL-2026-3126","name":"Malicious code in lsh (crates.io)","ecosystem":"crates.io","package":"lsh","versions":["99.0.1","99.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3126"},
+    {"id":"MAL-2026-3129","name":"Malicious code in supertag (crates.io)","ecosystem":"crates.io","package":"supertag","versions":["99.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3129"},
+    {"id":"MAL-2026-6959","name":"Malicious code in proton_pfff (crates.io)","ecosystem":"crates.io","package":"proton-pfff","versions":["99.99.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-6959"}
+  ]
+}

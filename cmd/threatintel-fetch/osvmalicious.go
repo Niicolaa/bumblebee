@@ -32,12 +32,33 @@ type osvEcosystem struct {
 	osv       string
 }
 
+// Only ecosystems that OSV publishes AND that actually carry MAL-*
+// advisories are listed. An ecosystem with zero MAL records costs a
+// multi-MB download on every sync and writes an empty catalog, so it is
+// left out until upstream has something to serve.
+//
+// MAL-* counts in the per-ecosystem all.zip when this list was last
+// reviewed (2026-08-04):
+//
+//	npm 30k+, PyPI 20k+, NuGet 777, RubyGems 100s, Packagist 100s,
+//	Go 10s, crates.io 10, Maven 2.
+//
+// Scanned but deliberately absent, all at zero MAL-*: Pub, Hex,
+// SwiftURL, Julia. Worth re-checking periodically — adding one is a
+// single line here.
+//
+// The remaining scanner ecosystems have no OSV ecosystem at all:
+// CocoaPods is not published, and Conan/ConanCenter does not appear in
+// osv-vulnerabilities' ecosystems.txt.
 var osvEcosystems = []osvEcosystem{
 	{bumblebee: model.EcosystemNPM, osv: "npm"},
 	{bumblebee: model.EcosystemPyPI, osv: "PyPI"},
 	{bumblebee: model.EcosystemGo, osv: "Go"},
 	{bumblebee: model.EcosystemRubyGems, osv: "RubyGems"},
 	{bumblebee: model.EcosystemPackagist, osv: "Packagist"},
+	{bumblebee: model.EcosystemNuGet, osv: "NuGet"},
+	{bumblebee: model.EcosystemCratesIO, osv: "crates.io"},
+	{bumblebee: model.EcosystemMaven, osv: "Maven"},
 }
 
 // osvShardCount marks ecosystems whose unshard'd auto-* catalog would
