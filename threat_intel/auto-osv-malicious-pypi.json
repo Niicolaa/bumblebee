@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-08-04T13:39:47Z",
+  "_generated_utc": "2026-08-05T09:08:36Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10541,6 +10541,10 @@
     {"id":"MAL-2026-11519","name":"Malicious code in launchdarkly-ai-server-sdk (PyPI)","ecosystem":"pypi","package":"launchdarkly-ai-server-sdk","versions":["1.0.1","1.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-11519"},
     {"id":"MAL-2026-11520","name":"Malicious code in psbt-utils (PyPI)","ecosystem":"pypi","package":"psbt-utils","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-11520"},
     {"id":"MAL-2026-11521","name":"Malicious code in psbt-helpers (PyPI)","ecosystem":"pypi","package":"psbt-helpers","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-11521"},
+    {"id":"MAL-2026-12080","name":"Malicious code in bip39-py (PyPI)","ecosystem":"pypi","package":"bip39-py","versions":["1.0.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-12080"},
+    {"id":"MAL-2026-12081","name":"Malicious code in bitcoinlib-py (PyPI)","ecosystem":"pypi","package":"bitcoinlib-py","versions":["0.9.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-12081"},
+    {"id":"MAL-2026-12082","name":"Malicious code in crypto-trading-toolkit (PyPI)","ecosystem":"pypi","package":"crypto-trading-toolkit","versions":["3.2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-12082"},
+    {"id":"MAL-2026-12083","name":"Malicious code in crypto-wallet-sdk (PyPI)","ecosystem":"pypi","package":"crypto-wallet-sdk","versions":["1.8.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-12083"},
     {"id":"MAL-2026-1222","name":"Malicious code in optimal-spark-config (PyPI)","ecosystem":"pypi","package":"optimal-spark-config","versions":["14.0.0","14.0.1","14.0.2","14.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1222"},
     {"id":"MAL-2026-1223","name":"Malicious code in risk-utilities (PyPI)","ecosystem":"pypi","package":"risk-utilities","versions":["6.0.0","6.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1223"},
     {"id":"MAL-2026-1224","name":"Malicious code in spark-ml-utilities (PyPI)","ecosystem":"pypi","package":"spark-ml-utilities","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1224"},
