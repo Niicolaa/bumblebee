@@ -18,7 +18,7 @@ var Version = ""
 // fileDefault is the compiled-in fallback version. It must match the
 // repo's VERSION file; TestFileDefaultMatchesVERSION enforces that, so a
 // release bump cannot land in one place and not the other.
-const fileDefault = "0.1.2"
+const fileDefault = "0.1.3"
 
 // currentVersion returns the resolved version string (no commit / build
 // info). Used by callers that need a single token, such as the records'
