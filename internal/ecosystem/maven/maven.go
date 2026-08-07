@@ -29,10 +29,10 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"os"
 	"path/filepath"
 	"strings"
 
+	"github.com/perplexityai/bumblebee/internal/ecosystem/safeopen"
 	"github.com/perplexityai/bumblebee/internal/model"
 )
 
@@ -242,7 +242,7 @@ func (s *Scanner) emitRecord(base model.Record, name, version, projectPath, sour
 }
 
 func (s *Scanner) readBounded(path string) ([]byte, error) {
-	f, err := os.Open(path)
+	f, _, err := safeopen.Regular(path)
 	if err != nil {
 		return nil, err
 	}

@@ -245,6 +245,21 @@ func walkOne(root string, excludes map[string]struct{}, seen map[string]struct{}
 				}
 				seen[key] = struct{}{}
 			}
+		} else if path != root && d.Type()&os.ModeSymlink != 0 {
+			// Non-directory symlinks discovered below a root are never
+			// surfaced. Parsers open what they are handed with os.Open,
+			// which dereferences the link, so a symlink planted inside a
+			// scanned tree could redirect a read to any file the scanner
+			// can reach. Skipping keeps the walker's promise that it only
+			// hands out paths whose contents live inside the tree.
+			//
+			// The root itself is exempt: it is operator-supplied (a shipped
+			// default or an explicit --root), and some roots are single
+			// config files (e.g. ~/.claude.json) that a dotfile manager
+			// legitimately symlinks. This mirrors how a symlinked directory
+			// root already behaves: WalkDir lstats the root, so it arrives
+			// as a symlink entry, is visited once, and is not descended.
+			return nil
 		}
 		if verr := visit(path, d); verr != nil {
 			if errors.Is(verr, filepath.SkipDir) {

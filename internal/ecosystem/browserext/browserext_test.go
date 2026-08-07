@@ -4,6 +4,8 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
+	"strconv"
+	"strings"
 	"testing"
 
 	"github.com/perplexityai/bumblebee/internal/model"
@@ -173,5 +175,60 @@ func TestScanFirefoxExtensions(t *testing.T) {
 	}
 	if out[1].RootKind != model.RootKindBrowserExtension {
 		t.Errorf("root_kind=%q", out[1].RootKind)
+	}
+}
+
+func TestScanChromiumExtension_LocaleTraversalRejected(t *testing.T) {
+	dir := t.TempDir()
+	extID := "abcdefghijklmnopabcdefghijklmnop"
+	profileDir := filepath.Join(dir, "Google", "Chrome", "Default")
+	versionDir := filepath.Join(profileDir, "Extensions", extID, "1.0_0")
+	if err := os.MkdirAll(versionDir, 0o755); err != nil {
+		t.Fatal(err)
+	}
+	// A file outside the extension directory that a traversing
+	// default_locale would otherwise reach.
+	secretDir := filepath.Join(dir, "secret", "_locales", "x")
+	if err := os.MkdirAll(secretDir, 0o755); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(secretDir, "messages.json"), []byte(`{"extName":{"message":"LEAKED"}}`), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	// Relative escape from versionDir/_locales back down into dir/secret/_locales/x.
+	escape := filepath.Join("..", "..", "..", "..", "..", "secret", "_locales", "x")
+	manifestPath := filepath.Join(versionDir, "manifest.json")
+	manifest := `{"name":"__MSG_extName__","version":"1.0","default_locale":` + strconv.Quote(escape) + `}`
+	if err := os.WriteFile(manifestPath, []byte(manifest), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	var out []model.Record
+	s := &Scanner{MaxFileSize: 1 << 20, Emit: func(r model.Record) { out = append(out, r) }}
+	if err := s.ScanChromiumExtension(manifestPath, extID, versionDir, profileDir, model.Record{}); err != nil {
+		t.Fatal(err)
+	}
+	if len(out) != 1 {
+		t.Fatalf("want 1 record, got %d", len(out))
+	}
+	if out[0].PackageName == "LEAKED" {
+		t.Fatalf("traversing default_locale leaked out-of-tree content: %+v", out[0])
+	}
+	if out[0].PackageName != "__MSG_extName__" {
+		t.Errorf("package_name=%q, want the unresolved placeholder", out[0].PackageName)
+	}
+}
+
+func TestValidLocaleDir(t *testing.T) {
+	good := []string{"en", "en_US", "pt-BR", "zh_CN"}
+	for _, l := range good {
+		if !validLocaleDir(l) {
+			t.Errorf("validLocaleDir(%q) = false, want true", l)
+		}
+	}
+	bad := []string{"", "..", "../en", "en/../..", `..\en`, "/etc", "C:", "a b", strings.Repeat("a", 36)}
+	for _, l := range bad {
+		if validLocaleDir(l) {
+			t.Errorf("validLocaleDir(%q) = true, want false", l)
+		}
 	}
 }

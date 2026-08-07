@@ -25,10 +25,10 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"os"
 	"path/filepath"
 	"strings"
 
+	"github.com/perplexityai/bumblebee/internal/ecosystem/safeopen"
 	"github.com/perplexityai/bumblebee/internal/model"
 	"github.com/perplexityai/bumblebee/internal/normalize"
 	"github.com/perplexityai/bumblebee/internal/toml"
@@ -286,7 +286,7 @@ func (s *Scanner) scanTOMLLock(path string, base model.Record, tableName, manage
 }
 
 func (s *Scanner) readBounded(path string) ([]byte, error) {
-	f, err := os.Open(path)
+	f, _, err := safeopen.Regular(path)
 	if err != nil {
 		return nil, err
 	}

@@ -386,3 +386,51 @@ func TestSymlinkLoopSafety(t *testing.T) {
 		t.Errorf("expected at least 1 record, got %d", em.RecordsEmitted)
 	}
 }
+
+// A symlink whose basename matches a dispatchable metadata file must never
+// be handed to a parser: doing so would read the link target (here a private
+// key outside the scanned tree) and emit its lines as package records.
+func TestSymlinkedMetadataFileIsNotParsed(t *testing.T) {
+	root := t.TempDir()
+	secretDir := t.TempDir()
+
+	secret := filepath.Join(secretDir, "id_ed25519")
+	writeFile(t, secret, "-----BEGIN OPENSSH PRIVATE KEY-----\ntotally-secret==\n-----END OPENSSH PRIVATE KEY-----\n")
+
+	link := filepath.Join(root, "proj", "requirements.txt")
+	if err := os.MkdirAll(filepath.Dir(link), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.Symlink(secret, link); err != nil {
+		// Windows needs developer mode or elevation to create symlinks.
+		t.Skipf("symlink unsupported here: %v", err)
+	}
+
+	stdout := &bytes.Buffer{}
+	stderr := &bytes.Buffer{}
+	em := output.New(stdout, stderr, "runtest")
+
+	if _, err := Run(context.Background(), Config{
+		Roots:       []Root{{Path: root, Kind: model.RootKindProject}},
+		Profile:     model.ProfileProject,
+		MaxFileSize: 5 * 1024 * 1024,
+		Concurrency: 2,
+		BaseRecord: model.Record{
+			SchemaVersion:  model.SchemaVersion,
+			ScannerName:    model.ScannerName,
+			ScannerVersion: "test",
+			RunID:          "runtest",
+			ScanTime:       time.Now().UTC().Format(time.RFC3339Nano),
+		},
+		Emitter: em,
+	}); err != nil {
+		t.Fatalf("Run: %v", err)
+	}
+
+	if out := stdout.String(); strings.Contains(out, "OPENSSH") || strings.Contains(out, "totally-secret") {
+		t.Fatalf("symlink target contents leaked into output: %s", out)
+	}
+	if strings.Contains(stdout.String(), "requirements.txt") {
+		t.Fatalf("symlinked requirements.txt was dispatched to a parser: %s", stdout.String())
+	}
+}

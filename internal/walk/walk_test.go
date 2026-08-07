@@ -101,3 +101,81 @@ func mustWrite(t *testing.T, p, body string) {
 		t.Fatal(err)
 	}
 }
+
+// mustSymlink creates a symlink, skipping the test where the platform
+// denies symlink creation (unprivileged Windows without developer mode).
+func mustSymlink(t *testing.T, oldname, newname string) {
+	t.Helper()
+	if err := os.Symlink(oldname, newname); err != nil {
+		t.Skipf("symlinks unavailable on this platform: %v", err)
+	}
+}
+
+// TestWalkSkipsDiscoveredFileSymlinks proves a symlinked *file* found
+// below a root is never handed to a visitor: parsers dereference what
+// they are given, so surfacing one would let a planted link redirect a
+// read to a file outside the scanned tree.
+func TestWalkSkipsDiscoveredFileSymlinks(t *testing.T) {
+	tmp := t.TempDir()
+	outside := filepath.Join(tmp, "outside")
+	mustMkdir(t, outside)
+	secret := filepath.Join(outside, "secret.json")
+	mustWrite(t, secret, `{"secret":true}`)
+
+	root := filepath.Join(tmp, "root")
+	mustMkdir(t, root)
+	real := filepath.Join(root, "package-lock.json")
+	mustWrite(t, real, `{}`)
+	link := filepath.Join(root, "linked-lock.json")
+	mustSymlink(t, secret, link)
+
+	var seen []string
+	if err := Walk(Options{Roots: []string{root}}, func(p string, d fs.DirEntry) error {
+		seen = append(seen, p)
+		return nil
+	}); err != nil {
+		t.Fatal(err)
+	}
+	for _, p := range seen {
+		if p == link {
+			t.Errorf("file symlink was visited: %s", p)
+		}
+	}
+	found := false
+	for _, p := range seen {
+		if p == real {
+			found = true
+		}
+	}
+	if !found {
+		t.Errorf("expected to visit %q; saw %v", real, seen)
+	}
+}
+
+// TestWalkVisitsSymlinkedFileRoot pins the root exemption: a handful of
+// roots (e.g. ~/.claude.json) are single config files, and dotfile
+// managers commonly symlink them. The root path is operator-supplied,
+// so it is still visited.
+func TestWalkVisitsSymlinkedFileRoot(t *testing.T) {
+	tmp := t.TempDir()
+	store := filepath.Join(tmp, "dotfiles")
+	mustMkdir(t, store)
+	target := filepath.Join(store, "claude.json")
+	mustWrite(t, target, `{"mcpServers":{}}`)
+
+	home := filepath.Join(tmp, "home")
+	mustMkdir(t, home)
+	root := filepath.Join(home, ".claude.json")
+	mustSymlink(t, target, root)
+
+	var seen []string
+	if err := Walk(Options{Roots: []string{root}}, func(p string, d fs.DirEntry) error {
+		seen = append(seen, p)
+		return nil
+	}); err != nil {
+		t.Fatal(err)
+	}
+	if len(seen) != 1 || seen[0] != root {
+		t.Errorf("expected symlinked file root %q to be visited; saw %v", root, seen)
+	}
+}

@@ -23,13 +23,12 @@ package browserext
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io"
-	"os"
 	"path/filepath"
 	"strings"
 
+	"github.com/perplexityai/bumblebee/internal/ecosystem/safeopen"
 	"github.com/perplexityai/bumblebee/internal/model"
 )
 
@@ -141,7 +140,36 @@ func (s *Scanner) ScanChromiumExtension(manifestPath, extID, versionDir, profile
 	return nil
 }
 
+// validLocaleDir reports whether an extension-supplied "default_locale"
+// is a plain locale tag we can safely use as a single path segment.
+// Chromium locale directory names are BCP-47-ish: letters, digits,
+// hyphen and underscore only. Anything else (path separators, "..",
+// drive letters, empty) is rejected so a hostile manifest can't steer
+// the read outside the extension's version directory.
+func validLocaleDir(locale string) bool {
+	if locale == "" || len(locale) > 35 {
+		return false
+	}
+	for _, r := range locale {
+		switch {
+		case r >= 'a' && r <= 'z',
+			r >= 'A' && r <= 'Z',
+			r >= '0' && r <= '9',
+			r == '-', r == '_':
+		default:
+			return false
+		}
+	}
+	return true
+}
+
 func (s *Scanner) lookupLocaleMessage(versionDir, locale, key string) string {
+	if !validLocaleDir(locale) {
+		if locale != "en" {
+			return s.lookupLocaleMessage(versionDir, "en", key)
+		}
+		return ""
+	}
 	path := filepath.Join(versionDir, "_locales", locale, "messages.json")
 	data, err := s.readBounded(path)
 	if err != nil {
@@ -252,18 +280,11 @@ func (s *Scanner) ScanFirefoxExtensions(path string, base model.Record) error {
 }
 
 func (s *Scanner) readBounded(path string) ([]byte, error) {
-	f, err := os.Open(path)
+	f, info, err := safeopen.Regular(path)
 	if err != nil {
 		return nil, err
 	}
 	defer f.Close()
-	info, err := f.Stat()
-	if err != nil {
-		return nil, err
-	}
-	if !info.Mode().IsRegular() {
-		return nil, errors.New("not a regular file")
-	}
 	if s.MaxFileSize > 0 && info.Size() > s.MaxFileSize {
 		if s.Diag != nil {
 			s.Diag("warn", path, fmt.Sprintf("skipping: size %d exceeds max %d", info.Size(), s.MaxFileSize))

@@ -354,6 +354,15 @@ func Run(ctx context.Context, cfg Config) (Result, error) {
 		if d.IsDir() {
 			return nil
 		}
+		// Only regular files are ever handed to a parser. Dispatch below is
+		// decided on basename alone, so a planted symlink such as
+		// `requirements.txt -> ~/.ssh/id_rsa` would otherwise make a parser
+		// read an arbitrary file and emit its contents as record fields,
+		// escaping the path-based excludes. Non-regular entries (symlinks,
+		// FIFOs, sockets, devices) are skipped.
+		if !d.Type().IsRegular() {
+			return nil
+		}
 		base := d.Name()
 		// Skip obvious credential-ish dotfiles even outside excluded dirs.
 		if base == ".env" || base == ".envrc" {

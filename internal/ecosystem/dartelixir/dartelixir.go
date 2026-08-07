@@ -21,11 +21,11 @@ import (
 	"bytes"
 	"errors"
 	"io"
-	"os"
 	"path/filepath"
 	"regexp"
 	"strings"
 
+	"github.com/perplexityai/bumblebee/internal/ecosystem/safeopen"
 	"github.com/perplexityai/bumblebee/internal/model"
 )
 
@@ -177,7 +177,7 @@ func (s *Scanner) ScanMixLock(path string, base model.Record) error {
 }
 
 func (s *Scanner) readBounded(path string) ([]byte, error) {
-	f, err := os.Open(path)
+	f, _, err := safeopen.Regular(path)
 	if err != nil {
 		return nil, err
 	}
