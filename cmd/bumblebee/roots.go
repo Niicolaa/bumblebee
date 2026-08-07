@@ -268,6 +268,52 @@ func baselineHomeCandidates(home string) []scanner.Root {
 		add(p, model.RootKindUserPackage)
 	}
 	add(filepath.Join(home, ".local", "share", "pipx", "venvs"), model.RootKindUserPackage)
+	// uv's tool installs (`uv tool install ruff`) — the uv analogue of
+	// pipx, and increasingly the default way Python CLIs land on a
+	// developer machine.
+	add(filepath.Join(home, ".local", "share", "uv", "tools"), model.RootKindUserPackage)
+
+	// Global npm-family package prefixes. These are the "npm install -g"
+	// targets, which is exactly the shape a compromised CLI package
+	// takes — and none of them lives under a toolchain root above.
+	//
+	// ~/.npm-global is the prefix the standard "don't sudo npm" advice
+	// tells people to configure, so it is common on exactly the machines
+	// whose owners are security-conscious enough to have followed it.
+	for _, seg := range [][]string{
+		{".npm-global", "lib", "node_modules"},
+		{".npm-packages", "lib", "node_modules"},
+		{".node_modules", "lib", "node_modules"},
+		{".config", "yarn", "global", "node_modules"},
+		{".yarn", "global", "node_modules"},
+		{".bun", "install", "global", "node_modules"},
+		{".deno"},
+	} {
+		add(filepath.Join(append([]string{home}, seg...)...), model.RootKindUserPackage)
+	}
+	// pnpm's global store/tool dir moves per platform and per install
+	// method, so all the documented locations are listed; absent ones
+	// are dropped by filterExistingRoots.
+	for _, p := range []string{
+		filepath.Join(home, ".local", "share", "pnpm"),
+		filepath.Join(home, "Library", "pnpm"),
+		filepath.Join(home, ".pnpm-global"),
+	} {
+		add(p, model.RootKindUserPackage)
+	}
+	// Volta and fnm keep their own package images outside the toolchain
+	// roots above.
+	add(filepath.Join(home, ".volta", "tools", "image", "packages"), model.RootKindUserPackage)
+
+	// Per-user conda environments. site-packages under each env holds
+	// dist-info the PyPI scanner reads.
+	for _, seg := range []string{"miniconda3", "anaconda3", "miniforge3", ".conda"} {
+		add(filepath.Join(home, seg, "envs"), model.RootKindUserPackage)
+		add(filepath.Join(home, seg, "lib"), model.RootKindUserPackage)
+	}
+
+	// Per-user RubyGems installs (`gem install --user-install`).
+	add(filepath.Join(home, ".gem"), model.RootKindUserPackage)
 
 	// Editor extension trees. Each editor has a local tree and a
 	// remote/SSH counterpart installed by its server build; a remote
@@ -309,6 +355,15 @@ func baselineHomeCandidates(home string) []scanner.Root {
 	switch runtime.GOOS {
 	case "darwin":
 		add(filepath.Join(home, "Library", "Application Support", "Claude"), model.RootKindMCPConfig)
+		// Per-user Python from the python.org installer and from
+		// `pip install --user`. Layout is
+		// ~/Library/Python/<ver>/lib/python/site-packages. This is the
+		// per-user twin of the machine-wide /Library/Python already in
+		// systemRoots, and on a Mac where pip is used without a venv it
+		// is where most PyPI metadata actually lives.
+		for _, p := range globExisting(filepath.Join(home, "Library", "Python", "*", "lib", "python", "site-packages")) {
+			add(p, model.RootKindUserPackage)
+		}
 	case "linux":
 		add(filepath.Join(home, ".config", "Claude"), model.RootKindMCPConfig)
 		add(filepath.Join(home, ".config", "Claude Code"), model.RootKindMCPConfig)
@@ -327,6 +382,25 @@ func baselineHomeCandidates(home string) []scanner.Root {
 		// metadata lives on most Windows developer machines.
 		for _, p := range globExisting(filepath.Join(windowsLocalAppData(home), "Programs", "Python", "Python*", "Lib", "site-packages")) {
 			add(p, model.RootKindUserPackage)
+		}
+		// `npm install -g` on Windows writes to %APPDATA%\npm\node_modules
+		// rather than any of the Unix prefixes above. Windows has almost
+		// no machine-wide package roots, so missing this left global npm
+		// installs — the classic compromised-CLI shape — invisible on
+		// every Windows endpoint.
+		add(filepath.Join(appdata, "npm", "node_modules"), model.RootKindUserPackage)
+		local := windowsLocalAppData(home)
+		// pnpm, Yarn Berry, and Volta per-user homes.
+		add(filepath.Join(local, "pnpm", "global"), model.RootKindUserPackage)
+		add(filepath.Join(local, "Yarn", "Data", "global", "node_modules"), model.RootKindUserPackage)
+		add(filepath.Join(local, "Volta", "tools", "image", "packages"), model.RootKindUserPackage)
+		// Scoop and per-user Chocolatey: user-writable app managers that
+		// are a common way software lands on a locked-down Windows box.
+		add(filepath.Join(home, "scoop", "apps"), model.RootKindUserPackage)
+		// Per-user conda.
+		for _, seg := range []string{"miniconda3", "anaconda3", "miniforge3"} {
+			add(filepath.Join(home, seg, "envs"), model.RootKindUserPackage)
+			add(filepath.Join(home, seg, "Lib", "site-packages"), model.RootKindUserPackage)
 		}
 	}
 
@@ -387,8 +461,14 @@ func systemRoots() []scanner.Root {
 			{Path: "/usr/local/lib", Kind: model.RootKindGlobalPackage},
 			{Path: "/home/linuxbrew/.linuxbrew/Cellar", Kind: model.RootKindHomebrew},
 			{Path: "/home/linuxbrew/.linuxbrew/Caskroom", Kind: model.RootKindHomebrew},
+			// Machine-wide conda and Node prefixes. /usr/local/lib above
+			// already covers /usr/local/lib/node_modules, but a distro
+			// nodejs package and an /opt conda install land elsewhere.
+			{Path: "/opt/conda", Kind: model.RootKindGlobalPackage},
+			{Path: "/usr/lib/node_modules", Kind: model.RootKindGlobalPackage},
+			{Path: "/usr/share/gems", Kind: model.RootKindGlobalPackage},
 		}
-		for _, pattern := range []string{"/usr/lib/python*"} {
+		for _, pattern := range []string{"/usr/lib/python*", "/usr/lib64/python*"} {
 			for _, p := range globExisting(pattern) {
 				roots = append(roots, scanner.Root{Path: p, Kind: model.RootKindGlobalPackage})
 			}
@@ -409,6 +489,21 @@ func systemRoots() []scanner.Root {
 			for _, p := range globExisting(filepath.Join(base, "Python*", "Lib", "site-packages")) {
 				roots = append(roots, scanner.Root{Path: p, Kind: model.RootKindGlobalPackage})
 			}
+			// Node installed machine-wide puts global npm packages here.
+			roots = append(roots, scanner.Root{
+				Path: filepath.Join(base, "nodejs", "node_modules"),
+				Kind: model.RootKindGlobalPackage,
+			})
+		}
+		// Chocolatey's default machine-wide install root, and the
+		// machine-wide conda prefixes. These are user-writable in many
+		// default deployments, which is what makes them worth walking.
+		if pd := strings.TrimSpace(os.Getenv("ProgramData")); pd != "" {
+			roots = append(roots,
+				scanner.Root{Path: filepath.Join(pd, "chocolatey", "lib"), Kind: model.RootKindGlobalPackage},
+				scanner.Root{Path: filepath.Join(pd, "miniconda3"), Kind: model.RootKindGlobalPackage},
+				scanner.Root{Path: filepath.Join(pd, "anaconda3"), Kind: model.RootKindGlobalPackage},
+			)
 		}
 		return roots
 	}

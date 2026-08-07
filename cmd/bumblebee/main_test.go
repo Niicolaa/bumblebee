@@ -842,3 +842,57 @@ func TestDefaultUsersDir(t *testing.T) {
 		t.Errorf(`defaultUsersDir() = %q, want C:\Users fallback`, got)
 	}
 }
+
+// Global package prefixes are where a compromised CLI lands, and none
+// of them sits under the language-toolchain roots. Each of these was
+// missing at some point and is invisible to every profile but a deep
+// sweep of the whole home, so they are pinned here.
+func TestBaselineCoversGlobalPackagePrefixes(t *testing.T) {
+	home := t.TempDir()
+	setHomeDir(t, home)
+
+	var want []string
+	mk := func(parts ...string) string {
+		p := filepath.Join(append([]string{home}, parts...)...)
+		if err := os.MkdirAll(p, 0o755); err != nil {
+			t.Fatal(err)
+		}
+		want = append(want, p)
+		return p
+	}
+	// npm-family global prefixes ("npm install -g" targets).
+	mk(".npm-global", "lib", "node_modules")
+	mk(".config", "yarn", "global", "node_modules")
+	mk(".bun", "install", "global", "node_modules")
+	// Python tool installers.
+	mk(".local", "share", "uv", "tools")
+	// Per-user RubyGems.
+	mk(".gem")
+	// Conda.
+	mk("miniconda3", "envs")
+
+	if runtime.GOOS == "darwin" {
+		// ~/Library/Python/<ver>/lib/python/site-packages — where
+		// `pip install --user` puts things on a Mac.
+		mk("Library", "Python", "3.12", "lib", "python", "site-packages")
+	}
+	if runtime.GOOS == "windows" {
+		// %APPDATA%\npm\node_modules is the Windows "npm -g" target and
+		// has no Unix equivalent among the roots above.
+		mk("AppData", "Roaming", "npm", "node_modules")
+	}
+
+	roots, _, err := resolveRoots(model.ProfileBaseline, nil, rootsOpts{})
+	if err != nil {
+		t.Fatalf("resolveRoots baseline: %v", err)
+	}
+	got := map[string]bool{}
+	for _, r := range roots {
+		got[r.Path] = true
+	}
+	for _, w := range want {
+		if !got[w] {
+			t.Errorf("baseline does not cover global prefix %q", w)
+		}
+	}
+}
