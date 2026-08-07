@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-08-06T09:08:42Z",
+  "_generated_utc": "2026-08-07T07:44:17Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10591,6 +10591,9 @@
     {"id":"MAL-2026-1340","name":"Malicious code in safetest123 (PyPI)","ecosystem":"pypi","package":"safetest123","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1340"},
     {"id":"MAL-2026-1341","name":"Malicious code in collects (PyPI)","ecosystem":"pypi","package":"collects","versions":["1.0.1","1.0.2","1.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1341"},
     {"id":"MAL-2026-1342","name":"Malicious code in collectables (PyPI)","ecosystem":"pypi","package":"collectables","versions":["1.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1342"},
+    {"id":"MAL-2026-13426","name":"Malicious code in xayoub-xctxteam (PyPI)","ecosystem":"pypi","package":"xayoub-xctxteam","versions":["0.1.0","0.1.1","0.1.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13426"},
+    {"id":"MAL-2026-13472","name":"Malicious code in alphalend-abi (PyPI)","ecosystem":"pypi","package":"alphalend-abi","versions":["1.0.0","1.0.1","1.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13472"},
+    {"id":"MAL-2026-13473","name":"Malicious code in alphalend-layouts (PyPI)","ecosystem":"pypi","package":"alphalend-layouts","versions":["4.0.0","4.0.1","4.0.2","4.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13473"},
     {"id":"MAL-2026-1350","name":"Malicious code in falador (PyPI)","ecosystem":"pypi","package":"falador","versions":["99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1350"},
     {"id":"MAL-2026-1351","name":"Malicious code in faaladorcli (PyPI)","ecosystem":"pypi","package":"faaladorcli","versions":["99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1351"},
     {"id":"MAL-2026-1371","name":"Malicious code in collecters (PyPI)","ecosystem":"pypi","package":"collecters","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1371"},
