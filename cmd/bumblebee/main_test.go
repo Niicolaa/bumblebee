@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 	"runtime"
@@ -893,6 +894,58 @@ func TestBaselineCoversGlobalPackagePrefixes(t *testing.T) {
 	for _, w := range want {
 		if !got[w] {
 			t.Errorf("baseline does not cover global prefix %q", w)
+		}
+	}
+}
+
+// A relocated toolchain must not silently drop out of the scan. Every
+// other root is derived from a home directory, so a developer who moved
+// GOPATH to a second disk or set a corporate NPM_CONFIG_PREFIX would
+// otherwise be reported clean because the packages were never looked at.
+func TestBaselineHonorsEnvRelocatedToolchains(t *testing.T) {
+	home := t.TempDir()
+	setHomeDir(t, home)
+	// Keep at least one home-derived root present so resolveRoots does
+	// not fail for lack of any root at all.
+	if err := os.MkdirAll(filepath.Join(home, "go"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+
+	relocated := t.TempDir()
+	cases := []struct {
+		env   string
+		parts []string
+	}{
+		{"GOMODCACHE", nil},
+		{"CARGO_HOME", []string{"registry"}},
+		{"NPM_CONFIG_PREFIX", []string{"lib", "node_modules"}},
+		{"PNPM_HOME", nil},
+		{"GEM_HOME", nil},
+		{"COMPOSER_HOME", []string{"vendor"}},
+		{"PUB_CACHE", nil},
+	}
+	var want []string
+	for i, c := range cases {
+		base := filepath.Join(relocated, fmt.Sprintf("t%d", i))
+		full := filepath.Join(append([]string{base}, c.parts...)...)
+		if err := os.MkdirAll(full, 0o755); err != nil {
+			t.Fatal(err)
+		}
+		t.Setenv(c.env, base)
+		want = append(want, full)
+	}
+
+	roots, _, err := resolveRoots(model.ProfileBaseline, nil, rootsOpts{})
+	if err != nil {
+		t.Fatalf("resolveRoots baseline: %v", err)
+	}
+	got := map[string]bool{}
+	for _, r := range roots {
+		got[r.Path] = true
+	}
+	for i, w := range want {
+		if !got[w] {
+			t.Errorf("%s relocation not covered: %q", cases[i].env, w)
 		}
 	}
 }

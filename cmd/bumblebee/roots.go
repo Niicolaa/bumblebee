@@ -314,6 +314,25 @@ func baselineHomeCandidates(home string) []scanner.Root {
 
 	// Per-user RubyGems installs (`gem install --user-install`).
 	add(filepath.Join(home, ".gem"), model.RootKindUserPackage)
+	// macOS ships its own Ruby, whose --user-install lands here.
+	add(filepath.Join(home, ".local", "share", "gem"), model.RootKindUserPackage)
+
+	// Composer's global package tree (`composer global require`). The
+	// location moved from ~/.composer to XDG, so both are listed.
+	add(filepath.Join(home, ".composer", "vendor"), model.RootKindUserPackage)
+	add(filepath.Join(home, ".config", "composer", "vendor"), model.RootKindUserPackage)
+
+	// Dart/Flutter's global package cache (`dart pub global activate`).
+	add(filepath.Join(home, ".pub-cache"), model.RootKindUserPackage)
+
+	// Elixir's Hex cache and Mix archives.
+	add(filepath.Join(home, ".hex", "packages"), model.RootKindUserPackage)
+	add(filepath.Join(home, ".mix", "archives"), model.RootKindUserPackage)
+
+	// Gradle's module cache. The wrapper/daemon state around it is
+	// excluded by the walker (.gradle is in DefaultExcludes), so the
+	// cache is named explicitly rather than by adding all of ~/.gradle.
+	add(filepath.Join(home, ".gradle", "caches", "modules-2", "files-2.1"), model.RootKindUserPackage)
 
 	// Editor extension trees. Each editor has a local tree and a
 	// remote/SSH counterpart installed by its server build; a remote
@@ -546,6 +565,49 @@ func globExisting(pattern string) []string {
 	return out
 }
 
+// envOverrideRoots returns package roots relocated by environment
+// variable. Every other root here is derived from a home directory, so a
+// developer who moved their toolchain (GOPATH on a second disk,
+// CARGO_HOME on a faster volume, a corporate NPM_CONFIG_PREFIX) would
+// otherwise be scanned as if the packages did not exist — a clean result
+// that means nothing.
+//
+// These are read from the scanning process's environment, which is the
+// right source for a user-context run and the wrong one for an agent
+// running as root or SYSTEM: a service account does not inherit the
+// user's shell profile. They are therefore additive to the home-derived
+// roots, never a replacement, and absent variables cost nothing.
+func envOverrideRoots() []scanner.Root {
+	var out []scanner.Root
+	// GOMODCACHE and GOPATH/pkg/mod are the same directory on a default
+	// setup, and several other pairs can collide once a variable is set
+	// to a path the home-derived roots already cover. Dedupe here rather
+	// than leaving duplicate roots for the walker to visit twice.
+	seen := map[string]bool{}
+	add := func(v string, parts ...string) {
+		base := strings.TrimSpace(os.Getenv(v))
+		if base == "" {
+			return
+		}
+		p := filepath.Clean(filepath.Join(append([]string{base}, parts...)...))
+		if seen[p] {
+			return
+		}
+		seen[p] = true
+		out = append(out, scanner.Root{Path: p, Kind: model.RootKindUserPackage})
+	}
+	add("GOMODCACHE")
+	add("GOPATH", "pkg", "mod")
+	add("CARGO_HOME", "registry")
+	add("NPM_CONFIG_PREFIX", "lib", "node_modules")
+	add("PNPM_HOME")
+	add("GEM_HOME")
+	add("COMPOSER_HOME", "vendor")
+	add("PUB_CACHE")
+	add("MAVEN_OPTS_LOCAL_REPO")
+	return out
+}
+
 // baselineDefaultRoots returns the curated set of global/user
 // package-manager install roots, language toolchains, editor-extension
 // trees, MCP config locations, and Homebrew lib prefixes. No
@@ -562,6 +624,7 @@ func baselineDefaultRoots(opts rootsOpts) ([]scanner.Root, []string) {
 		candidates = append(candidates, baselineHomeCandidates(home)...)
 	}
 	candidates = append(candidates, systemRoots()...)
+	candidates = append(candidates, envOverrideRoots()...)
 
 	present, filterNotes := filterExistingRoots(candidates)
 	notes = append(notes, filterNotes...)

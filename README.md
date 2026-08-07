@@ -115,7 +115,7 @@ receivers can keep populations separate.
 
 | Profile | Scans | Use for |
 |---|---|---|
-| `baseline` | Common global/user package roots, language toolchains, editor extensions, browser extensions, and MCP configs. | Recurring lightweight inventory via an external runner. |
+| `baseline` | Common global/user package roots (including the `npm -g`/Yarn/pnpm/Bun prefixes, per-user Python, conda, Composer, pub, Hex), language toolchains, editor extensions, browser extensions, and MCP configs. Honours `GOPATH`, `CARGO_HOME`, `NPM_CONFIG_PREFIX` and similar relocations. | Recurring lightweight inventory via an external runner. |
 | `project` | Configured development directories, such as `~/code`, `~/src`, or `~/work`. | Recurring inventory for known project workspaces. |
 | `deep` | Explicit `--root` paths, including broad roots like `$HOME`. | On-demand incident or campaign checks, usually with `--ecosystem`, `--exposure-catalog`, and `--findings-only`. |
 
