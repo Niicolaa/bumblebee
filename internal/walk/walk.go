@@ -211,7 +211,7 @@ var ErrSkip = filepath.SkipDir
 // (matched by basename or by suffix path component) are skipped entirely.
 func Walk(opts Options, visit Visitor) error {
 	excludes := normalizeExcludes(opts.Excludes)
-	seen := make(map[string]struct{})
+	seen := make(map[dirIdent]struct{})
 
 	for _, root := range opts.Roots {
 		root = filepath.Clean(root)
@@ -224,7 +224,7 @@ func Walk(opts Options, visit Visitor) error {
 	return nil
 }
 
-func walkOne(root string, excludes map[string]struct{}, seen map[string]struct{}, onErr func(string, error), visit Visitor) error {
+func walkOne(root string, excludes excludeSet, seen map[dirIdent]struct{}, onErr func(string, error), visit Visitor) error {
 	return filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
 			if onErr != nil {
@@ -243,12 +243,20 @@ func walkOne(root string, excludes map[string]struct{}, seen map[string]struct{}
 			// Directory symlinks are never descended into. filepath.WalkDir
 			// does not follow them on its own, and we explicitly skip any
 			// directory-shaped symlink we encounter so the walker never
-			// crosses into an unrelated subtree by indirection.
-			if info, lerr := os.Lstat(path); lerr == nil && info.Mode()&os.ModeSymlink != 0 {
+			// crosses into an unrelated subtree by indirection. Reuse this
+			// Lstat result for the loop-guard key; do not stat again.
+			info, lerr := os.Lstat(path)
+			if lerr == nil && info.Mode()&os.ModeSymlink != 0 {
 				return filepath.SkipDir
 			}
-			// Symlink-loop guard via device+inode.
-			if key, ok := dirKey(path); ok {
+			var key dirIdent
+			var ok bool
+			if lerr == nil {
+				key, ok = dirKeyFromInfo(path, info)
+			} else {
+				key, ok = dirKey(path)
+			}
+			if ok {
 				if _, dup := seen[key]; dup {
 					return filepath.SkipDir
 				}
@@ -282,29 +290,49 @@ func walkOne(root string, excludes map[string]struct{}, seen map[string]struct{}
 	})
 }
 
-func normalizeExcludes(in []string) map[string]struct{} {
-	out := make(map[string]struct{}, len(in))
+// excludeSet holds normalized excludes indexed for O(1) directory checks:
+// single-component entries match by basename; multi-component entries are
+// indexed by their last component so only candidates whose tail already
+// matches the directory name pay a suffix comparison.
+type excludeSet struct {
+	names    map[string]struct{}
+	suffixes map[string][]string
+}
+
+func normalizeExcludes(in []string) excludeSet {
+	out := excludeSet{
+		names:    make(map[string]struct{}, len(in)),
+		suffixes: make(map[string][]string),
+	}
 	for _, x := range in {
 		x = strings.TrimSpace(x)
 		if x == "" {
 			continue
 		}
-		out[filepath.Clean(x)] = struct{}{}
+		x = filepath.Clean(x)
+		// A separator-only exclude has no usable suffix form; keep it
+		// name-matched so it still matches a root whose base name is
+		// the separator itself.
+		if !strings.ContainsRune(x, filepath.Separator) || x == string(filepath.Separator) {
+			out.names[x] = struct{}{}
+			continue
+		}
+		last := filepath.Base(x)
+		out.suffixes[last] = append(out.suffixes[last], string(filepath.Separator)+x)
 	}
 	return out
 }
 
-func isExcluded(fullPath, base string, excludes map[string]struct{}) bool {
-	if _, ok := excludes[base]; ok {
+// isExcluded expects fullPath to be clean, which holds for every path
+// filepath.WalkDir produces from the cleaned roots in Walk.
+func isExcluded(fullPath, base string, excludes excludeSet) bool {
+	if _, ok := excludes.names[base]; ok {
 		return true
 	}
 	// Suffix-component match: an exclude like "Library/Caches" or
 	// ".config/gcloud" matches any path ending in that sequence.
-	for ex := range excludes {
-		if !strings.ContainsRune(ex, filepath.Separator) {
-			continue
-		}
-		if strings.HasSuffix(filepath.Clean(fullPath), string(filepath.Separator)+ex) {
+	for _, suf := range excludes.suffixes[base] {
+		if strings.HasSuffix(fullPath, suf) {
 			return true
 		}
 	}
