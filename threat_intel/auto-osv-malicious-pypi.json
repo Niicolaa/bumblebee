@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-08-08T07:18:06Z",
+  "_generated_utc": "2026-08-09T07:18:51Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10604,6 +10604,7 @@
     {"id":"MAL-2026-13606","name":"Malicious code in cdktn-provider-azurerm (PyPI)","ecosystem":"pypi","package":"cdktn-provider-azurerm","versions":["17.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13606"},
     {"id":"MAL-2026-13607","name":"Malicious code in speed-hashes (PyPI)","ecosystem":"pypi","package":"speed-hashes","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13607"},
     {"id":"MAL-2026-13619","name":"Malicious code in atlas-internal (PyPI)","ecosystem":"pypi","package":"atlas-internal","versions":["1.8.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13619"},
+    {"id":"MAL-2026-13665","name":"Malicious code in riakcs (PyPI)","ecosystem":"pypi","package":"riakcs","versions":["0.0.1","0.5.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13665"},
     {"id":"MAL-2026-1371","name":"Malicious code in collecters (PyPI)","ecosystem":"pypi","package":"collecters","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1371"},
     {"id":"MAL-2026-1406","name":"Malicious code in makenotion-ppetest (PyPI)","ecosystem":"pypi","package":"makenotion-ppetest","versions":["0.0.0","1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1406"},
     {"id":"MAL-2026-1407","name":"Malicious code in thief-utils (PyPI)","ecosystem":"pypi","package":"thief-utils","versions":["1.2.6","1.2.7"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1407"},
