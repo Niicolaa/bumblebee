@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-08T07:18:02Z",
+  "_generated_utc": "2026-08-10T08:07:16Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -53107,6 +53107,8 @@
     {"id":"MAL-2026-13658","name":"Malicious code in sme-rko-finance-front-payments-currency-payment-actions-operations-repeat-models (npm)","ecosystem":"npm","package":"sme-rko-finance-front-payments-currency-payment-actions-operations-repeat-models","versions":["35.8.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13658"},
     {"id":"MAL-2026-13660","name":"Malicious code in sme-rko-finance-front-payments-domain (npm)","ecosystem":"npm","package":"sme-rko-finance-front-payments-domain","versions":["35.8.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13660"},
     {"id":"MAL-2026-13662","name":"Malicious code in sme-rko-finance-front-payments-feed-display-list (npm)","ecosystem":"npm","package":"sme-rko-finance-front-payments-feed-display-list","versions":["35.8.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13662"},
+    {"id":"MAL-2026-13668","name":"Malicious code in @lambda-platform/lambda-vue (npm)","ecosystem":"npm","package":"@lambda-platform/lambda-vue","versions":["3.3.24"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13668"},
+    {"id":"MAL-2026-13669","name":"Malicious code in specials-resources-server (npm)","ecosystem":"npm","package":"specials-resources-server","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13669"},
     {"id":"MAL-2026-1372","name":"Malicious code in @sky-it-livedata-libraries/livedata-commons (npm)","ecosystem":"npm","package":"@sky-it-livedata-libraries/livedata-commons","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1372"},
     {"id":"MAL-2026-1382","name":"Malicious code in @immuta/flag-providers-web (npm)","ecosystem":"npm","package":"@immuta/flag-providers-web","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1382"},
     {"id":"MAL-2026-1384","name":"Malicious code in @lux2/ssr-catalogue-sfcc (npm)","ecosystem":"npm","package":"@lux2/ssr-catalogue-sfcc","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1384"},

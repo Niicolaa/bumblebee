@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-08T07:18:02Z",
+  "_generated_utc": "2026-08-10T08:07:16Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -53369,7 +53369,7 @@
     {"id":"MAL-2026-13480","name":"Malicious code in @prototypevip/baileys (npm)","ecosystem":"npm","package":"@prototypevip/baileys","versions":["0.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13480"},
     {"id":"MAL-2026-13485","name":"Malicious code in weight2loss (npm)","ecosystem":"npm","package":"weight2loss","versions":["1.0.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13485"},
     {"id":"MAL-2026-13492","name":"Malicious code in rdfxvela-build (npm)","ecosystem":"npm","package":"rdfxvela-build","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13492"},
-    {"id":"MAL-2026-13495","name":"Malicious code in blekit (npm)","ecosystem":"npm","package":"blekit","versions":["1.2.0","1.2.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13495"},
+    {"id":"MAL-2026-13495","name":"Malicious code in blekit (npm)","ecosystem":"npm","package":"blekit","versions":["0.1.0","0.2.0","0.3.0","0.3.1","0.3.2","1.0.0","1.1.0","1.2.0","1.2.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13495"},
     {"id":"MAL-2026-13498","name":"Malicious code in ded-pwa-ded-pwa-core (npm)","ecosystem":"npm","package":"ded-pwa-ded-pwa-core","versions":["35.6.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13498"},
     {"id":"MAL-2026-13500","name":"Malicious code in delivery-ci-dpat (npm)","ecosystem":"npm","package":"delivery-ci-dpat","versions":["35.1.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13500"},
     {"id":"MAL-2026-13501","name":"Malicious code in delivery-ci-jira-rnd (npm)","ecosystem":"npm","package":"delivery-ci-jira-rnd","versions":["35.5.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13501"},
@@ -53414,6 +53414,9 @@
     {"id":"MAL-2026-13646","name":"Malicious code in sme-rko-finance-front-operations-providers (npm)","ecosystem":"npm","package":"sme-rko-finance-front-operations-providers","versions":["35.8.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13646"},
     {"id":"MAL-2026-13659","name":"Malicious code in sme-rko-finance-front-payments-currency-payment-domain (npm)","ecosystem":"npm","package":"sme-rko-finance-front-payments-currency-payment-domain","versions":["35.8.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13659"},
     {"id":"MAL-2026-1366","name":"Malicious code in @kinggupong/baileys (npm)","ecosystem":"npm","package":"@kinggupong/baileys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1366"},
+    {"id":"MAL-2026-13670","name":"Malicious code in statist-browser-typed-client-eventea.projects.pwafamily (npm)","ecosystem":"npm","package":"statist-browser-typed-client-eventea.projects.pwafamily","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13670"},
+    {"id":"MAL-2026-13672","name":"Malicious code in statist-browser-typed-client-eventea.projects.pwainsurance (npm)","ecosystem":"npm","package":"statist-browser-typed-client-eventea.projects.pwainsurance","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13672"},
+    {"id":"MAL-2026-13679","name":"Malicious code in svelte-streak-kit (npm)","ecosystem":"npm","package":"svelte-streak-kit","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13679"},
     {"id":"MAL-2026-1383","name":"Malicious code in @immuta/pxl-components (npm)","ecosystem":"npm","package":"@immuta/pxl-components","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1383"},
     {"id":"MAL-2026-1387","name":"Malicious code in tahoe-tap (npm)","ecosystem":"npm","package":"tahoe-tap","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1387"},
     {"id":"MAL-2026-1388","name":"Malicious code in tourney-sdk-react (npm)","ecosystem":"npm","package":"tourney-sdk-react","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1388"},

@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-08T07:18:02Z",
+  "_generated_utc": "2026-08-10T08:07:16Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -52789,6 +52789,9 @@
     {"id":"MAL-2026-13652","name":"Malicious code in sme-rko-finance-front-operations-widget-models (npm)","ecosystem":"npm","package":"sme-rko-finance-front-operations-widget-models","versions":["35.8.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13652"},
     {"id":"MAL-2026-13661","name":"Malicious code in sme-rko-finance-front-payments-feed-adapter (npm)","ecosystem":"npm","package":"sme-rko-finance-front-payments-feed-adapter","versions":["35.8.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13661"},
     {"id":"MAL-2026-1367","name":"Malicious code in @kinggupong/libsignal-node (npm)","ecosystem":"npm","package":"@kinggupong/libsignal-node","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1367"},
+    {"id":"MAL-2026-13671","name":"Malicious code in statist-browser-typed-client-eventea.projects.pwahelp (npm)","ecosystem":"npm","package":"statist-browser-typed-client-eventea.projects.pwahelp","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13671"},
+    {"id":"MAL-2026-13673","name":"Malicious code in statist-browser-typed-client-eventea.projects.pwakasko (npm)","ecosystem":"npm","package":"statist-browser-typed-client-eventea.projects.pwakasko","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13673"},
+    {"id":"MAL-2026-13680","name":"Malicious code in test-noexist-xyz-99 (npm)","ecosystem":"npm","package":"test-noexist-xyz-99","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13680"},
     {"id":"MAL-2026-1370","name":"Malicious code in mezukabil (npm)","ecosystem":"npm","package":"mezukabil","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1370"},
     {"id":"MAL-2026-1373","name":"Malicious code in @sky-it-livedata-libraries/livedata-commons-client (npm)","ecosystem":"npm","package":"@sky-it-livedata-libraries/livedata-commons-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1373"},
     {"id":"MAL-2026-1375","name":"Malicious code in @adamallana0909/apple-research-test (npm)","ecosystem":"npm","package":"@adamallana0909/apple-research-test","versions":["99.9.30","99.9.46"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1375"},
