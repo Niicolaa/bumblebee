@@ -949,3 +949,55 @@ func TestBaselineHonorsEnvRelocatedToolchains(t *testing.T) {
 		}
 	}
 }
+
+// %APPDATA% and %LOCALAPPDATA% describe the scanning account. Honouring
+// them while --all-users iterates OTHER users' homes pointed every
+// per-user Windows root back at the agent's own profile, so a
+// Velociraptor client running as SYSTEM produced N copies of one empty
+// candidate set and exited with "found no default roots on this host"
+// while appearing to have scanned every user.
+func TestWindowsAppDataFollowsExpandedHome(t *testing.T) {
+	selfHome, err := os.UserHomeDir()
+	if err != nil {
+		t.Skip("no home dir")
+	}
+	t.Setenv("APPDATA", filepath.Join(selfHome, "AppData", "Roaming"))
+	t.Setenv("LOCALAPPDATA", filepath.Join(selfHome, "AppData", "Local"))
+
+	other := filepath.Join(t.TempDir(), "alice")
+	if got, want := windowsRoamingAppData(other), filepath.Join(other, "AppData", "Roaming"); got != want {
+		t.Errorf("roaming AppData for another user = %q, want %q", got, want)
+	}
+	if got, want := windowsLocalAppData(other), filepath.Join(other, "AppData", "Local"); got != want {
+		t.Errorf("local AppData for another user = %q, want %q", got, want)
+	}
+	// For the scanning account's own home the env var still wins, so a
+	// machine-configured non-default AppData location is honoured.
+	if got, want := windowsRoamingAppData(selfHome), filepath.Join(selfHome, "AppData", "Roaming"); got != want {
+		t.Errorf("roaming AppData for own home = %q, want %q", got, want)
+	}
+}
+
+// A host with no developer tooling is a clean result, not a crash, but
+// the operator still needs to be told which of the two situations they
+// are in.
+func TestNoDefaultRootsErrorExplainsAgentCase(t *testing.T) {
+	setHomeDir(t, t.TempDir())
+	// Clear the relocation overrides, otherwise a developer machine that
+	// has GOPATH set contributes a real root and there is no error.
+	for _, v := range []string{"GOMODCACHE", "GOPATH", "CARGO_HOME",
+		"NPM_CONFIG_PREFIX", "PNPM_HOME", "GEM_HOME", "COMPOSER_HOME", "PUB_CACHE"} {
+		t.Setenv(v, "")
+	}
+	// project has no machine-wide roots, so an empty home guarantees the
+	// zero-roots path on every platform.
+	_, _, err := resolveRoots(model.ProfileProject, nil, rootsOpts{})
+	if err == nil {
+		t.Fatal("empty home should yield no project roots")
+	}
+	for _, want := range []string{"--all-users", "SYSTEM", "--root"} {
+		if !strings.Contains(err.Error(), want) {
+			t.Errorf("error should mention %q; got: %v", want, err)
+		}
+	}
+}

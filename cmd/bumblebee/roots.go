@@ -117,7 +117,12 @@ func resolveRoots(profile string, explicit []string, opts rootsOpts) (roots []sc
 
 	if len(roots) == 0 {
 		return nil, nil, fmt.Errorf(
-			"profile=%s found no default roots on this host. Pass --root explicitly.", profile)
+			"profile=%s found no default roots on this host.\n"+
+				"None of the profile's candidate paths exist. On Windows an agent running as\n"+
+				"SYSTEM sees only its own service profile unless --all-users is passed, and on\n"+
+				"macOS the same applies to root. If --all-users is already set, the host may\n"+
+				"genuinely have no developer tooling installed.\n"+
+				"Pass --root explicitly to scan a specific location.", profile)
 	}
 	return roots, notes, nil
 }
@@ -535,20 +540,47 @@ func systemRoots() []scanner.Root {
 // to `<home>\AppData\Roaming` which matches the default Windows layout.
 // Callers should only invoke this on Windows.
 func windowsRoamingAppData(home string) string {
-	if v := strings.TrimSpace(os.Getenv("APPDATA")); v != "" {
-		return v
-	}
-	return filepath.Join(home, "AppData", "Roaming")
+	return appDataFor(home, "APPDATA", "Roaming")
 }
 
 // windowsLocalAppData returns the absolute path to %LOCALAPPDATA% (the
 // per-user Local AppData directory). Browser extension trees live here
 // on Windows. Callers should only invoke this on Windows.
 func windowsLocalAppData(home string) string {
-	if v := strings.TrimSpace(os.Getenv("LOCALAPPDATA")); v != "" {
-		return v
+	return appDataFor(home, "LOCALAPPDATA", "Local")
+}
+
+// appDataFor resolves a per-user AppData subdirectory for the given
+// home.
+//
+// The environment variable is only consulted when home is the scanning
+// account's own home. %APPDATA% and %LOCALAPPDATA% describe the process
+// owner, so honouring them while iterating another user's home under
+// --all-users pointed every per-user Windows root (MCP configs, global
+// npm, pnpm/Yarn/Volta, per-user Python, every Chromium extension tree)
+// back at the agent's own profile. On a Velociraptor client that
+// profile is SYSTEM's, which holds none of them — so the expansion
+// produced N copies of the same empty candidate set, everything was
+// filtered as absent, and baseline exited with "found no default roots
+// on this host" while appearing to have scanned every user.
+func appDataFor(home, envVar, sub string) string {
+	if v := strings.TrimSpace(os.Getenv(envVar)); v != "" {
+		if self, err := os.UserHomeDir(); err == nil && sameDir(self, home) {
+			return v
+		}
 	}
-	return filepath.Join(home, "AppData", "Local")
+	return filepath.Join(home, "AppData", sub)
+}
+
+// sameDir compares two directory paths for equality, case-insensitively
+// on Windows where the filesystem is.
+func sameDir(a, b string) bool {
+	a = filepath.Clean(a)
+	b = filepath.Clean(b)
+	if runtime.GOOS == "windows" {
+		return strings.EqualFold(a, b)
+	}
+	return a == b
 }
 
 func globExisting(pattern string) []string {
