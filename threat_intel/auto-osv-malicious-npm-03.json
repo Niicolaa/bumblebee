@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-11T07:39:59Z",
+  "_generated_utc": "2026-08-12T07:54:49Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -53116,6 +53116,13 @@
     {"id":"MAL-2026-13707","name":"Malicious code in polymarket-stake-mathss (npm)","ecosystem":"npm","package":"polymarket-stake-mathss","versions":["3.5.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13707"},
     {"id":"MAL-2026-1372","name":"Malicious code in @sky-it-livedata-libraries/livedata-commons (npm)","ecosystem":"npm","package":"@sky-it-livedata-libraries/livedata-commons","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1372"},
     {"id":"MAL-2026-13723","name":"Malicious code in godot-kit (npm)","ecosystem":"npm","package":"godot-kit","versions":["1.0.1786316795"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13723"},
+    {"id":"MAL-2026-13735","name":"Malicious code in @aerodrome-finance/slipstream (npm)","ecosystem":"npm","package":"@aerodrome-finance/slipstream","versions":["1.0.0","1.1.0","1.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13735"},
+    {"id":"MAL-2026-13739","name":"Malicious code in ethereum-vault-connector (npm)","ecosystem":"npm","package":"ethereum-vault-connector","versions":["1.0.0","1.1.0","1.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13739"},
+    {"id":"MAL-2026-13755","name":"Malicious code in ghazaly (npm)","ecosystem":"npm","package":"ghazaly","versions":["99.9.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13755"},
+    {"id":"MAL-2026-13764","name":"Malicious code in internallib_v164 (npm)","ecosystem":"npm","package":"internallib_v164","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13764"},
+    {"id":"MAL-2026-13768","name":"Malicious code in sui-gql-client (npm)","ecosystem":"npm","package":"sui-gql-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13768"},
+    {"id":"MAL-2026-13770","name":"Malicious code in @telekom-ods/react-ui-kit (npm)","ecosystem":"npm","package":"@telekom-ods/react-ui-kit","versions":["2.6.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13770"},
+    {"id":"MAL-2026-13773","name":"Malicious code in camelot-ammv2-periphery (npm)","ecosystem":"npm","package":"camelot-ammv2-periphery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13773"},
     {"id":"MAL-2026-1382","name":"Malicious code in @immuta/flag-providers-web (npm)","ecosystem":"npm","package":"@immuta/flag-providers-web","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1382"},
     {"id":"MAL-2026-1384","name":"Malicious code in @lux2/ssr-catalogue-sfcc (npm)","ecosystem":"npm","package":"@lux2/ssr-catalogue-sfcc","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1384"},
     {"id":"MAL-2026-1385","name":"Malicious code in conductor-managed-airflow-environment (npm)","ecosystem":"npm","package":"conductor-managed-airflow-environment","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1385"},
