@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-15T06:59:50Z",
+  "_generated_utc": "2026-08-16T07:02:09Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -52674,7 +52674,7 @@
     {"id":"MAL-2026-12326","name":"Malicious code in @offa/offa-uwk (npm)","ecosystem":"npm","package":"@offa/offa-uwk","versions":["999.0.0","999.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-12326"},
     {"id":"MAL-2026-12327","name":"Malicious code in @offa-uwk/offa-uwk (npm)","ecosystem":"npm","package":"@offa-uwk/offa-uwk","versions":["999.0.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-12327"},
     {"id":"MAL-2026-12328","name":"Malicious code in @rentwise/common (npm)","ecosystem":"npm","package":"@rentwise/common","versions":["1.0.36"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-12328"},
-    {"id":"MAL-2026-12331","name":"Malicious code in @wololasod/tiny-id (npm)","ecosystem":"npm","package":"@wololasod/tiny-id","versions":["0.1.0","0.1.1","0.1.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-12331"},
+    {"id":"MAL-2026-12331","name":"Malicious code in @wololasod/tiny-id (npm)","ecosystem":"npm","package":"@wololasod/tiny-id","versions":["0.1.0","0.1.1","0.1.2","0.1.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-12331"},
     {"id":"MAL-2026-12333","name":"Malicious code in @zahlen/checkout-react (npm)","ecosystem":"npm","package":"@zahlen/checkout-react","versions":["0.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-12333"},
     {"id":"MAL-2026-12336","name":"Malicious code in afisha-storybook-default (npm)","ecosystem":"npm","package":"afisha-storybook-default","versions":["12.1.1","9.7.10","9.7.11","9.7.12","9.7.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-12336"},
     {"id":"MAL-2026-12345","name":"Malicious code in calendar-streak-core (npm)","ecosystem":"npm","package":"calendar-streak-core","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-12345"},
@@ -53157,6 +53157,10 @@
     {"id":"MAL-2026-14049","name":"Malicious code in @mexc/shared-utils (npm)","ecosystem":"npm","package":"@mexc/shared-utils","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14049"},
     {"id":"MAL-2026-1405","name":"Malicious code in whatsapp-fastdesk-utils-drzak (npm)","ecosystem":"npm","package":"whatsapp-fastdesk-utils-drzak","versions":["99.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1405"},
     {"id":"MAL-2026-14051","name":"Malicious code in @velliajs/discord (npm)","ecosystem":"npm","package":"@velliajs/discord","versions":["1.0.3","1.0.4","1.0.5","1.0.6","1.0.7"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14051"},
+    {"id":"MAL-2026-14055","name":"Malicious code in harmony-app-toolkit (npm)","ecosystem":"npm","package":"harmony-app-toolkit","versions":["21.0.0","22.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14055"},
+    {"id":"MAL-2026-14056","name":"Malicious code in gunzip-js (npm)","ecosystem":"npm","package":"gunzip-js","versions":["99.9.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14056"},
+    {"id":"MAL-2026-14061","name":"Malicious code in hunterone-build-probe-9210 (npm)","ecosystem":"npm","package":"hunterone-build-probe-9210","versions":["1.0.0","1.0.1","1.0.2","1.0.3","1.0.4","1.0.5","1.0.6","1.0.7"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14061"},
+    {"id":"MAL-2026-14062","name":"Malicious code in tw-pkgprobe-7731 (npm)","ecosystem":"npm","package":"tw-pkgprobe-7731","versions":["1.0.0","1.0.1","1.0.3","1.0.4","1.0.5","1.0.6","1.0.7","1.1.0","1.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14062"},
     {"id":"MAL-2026-1415","name":"Malicious code in pulsard-utils (npm)","ecosystem":"npm","package":"pulsard-utils","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1415"},
     {"id":"MAL-2026-1417","name":"Malicious code in twitch.dashboard-v2.core (npm)","ecosystem":"npm","package":"twitch.dashboard-v2.core","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1417"},
     {"id":"MAL-2026-1421","name":"Malicious code in devlino (npm)","ecosystem":"npm","package":"devlino","versions":["1.0.1","1.0.2","1.0.3","1.0.6","1.0.8","1.0.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1421"},
