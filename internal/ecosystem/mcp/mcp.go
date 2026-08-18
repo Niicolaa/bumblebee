@@ -155,6 +155,9 @@ func (s *Scanner) ScanConfig(path string, base model.Record) error {
 	if err != nil {
 		return err
 	}
+	// These files are JSONC in practice: VS Code, Kiro and GitLab Duo all
+	// ship commented mcp.json templates. See jsonc.go.
+	data = stripJSONC(data)
 
 	// Try envelope { mcpServers: {...} } first, then { servers: {...} }, then
 	// flat object. Malformed JSON is surfaced as a warn diagnostic so the
@@ -223,6 +226,7 @@ func (s *Scanner) ScanClaudeConfig(path string, base model.Record) error {
 	if err != nil {
 		return err
 	}
+	data = stripJSONC(data)
 	var doc struct {
 		MCPServers map[string]serverEntry `json:"mcpServers"`
 		Projects   map[string]struct {

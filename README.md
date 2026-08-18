@@ -45,7 +45,7 @@ know what they are looking for.
 | Go modules | `go` | `go.sum`, `go.mod`, `go.work.sum`, `vendor/modules.txt` |
 | RubyGems | `rubygems` | `Gemfile.lock`, installed `*.gemspec` |
 | Composer | `packagist` | `composer.lock`, `vendor/composer/installed.json` |
-| MCP | `mcp` | JSON host configs: `mcp.json`, `.mcp.json`, `claude_desktop_config.json`, `mcp_config.json`, `mcp_settings.json`, `cline_mcp_settings.json`, plus `~/.gemini/settings.json` (Gemini CLI / Code Assist) and `~/.claude.json` (Claude Code user- and project-scoped `mcpServers`). Non-JSON configs (Codex `config.toml`, Continue YAML) are not parsed in v0.1. |
+| MCP | `mcp` | JSON host configs: `mcp.json`, `.mcp.json`, `claude_desktop_config.json`, `mcp_config.json`, `mcp_settings.json`, `cline_mcp_settings.json`, plus `~/.gemini/settings.json` (Gemini CLI / Code Assist) and `~/.claude.json` (Claude Code user- and project-scoped `mcpServers`). These are parsed as JSONC (comments and trailing commas accepted), because VS Code, Kiro and GitLab Duo all ship commented `mcp.json` templates. Non-JSON configs (Codex `config.toml`, Continue YAML) are not parsed in v0.1. |
 | Agent skills | `agent-skill` | `skills.sh` / `vercel-labs/skills` lock files: global `~/.agents/.skill-lock.json` (or `$XDG_STATE_HOME/skills/.skill-lock.json`) and project-local `skills-lock.json`. Loose `SKILL.md` directories without a lock file are not enumerated. |
 | Editor extensions | `editor-extension` | VS Code, Cursor, Windsurf, VSCodium manifests, including each editor's remote/SSH server tree |
 | Browser extensions | `browser-extension` | Chromium-family (`manifest.json`) and Firefox (`extensions.json`) per profile |

@@ -376,6 +376,24 @@ References:
 
 ## MCP server configs
 
+These files are parsed as **JSONC**, not strict JSON: `//` and `/* */`
+comments and trailing commas are accepted. That is not a nicety. VS Code
+and the editors that inherited its config format ship commented
+`mcp.json` templates by default, so strict `encoding/json` rejected
+`.vscode/mcp.json`, `.kiro/settings/mcp.json` and `.gitlab/duo/mcp.json`
+outright — and the MCP inventory came back empty on exactly the machines
+with the most MCP servers configured. Observed on a real Windows
+endpoint before the fix:
+
+    parse MCP config: invalid character '/' looking for beginning of
+    object key string
+
+Comment bytes are blanked rather than deleted, and newlines inside block
+comments are preserved, so byte offsets and line numbers in any parse
+error still point at the original file. String contents are never
+touched, which is the whole difficulty: these configs are full of URLs
+and a naive scan for `//` would corrupt every `https://` in the file.
+
 Files read (JSON only):
 
 - `mcp.json`, `.mcp.json`, `claude_desktop_config.json`, `mcp_config.json`,

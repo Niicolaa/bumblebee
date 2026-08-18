@@ -130,6 +130,15 @@ var DefaultExcludes = []string{
 	".npm/_cacache",
 	".pnpm-store",
 	".yarn/cache",
+	// The Windows equivalents of the three above. npm on Windows caches
+	// under %LOCALAPPDATA%\npm-cache rather than ~/.npm, so without these
+	// a Windows sweep walked the whole cache: wasted time, plus a stream
+	// of parse diagnostics from the zero-byte package.json placeholders
+	// that `npm exec` leaves under _npx.
+	"AppData/Local/npm-cache",
+	"AppData/Local/Yarn/Cache",
+	"AppData/Local/pnpm-store",
+	"AppData/Local/pnpm/store",
 	// .gradle, .ivy2 and .sbt hold build state and resolved-artifact
 	// caches with no per-package identity we can read cheaply, so they
 	// stay excluded. ~/.m2 is deliberately NOT in this list: its

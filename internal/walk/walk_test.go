@@ -5,6 +5,7 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
+	"strings"
 	"testing"
 )
 
@@ -177,5 +178,43 @@ func TestWalkVisitsSymlinkedFileRoot(t *testing.T) {
 	}
 	if len(seen) != 1 || seen[0] != root {
 		t.Errorf("expected symlinked file root %q to be visited; saw %v", root, seen)
+	}
+}
+
+// The Windows package-manager caches must be excluded the same way their
+// Unix counterparts are. Without this a Windows sweep walked
+// %LOCALAPPDATA%\npm-cache in full, which is both slow and noisy: `npm
+// exec` leaves zero-byte package.json placeholders under _npx that every
+// parser then reports on.
+func TestDefaultExcludesCoverWindowsPackageCaches(t *testing.T) {
+	root := t.TempDir()
+	cached := filepath.Join(root, "AppData", "Local", "npm-cache", "_npx", "abc", "node_modules", "left-pad")
+	kept := filepath.Join(root, "AppData", "Local", "Programs", "app", "node_modules", "left-pad")
+	for _, d := range []string{cached, kept} {
+		if err := os.MkdirAll(d, 0o755); err != nil {
+			t.Fatal(err)
+		}
+		if err := os.WriteFile(filepath.Join(d, "package.json"), []byte("{}"), 0o644); err != nil {
+			t.Fatal(err)
+		}
+	}
+
+	var seen []string
+	err := Walk(Options{Roots: []string{root}, Excludes: DefaultExcludes}, func(p string, d fs.DirEntry) error {
+		if !d.IsDir() && filepath.Base(p) == "package.json" {
+			seen = append(seen, p)
+		}
+		return nil
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, p := range seen {
+		if strings.Contains(filepath.ToSlash(p), "npm-cache") {
+			t.Errorf("walked into the npm cache: %s", p)
+		}
+	}
+	if len(seen) != 1 {
+		t.Errorf("want only the non-cache package.json, got %v", seen)
 	}
 }

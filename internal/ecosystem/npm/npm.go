@@ -6,6 +6,7 @@
 package npm
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -228,12 +229,31 @@ func (s *Scanner) ScanNodeModulesPackageJSON(path, projectPath string, base mode
 	if err != nil {
 		return err
 	}
+	// An empty or truncated package.json is not a scanner failure. npm's
+	// own caches are full of them: `npm exec`/npx leaves zero-byte
+	// placeholders under _npx, and a fleet sweep of a developer machine
+	// hits dozens. Reporting those at error level trains operators to
+	// ignore the error stream, which is where real problems appear.
+	if len(bytes.TrimSpace(data)) == 0 {
+		if s.Diag != nil {
+			s.Diag("debug", path, "empty package.json; skipped")
+		}
+		return nil
+	}
 	var pj packageJSON
 	if err := json.Unmarshal(data, &pj); err != nil {
-		return fmt.Errorf("parse %s: %w", path, err)
+		// Malformed but non-empty: worth surfacing, still not a scanner
+		// failure, so it is a warn rather than an error.
+		if s.Diag != nil {
+			s.Diag("warn", path, "parse package.json: "+err.Error())
+		}
+		return nil
 	}
 	if pj.Name == "" || pj.Version == "" {
-		return fmt.Errorf("incomplete package.json at %s", path)
+		if s.Diag != nil {
+			s.Diag("debug", path, "package.json has no name/version; skipped")
+		}
+		return nil
 	}
 	scripts := scriptKeys(pj.Scripts)
 	r := base
