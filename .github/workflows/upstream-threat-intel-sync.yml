@@ -1,0 +1,173 @@
+name: upstream-threat-intel-sync
+
+# Daily pull of the hand-curated exposure catalogs from upstream
+# (perplexityai/bumblebee) into this fork.
+#
+# Upstream adds a catalog per campaign, by PR, as researchers publish.
+# This fork's own threat-intel-sync workflow only regenerates the
+# `auto-*.json` catalogs from public feeds, so without this job the
+# hand-written ones silently drift behind upstream and a fleet scan
+# stops matching the newest campaigns.
+#
+# What this job does and does not touch:
+#
+#   * syncs   threat_intel/*.json that are NOT auto-*
+#   * ignores threat_intel/auto-*.json — this fork generates its own from
+#     the feeds, and overwriting them with upstream's would have the two
+#     jobs fighting over the same files every day
+#   * ignores threat_intel/README.md and NOTICES.md — this fork's README
+#     documents its own auto pipeline and is intentionally longer than
+#     upstream's; syncing it would clobber that
+#   * never deletes. A catalog added locally must survive, and an
+#     upstream retraction is surfaced in the job summary for a human to
+#     act on rather than silently removing detection coverage.
+
+on:
+  schedule:
+    # Daily at 05:23 UTC, deliberately ahead of this fork's own
+    # threat-intel-sync (06:17) so a newly synced upstream catalog is
+    # already in place when that job cuts the day's release.
+    - cron: "23 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  # Same group as this fork's threat-intel-sync. Both push to main and
+  # both write threat_intel/, so they must never run concurrently.
+  group: threat-intel-sync
+  cancel-in-progress: false
+
+env:
+  UPSTREAM_REPO: https://github.com/perplexityai/bumblebee.git
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          # Job commits to main.
+          persist-credentials: true
+
+      - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
+        with:
+          go-version: "1.25"
+          check-latest: true
+
+      - name: fetch upstream catalogs
+        id: fetch
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git remote add upstream "$UPSTREAM_REPO" 2>/dev/null || \
+            git remote set-url upstream "$UPSTREAM_REPO"
+          git fetch --no-tags --depth=1 upstream main
+
+          STAGED=$(mktemp -d)
+          echo "staged=${STAGED}" >> "$GITHUB_OUTPUT"
+
+          # Hand-curated catalogs only. auto-* belongs to this fork's own
+          # generator; README/NOTICES are fork-specific prose.
+          mapfile -t FILES < <(
+            git ls-tree -r --name-only upstream/main threat_intel/ \
+              | grep -E '^threat_intel/[^/]+\.json$' \
+              | grep -v '/auto-'
+          )
+
+          if [ "${#FILES[@]}" -eq 0 ]; then
+            echo "::error::Upstream returned no hand-curated catalogs. Refusing to continue."
+            exit 1
+          fi
+
+          for f in "${FILES[@]}"; do
+            git show "upstream/main:${f}" > "${STAGED}/$(basename "$f")"
+          done
+          echo "Fetched ${#FILES[@]} catalog(s) from upstream."
+
+          # Report catalogs upstream no longer ships. Not deleted here:
+          # removing detection coverage is a human decision.
+          for local in threat_intel/*.json; do
+            base=$(basename "$local")
+            case "$base" in auto-*) continue ;; esac
+            if [ ! -f "${STAGED}/${base}" ]; then
+              echo "note: ${base} exists here but not upstream (kept)."
+              echo "- \`${base}\` is no longer in upstream (kept locally)" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
+
+      - name: apply and validate
+        id: apply
+        shell: bash
+        env:
+          STAGED: ${{ steps.fetch.outputs.staged }}
+        run: |
+          set -euo pipefail
+
+          cp "${STAGED}"/*.json threat_intel/
+
+          if git diff --quiet -- threat_intel/; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Hand-curated catalogs already match upstream." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+          {
+            echo "### Upstream catalogs synced"
+            echo
+            git diff --stat -- threat_intel/ | tail -n +1
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # Validation runs against the merged working tree, so a catalog
+      # whose schema_version disagrees with the rest of the directory
+      # fails here rather than on an endpoint mid-incident.
+      - name: validate catalogs load
+        if: steps.apply.outputs.changed == 'true'
+        run: go test ./internal/exposure/... -run 'TestLoad|TestShippedCatalogsLoad' -count=1
+
+      - name: build and selftest
+        if: steps.apply.outputs.changed == 'true'
+        run: |
+          go build -buildvcs=false -o ./bumblebee ./cmd/bumblebee
+          ./bumblebee selftest
+
+      - name: commit to main
+        if: steps.apply.outputs.changed == 'true'
+        shell: bash
+        env:
+          STAGED: ${{ steps.fetch.outputs.staged }}
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Each attempt restarts from a pristine checkout of the newest
+          # main and re-applies only the files this job owns, so a push
+          # from the auto-generator mid-run is preserved rather than
+          # reverted, and a lost race never leaves a half-finished rebase.
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git checkout -f --detach origin/main
+            cp "${STAGED}"/*.json threat_intel/
+
+            git add threat_intel/
+            if git diff --cached --quiet; then
+              echo "Already current on main; nothing to push."
+              exit 0
+            fi
+            git commit -m "chore(threat-intel): sync hand-curated catalogs from upstream $(date -u +%Y-%m-%d)"
+
+            if git push origin HEAD:main; then
+              echo "Pushed to main on attempt ${attempt}."
+              exit 0
+            fi
+            echo "Push attempt ${attempt} lost the race; retrying in $((attempt * 5))s."
+            sleep $((attempt * 5))
+          done
+
+          echo "::error::Could not push after 5 attempts."
+          exit 1
