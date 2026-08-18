@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-08-17T07:18:37Z",
+  "_generated_utc": "2026-08-18T07:07:07Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10601,7 +10601,6 @@
     {"id":"MAL-2026-13490","name":"Malicious code in fast-hashes (PyPI)","ecosystem":"pypi","package":"fast-hashes","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13490"},
     {"id":"MAL-2026-1350","name":"Malicious code in falador (PyPI)","ecosystem":"pypi","package":"falador","versions":["99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1350"},
     {"id":"MAL-2026-1351","name":"Malicious code in faaladorcli (PyPI)","ecosystem":"pypi","package":"faaladorcli","versions":["99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1351"},
-    {"id":"MAL-2026-13606","name":"Malicious code in cdktn-provider-azurerm (PyPI)","ecosystem":"pypi","package":"cdktn-provider-azurerm","versions":["17.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13606"},
     {"id":"MAL-2026-13607","name":"Malicious code in speed-hashes (PyPI)","ecosystem":"pypi","package":"speed-hashes","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13607"},
     {"id":"MAL-2026-13619","name":"Malicious code in atlas-internal (PyPI)","ecosystem":"pypi","package":"atlas-internal","versions":["1.8.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13619"},
     {"id":"MAL-2026-13665","name":"Malicious code in riakcs (PyPI)","ecosystem":"pypi","package":"riakcs","versions":["0.0.1","0.5.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-13665"},
@@ -10630,6 +10629,7 @@
     {"id":"MAL-2026-1408","name":"Malicious code in nai (PyPI)","ecosystem":"pypi","package":"nai","versions":["1.4","1.5","1.6","1.7","1.8","1.9","2.0","2.1","2.2","2.3","2.4","2.5","2.8","2.9","3.0","3.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1408"},
     {"id":"MAL-2026-1409","name":"Malicious code in darkig (PyPI)","ecosystem":"pypi","package":"darkig","versions":["1.0","2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1409"},
     {"id":"MAL-2026-1410","name":"Malicious code in ighack (PyPI)","ecosystem":"pypi","package":"ighack","versions":["3.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1410"},
+    {"id":"MAL-2026-14100","name":"Malicious code in socks5901 (PyPI)","ecosystem":"pypi","package":"socks5901","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14100"},
     {"id":"MAL-2026-1411","name":"Malicious code in nfd (PyPI)","ecosystem":"pypi","package":"nfd","versions":["1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1411"},
     {"id":"MAL-2026-1412","name":"Malicious code in project47 (PyPI)","ecosystem":"pypi","package":"project47","versions":["1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1412"},
     {"id":"MAL-2026-1422","name":"Malicious code in fastapi-middleware-cors (PyPI)","ecosystem":"pypi","package":"fastapi-middleware-cors","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1422"},

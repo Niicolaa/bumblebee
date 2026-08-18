@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-17T07:18:33Z",
+  "_generated_utc": "2026-08-18T07:07:03Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -53210,6 +53210,12 @@
     {"id":"MAL-2026-14093","name":"Malicious code in rtms-manager-dev (npm)","ecosystem":"npm","package":"rtms-manager-dev","versions":["1.3.0","1.4.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14093"},
     {"id":"MAL-2026-14096","name":"Malicious code in svelte-goal-vim (npm)","ecosystem":"npm","package":"svelte-goal-vim","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14096"},
     {"id":"MAL-2026-14099","name":"Malicious code in zip-bundle (npm)","ecosystem":"npm","package":"zip-bundle","versions":["7.3.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14099"},
+    {"id":"MAL-2026-14103","name":"Malicious code in a.poltoradnev-package-a (npm)","ecosystem":"npm","package":"a.poltoradnev-package-a","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14103"},
+    {"id":"MAL-2026-14107","name":"Malicious code in club-sauce (npm)","ecosystem":"npm","package":"club-sauce","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14107"},
+    {"id":"MAL-2026-14109","name":"Malicious code in leb128x (npm)","ecosystem":"npm","package":"leb128x","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14109"},
+    {"id":"MAL-2026-14111","name":"Malicious code in sugarball-cli (npm)","ecosystem":"npm","package":"sugarball-cli","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14111"},
+    {"id":"MAL-2026-14112","name":"Malicious code in sui-gql-core (npm)","ecosystem":"npm","package":"sui-gql-core","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14112"},
+    {"id":"MAL-2026-14119","name":"Malicious code in bcc-design-icons (npm)","ecosystem":"npm","package":"bcc-design-icons","versions":["9999.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14119"},
     {"id":"MAL-2026-1416","name":"Malicious code in twitch-security (npm)","ecosystem":"npm","package":"twitch-security","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1416"},
     {"id":"MAL-2026-1420","name":"Malicious code in cw-isdk (npm)","ecosystem":"npm","package":"cw-isdk","versions":["1.0.0","20.0.0","22.0.0","25.0.0","26.0.0","31.0.0","32.0.0","33.0.0","34.0.0","37.0.0","38.0.0","39.0.0","40.0.7","40.0.8","40.0.9","40.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1420"},
     {"id":"MAL-2026-1423","name":"Malicious code in test_pkg_forppe (npm)","ecosystem":"npm","package":"test_pkg_forppe","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1423"},
