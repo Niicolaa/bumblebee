@@ -233,8 +233,8 @@ Files read:
 - `pylock.toml` (PEP 751) — `[[packages]]` tables, note the plural.
   `source_type: pypi-pylock-toml`.
 
-The three TOML formats are read with the restricted reader in
-[`internal/toml`](../internal/toml/toml.go) — see "TOML parsing" below.
+The three TOML formats are decoded with `pelletier/go-toml/v2` — see
+"TOML parsing" below.
 Lock entries are medium confidence: the version is exact, but a lockfile
 records resolution, not installation.
 
@@ -246,23 +246,40 @@ References:
 ## TOML parsing
 
 Cargo, poetry, uv, and PEP 751 lockfiles are TOML, and the Go standard
-library has no TOML support. Rather than take a dependency — the
-zero-dependency guarantee is a hard constraint — these are read with a
-restricted reader in [`internal/toml`](../internal/toml/toml.go) covering
-the subset lockfiles actually use: arrays of tables holding flat scalar
-and string-array values.
+library has no TOML support. These are decoded with
+[`pelletier/go-toml/v2`](https://github.com/pelletier/go-toml) (MIT), the
+project's only dependency. It has no transitive dependencies of its own.
 
-The failure behaviour matters more than the feature list. Structural
-damage (a malformed table header, an assignment with no `=`) is a hard
-error and the file produces **no records at all**, so a receiver never
-mistakes a truncated parse for a complete inventory. A value whose syntax
-is outside the subset — poetry's `files = [{file = ..., hash = ...}]`,
-for instance — is recorded as an explicitly unsupported value rather than
-dropped, so the `name` and `version` on the same table still parse while
-nothing is silently lost.
+This was originally a hand-rolled restricted reader, on the theory that a
+scanner running as root/SYSTEM fleet-wide should carry no supply chain of
+its own. That theory lost to measurement. Parsing every lockfile on one
+developer machine found **2 of 40 files rejected outright**, each for a
+construct the restricted reader did not model:
 
-Not supported: inline tables, multi-line basic strings, dotted keys in
-assignments, dates, floats.
+- `uv.lock` nests arrays inside arrays of inline tables
+  (`{ name = "pydantic", extra = ["email"] }`), and the reader terminated
+  the outer array at the inner `]`.
+- `Cargo.lock` v1's `[metadata]` table is built entirely from quoted keys
+  containing dots, which the reader rejected as dotted keys.
+
+Both failures dropped the **entire file**, which in an exposure scan
+reads as "this machine is clean" — the worst failure mode a scanner has.
+The bug class is *rejecting valid input*, which fuzzing cannot find
+without a reference implementation to compare against, and the reference
+implementation is exactly the dependency that was being avoided.
+
+Decoding is into per-ecosystem structs rather than a shared one, and only
+the fields actually used are declared. That matters for more than tidiness:
+`uv.lock` writes `source = { registry = "..." }` while `Cargo.lock` writes
+`source = "registry+https://..."`, so a single shared struct with a typed
+`Source` field would fail to decode one of them and drop the file. Fields
+that are not declared — poetry's `files = [...]`, Cargo's per-package
+checksums, uv's dependency graphs — are ignored rather than fought with.
+
+A genuinely malformed file is still a hard error producing no records, so
+a receiver never mistakes a truncated parse for a complete inventory.
+That does happen in the wild: the corpus above contained a `uv.lock` with
+corrupt bytes mid-key (`registrñ~y`), which both readers correctly reject.
 
 ## Go modules
 

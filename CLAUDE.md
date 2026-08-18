@@ -15,9 +15,13 @@ Module path: `github.com/perplexityai/bumblebee`. Go 1.25+.
 
 These are the project's defining properties. Do not break them.
 
-- **Zero non-stdlib dependencies.** `go.mod` has no `require` block and
-  must stay that way. Never add a third-party library; write it against
-  the stdlib or don't do it.
+- **Near-zero dependencies.** `go.mod` has exactly one require line,
+  `github.com/pelletier/go-toml/v2` (MIT, no transitive deps). Adding a
+  second is a significant decision, not a convenience: this binary runs
+  as root/SYSTEM fleet-wide, so its own supply chain is part of the
+  threat model. Prefer the stdlib. The TOML parser was added only after
+  a hand-rolled reader was shown to silently reject 2 of 40 real
+  lockfiles, which in a scanner reads as "this machine is clean".
 - **Read-only.** The scanner never executes a package manager
   (`npm ls`, `pip show`, `go list`, ...), never writes to scanned
   directories, and never makes network calls except the explicit
@@ -59,7 +63,6 @@ meaningful.
 | `cmd/threatintel-fetch` | Daily job building `threat_intel/auto-*.json` from public feeds (one file per source). |
 | `tools/osvcatalog` | Offline OSV-to-catalog generator. |
 | `internal/ecosystem/<name>` | One package per ecosystem parser (npm, pnpm, yarn, bun, pypi, pylock, gomod, rubygems, composer, nuget, cargo, maven, swiftpkg, dartelixir, mcp, skills, editorext, browserext, homebrew). |
-| `internal/toml` | Restricted TOML reader for lockfiles (Cargo, poetry, uv, PEP 751). Structural damage is fatal; unmodelled values are recorded as unsupported, never dropped. |
 | `internal/scanner/dispatch.go` | Typed `jobKind` constants and the walker→parser handler table. |
 | `internal/walk` | Filesystem walker, exclude handling, per-OS dir-identity helpers. |
 | `internal/scanner` | Orchestration: walk → parse → emit, plus finding generation. |

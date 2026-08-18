@@ -28,10 +28,10 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/pelletier/go-toml/v2"
 	"github.com/perplexityai/bumblebee/internal/ecosystem/safeopen"
 	"github.com/perplexityai/bumblebee/internal/model"
 	"github.com/perplexityai/bumblebee/internal/normalize"
-	"github.com/perplexityai/bumblebee/internal/toml"
 )
 
 const Ecosystem = model.EcosystemPyPI
@@ -223,38 +223,68 @@ func (s *Scanner) ScanPipfileLock(path string, base model.Record) error {
 
 // ScanPoetryLock parses a poetry.lock ([[package]] tables).
 func (s *Scanner) ScanPoetryLock(path string, base model.Record) error {
-	return s.scanTOMLLock(path, base, "package", "poetry", "pypi-poetry-lock")
+	return s.scanTOMLLock(path, base, tableNamePackage, "poetry", "pypi-poetry-lock")
 }
 
 // ScanUVLock parses a uv.lock ([[package]] tables).
 func (s *Scanner) ScanUVLock(path string, base model.Record) error {
-	return s.scanTOMLLock(path, base, "package", "uv", "pypi-uv-lock")
+	return s.scanTOMLLock(path, base, tableNamePackage, "uv", "pypi-uv-lock")
 }
 
 // ScanPylockTOML parses a PEP 751 pylock.toml ([[packages]] tables).
 func (s *Scanner) ScanPylockTOML(path string, base model.Record) error {
-	return s.scanTOMLLock(path, base, "packages", "pip", "pypi-pylock-toml")
+	return s.scanTOMLLock(path, base, tableNamePackages, "pip", "pypi-pylock-toml")
+}
+
+// The three TOML lock formats differ only in the table name holding the
+// entries: poetry.lock and uv.lock use [[package]], PEP 751's
+// pylock.toml uses [[packages]].
+const (
+	tableNamePackage = iota
+	tableNamePackages
+)
+
+// tomlLock covers both spellings. Only name and version are declared:
+// everything else in these files is deliberately left undecoded, which
+// is what keeps one ecosystem's quirks from breaking another. uv.lock
+// writes `source = { registry = "..." }` while Cargo.lock writes
+// `source = "registry+https://..."`, and a shared struct with a typed
+// Source field would fail to decode one of them and drop the whole file.
+type tomlLock struct {
+	Package  []tomlLockEntry `toml:"package"`
+	Packages []tomlLockEntry `toml:"packages"`
+}
+
+type tomlLockEntry struct {
+	Name    string `toml:"name"`
+	Version string `toml:"version"`
 }
 
 // scanTOMLLock is the shared body for the three TOML lock formats: they
-// differ only in the table name they use and the manager that wrote them.
-func (s *Scanner) scanTOMLLock(path string, base model.Record, tableName, manager, sourceType string) error {
+// differ only in the table they use and the manager that wrote them.
+func (s *Scanner) scanTOMLLock(path string, base model.Record, table int, manager, sourceType string) error {
 	data, err := s.readBounded(path)
 	if err != nil {
 		return err
 	}
-	doc, err := toml.Parse(data)
-	if err != nil {
-		// Structural damage: report the file as unparsed rather than
-		// emitting whatever happened to parse before the bad line.
+	var doc tomlLock
+	if err := toml.Unmarshal(data, &doc); err != nil {
+		// A genuinely malformed lockfile. Report it as unparsed rather
+		// than emitting whatever decoded before the bad line, so a
+		// receiver never reads a partial list as a complete inventory.
 		return fmt.Errorf("parse %s: %w", filepath.Base(path), err)
 	}
+	entries := doc.Package
+	if table == tableNamePackages {
+		entries = doc.Packages
+	}
+
 	projectPath := filepath.Dir(path)
 	seen := make(map[string]struct{})
 
-	for _, tbl := range doc.TablesNamed(tableName) {
-		name := tbl.String("name")
-		version := tbl.String("version")
+	for _, e := range entries {
+		name := strings.TrimSpace(e.Name)
+		version := strings.TrimSpace(e.Version)
 		if name == "" {
 			continue
 		}

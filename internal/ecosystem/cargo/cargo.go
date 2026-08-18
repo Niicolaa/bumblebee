@@ -21,9 +21,9 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/pelletier/go-toml/v2"
 	"github.com/perplexityai/bumblebee/internal/ecosystem/safeopen"
 	"github.com/perplexityai/bumblebee/internal/model"
-	"github.com/perplexityai/bumblebee/internal/toml"
 )
 
 const Ecosystem = model.EcosystemCargo
@@ -36,25 +36,42 @@ type Scanner struct {
 
 func IsCargoLock(base string) bool { return base == "Cargo.lock" }
 
-// ScanCargoLock parses a Cargo.lock. Both the v1 and v2/v3/v4 layouts
-// use the same [[package]] tables with name and version keys; the
-// versions differ only in how `dependencies` entries and checksums are
-// written, neither of which is emitted.
+// cargoLock is Cargo.lock's structure. Only the fields used are
+// declared; v1's [metadata] table (quoted keys containing dots) and the
+// per-package checksum/dependencies are left undecoded.
+//
+// Source is a plain string here. It is deliberately NOT shared with the
+// Python lock structs: uv.lock spells the same key as an inline table
+// (`source = { registry = "..." }`), and one struct serving both would
+// fail to decode one of them and drop the entire file.
+type cargoLock struct {
+	Package []cargoPackage `toml:"package"`
+}
+
+type cargoPackage struct {
+	Name    string `toml:"name"`
+	Version string `toml:"version"`
+	Source  string `toml:"source"`
+}
+
+// ScanCargoLock parses a Cargo.lock. The v1 and v2/v3/v4 layouts differ
+// only in how checksums and `dependencies` entries are written, neither
+// of which is emitted, so one decode covers all of them.
 func (s *Scanner) ScanCargoLock(path string, base model.Record) error {
 	data, err := s.readBounded(path)
 	if err != nil {
 		return err
 	}
-	doc, err := toml.Parse(data)
-	if err != nil {
+	var doc cargoLock
+	if err := toml.Unmarshal(data, &doc); err != nil {
 		return fmt.Errorf("parse Cargo.lock: %w", err)
 	}
 	projectPath := filepath.Dir(path)
 	seen := make(map[string]struct{})
 
-	for _, tbl := range doc.TablesNamed("package") {
-		name := tbl.String("name")
-		version := tbl.String("version")
+	for _, p := range doc.Package {
+		name := strings.TrimSpace(p.Name)
+		version := strings.TrimSpace(p.Version)
 		if name == "" {
 			continue
 		}
@@ -64,11 +81,11 @@ func (s *Scanner) ScanCargoLock(path string, base model.Record) error {
 		}
 		seen[key] = struct{}{}
 
-		// An entry with no `source` is a local path or workspace member,
-		// not a crates.io crate; it still exists at that version on disk,
-		// but it is not something a registry advisory can name.
+		// An entry with no `source` is a workspace member or path
+		// dependency, not a crates.io crate; it exists at that version on
+		// disk, but no registry advisory can name it.
 		confidence := "high"
-		if tbl.String("source") == "" {
+		if strings.TrimSpace(p.Source) == "" {
 			confidence = "medium"
 		}
 		if version == "" {

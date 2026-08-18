@@ -5,7 +5,15 @@ with tests.
 
 ## Local development
 
-Requires Go 1.25+. No non-stdlib runtime dependencies.
+Requires Go 1.25+. One runtime dependency, `pelletier/go-toml/v2`.
+
+New dependencies are close to never accepted. This binary runs as root or
+SYSTEM on every endpoint in a fleet, so its own supply chain is part of the
+threat model, and a small `go.mod` is what keeps that auditable. The TOML
+parser earned its place by evidence: a hand-rolled reader silently rejected
+2 of 40 real lockfiles, and in a scanner a rejected file reads as "this
+machine is clean". If you want to add one, bring that kind of evidence, and
+prefer libraries with no transitive dependencies.
 
 ```sh
 go build ./cmd/bumblebee

@@ -20,7 +20,7 @@ know what they are looking for.
 
 ## Scope
 
-- Single static binary, Go 1.25+, zero non-stdlib dependencies.
+- Single static binary, Go 1.25+, one dependency.
 - Three scan profiles (`baseline`, `project`, `deep`) for different
   populations and cadences.
 - Reads only the lockfiles, package-manager install metadata,
@@ -62,7 +62,9 @@ Per-ecosystem detail: [docs/inventory-sources.md](docs/inventory-sources.md).
 
 ## Install
 
-Requires Go 1.25+. Zero non-stdlib dependencies.
+Requires Go 1.25+. Exactly one dependency,
+[`pelletier/go-toml/v2`](https://github.com/pelletier/go-toml) (MIT), which
+has no transitive dependencies of its own.
 
 ```sh
 # Install the latest tagged release into $GOBIN.
