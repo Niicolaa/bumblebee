@@ -138,3 +138,58 @@ func TestParseStructuralErrors(t *testing.T) {
 		}
 	}
 }
+
+// Both cases below came from real lockfiles on real machines, and both
+// made Parse reject the ENTIRE file. In a scanner that is the worst
+// failure mode there is: every package in the file disappears and the
+// endpoint reports clean.
+
+// uv.lock nests an array inside an array of inline tables. The inner
+// "]" must not be mistaken for the end of the outer array.
+func TestParseUVLockNestedBrackets(t *testing.T) {
+	in := []byte(`[[package]]
+name = "mcp-server-odp"
+version = "0.1.0"
+dependencies = [
+    { name = "pydantic", extra = ["email"] },
+    { name = "httpx" },
+]
+
+[[package]]
+name = "httpx"
+version = "0.27.0"
+`)
+	doc, err := Parse(in)
+	if err != nil {
+		t.Fatalf("parse: %v", err)
+	}
+	if got := len(doc.TablesNamed("package")); got != 2 {
+		t.Fatalf("want 2 packages, got %d", got)
+	}
+	if doc.TablesNamed("package")[1].String("name") != "httpx" {
+		t.Error("second package lost")
+	}
+}
+
+// Cargo.lock v1 [metadata] uses quoted keys that contain dots. Only a
+// BARE key is forbidden from containing them.
+func TestParseCargoLockV1MetadataQuotedKeys(t *testing.T) {
+	in := []byte(`[[package]]
+name = "libc"
+version = "0.2.155"
+
+[metadata]
+"checksum rustc-std-workspace-core 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "1dcc"
+`)
+	doc, err := Parse(in)
+	if err != nil {
+		t.Fatalf("parse: %v", err)
+	}
+	if got := len(doc.TablesNamed("package")); got != 1 {
+		t.Fatalf("want 1 package, got %d", got)
+	}
+	meta := doc.TablesNamed("metadata")
+	if len(meta) != 1 || len(meta[0].Values) != 1 {
+		t.Fatalf("metadata table not parsed: %+v", meta)
+	}
+}

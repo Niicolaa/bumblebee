@@ -127,16 +127,35 @@ func Parse(data []byte) (*Document, error) {
 			continue
 		}
 
-		key, rest, ok := splitKeyValue(line)
+		key, rest, quoted, ok := splitKeyValue(line)
 		if !ok {
 			return nil, fmt.Errorf("line %d: not a key/value assignment: %q", lineNo, line)
 		}
-		if strings.Contains(key, ".") {
+		// Only BARE keys may not contain dots. A quoted key is a single
+		// literal key even when it contains them, and Cargo.lock v1 relies
+		// on that in its [metadata] table:
+		//
+		//   "checksum foo 1.0.1 (registry+https://...)" = "<sha256>"
+		//
+		// Rejecting those dropped every v1 Cargo.lock outright.
+		if !quoted && strings.Contains(key, ".") {
 			return nil, fmt.Errorf("line %d: dotted keys are not supported: %q", lineNo, key)
 		}
 
-		// A multi-line array continues until its closing bracket.
-		if strings.HasPrefix(rest, "[") && !strings.Contains(rest, "]") {
+		// A multi-line array continues until the bracket that opened it
+		// is closed. Depth has to be tracked rather than stopping at the
+		// first "]": uv.lock writes
+		//
+		//	dependencies = [
+		//	    { name = "pydantic", extra = ["email"] },
+		//	    { name = "httpx" },
+		//	]
+		//
+		// where the first entry closes an INNER bracket. Stopping there
+		// left the remaining entries to be parsed as top-level
+		// assignments, which failed on `{ name` and rejected the whole
+		// lockfile — silently dropping every package in it.
+		if depth := bracketDepth(rest); depth > 0 {
 			var b strings.Builder
 			b.WriteString(rest)
 			closed := false
@@ -145,7 +164,8 @@ func Parse(data []byte) (*Document, error) {
 				chunk := strings.TrimSpace(stripComment(sc.Text()))
 				b.WriteString(" ")
 				b.WriteString(chunk)
-				if strings.Contains(chunk, "]") {
+				depth += bracketDepth(chunk)
+				if depth <= 0 {
 					closed = true
 					break
 				}
@@ -186,20 +206,20 @@ func parseHeader(line string) (string, error) {
 	}
 }
 
-func splitKeyValue(line string) (key, rest string, ok bool) {
+func splitKeyValue(line string) (key, rest string, quoted, ok bool) {
 	i := indexUnquoted(line, '=')
 	if i < 0 {
-		return "", "", false
+		return "", "", false, false
 	}
 	key = strings.TrimSpace(line[:i])
 	rest = strings.TrimSpace(line[i+1:])
 	if key == "" || rest == "" {
-		return "", "", false
+		return "", "", false, false
 	}
 	if unq, wasQuoted := unquote(key); wasQuoted {
-		key = unq
+		return unq, rest, true, true
 	}
-	return key, rest, true
+	return key, rest, false, true
 }
 
 func parseValue(s string) (Value, error) {
@@ -321,6 +341,32 @@ func indexUnquoted(s string, c byte) int {
 		}
 	}
 	return -1
+}
+
+// bracketDepth returns the net change in [ ] nesting across s, ignoring
+// brackets inside quoted strings. A positive result means the line left
+// an array open.
+func bracketDepth(s string) int {
+	depth := 0
+	var quote byte
+	for i := 0; i < len(s); i++ {
+		ch := s[i]
+		switch {
+		case quote == '"' && ch == '\\':
+			i++
+		case quote != 0:
+			if ch == quote {
+				quote = 0
+			}
+		case ch == '"' || ch == '\'':
+			quote = ch
+		case ch == '[':
+			depth++
+		case ch == ']':
+			depth--
+		}
+	}
+	return depth
 }
 
 // stripComment removes a trailing # comment that is not inside a string.
