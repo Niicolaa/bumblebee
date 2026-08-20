@@ -71,7 +71,7 @@ has no transitive dependencies of its own.
 go install github.com/perplexityai/bumblebee/cmd/bumblebee@latest
 
 # Or pin a specific tag.
-go install github.com/perplexityai/bumblebee/cmd/bumblebee@v0.1.4
+go install github.com/perplexityai/bumblebee/cmd/bumblebee@v0.1.5
 ```
 
 To build from a checkout:
@@ -84,7 +84,7 @@ go test ./...
 Stamp an explicit version at build time:
 
 ```sh
-go build -ldflags "-X main.Version=v0.1.4" -o bumblebee ./cmd/bumblebee
+go build -ldflags "-X main.Version=v0.1.5" -o bumblebee ./cmd/bumblebee
 ```
 
 `bumblebee version` prints the version plus the VCS revision, build
