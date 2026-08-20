@@ -537,10 +537,23 @@ func TestResolveRootsBaselineAllUsersExpansion(t *testing.T) {
 			t.Fatal(err)
 		}
 	}
+	// The MCP config root is platform-shaped: macOS keeps it under
+	// Library/Application Support, Windows under %APPDATA%. Asserting the
+	// macOS path on Windows fails for the wrong reason — the expansion
+	// itself works, it just resolves a different per-user subdirectory.
+	perUserSubdirs := [][]string{
+		{".nvm", "versions"},
+		{".vscode", "extensions"},
+	}
+	if runtime.GOOS == "windows" {
+		perUserSubdirs = append(perUserSubdirs, []string{"AppData", "Roaming", "Claude"})
+	} else {
+		perUserSubdirs = append(perUserSubdirs, []string{"Library", "Application Support", "Claude"})
+	}
 	for _, h := range realHomes {
-		mustMkdir(filepath.Join(h, ".nvm", "versions"))
-		mustMkdir(filepath.Join(h, ".vscode", "extensions"))
-		mustMkdir(filepath.Join(h, "Library", "Application Support", "Claude"))
+		for _, sub := range perUserSubdirs {
+			mustMkdir(filepath.Join(append([]string{h}, sub...)...))
+		}
 	}
 
 	roots, _, err := resolveRoots(model.ProfileBaseline, nil, rootsOpts{AllUsers: true})
@@ -555,13 +568,10 @@ func TestResolveRootsBaselineAllUsersExpansion(t *testing.T) {
 
 	// Each created per-user dir must be present.
 	for _, h := range realHomes {
-		for _, sub := range []string{
-			filepath.Join(h, ".nvm", "versions"),
-			filepath.Join(h, ".vscode", "extensions"),
-			filepath.Join(h, "Library", "Application Support", "Claude"),
-		} {
-			if _, ok := gotPaths[sub]; !ok {
-				t.Errorf("expected per-user root %q to be expanded, got=%v", sub, gotPaths)
+		for _, sub := range perUserSubdirs {
+			p := filepath.Join(append([]string{h}, sub...)...)
+			if _, ok := gotPaths[p]; !ok {
+				t.Errorf("expected per-user root %q to be expanded, got=%v", p, gotPaths)
 			}
 		}
 	}
