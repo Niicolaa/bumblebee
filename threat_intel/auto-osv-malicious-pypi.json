@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-08-19T07:08:02Z",
+  "_generated_utc": "2026-08-20T07:09:05Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10638,6 +10638,9 @@
     {"id":"MAL-2026-14133","name":"Malicious code in reqcrypt (PyPI)","ecosystem":"pypi","package":"reqcrypt","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14133"},
     {"id":"MAL-2026-14158","name":"Malicious code in deepface-weight (PyPI)","ecosystem":"pypi","package":"deepface-weight","versions":["0.1.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14158"},
     {"id":"MAL-2026-1422","name":"Malicious code in fastapi-middleware-cors (PyPI)","ecosystem":"pypi","package":"fastapi-middleware-cors","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1422"},
+    {"id":"MAL-2026-14274","name":"Malicious code in reqcrypt-dev (PyPI)","ecosystem":"pypi","package":"reqcrypt-dev","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14274"},
+    {"id":"MAL-2026-14306","name":"Malicious code in rc4-secure (PyPI)","ecosystem":"pypi","package":"rc4-secure","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14306"},
+    {"id":"MAL-2026-14308","name":"Malicious code in libasync (PyPI)","ecosystem":"pypi","package":"libasync","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14308"},
     {"id":"MAL-2026-1431","name":"Malicious code in ariadne-federation (PyPI)","ecosystem":"pypi","package":"ariadne-federation","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1431"},
     {"id":"MAL-2026-1432","name":"Malicious code in dgl-cu117 (PyPI)","ecosystem":"pypi","package":"dgl-cu117","versions":["14.6.0","16.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1432"},
     {"id":"MAL-2026-1433","name":"Malicious code in kvstore-pb2-grpc (PyPI)","ecosystem":"pypi","package":"kvstore-pb2-grpc","versions":["16.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1433"},
