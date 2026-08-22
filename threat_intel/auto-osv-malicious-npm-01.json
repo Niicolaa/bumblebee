@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-21T07:09:55Z",
+  "_generated_utc": "2026-08-22T07:01:55Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -52974,6 +52974,8 @@
     {"id":"MAL-2026-14326","name":"Malicious code in create-react-app-ux (npm)","ecosystem":"npm","package":"create-react-app-ux","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14326"},
     {"id":"MAL-2026-14343","name":"Malicious code in chai-as-soul (npm)","ecosystem":"npm","package":"chai-as-soul","versions":["2.3.5","2.3.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14343"},
     {"id":"MAL-2026-14347","name":"Malicious code in mcq-session (npm)","ecosystem":"npm","package":"mcq-session","versions":["1.0.3","1.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14347"},
+    {"id":"MAL-2026-14354","name":"Malicious code in kelly-sizing (npm)","ecosystem":"npm","package":"kelly-sizing","versions":["0.1.0","0.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14354"},
+    {"id":"MAL-2026-14357","name":"Malicious code in @postman-cse/okta-aio-linux-arm64 (npm)","ecosystem":"npm","package":"@postman-cse/okta-aio-linux-arm64","versions":["0.10.0","0.10.1","0.10.2","0.10.3","0.10.4","0.10.5","0.10.6","0.10.7","0.10.8","0.10.9","0.11.0","0.11.1","0.11.2","0.11.3","0.11.4","0.11.5","0.11.6","0.8.10","0.8.11","0.9.0","0.9.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14357"},
     {"id":"MAL-2026-1439","name":"Malicious code in @omhc/libsignal-node (npm)","ecosystem":"npm","package":"@omhc/libsignal-node","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1439"},
     {"id":"MAL-2026-1440","name":"Malicious code in @vtim/xss-poc (npm)","ecosystem":"npm","package":"@vtim/xss-poc","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1440"},
     {"id":"MAL-2026-1441","name":"Malicious code in big-numben (npm)","ecosystem":"npm","package":"big-numben","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1441"},

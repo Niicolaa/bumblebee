@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-21T07:09:55Z",
+  "_generated_utc": "2026-08-22T07:01:55Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -53279,6 +53279,10 @@
     {"id":"MAL-2026-14331","name":"Malicious code in exam-kit (npm)","ecosystem":"npm","package":"exam-kit","versions":["1.0.0","1.0.1","1.0.2","1.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14331"},
     {"id":"MAL-2026-14345","name":"Malicious code in express-session-handler (npm)","ecosystem":"npm","package":"express-session-handler","versions":["2.3.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14345"},
     {"id":"MAL-2026-14346","name":"Malicious code in @next-fonts/font (npm)","ecosystem":"npm","package":"@next-fonts/font","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14346"},
+    {"id":"MAL-2026-14352","name":"Malicious code in tailwind-animate-css-plugin (npm)","ecosystem":"npm","package":"tailwind-animate-css-plugin","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14352"},
+    {"id":"MAL-2026-14353","name":"Malicious code in @gfe/lx-watcher (npm)","ecosystem":"npm","package":"@gfe/lx-watcher","versions":["1.5.3","1.5.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14353"},
+    {"id":"MAL-2026-14355","name":"Malicious code in fuel-react (npm)","ecosystem":"npm","package":"fuel-react","versions":["91.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14355"},
+    {"id":"MAL-2026-14356","name":"Malicious code in lumen-pages-community (npm)","ecosystem":"npm","package":"lumen-pages-community","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14356"},
     {"id":"MAL-2026-1443","name":"Malicious code in es-lint-builder (npm)","ecosystem":"npm","package":"es-lint-builder","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1443"},
     {"id":"MAL-2026-1444","name":"Malicious code in graphql-request-dom (npm)","ecosystem":"npm","package":"graphql-request-dom","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1444"},
     {"id":"MAL-2026-1446","name":"Malicious code in omhcsilence-bails (npm)","ecosystem":"npm","package":"omhcsilence-bails","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1446"},
