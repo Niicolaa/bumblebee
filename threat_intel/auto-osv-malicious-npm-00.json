@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-21T07:09:55Z",
+  "_generated_utc": "2026-08-23T07:04:09Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -53220,6 +53220,11 @@
     {"id":"MAL-2026-14315","name":"Malicious code in @httttt/mcp-demo (npm)","ecosystem":"npm","package":"@httttt/mcp-demo","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14315"},
     {"id":"MAL-2026-14320","name":"Malicious code in test-flow-entire6 (npm)","ecosystem":"npm","package":"test-flow-entire6","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14320"},
     {"id":"MAL-2026-14344","name":"Malicious code in @js-lib-team/env-parser (npm)","ecosystem":"npm","package":"@js-lib-team/env-parser","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14344"},
+    {"id":"MAL-2026-14360","name":"Malicious code in stillm4ddpocs-demo-widget (npm)","ecosystem":"npm","package":"stillm4ddpocs-demo-widget","versions":["999.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14360"},
+    {"id":"MAL-2026-14361","name":"Malicious code in stillm4ddpocs-demo-gadget (npm)","ecosystem":"npm","package":"stillm4ddpocs-demo-gadget","versions":["999.9.10","999.9.12","999.9.20"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14361"},
+    {"id":"MAL-2026-14366","name":"Malicious code in 8-fetchsight-web (npm)","ecosystem":"npm","package":"8-fetchsight-web","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14366"},
+    {"id":"MAL-2026-14367","name":"Malicious code in @syncraft-labs/core (npm)","ecosystem":"npm","package":"@syncraft-labs/core","versions":["0.4.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14367"},
+    {"id":"MAL-2026-14379","name":"Malicious code in totp-utils (npm)","ecosystem":"npm","package":"totp-utils","versions":["1.4.2","1.4.3","1.4.4","1.4.5","1.4.6","1.4.7","1.4.8","1.4.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14379"},
     {"id":"MAL-2026-144","name":"Malicious code in scrollbar-stylecss (npm)","ecosystem":"npm","package":"scrollbar-stylecss","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-144"},
     {"id":"MAL-2026-1450","name":"Malicious code in @myisrfn/baileys-mod (npm)","ecosystem":"npm","package":"@myisrfn/baileys-mod","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1450"},
     {"id":"MAL-2026-1455","name":"Malicious code in native_dep (npm)","ecosystem":"npm","package":"native_dep","versions":["2.0.1","2.0.2","99.10.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1455"},
