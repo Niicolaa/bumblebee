@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-23T07:04:09Z",
+  "_generated_utc": "2026-08-24T07:31:00Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -53605,6 +53605,11 @@
     {"id":"MAL-2026-14371","name":"Malicious code in chai-as-testkit (npm)","ecosystem":"npm","package":"chai-as-testkit","versions":["2.3.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14371"},
     {"id":"MAL-2026-14373","name":"Malicious code in hatdhat-testkit (npm)","ecosystem":"npm","package":"hatdhat-testkit","versions":["3.2.14"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14373"},
     {"id":"MAL-2026-14374","name":"Malicious code in rust-testing-utils (npm)","ecosystem":"npm","package":"rust-testing-utils","versions":["2.3.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14374"},
+    {"id":"MAL-2026-14380","name":"Malicious code in fund-list-filter (npm)","ecosystem":"npm","package":"fund-list-filter","versions":["999.9.12"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14380"},
+    {"id":"MAL-2026-14387","name":"Malicious code in @opap/player-kyc-widget (npm)","ecosystem":"npm","package":"@opap/player-kyc-widget","versions":["3.999.999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14387"},
+    {"id":"MAL-2026-14392","name":"Malicious code in message-compiler (npm)","ecosystem":"npm","package":"message-compiler","versions":["9.2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14392"},
+    {"id":"MAL-2026-14396","name":"Malicious code in sm-cart (npm)","ecosystem":"npm","package":"sm-cart","versions":["99.0.0","99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14396"},
+    {"id":"MAL-2026-14399","name":"Malicious code in sm-payment (npm)","ecosystem":"npm","package":"sm-payment","versions":["99.0.0","99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14399"},
     {"id":"MAL-2026-1442","name":"Malicious code in bignumber-tool.js (npm)","ecosystem":"npm","package":"bignumber-tool.js","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1442"},
     {"id":"MAL-2026-1447","name":"Malicious code in testpoc01 (npm)","ecosystem":"npm","package":"testpoc01","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1447"},
     {"id":"MAL-2026-1451","name":"Malicious code in @sheniraid/baileys (npm)","ecosystem":"npm","package":"@sheniraid/baileys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1451"},

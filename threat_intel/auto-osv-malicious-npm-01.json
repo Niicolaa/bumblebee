@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-23T07:04:09Z",
+  "_generated_utc": "2026-08-24T07:31:00Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -52984,6 +52984,8 @@
     {"id":"MAL-2026-14377","name":"Malicious code in stillm4ddpocs-rtest-alpha (npm)","ecosystem":"npm","package":"stillm4ddpocs-rtest-alpha","versions":["999.9.10","999.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14377"},
     {"id":"MAL-2026-14378","name":"Malicious code in stillm4ddpocs-rtest-bravo (npm)","ecosystem":"npm","package":"stillm4ddpocs-rtest-bravo","versions":["999.9.10","999.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14378"},
     {"id":"MAL-2026-1439","name":"Malicious code in @omhc/libsignal-node (npm)","ecosystem":"npm","package":"@omhc/libsignal-node","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1439"},
+    {"id":"MAL-2026-14390","name":"Malicious code in amundi-compare (npm)","ecosystem":"npm","package":"amundi-compare","versions":["999.9.12"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14390"},
+    {"id":"MAL-2026-14391","name":"Malicious code in fund-calculator (npm)","ecosystem":"npm","package":"fund-calculator","versions":["999.9.12"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14391"},
     {"id":"MAL-2026-1440","name":"Malicious code in @vtim/xss-poc (npm)","ecosystem":"npm","package":"@vtim/xss-poc","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1440"},
     {"id":"MAL-2026-1441","name":"Malicious code in big-numben (npm)","ecosystem":"npm","package":"big-numben","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1441"},
     {"id":"MAL-2026-1445","name":"Malicious code in nest-moralis (npm)","ecosystem":"npm","package":"nest-moralis","versions":["2.27.4","2.27.6","2.27.7","2.27.8"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1445"},
@@ -54066,7 +54068,7 @@
     {"id":"MAL-2026-6156","name":"Malicious code in documents-widgets (npm)","ecosystem":"npm","package":"documents-widgets","versions":["1.0.0","2.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-6156"},
     {"id":"MAL-2026-6175","name":"Malicious code in request-performance (npm)","ecosystem":"npm","package":"request-performance","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-6175"},
     {"id":"MAL-2026-6181","name":"Malicious code in virtualization-compression-collapse (npm)","ecosystem":"npm","package":"virtualization-compression-collapse","versions":["1.0.0","2.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-6181"},
-    {"id":"MAL-2026-6185","name":"Malicious code in conversa-sdk (npm)","ecosystem":"npm","package":"conversa-sdk","versions":["1.0.9","2.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-6185"},
+    {"id":"MAL-2026-6185","name":"Malicious code in conversa-sdk (npm)","ecosystem":"npm","package":"conversa-sdk","versions":["1.0.0","1.0.4","1.0.5","1.0.6","1.0.8","1.0.9","2.0.0","2.0.2","2.0.3","2.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-6185"},
     {"id":"MAL-2026-6188","name":"Malicious code in eslint-helper-1 (npm)","ecosystem":"npm","package":"eslint-helper-1","versions":["5.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-6188"},
     {"id":"MAL-2026-6189","name":"Malicious code in eyee (npm)","ecosystem":"npm","package":"eyee","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-6189"},
     {"id":"MAL-2026-6193","name":"Malicious code in ordered-btree (npm)","ecosystem":"npm","package":"ordered-btree","versions":["3.2.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-6193"},

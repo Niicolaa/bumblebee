@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-23T07:04:09Z",
+  "_generated_utc": "2026-08-24T07:31:00Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -53287,6 +53287,13 @@
     {"id":"MAL-2026-14364","name":"Malicious code in 3-buildsight-web (npm)","ecosystem":"npm","package":"3-buildsight-web","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14364"},
     {"id":"MAL-2026-14370","name":"Malicious code in @usaa-grp-personal-profile/personal-profile-common (npm)","ecosystem":"npm","package":"@usaa-grp-personal-profile/personal-profile-common","versions":["999.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14370"},
     {"id":"MAL-2026-14376","name":"Malicious code in stillm4ddpocs-demo-sprocket (npm)","ecosystem":"npm","package":"stillm4ddpocs-demo-sprocket","versions":["999.9.12"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14376"},
+    {"id":"MAL-2026-14381","name":"Malicious code in fund-portfolio (npm)","ecosystem":"npm","package":"fund-portfolio","versions":["999.9.12"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14381"},
+    {"id":"MAL-2026-14382","name":"Malicious code in @sdgdfgdfhhhfd/chainvista (npm)","ecosystem":"npm","package":"@sdgdfgdfhhhfd/chainvista","versions":["1.0.0","2.0.0","2.0.1","2.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14382"},
+    {"id":"MAL-2026-14383","name":"Malicious code in @sdgdfgdfhhhfd/multiviewr (npm)","ecosystem":"npm","package":"@sdgdfgdfhhhfd/multiviewr","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14383"},
+    {"id":"MAL-2026-14385","name":"Malicious code in hydration-dim-kit (npm)","ecosystem":"npm","package":"hydration-dim-kit","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14385"},
+    {"id":"MAL-2026-14393","name":"Malicious code in sm-admin (npm)","ecosystem":"npm","package":"sm-admin","versions":["99.0.0","99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14393"},
+    {"id":"MAL-2026-14394","name":"Malicious code in sm-apikey-model (npm)","ecosystem":"npm","package":"sm-apikey-model","versions":["99.0.0","99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14394"},
+    {"id":"MAL-2026-14398","name":"Malicious code in sm-oauth (npm)","ecosystem":"npm","package":"sm-oauth","versions":["99.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14398"},
     {"id":"MAL-2026-1443","name":"Malicious code in es-lint-builder (npm)","ecosystem":"npm","package":"es-lint-builder","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1443"},
     {"id":"MAL-2026-1444","name":"Malicious code in graphql-request-dom (npm)","ecosystem":"npm","package":"graphql-request-dom","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1444"},
     {"id":"MAL-2026-1446","name":"Malicious code in omhcsilence-bails (npm)","ecosystem":"npm","package":"omhcsilence-bails","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1446"},

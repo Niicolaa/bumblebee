@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-08-23T07:04:12Z",
+  "_generated_utc": "2026-08-24T07:31:04Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10654,6 +10654,9 @@
     {"id":"MAL-2026-1436","name":"Malicious code in do-not-install-this-package-004 (PyPI)","ecosystem":"pypi","package":"do-not-install-this-package-004","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1436"},
     {"id":"MAL-2026-1437","name":"Malicious code in flowpeek (PyPI)","ecosystem":"pypi","package":"flowpeek","versions":["0.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1437"},
     {"id":"MAL-2026-1438","name":"Malicious code in pymnemonic (PyPI)","ecosystem":"pypi","package":"pymnemonic","versions":["1.1.2","1.1.3","1.2.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1438"},
+    {"id":"MAL-2026-14384","name":"Malicious code in mlflow-otel-instrumentor (PyPI)","ecosystem":"pypi","package":"mlflow-otel-instrumentor","versions":["1.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14384"},
+    {"id":"MAL-2026-14388","name":"Malicious code in cryptgraphy (PyPI)","ecosystem":"pypi","package":"cryptgraphy","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14388"},
+    {"id":"MAL-2026-14389","name":"Malicious code in envprovision (PyPI)","ecosystem":"pypi","package":"envprovision","versions":["1.2.0","1.3.0","1.4.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14389"},
     {"id":"MAL-2026-1453","name":"Malicious code in hxq-misc-utils-0379 (PyPI)","ecosystem":"pypi","package":"hxq-misc-utils-0379","versions":["2026.310.1","2026.313.1","2026.314.1","2026.315.1","2026.315.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1453"},
     {"id":"MAL-2026-1479","name":"Malicious code in color-list (PyPI)","ecosystem":"pypi","package":"color-list","versions":["1.0.1","1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1479"},
     {"id":"MAL-2026-1480","name":"Malicious code in pretty-tabulate (PyPI)","ecosystem":"pypi","package":"pretty-tabulate","versions":["2.37.1","2.37.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1480"},
