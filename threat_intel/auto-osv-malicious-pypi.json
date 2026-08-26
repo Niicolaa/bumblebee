@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-08-25T07:10:45Z",
+  "_generated_utc": "2026-08-26T07:10:58Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10659,6 +10659,11 @@
     {"id":"MAL-2026-14389","name":"Malicious code in envprovision (PyPI)","ecosystem":"pypi","package":"envprovision","versions":["1.2.0","1.3.0","1.4.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14389"},
     {"id":"MAL-2026-14401","name":"Malicious code in multyproccess (PyPI)","ecosystem":"pypi","package":"multyproccess","versions":["2.32.3","2.32.4","2.32.5","2.32.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14401"},
     {"id":"MAL-2026-14444","name":"Malicious code in msrcpoc (PyPI)","ecosystem":"pypi","package":"msrcpoc","versions":["99.1.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14444"},
+    {"id":"MAL-2026-14488","name":"Malicious code in python-walletlibr-v (PyPI)","ecosystem":"pypi","package":"python-walletlibr-v","versions":["0.7.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14488"},
+    {"id":"MAL-2026-14516","name":"Malicious code in minecraft-ytreceiver (PyPI)","ecosystem":"pypi","package":"minecraft-ytreceiver","versions":["0.1.0","0.2.0","0.3.0","0.4.0","0.5.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14516"},
+    {"id":"MAL-2026-14522","name":"Malicious code in syntaxerror-package-12345 (PyPI)","ecosystem":"pypi","package":"syntaxerror-package-12345","versions":["0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14522"},
+    {"id":"MAL-2026-14523","name":"Malicious code in rce-test (PyPI)","ecosystem":"pypi","package":"rce-test","versions":["0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14523"},
+    {"id":"MAL-2026-14524","name":"Malicious code in bigquery-agent-analytics-tracing (PyPI)","ecosystem":"pypi","package":"bigquery-agent-analytics-tracing","versions":["0.0.0","0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14524"},
     {"id":"MAL-2026-1453","name":"Malicious code in hxq-misc-utils-0379 (PyPI)","ecosystem":"pypi","package":"hxq-misc-utils-0379","versions":["2026.310.1","2026.313.1","2026.314.1","2026.315.1","2026.315.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1453"},
     {"id":"MAL-2026-1479","name":"Malicious code in color-list (PyPI)","ecosystem":"pypi","package":"color-list","versions":["1.0.1","1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1479"},
     {"id":"MAL-2026-1480","name":"Malicious code in pretty-tabulate (PyPI)","ecosystem":"pypi","package":"pretty-tabulate","versions":["2.37.1","2.37.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1480"},
