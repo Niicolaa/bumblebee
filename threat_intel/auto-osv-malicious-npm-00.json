@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-26T07:10:54Z",
+  "_generated_utc": "2026-08-27T17:40:53Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -53261,7 +53261,12 @@
     {"id":"MAL-2026-14507","name":"Malicious code in foldmap (npm)","ecosystem":"npm","package":"foldmap","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14507"},
     {"id":"MAL-2026-14511","name":"Malicious code in svelte-cls-ui (npm)","ecosystem":"npm","package":"svelte-cls-ui","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14511"},
     {"id":"MAL-2026-14520","name":"Malicious code in fivem-tool-helper (npm)","ecosystem":"npm","package":"fivem-tool-helper","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14520"},
+    {"id":"MAL-2026-14532","name":"Malicious code in chai-as-org (npm)","ecosystem":"npm","package":"chai-as-org","versions":["1.0.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14532"},
     {"id":"MAL-2026-1455","name":"Malicious code in native_dep (npm)","ecosystem":"npm","package":"native_dep","versions":["2.0.1","2.0.2","99.10.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1455"},
+    {"id":"MAL-2026-14559","name":"Malicious code in imo-allowlist-xss-poc (npm)","ecosystem":"npm","package":"imo-allowlist-xss-poc","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14559"},
+    {"id":"MAL-2026-14561","name":"Malicious code in module-relpath (npm)","ecosystem":"npm","package":"module-relpath","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14561"},
+    {"id":"MAL-2026-14562","name":"Malicious code in morglog (npm)","ecosystem":"npm","package":"morglog","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14562"},
+    {"id":"MAL-2026-14566","name":"Malicious code in veloq (npm)","ecosystem":"npm","package":"veloq","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14566"},
     {"id":"MAL-2026-1458","name":"Malicious code in @wealth-common/font (npm)","ecosystem":"npm","package":"@wealth-common/font","versions":["99.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1458"},
     {"id":"MAL-2026-146","name":"Malicious code in spark-ar-dynamic-mocks (npm)","ecosystem":"npm","package":"spark-ar-dynamic-mocks","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-146"},
     {"id":"MAL-2026-1461","name":"Malicious code in npm-demo-1112 (npm)","ecosystem":"npm","package":"npm-demo-1112","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1461"},

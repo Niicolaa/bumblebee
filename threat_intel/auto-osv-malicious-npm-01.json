@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-26T07:10:54Z",
+  "_generated_utc": "2026-08-27T17:40:53Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53022,8 +53022,13 @@
     {"id":"MAL-2026-14515","name":"Malicious code in wm-lib-env-provider (npm)","ecosystem":"npm","package":"wm-lib-env-provider","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14515"},
     {"id":"MAL-2026-14519","name":"Malicious code in array-shuffler-utils-99 (npm)","ecosystem":"npm","package":"array-shuffler-utils-99","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14519"},
     {"id":"MAL-2026-1452","name":"Malicious code in @sheniraid/libsignal-node (npm)","ecosystem":"npm","package":"@sheniraid/libsignal-node","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1452"},
+    {"id":"MAL-2026-14529","name":"Malicious code in baileys-mbuilder (npm)","ecosystem":"npm","package":"baileys-mbuilder","versions":["4.7.0-lts"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14529"},
+    {"id":"MAL-2026-14536","name":"Malicious code in mt-ts-serverless-starter (npm)","ecosystem":"npm","package":"mt-ts-serverless-starter","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14536"},
     {"id":"MAL-2026-1454","name":"Malicious code in n8n-nodes-text-helpers (npm)","ecosystem":"npm","package":"n8n-nodes-text-helpers","versions":["0.1.0","0.2.0","0.3.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1454"},
+    {"id":"MAL-2026-14546","name":"Malicious code in dumb-binding-gyp-package (npm)","ecosystem":"npm","package":"dumb-binding-gyp-package","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14546"},
     {"id":"MAL-2026-1456","name":"Malicious code in rrweb-v1 (npm)","ecosystem":"npm","package":"rrweb-v1","versions":["99.99.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1456"},
+    {"id":"MAL-2026-14560","name":"Malicious code in inspectstack (npm)","ecosystem":"npm","package":"inspectstack","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14560"},
+    {"id":"MAL-2026-14565","name":"Malicious code in stackpaths (npm)","ecosystem":"npm","package":"stackpaths","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14565"},
     {"id":"MAL-2026-1459","name":"Malicious code in changelog-logger-utilities (npm)","ecosystem":"npm","package":"changelog-logger-utilities","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1459"},
     {"id":"MAL-2026-1464","name":"Malicious code in pretty-changelog-logger (npm)","ecosystem":"npm","package":"pretty-changelog-logger","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1464"},
     {"id":"MAL-2026-1469","name":"Malicious code in n8n-nodes-format-utils (npm)","ecosystem":"npm","package":"n8n-nodes-format-utils","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1469"},

@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-08-26T07:10:58Z",
+  "_generated_utc": "2026-08-27T17:40:57Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10664,7 +10664,14 @@
     {"id":"MAL-2026-14522","name":"Malicious code in syntaxerror-package-12345 (PyPI)","ecosystem":"pypi","package":"syntaxerror-package-12345","versions":["0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14522"},
     {"id":"MAL-2026-14523","name":"Malicious code in rce-test (PyPI)","ecosystem":"pypi","package":"rce-test","versions":["0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14523"},
     {"id":"MAL-2026-14524","name":"Malicious code in bigquery-agent-analytics-tracing (PyPI)","ecosystem":"pypi","package":"bigquery-agent-analytics-tracing","versions":["0.0.0","0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14524"},
+    {"id":"MAL-2026-14525","name":"Malicious code in 0xfighter3 (PyPI)","ecosystem":"pypi","package":"0xfighter3","versions":["0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14525"},
     {"id":"MAL-2026-1453","name":"Malicious code in hxq-misc-utils-0379 (PyPI)","ecosystem":"pypi","package":"hxq-misc-utils-0379","versions":["2026.310.1","2026.313.1","2026.314.1","2026.315.1","2026.315.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1453"},
+    {"id":"MAL-2026-14542","name":"Malicious code in trongridet (PyPI)","ecosystem":"pypi","package":"trongridet","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14542"},
+    {"id":"MAL-2026-14545","name":"Malicious code in pybitjs (PyPI)","ecosystem":"pypi","package":"pybitjs","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14545"},
+    {"id":"MAL-2026-14552","name":"Malicious code in mathkitlite (PyPI)","ecosystem":"pypi","package":"mathkitlite","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14552"},
+    {"id":"MAL-2026-14554","name":"Malicious code in decoris (PyPI)","ecosystem":"pypi","package":"decoris","versions":["0.3.0","0.3.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14554"},
+    {"id":"MAL-2026-14555","name":"Malicious code in ekx-report-utils (PyPI)","ecosystem":"pypi","package":"ekx-report-utils","versions":["0.1.0","0.2.0","0.3.0","0.4.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14555"},
+    {"id":"MAL-2026-14556","name":"Malicious code in sap-quarterly-report (PyPI)","ecosystem":"pypi","package":"sap-quarterly-report","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-14556"},
     {"id":"MAL-2026-1479","name":"Malicious code in color-list (PyPI)","ecosystem":"pypi","package":"color-list","versions":["1.0.1","1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1479"},
     {"id":"MAL-2026-1480","name":"Malicious code in pretty-tabulate (PyPI)","ecosystem":"pypi","package":"pretty-tabulate","versions":["2.37.1","2.37.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1480"},
     {"id":"MAL-2026-1482","name":"Malicious code in chacha-lite-encrypt (PyPI)","ecosystem":"pypi","package":"chacha-lite-encrypt","versions":["4.2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1482"},
