@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-29T12:43:39Z",
+  "_generated_utc": "2026-08-30T11:58:37Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53302,6 +53302,9 @@
     {"id":"MAL-2026-1556","name":"Malicious code in yoshi-base (npm)","ecosystem":"npm","package":"yoshi-base","versions":["4.78.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1556"},
     {"id":"MAL-2026-15560","name":"Malicious code in supersignaturenature (npm)","ecosystem":"npm","package":"supersignaturenature","versions":["1.0.5","1.0.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15560"},
     {"id":"MAL-2026-15565","name":"Malicious code in @testrelic/playwright-analytics (npm)","ecosystem":"npm","package":"@testrelic/playwright-analytics","versions":["2.13.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15565"},
+    {"id":"MAL-2026-15573","name":"Malicious code in grafeno-webhook (npm)","ecosystem":"npm","package":"grafeno-webhook","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15573"},
+    {"id":"MAL-2026-15574","name":"Malicious code in gclassroom (npm)","ecosystem":"npm","package":"gclassroom","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15574"},
+    {"id":"MAL-2026-15575","name":"Malicious code in opiumbest (npm)","ecosystem":"npm","package":"opiumbest","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15575"},
     {"id":"MAL-2026-156","name":"Malicious code in sparkling-cli (npm)","ecosystem":"npm","package":"sparkling-cli","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-156"},
     {"id":"MAL-2026-1561","name":"Malicious code in transform-es2015-duplicate-keys (npm)","ecosystem":"npm","package":"transform-es2015-duplicate-keys","versions":["6.24.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1561"},
     {"id":"MAL-2026-1562","name":"Malicious code in transform-es2015-parameters (npm)","ecosystem":"npm","package":"transform-es2015-parameters","versions":["6.24.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1562"},

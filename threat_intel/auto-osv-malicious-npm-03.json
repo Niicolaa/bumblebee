@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-08-29T12:43:39Z",
+  "_generated_utc": "2026-08-30T11:58:37Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -53626,6 +53626,9 @@
     {"id":"MAL-2026-15558","name":"Malicious code in mfakit (npm)","ecosystem":"npm","package":"mfakit","versions":["1.4.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15558"},
     {"id":"MAL-2026-15559","name":"Malicious code in secretkey2fa (npm)","ecosystem":"npm","package":"secretkey2fa","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15559"},
     {"id":"MAL-2026-15561","name":"Malicious code in techportal (npm)","ecosystem":"npm","package":"techportal","versions":["4.0.10"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15561"},
+    {"id":"MAL-2026-15569","name":"Malicious code in nuvyra-marketplace-sdk (npm)","ecosystem":"npm","package":"nuvyra-marketplace-sdk","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15569"},
+    {"id":"MAL-2026-15571","name":"Malicious code in grafeno-billing (npm)","ecosystem":"npm","package":"grafeno-billing","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15571"},
+    {"id":"MAL-2026-15572","name":"Malicious code in grafeno-payments (npm)","ecosystem":"npm","package":"grafeno-payments","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15572"},
     {"id":"MAL-2026-1560","name":"Malicious code in transform-dynamic-import (npm)","ecosystem":"npm","package":"transform-dynamic-import","versions":["8.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1560"},
     {"id":"MAL-2026-1568","name":"Malicious code in transform-inline-consecutive-adds (npm)","ecosystem":"npm","package":"transform-inline-consecutive-adds","versions":["7.28.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1568"},
     {"id":"MAL-2026-1569","name":"Malicious code in transform-json-strings (npm)","ecosystem":"npm","package":"transform-json-strings","versions":["7.29.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1569"},
