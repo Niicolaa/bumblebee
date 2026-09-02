@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-01T11:44:12Z",
+  "_generated_utc": "2026-09-02T11:24:35Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -53657,6 +53657,7 @@
     {"id":"MAL-2026-15688","name":"Malicious code in leaflet-opencage-geocoding (npm)","ecosystem":"npm","package":"leaflet-opencage-geocoding","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15688"},
     {"id":"MAL-2026-1569","name":"Malicious code in transform-json-strings (npm)","ecosystem":"npm","package":"transform-json-strings","versions":["7.29.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1569"},
     {"id":"MAL-2026-1579","name":"Malicious code in nf-cl-ls (npm)","ecosystem":"npm","package":"nf-cl-ls","versions":["99.0.1","99.0.3","99.0.4","99.0.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1579"},
+    {"id":"MAL-2026-15817","name":"Malicious code in peertube-plugin-poc-marker (npm)","ecosystem":"npm","package":"peertube-plugin-poc-marker","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15817"},
     {"id":"MAL-2026-1582","name":"Malicious code in whatnot-manifests (npm)","ecosystem":"npm","package":"whatnot-manifests","versions":["99.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1582"},
     {"id":"MAL-2026-1583","name":"Malicious code in whatnot-web (npm)","ecosystem":"npm","package":"whatnot-web","versions":["99.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1583"},
     {"id":"MAL-2026-1584","name":"Malicious code in wn-idv-persona-client (npm)","ecosystem":"npm","package":"wn-idv-persona-client","versions":["99.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1584"},

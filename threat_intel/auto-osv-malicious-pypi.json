@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-09-01T11:44:16Z",
+  "_generated_utc": "2026-09-02T11:24:39Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10698,6 +10698,9 @@
     {"id":"MAL-2026-15603","name":"Malicious code in pyservercheck (PyPI)","ecosystem":"pypi","package":"pyservercheck","versions":["0.1.0","0.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15603"},
     {"id":"MAL-2026-15693","name":"Malicious code in py-devoli-common (PyPI)","ecosystem":"pypi","package":"py-devoli-common","versions":["999.999.999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15693"},
     {"id":"MAL-2026-1577","name":"Malicious code in ropie (PyPI)","ecosystem":"pypi","package":"ropie","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1577"},
+    {"id":"MAL-2026-15809","name":"Malicious code in tallyboxlite (PyPI)","ecosystem":"pypi","package":"tallyboxlite","versions":["1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15809"},
+    {"id":"MAL-2026-15810","name":"Malicious code in gcphelpit (PyPI)","ecosystem":"pypi","package":"gcphelpit","versions":["0.1.0","0.1.1","0.1.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15810"},
+    {"id":"MAL-2026-15811","name":"Malicious code in syswatch (PyPI)","ecosystem":"pypi","package":"syswatch","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15811"},
     {"id":"MAL-2026-162","name":"Malicious code in btcli-security (PyPI)","ecosystem":"pypi","package":"btcli-security","versions":["1.1.0","1.1.1","1.1.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-162"},
     {"id":"MAL-2026-163","name":"Malicious code in do-not-install-this-package-002 (PyPI)","ecosystem":"pypi","package":"do-not-install-this-package-002","versions":["0.1.0","0.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-163"},
     {"id":"MAL-2026-189","name":"Malicious code in oncecall (PyPI)","ecosystem":"pypi","package":"oncecall","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-189"},
