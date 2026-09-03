@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-02T11:24:35Z",
+  "_generated_utc": "2026-09-03T11:20:54Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53352,6 +53352,10 @@
     {"id":"MAL-2026-15814","name":"Malicious code in chromatitle-dev (npm)","ecosystem":"npm","package":"chromatitle-dev","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15814"},
     {"id":"MAL-2026-15816","name":"Malicious code in order-package-saas (npm)","ecosystem":"npm","package":"order-package-saas","versions":["999.0.0","999.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15816"},
     {"id":"MAL-2026-15818","name":"Malicious code in vitest-cli-pro (npm)","ecosystem":"npm","package":"vitest-cli-pro","versions":["10.0.7"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15818"},
+    {"id":"MAL-2026-15823","name":"Malicious code in @stellarshift/evm-address-kit (npm)","ecosystem":"npm","package":"@stellarshift/evm-address-kit","versions":["1.0.1","1.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15823"},
+    {"id":"MAL-2026-15825","name":"Malicious code in real-router-utils (npm)","ecosystem":"npm","package":"real-router-utils","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15825"},
+    {"id":"MAL-2026-15830","name":"Malicious code in @viertechjs/api (npm)","ecosystem":"npm","package":"@viertechjs/api","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15830"},
+    {"id":"MAL-2026-15833","name":"Malicious code in apple-cktool-internal-api-v9 (npm)","ecosystem":"npm","package":"apple-cktool-internal-api-v9","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15833"},
     {"id":"MAL-2026-1588","name":"Malicious code in @bingads-webui-help/apex.core.v3.min (npm)","ecosystem":"npm","package":"@bingads-webui-help/apex.core.v3.min","versions":["99.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1588"},
     {"id":"MAL-2026-159","name":"Malicious code in chai-min (npm)","ecosystem":"npm","package":"chai-min","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-159"},
     {"id":"MAL-2026-1592","name":"Malicious code in @cbreone/survey-ui (npm)","ecosystem":"npm","package":"@cbreone/survey-ui","versions":["999.999.999","9999.9999.9999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1592"},

@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-02T11:24:35Z",
+  "_generated_utc": "2026-09-03T11:20:54Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -53659,7 +53659,9 @@
     {"id":"MAL-2026-1579","name":"Malicious code in nf-cl-ls (npm)","ecosystem":"npm","package":"nf-cl-ls","versions":["99.0.1","99.0.3","99.0.4","99.0.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1579"},
     {"id":"MAL-2026-15817","name":"Malicious code in peertube-plugin-poc-marker (npm)","ecosystem":"npm","package":"peertube-plugin-poc-marker","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15817"},
     {"id":"MAL-2026-1582","name":"Malicious code in whatnot-manifests (npm)","ecosystem":"npm","package":"whatnot-manifests","versions":["99.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1582"},
+    {"id":"MAL-2026-15821","name":"Malicious code in @stellarshift/abi-tools (npm)","ecosystem":"npm","package":"@stellarshift/abi-tools","versions":["1.0.1","1.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15821"},
     {"id":"MAL-2026-1583","name":"Malicious code in whatnot-web (npm)","ecosystem":"npm","package":"whatnot-web","versions":["99.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1583"},
+    {"id":"MAL-2026-15834","name":"Malicious code in apple-internal-test-utility (npm)","ecosystem":"npm","package":"apple-internal-test-utility","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15834"},
     {"id":"MAL-2026-1584","name":"Malicious code in wn-idv-persona-client (npm)","ecosystem":"npm","package":"wn-idv-persona-client","versions":["99.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1584"},
     {"id":"MAL-2026-1594","name":"Malicious code in @cewe-onsitesearch/schemas (npm)","ecosystem":"npm","package":"@cewe-onsitesearch/schemas","versions":["100.0.0","99.0.0","99.0.1","99.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1594"},
     {"id":"MAL-2026-1596","name":"Malicious code in @emerald-react/app-header (npm)","ecosystem":"npm","package":"@emerald-react/app-header","versions":["999.999.999","9999.9999.9999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1596"},
