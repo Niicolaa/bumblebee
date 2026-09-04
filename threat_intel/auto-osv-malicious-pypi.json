@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-09-03T11:20:57Z",
+  "_generated_utc": "2026-09-04T11:24:07Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10704,6 +10704,14 @@
     {"id":"MAL-2026-15827","name":"Malicious code in company-sdk (PyPI)","ecosystem":"pypi","package":"company-sdk","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15827"},
     {"id":"MAL-2026-15828","name":"Malicious code in env-validator-tool (PyPI)","ecosystem":"pypi","package":"env-validator-tool","versions":["1.0.0","1.0.1","1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15828"},
     {"id":"MAL-2026-15829","name":"Malicious code in telemetry-helper (PyPI)","ecosystem":"pypi","package":"telemetry-helper","versions":["1.0.0","1.0.1","1.0.2","1.1.0","1.2.0","1.3.0","2.0.0","2.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15829"},
+    {"id":"MAL-2026-15858","name":"Malicious code in trongridi (PyPI)","ecosystem":"pypi","package":"trongridi","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15858"},
+    {"id":"MAL-2026-15859","name":"Malicious code in 0requests (PyPI)","ecosystem":"pypi","package":"0requests","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15859"},
+    {"id":"MAL-2026-15860","name":"Malicious code in py-0requests (PyPI)","ecosystem":"pypi","package":"py-0requests","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15860"},
+    {"id":"MAL-2026-15861","name":"Malicious code in py-1requests (PyPI)","ecosystem":"pypi","package":"py-1requests","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15861"},
+    {"id":"MAL-2026-15862","name":"Malicious code in py-2equests (PyPI)","ecosystem":"pypi","package":"py-2equests","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15862"},
+    {"id":"MAL-2026-15863","name":"Malicious code in uvhttp-custom (PyPI)","ecosystem":"pypi","package":"uvhttp-custom","versions":["1.7.9","1.8.1","1.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15863"},
+    {"id":"MAL-2026-15864","name":"Malicious code in asti (PyPI)","ecosystem":"pypi","package":"asti","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15864"},
+    {"id":"MAL-2026-15910","name":"Malicious code in timeweave (PyPI)","ecosystem":"pypi","package":"timeweave","versions":["1.0.0","1.1.0","1.2.0","1.3.0","1.4.0","1.5.0","1.6.0","1.7.0","1.8.0","1.9.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15910"},
     {"id":"MAL-2026-162","name":"Malicious code in btcli-security (PyPI)","ecosystem":"pypi","package":"btcli-security","versions":["1.1.0","1.1.1","1.1.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-162"},
     {"id":"MAL-2026-163","name":"Malicious code in do-not-install-this-package-002 (PyPI)","ecosystem":"pypi","package":"do-not-install-this-package-002","versions":["0.1.0","0.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-163"},
     {"id":"MAL-2026-189","name":"Malicious code in oncecall (PyPI)","ecosystem":"pypi","package":"oncecall","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-189"},
