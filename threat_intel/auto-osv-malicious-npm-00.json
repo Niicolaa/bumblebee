@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-04T11:24:03Z",
+  "_generated_utc": "2026-09-05T10:41:01Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -53583,7 +53583,7 @@
     {"id":"MAL-2026-15848","name":"Malicious code in @quantixfinance/api (npm)","ecosystem":"npm","package":"@quantixfinance/api","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15848"},
     {"id":"MAL-2026-15852","name":"Malicious code in @quantixfinance/sdk (npm)","ecosystem":"npm","package":"@quantixfinance/sdk","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15852"},
     {"id":"MAL-2026-1586","name":"Malicious code in @at-point/valiant-widgets-v2 (npm)","ecosystem":"npm","package":"@at-point/valiant-widgets-v2","versions":["99.99.9","99.99.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1586"},
-    {"id":"MAL-2026-15866","name":"Malicious code in @bx-ui-framework/authentication (npm)","ecosystem":"npm","package":"@bx-ui-framework/authentication","versions":["1.2.0","15.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15866"},
+    {"id":"MAL-2026-15866","name":"Malicious code in @bx-ui-framework/authentication (npm)","ecosystem":"npm","package":"@bx-ui-framework/authentication","versions":["1.2.0","15.0.0","16.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15866"},
     {"id":"MAL-2026-15868","name":"Malicious code in @bx-ui-framework/microfrontend (npm)","ecosystem":"npm","package":"@bx-ui-framework/microfrontend","versions":["15.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15868"},
     {"id":"MAL-2026-15877","name":"Malicious code in btree-time-index (npm)","ecosystem":"npm","package":"btree-time-index","versions":["1.2.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15877"},
     {"id":"MAL-2026-15884","name":"Malicious code in guci-date (npm)","ecosystem":"npm","package":"guci-date","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15884"},
