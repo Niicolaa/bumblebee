@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-07T12:41:06Z",
+  "_generated_utc": "2026-09-08T11:24:52Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54007,7 +54007,14 @@
     {"id":"MAL-2026-16005","name":"Malicious code in agentrc-security-poc-policy (npm)","ecosystem":"npm","package":"agentrc-security-poc-policy","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16005"},
     {"id":"MAL-2026-16007","name":"Malicious code in @caliperx2/components (npm)","ecosystem":"npm","package":"@caliperx2/components","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16007"},
     {"id":"MAL-2026-16008","name":"Malicious code in b2b-frontend-external-library (npm)","ecosystem":"npm","package":"b2b-frontend-external-library","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16008"},
+    {"id":"MAL-2026-16015","name":"Malicious code in @cp-shared-14/frontend-ui (npm)","ecosystem":"npm","package":"@cp-shared-14/frontend-ui","versions":["6.3.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16015"},
     {"id":"MAL-2026-1602","name":"Malicious code in @emerald-react/chat-bot (npm)","ecosystem":"npm","package":"@emerald-react/chat-bot","versions":["999.999.999","9999.9999.9999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1602"},
+    {"id":"MAL-2026-16022","name":"Malicious code in base-account-core (npm)","ecosystem":"npm","package":"base-account-core","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16022"},
+    {"id":"MAL-2026-16026","name":"Malicious code in bmc-translate-utils (npm)","ecosystem":"npm","package":"bmc-translate-utils","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16026"},
+    {"id":"MAL-2026-16031","name":"Malicious code in cb-wallet-store (npm)","ecosystem":"npm","package":"cb-wallet-store","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16031"},
+    {"id":"MAL-2026-16036","name":"Malicious code in redis-type-intel (npm)","ecosystem":"npm","package":"redis-type-intel","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16036"},
+    {"id":"MAL-2026-16040","name":"Malicious code in wallet-cds-web (npm)","ecosystem":"npm","package":"wallet-cds-web","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16040"},
+    {"id":"MAL-2026-16046","name":"Malicious code in i18nexus-tools (npm)","ecosystem":"npm","package":"i18nexus-tools","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16046"},
     {"id":"MAL-2026-1606","name":"Malicious code in @emerald-react/datepicker (npm)","ecosystem":"npm","package":"@emerald-react/datepicker","versions":["999.999.999","9999.9999.9999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1606"},
     {"id":"MAL-2026-1609","name":"Malicious code in @emerald-react/ellis-ai-icon (npm)","ecosystem":"npm","package":"@emerald-react/ellis-ai-icon","versions":["999.999.999","9999.9999.9999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1609"},
     {"id":"MAL-2026-161","name":"Malicious code in jsonify-setting (npm)","ecosystem":"npm","package":"jsonify-setting","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-161"},

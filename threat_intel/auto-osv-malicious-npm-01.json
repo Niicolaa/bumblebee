@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-07T12:41:06Z",
+  "_generated_utc": "2026-09-08T11:24:52Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53408,7 +53408,12 @@
     {"id":"MAL-2026-16011","name":"Malicious code in orbitron-tui (npm)","ecosystem":"npm","package":"orbitron-tui","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16011"},
     {"id":"MAL-2026-16012","name":"Malicious code in orbitron-cli (npm)","ecosystem":"npm","package":"orbitron-cli","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16012"},
     {"id":"MAL-2026-16014","name":"Malicious code in prime-coding-agent (npm)","ecosystem":"npm","package":"prime-coding-agent","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16014"},
+    {"id":"MAL-2026-16023","name":"Malicious code in base-app-data (npm)","ecosystem":"npm","package":"base-app-data","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16023"},
     {"id":"MAL-2026-1603","name":"Malicious code in @emerald-react/checkbox (npm)","ecosystem":"npm","package":"@emerald-react/checkbox","versions":["999.999.999","9999.9999.9999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1603"},
+    {"id":"MAL-2026-16030","name":"Malicious code in cb-wallet-solana-provider (npm)","ecosystem":"npm","package":"cb-wallet-solana-provider","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16030"},
+    {"id":"MAL-2026-16032","name":"Malicious code in feishu-docx-mcp (npm)","ecosystem":"npm","package":"feishu-docx-mcp","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16032"},
+    {"id":"MAL-2026-16035","name":"Malicious code in oscar-redis (npm)","ecosystem":"npm","package":"oscar-redis","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16035"},
+    {"id":"MAL-2026-16038","name":"Malicious code in scw-mobile (npm)","ecosystem":"npm","package":"scw-mobile","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16038"},
     {"id":"MAL-2026-1605","name":"Malicious code in @emerald-react/data-table (npm)","ecosystem":"npm","package":"@emerald-react/data-table","versions":["999.999.999","9999.9999.9999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1605"},
     {"id":"MAL-2026-1607","name":"Malicious code in @emerald-react/divider (npm)","ecosystem":"npm","package":"@emerald-react/divider","versions":["999.999.999","9999.9999.9999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1607"},
     {"id":"MAL-2026-1608","name":"Malicious code in @emerald-react/dropdown (npm)","ecosystem":"npm","package":"@emerald-react/dropdown","versions":["999.999.999","9999.9999.9999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1608"},
