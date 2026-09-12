@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-10T11:26:11Z",
+  "_generated_utc": "2026-09-12T10:52:59Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53436,6 +53436,8 @@
     {"id":"MAL-2026-16104","name":"Malicious code in @nexustechpro/baileys (npm)","ecosystem":"npm","package":"@nexustechpro/baileys","versions":["2.2.7"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16104"},
     {"id":"MAL-2026-16107","name":"Malicious code in @auction-fe/portal (npm)","ecosystem":"npm","package":"@auction-fe/portal","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16107"},
     {"id":"MAL-2026-16116","name":"Malicious code in etoro-builders (npm)","ecosystem":"npm","package":"etoro-builders","versions":["999.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16116"},
+    {"id":"MAL-2026-16138","name":"Malicious code in greensaver (npm)","ecosystem":"npm","package":"greensaver","versions":["1.2.1","1.2.2","1.2.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16138"},
+    {"id":"MAL-2026-16140","name":"Malicious code in tracker-cloudflare (npm)","ecosystem":"npm","package":"tracker-cloudflare","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16140"},
     {"id":"MAL-2026-1616","name":"Malicious code in @f5rest/icr-metadata-generator (npm)","ecosystem":"npm","package":"@f5rest/icr-metadata-generator","versions":["99.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1616"},
     {"id":"MAL-2026-1618","name":"Malicious code in @f5rest/odata-lens (npm)","ecosystem":"npm","package":"@f5rest/odata-lens","versions":["99.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1618"},
     {"id":"MAL-2026-1621","name":"Malicious code in @f5rest/odata-v4-parser (npm)","ecosystem":"npm","package":"@f5rest/odata-v4-parser","versions":["99.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1621"},
