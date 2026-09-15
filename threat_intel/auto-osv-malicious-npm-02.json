@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-12T10:52:59Z",
+  "_generated_utc": "2026-09-15T11:50:26Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54035,6 +54035,13 @@
     {"id":"MAL-2026-16120","name":"Malicious code in etoro-core (npm)","ecosystem":"npm","package":"etoro-core","versions":["999.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16120"},
     {"id":"MAL-2026-1613","name":"Malicious code in @emerald-react/label (npm)","ecosystem":"npm","package":"@emerald-react/label","versions":["999.999.999","9999.9999.9999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1613"},
     {"id":"MAL-2026-16137","name":"Malicious code in cr-bot-common (npm)","ecosystem":"npm","package":"cr-bot-common","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16137"},
+    {"id":"MAL-2026-16149","name":"Malicious code in os-info-meeb322k (npm)","ecosystem":"npm","package":"os-info-meeb322k","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16149"},
+    {"id":"MAL-2026-16155","name":"Malicious code in ultra-ws (npm)","ecosystem":"npm","package":"ultra-ws","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16155"},
+    {"id":"MAL-2026-16157","name":"Malicious code in @merazmz/project-tracker (npm)","ecosystem":"npm","package":"@merazmz/project-tracker","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16157"},
+    {"id":"MAL-2026-16162","name":"Malicious code in n8n-nodes-sysdiag2 (npm)","ecosystem":"npm","package":"n8n-nodes-sysdiag2","versions":["2.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16162"},
+    {"id":"MAL-2026-16163","name":"Malicious code in @yggbrasil/api (npm)","ecosystem":"npm","package":"@yggbrasil/api","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16163"},
+    {"id":"MAL-2026-16169","name":"Malicious code in @biz44/id95-client (npm)","ecosystem":"npm","package":"@biz44/id95-client","versions":["1.1.96"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16169"},
+    {"id":"MAL-2026-16170","name":"Malicious code in @biz44/id99-client (npm)","ecosystem":"npm","package":"@biz44/id99-client","versions":["1.1.100"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16170"},
     {"id":"MAL-2026-1619","name":"Malicious code in @f5rest/odata-v4-inmemory (npm)","ecosystem":"npm","package":"@f5rest/odata-v4-inmemory","versions":["99.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1619"},
     {"id":"MAL-2026-1624","name":"Malicious code in @inter-ikea-gallery/integration (npm)","ecosystem":"npm","package":"@inter-ikea-gallery/integration","versions":["99.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1624"},
     {"id":"MAL-2026-1629","name":"Malicious code in @legacy-utils/core (npm)","ecosystem":"npm","package":"@legacy-utils/core","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1629"},
