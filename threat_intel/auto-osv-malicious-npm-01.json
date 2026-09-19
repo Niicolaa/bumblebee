@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-18T11:22:40Z",
+  "_generated_utc": "2026-09-19T11:06:01Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53473,6 +53473,8 @@
     {"id":"MAL-2026-16280","name":"Malicious code in zero-baileys (npm)","ecosystem":"npm","package":"zero-baileys","versions":["2.7.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16280"},
     {"id":"MAL-2026-16281","name":"Malicious code in @sanzoffc/baileys (npm)","ecosystem":"npm","package":"@sanzoffc/baileys","versions":["3.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16281"},
     {"id":"MAL-2026-16282","name":"Malicious code in tailwindcss-form (npm)","ecosystem":"npm","package":"tailwindcss-form","versions":["0.5.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16282"},
+    {"id":"MAL-2026-16286","name":"Malicious code in test8999-auth (npm)","ecosystem":"npm","package":"test8999-auth","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16286"},
+    {"id":"MAL-2026-16291","name":"Malicious code in @shared-runtime/modules (npm)","ecosystem":"npm","package":"@shared-runtime/modules","versions":["9.9.10"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16291"},
     {"id":"MAL-2026-1630","name":"Malicious code in @measures/responsive (npm)","ecosystem":"npm","package":"@measures/responsive","versions":["99.99.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1630"},
     {"id":"MAL-2026-1634","name":"Malicious code in @panopto/api-core (npm)","ecosystem":"npm","package":"@panopto/api-core","versions":["99.98.5","99.98.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1634"},
     {"id":"MAL-2026-1636","name":"Malicious code in @sommos/create-leaverule-or-terminationrule-form-data (npm)","ecosystem":"npm","package":"@sommos/create-leaverule-or-terminationrule-form-data","versions":["99.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1636"},

@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-18T11:22:40Z",
+  "_generated_utc": "2026-09-19T11:06:01Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54068,7 +54068,12 @@
     {"id":"MAL-2026-16272","name":"Malicious code in kartykgithub-multiversion-a (npm)","ecosystem":"npm","package":"kartykgithub-multiversion-a","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16272"},
     {"id":"MAL-2026-16273","name":"Malicious code in blue-string-formatter-utils (npm)","ecosystem":"npm","package":"blue-string-formatter-utils","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16273"},
     {"id":"MAL-2026-16276","name":"Malicious code in @lekzo/baileys (npm)","ecosystem":"npm","package":"@lekzo/baileys","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16276"},
+    {"id":"MAL-2026-16285","name":"Malicious code in test899-auth (npm)","ecosystem":"npm","package":"test899-auth","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16285"},
+    {"id":"MAL-2026-16287","name":"Malicious code in openmct-heatmap (npm)","ecosystem":"npm","package":"openmct-heatmap","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16287"},
     {"id":"MAL-2026-1629","name":"Malicious code in @legacy-utils/core (npm)","ecosystem":"npm","package":"@legacy-utils/core","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1629"},
+    {"id":"MAL-2026-16290","name":"Malicious code in @insiderintelligence/googleadmanager (npm)","ecosystem":"npm","package":"@insiderintelligence/googleadmanager","versions":["9.9.10"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16290"},
+    {"id":"MAL-2026-16294","name":"Malicious code in internallib_v949 (npm)","ecosystem":"npm","package":"internallib_v949","versions":["1.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16294"},
+    {"id":"MAL-2026-16297","name":"Malicious code in keroeltop (npm)","ecosystem":"npm","package":"keroeltop","versions":["99.99.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16297"},
     {"id":"MAL-2026-1633","name":"Malicious code in @nxt-costco-com/forge-icons (npm)","ecosystem":"npm","package":"@nxt-costco-com/forge-icons","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1633"},
     {"id":"MAL-2026-1635","name":"Malicious code in @polymarket-developers/clob-client (npm)","ecosystem":"npm","package":"@polymarket-developers/clob-client","versions":["1.0.7","1.0.8","1.0.9","1.1.0","1.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1635"},
     {"id":"MAL-2026-1638","name":"Malicious code in @tl-icons/core (npm)","ecosystem":"npm","package":"@tl-icons/core","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1638"},

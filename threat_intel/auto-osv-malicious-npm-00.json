@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-18T11:22:40Z",
+  "_generated_utc": "2026-09-19T11:06:01Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -49075,7 +49075,7 @@
     {"id":"MAL-2025-88886","name":"Malicious code in nurul-dodol60-riris (npm)","ecosystem":"npm","package":"nurul-dodol60-riris","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-88886"},
     {"id":"MAL-2025-88891","name":"Malicious code in nurul-ikan12-miaww (npm)","ecosystem":"npm","package":"nurul-ikan12-miaww","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-88891"},
     {"id":"MAL-2025-88899","name":"Malicious code in nurul-klentik75-miaww (npm)","ecosystem":"npm","package":"nurul-klentik75-miaww","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-88899"},
-    {"id":"MAL-2025-889","name":"Malicious code in x509-escaping (npm)","ecosystem":"npm","package":"x509-escaping","versions":["0.0.0","0.0.1","0.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-889"},
+    {"id":"MAL-2025-889","name":"Malicious code in x509-escaping (npm)","ecosystem":"npm","package":"x509-escaping","versions":["0.0.0","0.0.1","0.0.2","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-889"},
     {"id":"MAL-2025-88911","name":"Malicious code in nurul-mieaceh40-miaww (npm)","ecosystem":"npm","package":"nurul-mieaceh40-miaww","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-88911"},
     {"id":"MAL-2025-88914","name":"Malicious code in nurul-miebogor13-riris (npm)","ecosystem":"npm","package":"nurul-miebogor13-riris","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-88914"},
     {"id":"MAL-2025-88920","name":"Malicious code in nurul-oblok96-apidev (npm)","ecosystem":"npm","package":"nurul-oblok96-apidev","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-88920"},
@@ -53680,6 +53680,7 @@
     {"id":"MAL-2026-16258","name":"Malicious code in randompkgd (npm)","ecosystem":"npm","package":"randompkgd","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16258"},
     {"id":"MAL-2026-16265","name":"Malicious code in @kartyk-github-org/takedown-a (npm)","ecosystem":"npm","package":"@kartyk-github-org/takedown-a","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16265"},
     {"id":"MAL-2026-16279","name":"Malicious code in xzvbailsx (npm)","ecosystem":"npm","package":"xzvbailsx","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16279"},
+    {"id":"MAL-2026-16284","name":"Malicious code in sinful (npm)","ecosystem":"npm","package":"sinful","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16284"},
     {"id":"MAL-2026-1631","name":"Malicious code in @nxt-costco-com/forge-components (npm)","ecosystem":"npm","package":"@nxt-costco-com/forge-components","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1631"},
     {"id":"MAL-2026-1637","name":"Malicious code in @spot-dapp/web (npm)","ecosystem":"npm","package":"@spot-dapp/web","versions":["99.99.9","99.99.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1637"},
     {"id":"MAL-2026-1640","name":"Malicious code in @uc-platform/auth (npm)","ecosystem":"npm","package":"@uc-platform/auth","versions":["99.99.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1640"},

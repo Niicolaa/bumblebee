@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-18T11:22:40Z",
+  "_generated_utc": "2026-09-19T11:06:01Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -53768,6 +53768,12 @@
     {"id":"MAL-2026-16261","name":"Malicious code in @railone/image-utils (npm)","ecosystem":"npm","package":"@railone/image-utils","versions":["1.1.10"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16261"},
     {"id":"MAL-2026-1627","name":"Malicious code in @legacy-components/core (npm)","ecosystem":"npm","package":"@legacy-components/core","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1627"},
     {"id":"MAL-2026-16277","name":"Malicious code in xa424234657567 (npm)","ecosystem":"npm","package":"xa424234657567","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16277"},
+    {"id":"MAL-2026-16283","name":"Malicious code in @shared-web/assets (npm)","ecosystem":"npm","package":"@shared-web/assets","versions":["9.9.10"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16283"},
+    {"id":"MAL-2026-16288","name":"Malicious code in test89-auth (npm)","ecosystem":"npm","package":"test89-auth","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16288"},
+    {"id":"MAL-2026-16289","name":"Malicious code in test890-auth (npm)","ecosystem":"npm","package":"test890-auth","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16289"},
+    {"id":"MAL-2026-16292","name":"Malicious code in @shared-web/utils (npm)","ecosystem":"npm","package":"@shared-web/utils","versions":["9.9.10"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16292"},
+    {"id":"MAL-2026-16293","name":"Malicious code in chai-as-indexed (npm)","ecosystem":"npm","package":"chai-as-indexed","versions":["7.2.8"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16293"},
+    {"id":"MAL-2026-16295","name":"Malicious code in tailwindcss-forms-ui (npm)","ecosystem":"npm","package":"tailwindcss-forms-ui","versions":["0.5.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16295"},
     {"id":"MAL-2026-1632","name":"Malicious code in @nxt-costco-com/forge-design-tokens (npm)","ecosystem":"npm","package":"@nxt-costco-com/forge-design-tokens","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1632"},
     {"id":"MAL-2026-1639","name":"Malicious code in @uc-platform/advertisement-service-client (npm)","ecosystem":"npm","package":"@uc-platform/advertisement-service-client","versions":["99.99.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1639"},
     {"id":"MAL-2026-164","name":"Malicious code in @kyriba/data-frontend (npm)","ecosystem":"npm","package":"@kyriba/data-frontend","versions":["1.0.2","1.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-164"},
