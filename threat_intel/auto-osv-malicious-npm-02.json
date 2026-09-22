@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-21T12:55:42Z",
+  "_generated_utc": "2026-09-22T11:45:18Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54088,6 +54088,12 @@
     {"id":"MAL-2026-16345","name":"Malicious code in starbucks-sdk (npm)","ecosystem":"npm","package":"starbucks-sdk","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16345"},
     {"id":"MAL-2026-16347","name":"Malicious code in radio-player-theme (npm)","ecosystem":"npm","package":"radio-player-theme","versions":["6.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16347"},
     {"id":"MAL-2026-1635","name":"Malicious code in @polymarket-developers/clob-client (npm)","ecosystem":"npm","package":"@polymarket-developers/clob-client","versions":["1.0.7","1.0.8","1.0.9","1.1.0","1.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1635"},
+    {"id":"MAL-2026-16355","name":"Malicious code in gemini-computer-use (npm)","ecosystem":"npm","package":"gemini-computer-use","versions":["0.1.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16355"},
+    {"id":"MAL-2026-16359","name":"Malicious code in @uh-platform/domain-widget (npm)","ecosystem":"npm","package":"@uh-platform/domain-widget","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16359"},
+    {"id":"MAL-2026-16360","name":"Malicious code in @uh-platform/nadaver (npm)","ecosystem":"npm","package":"@uh-platform/nadaver","versions":["102.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16360"},
+    {"id":"MAL-2026-16368","name":"Malicious code in mathmain (npm)","ecosystem":"npm","package":"mathmain","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16368"},
+    {"id":"MAL-2026-16372","name":"Malicious code in @zig-design-system/react (npm)","ecosystem":"npm","package":"@zig-design-system/react","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16372"},
+    {"id":"MAL-2026-16373","name":"Malicious code in wos-library (npm)","ecosystem":"npm","package":"wos-library","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16373"},
     {"id":"MAL-2026-1638","name":"Malicious code in @tl-icons/core (npm)","ecosystem":"npm","package":"@tl-icons/core","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1638"},
     {"id":"MAL-2026-1642","name":"Malicious code in @upstashed/context7-mcp (npm)","ecosystem":"npm","package":"@upstashed/context7-mcp","versions":["1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1642"},
     {"id":"MAL-2026-1646","name":"Malicious code in abstract-http-request (npm)","ecosystem":"npm","package":"abstract-http-request","versions":["2.3.1","99.99.1","99.99.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1646"},
