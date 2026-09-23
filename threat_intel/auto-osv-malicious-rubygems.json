@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the rubygems ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-09-01T11:44:16Z",
+  "_generated_utc": "2026-09-23T11:44:46Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2023-11","name":"Malicious code in microsoft_kiota_http (RubyGems)","ecosystem":"rubygems","package":"microsoft_kiota_http","versions":["6.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2023-11"},
@@ -1064,6 +1064,9 @@
     {"id":"MAL-2026-15806","name":"Malicious code in ultra-smart-hub (RubyGems)","ecosystem":"rubygems","package":"ultra-smart-hub","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15806"},
     {"id":"MAL-2026-15807","name":"Malicious code in ultra-smart-pkg (RubyGems)","ecosystem":"rubygems","package":"ultra-smart-pkg","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15807"},
     {"id":"MAL-2026-15808","name":"Malicious code in ultra-smart-tool (RubyGems)","ecosystem":"rubygems","package":"ultra-smart-tool","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-15808"},
+    {"id":"MAL-2026-16411","name":"Malicious code in no-fun (RubyGems)","ecosystem":"rubygems","package":"no-fun","versions":["999.99.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16411"},
+    {"id":"MAL-2026-16420","name":"Malicious code in kerokwis (RubyGems)","ecosystem":"rubygems","package":"kerokwis","versions":["99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16420"},
+    {"id":"MAL-2026-16466","name":"Malicious code in wurl_show_data (RubyGems)","ecosystem":"rubygems","package":"wurl_show_data","versions":["3.1.42.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16466"},
     {"id":"MAL-2026-1915","name":"Malicious code in doctolib (RubyGems)","ecosystem":"rubygems","package":"doctolib","versions":["99.0.0","99.0.1","99.0.2","99.0.3","99.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1915"},
     {"id":"MAL-2026-1916","name":"Malicious code in freshworks-ruby (RubyGems)","ecosystem":"rubygems","package":"freshworks-ruby","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1916"},
     {"id":"MAL-2026-1917","name":"Malicious code in kaleido (RubyGems)","ecosystem":"rubygems","package":"kaleido","versions":["5000.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1917"},
