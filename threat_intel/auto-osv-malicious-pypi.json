@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-09-24T11:53:15Z",
+  "_generated_utc": "2026-09-25T11:56:09Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10773,6 +10773,11 @@
     {"id":"MAL-2026-16410","name":"Malicious code in auclean (PyPI)","ecosystem":"pypi","package":"auclean","versions":["0.4.2","0.4.3","0.4.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16410"},
     {"id":"MAL-2026-16421","name":"Malicious code in kerokwis (PyPI)","ecosystem":"pypi","package":"kerokwis","versions":["99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16421"},
     {"id":"MAL-2026-16475","name":"Malicious code in memoryos (PyPI)","ecosystem":"pypi","package":"memoryos","versions":["2.0.34"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16475"},
+    {"id":"MAL-2026-17167","name":"Malicious code in prosocks (PyPI)","ecosystem":"pypi","package":"prosocks","versions":["1.0.0","1.0.1","1.0.13","1.0.14","1.0.15","1.0.16","1.0.17","1.0.18","1.0.19","1.0.2","1.0.20","1.0.21","1.0.22","1.0.23","1.0.25","1.0.26","1.0.27","1.0.28","1.0.29","1.0.3","1.0.30","1.0.32","1.0.4","1.0.5","1.0.6","1.0.7","1.0.8","1.0.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17167"},
+    {"id":"MAL-2026-17168","name":"Malicious code in vercel-runtime-python (PyPI)","ecosystem":"pypi","package":"vercel-runtime-python","versions":["0.1.0","100.100.99","100.99.99","99.99.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17168"},
+    {"id":"MAL-2026-17180","name":"Malicious code in my-private-pkg (PyPI)","ecosystem":"pypi","package":"my-private-pkg","versions":["0.1.1","99.1.1","99.11.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17180"},
+    {"id":"MAL-2026-17181","name":"Malicious code in reqparser (PyPI)","ecosystem":"pypi","package":"reqparser","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17181"},
+    {"id":"MAL-2026-17183","name":"Malicious code in tego-managed-agents-test (PyPI)","ecosystem":"pypi","package":"tego-managed-agents-test","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17183"},
     {"id":"MAL-2026-189","name":"Malicious code in oncecall (PyPI)","ecosystem":"pypi","package":"oncecall","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-189"},
     {"id":"MAL-2026-1893","name":"Malicious code in aitrade (PyPI)","ecosystem":"pypi","package":"aitrade","versions":["0.1.2","0.1.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1893"},
     {"id":"MAL-2026-1894","name":"Malicious code in async-substrate-interface-sub (PyPI)","ecosystem":"pypi","package":"async-substrate-interface-sub","versions":["1.5.156","1.5.157"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1894"},
