@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-25T11:56:05Z",
+  "_generated_utc": "2026-09-26T11:30:28Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -53851,6 +53851,8 @@
     {"id":"MAL-2026-17161","name":"Malicious code in simple-date-formatter-new-15 (npm)","ecosystem":"npm","package":"simple-date-formatter-new-15","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17161"},
     {"id":"MAL-2026-17173","name":"Malicious code in chromatitle (npm)","ecosystem":"npm","package":"chromatitle","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17173"},
     {"id":"MAL-2026-17178","name":"Malicious code in secure-env3 (npm)","ecosystem":"npm","package":"secure-env3","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17178"},
+    {"id":"MAL-2026-17185","name":"Malicious code in shoplist-app (npm)","ecosystem":"npm","package":"shoplist-app","versions":["99.99.99","993.99.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17185"},
+    {"id":"MAL-2026-17187","name":"Malicious code in @digift/cli (npm)","ecosystem":"npm","package":"@digift/cli","versions":["99.99.100"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17187"},
     {"id":"MAL-2026-1720","name":"Malicious code in dubbo-web-example (npm)","ecosystem":"npm","package":"dubbo-web-example","versions":["999.0.104"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1720"},
     {"id":"MAL-2026-1726","name":"Malicious code in ersagent-frontend (npm)","ecosystem":"npm","package":"ersagent-frontend","versions":["9.5.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1726"},
     {"id":"MAL-2026-1729","name":"Malicious code in eslint-plugin-superhuman-custom-rules (npm)","ecosystem":"npm","package":"eslint-plugin-superhuman-custom-rules","versions":["19.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1729"},

@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-25T11:56:05Z",
+  "_generated_utc": "2026-09-26T11:30:28Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54154,6 +54154,7 @@
     {"id":"MAL-2026-17163","name":"Malicious code in analytics-widget (npm)","ecosystem":"npm","package":"analytics-widget","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17163"},
     {"id":"MAL-2026-17166","name":"Malicious code in cache-swipper (npm)","ecosystem":"npm","package":"cache-swipper","versions":["3.5.0","3.6.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17166"},
     {"id":"MAL-2026-17170","name":"Malicious code in agency-test-exercise (npm)","ecosystem":"npm","package":"agency-test-exercise","versions":["1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17170"},
+    {"id":"MAL-2026-17184","name":"Malicious code in @airbnb-extended/typescript-config (npm)","ecosystem":"npm","package":"@airbnb-extended/typescript-config","versions":["99.9.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17184"},
     {"id":"MAL-2026-1721","name":"Malicious code in ehance-assistant (npm)","ecosystem":"npm","package":"ehance-assistant","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1721"},
     {"id":"MAL-2026-1736","name":"Malicious code in fe-lib-singleton (npm)","ecosystem":"npm","package":"fe-lib-singleton","versions":["99.99.9","99.99.99","999.999.999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1736"},
     {"id":"MAL-2026-1737","name":"Malicious code in fe-lib-theme (npm)","ecosystem":"npm","package":"fe-lib-theme","versions":["99.99.9","99.99.99","999.999.999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1737"},

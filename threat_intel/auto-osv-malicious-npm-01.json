@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-25T11:56:05Z",
+  "_generated_utc": "2026-09-26T11:30:28Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53572,6 +53572,7 @@
     {"id":"MAL-2026-17174","name":"Malicious code in chromatitle-js (npm)","ecosystem":"npm","package":"chromatitle-js","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17174"},
     {"id":"MAL-2026-17175","name":"Malicious code in n8n-nodes-flowstats (npm)","ecosystem":"npm","package":"n8n-nodes-flowstats","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17175"},
     {"id":"MAL-2026-17179","name":"Malicious code in wallet-connect-adapter (npm)","ecosystem":"npm","package":"wallet-connect-adapter","versions":["1.4.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17179"},
+    {"id":"MAL-2026-17186","name":"Malicious code in @nubjs/types (npm)","ecosystem":"npm","package":"@nubjs/types","versions":["0.9.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17186"},
     {"id":"MAL-2026-1719","name":"Malicious code in dstny (npm)","ecosystem":"npm","package":"dstny","versions":["999.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1719"},
     {"id":"MAL-2026-172","name":"Malicious code in chai-tests-async (npm)","ecosystem":"npm","package":"chai-tests-async","versions":["3.3.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-172"},
     {"id":"MAL-2026-1723","name":"Malicious code in elf-stats-velvet-ledger-928 (npm)","ecosystem":"npm","package":"elf-stats-velvet-ledger-928","versions":["2.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1723"},
