@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-27T12:08:58Z",
+  "_generated_utc": "2026-09-28T14:04:09Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53576,6 +53576,12 @@
     {"id":"MAL-2026-1719","name":"Malicious code in dstny (npm)","ecosystem":"npm","package":"dstny","versions":["999.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1719"},
     {"id":"MAL-2026-17190","name":"Malicious code in cma-self-hosted-sandbox-cf (npm)","ecosystem":"npm","package":"cma-self-hosted-sandbox-cf","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17190"},
     {"id":"MAL-2026-172","name":"Malicious code in chai-tests-async (npm)","ecosystem":"npm","package":"chai-tests-async","versions":["3.3.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-172"},
+    {"id":"MAL-2026-17202","name":"Malicious code in @consts/links (npm)","ecosystem":"npm","package":"@consts/links","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17202"},
+    {"id":"MAL-2026-17205","name":"Malicious code in @wbnr/lottiefiles-loader (npm)","ecosystem":"npm","package":"@wbnr/lottiefiles-loader","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17205"},
+    {"id":"MAL-2026-17207","name":"Malicious code in kjj81 (npm)","ecosystem":"npm","package":"kjj81","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17207"},
+    {"id":"MAL-2026-17208","name":"Malicious code in riot-private (npm)","ecosystem":"npm","package":"riot-private","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17208"},
+    {"id":"MAL-2026-17210","name":"Malicious code in uuid-date (npm)","ecosystem":"npm","package":"uuid-date","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17210"},
+    {"id":"MAL-2026-17212","name":"Malicious code in wbnr-probe-visible-check (npm)","ecosystem":"npm","package":"wbnr-probe-visible-check","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17212"},
     {"id":"MAL-2026-1723","name":"Malicious code in elf-stats-velvet-ledger-928 (npm)","ecosystem":"npm","package":"elf-stats-velvet-ledger-928","versions":["2.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1723"},
     {"id":"MAL-2026-1724","name":"Malicious code in engineers (npm)","ecosystem":"npm","package":"engineers","versions":["0.0.0-0","0.0.0-1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1724"},
     {"id":"MAL-2026-1725","name":"Malicious code in env-workflow-test (npm)","ecosystem":"npm","package":"env-workflow-test","versions":["2.1.10","2.1.12","2.1.13","2.1.14","2.1.15","2.1.16","2.1.17","2.1.18","2.1.19","2.1.20","2.1.21","2.1.22","2.1.23","2.1.4","2.1.5","2.1.6","2.1.7","2.1.8","2.1.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1725"},
