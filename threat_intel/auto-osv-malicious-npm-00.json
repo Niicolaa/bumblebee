@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-09-28T14:04:09Z",
+  "_generated_utc": "2026-09-29T12:59:48Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -53781,6 +53781,14 @@
     {"id":"MAL-2026-17182","name":"Malicious code in app-sca-info-banking (npm)","ecosystem":"npm","package":"app-sca-info-banking","versions":["0.0.24"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17182"},
     {"id":"MAL-2026-17204","name":"Malicious code in @wbnr/design-kit (npm)","ecosystem":"npm","package":"@wbnr/design-kit","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17204"},
     {"id":"MAL-2026-1722","name":"Malicious code in ehance-assistant33 (npm)","ecosystem":"npm","package":"ehance-assistant33","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1722"},
+    {"id":"MAL-2026-17220","name":"Malicious code in nebulajs-api (npm)","ecosystem":"npm","package":"nebulajs-api","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17220"},
+    {"id":"MAL-2026-17221","name":"Malicious code in tailwindcss-form-kit (npm)","ecosystem":"npm","package":"tailwindcss-form-kit","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17221"},
+    {"id":"MAL-2026-17223","name":"Malicious code in chalk-figlet (npm)","ecosystem":"npm","package":"chalk-figlet","versions":["1.2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17223"},
+    {"id":"MAL-2026-17227","name":"Malicious code in nebula-llm (npm)","ecosystem":"npm","package":"nebula-llm","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17227"},
+    {"id":"MAL-2026-17230","name":"Malicious code in llm-nebula (npm)","ecosystem":"npm","package":"llm-nebula","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17230"},
+    {"id":"MAL-2026-17232","name":"Malicious code in fabric-native-loader (npm)","ecosystem":"npm","package":"fabric-native-loader","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17232"},
+    {"id":"MAL-2026-17235","name":"Malicious code in items-validator (npm)","ecosystem":"npm","package":"items-validator","versions":["1.0.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17235"},
+    {"id":"MAL-2026-17237","name":"Malicious code in native-env (npm)","ecosystem":"npm","package":"native-env","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17237"},
     {"id":"MAL-2026-1728","name":"Malicious code in escaux (npm)","ecosystem":"npm","package":"escaux","versions":["999.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1728"},
     {"id":"MAL-2026-173","name":"Malicious code in cng-web-lib (npm)","ecosystem":"npm","package":"cng-web-lib","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-173"},
     {"id":"MAL-2026-1730","name":"Malicious code in express-configers (npm)","ecosystem":"npm","package":"express-configers","versions":["2.4.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1730"},
