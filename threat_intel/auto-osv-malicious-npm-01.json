@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-01T13:25:42Z",
+  "_generated_utc": "2026-10-02T12:43:55Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53644,6 +53644,14 @@
     {"id":"MAL-2026-17403","name":"Malicious code in noxxleys (npm)","ecosystem":"npm","package":"noxxleys","versions":["1.0.0","1.1.0","1.1.1","1.1.2","1.1.4","1.1.5","1.1.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17403"},
     {"id":"MAL-2026-17415","name":"Malicious code in com.epi.e2e_test (npm)","ecosystem":"npm","package":"com.epi.e2e_test","versions":["1.2.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17415"},
     {"id":"MAL-2026-1742","name":"Malicious code in google-audit-tool (npm)","ecosystem":"npm","package":"google-audit-tool","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1742"},
+    {"id":"MAL-2026-17425","name":"Malicious code in kartykgithub-ph-e (npm)","ecosystem":"npm","package":"kartykgithub-ph-e","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17425"},
+    {"id":"MAL-2026-17431","name":"Malicious code in apl-rive-renderer (npm)","ecosystem":"npm","package":"apl-rive-renderer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17431"},
+    {"id":"MAL-2026-17433","name":"Malicious code in figma-to-apl (npm)","ecosystem":"npm","package":"figma-to-apl","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17433"},
+    {"id":"MAL-2026-17435","name":"Malicious code in niksinnkatalapp (npm)","ecosystem":"npm","package":"niksinnkatalapp","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17435"},
+    {"id":"MAL-2026-17437","name":"Malicious code in @bluewin/utils (npm)","ecosystem":"npm","package":"@bluewin/utils","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17437"},
+    {"id":"MAL-2026-17441","name":"Malicious code in @fazzcodestudio/wa-web (npm)","ecosystem":"npm","package":"@fazzcodestudio/wa-web","versions":["0.3.0","0.3.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17441"},
+    {"id":"MAL-2026-17442","name":"Malicious code in @smart-dev-wa/baileys (npm)","ecosystem":"npm","package":"@smart-dev-wa/baileys","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17442"},
+    {"id":"MAL-2026-17447","name":"Malicious code in mikuhostt-baileys (npm)","ecosystem":"npm","package":"mikuhostt-baileys","versions":["1.0.0","1.0.1","1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17447"},
     {"id":"MAL-2026-1745","name":"Malicious code in hydra-consent-sdk (npm)","ecosystem":"npm","package":"hydra-consent-sdk","versions":["99.99.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1745"},
     {"id":"MAL-2026-175","name":"Malicious code in jwtdapp (npm)","ecosystem":"npm","package":"jwtdapp","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-175"},
     {"id":"MAL-2026-1752","name":"Malicious code in internal-api-insights (npm)","ecosystem":"npm","package":"internal-api-insights","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1752"},

@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the go ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-08-04T09:11:33Z",
+  "_generated_utc": "2026-10-02T12:44:00Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2025-2544","name":"Malicious code in github.com/belatedplanet/hypert (Go)","ecosystem":"go","package":"github.com/belatedplanet/hypert","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-2544"},
@@ -12,6 +12,8 @@
     {"id":"MAL-2025-2549","name":"Malicious code in github.com/thankfulmai/hypert (Go)","ecosystem":"go","package":"github.com/thankfulmai/hypert","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-2549"},
     {"id":"MAL-2025-2550","name":"Malicious code in github.com/utilizedsun/layout (Go)","ecosystem":"go","package":"github.com/utilizedsun/layout","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-2550"},
     {"id":"MAL-2025-2551","name":"Malicious code in github.com/vainreboot/layout (Go)","ecosystem":"go","package":"github.com/vainreboot/layout","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2025-2551"},
+    {"id":"MAL-2026-17453","name":"Malicious code in gocommunity.io/orderedbtree (Go)","ecosystem":"go","package":"gocommunity.io/orderedbtree","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17453"},
+    {"id":"MAL-2026-17454","name":"Malicious code in gogets.dev/btreex (Go)","ecosystem":"go","package":"gogets.dev/btreex","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17454"},
     {"id":"MAL-2026-3620","name":"Malicious code in github.com/BufferZoneCorp/config-loader (Go)","ecosystem":"go","package":"github.com/BufferZoneCorp/config-loader","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3620"},
     {"id":"MAL-2026-3621","name":"Malicious code in github.com/BufferZoneCorp/go-envconfig (Go)","ecosystem":"go","package":"github.com/BufferZoneCorp/go-envconfig","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3621"},
     {"id":"MAL-2026-3622","name":"Malicious code in github.com/BufferZoneCorp/go-metrics-sdk (Go)","ecosystem":"go","package":"github.com/BufferZoneCorp/go-metrics-sdk","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-3622"},
