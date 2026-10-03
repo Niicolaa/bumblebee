@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-02T12:43:55Z",
+  "_generated_utc": "2026-10-03T11:44:56Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54221,6 +54221,8 @@
     {"id":"MAL-2026-17446","name":"Malicious code in luoxy-baileys (npm)","ecosystem":"npm","package":"luoxy-baileys","versions":["7.1.1","7.1.2","7.1.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17446"},
     {"id":"MAL-2026-17450","name":"Malicious code in rubbydev-crash-baileys (npm)","ecosystem":"npm","package":"rubbydev-crash-baileys","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17450"},
     {"id":"MAL-2026-17452","name":"Malicious code in xcvrenzcompany (npm)","ecosystem":"npm","package":"xcvrenzcompany","versions":["1.0.0","2.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17452"},
+    {"id":"MAL-2026-17459","name":"Malicious code in ui-base-colors (npm)","ecosystem":"npm","package":"ui-base-colors","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17459"},
+    {"id":"MAL-2026-17460","name":"Malicious code in ui.dist.min.js (npm)","ecosystem":"npm","package":"ui.dist.min.js","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17460"},
     {"id":"MAL-2026-1750","name":"Malicious code in integration-icons (npm)","ecosystem":"npm","package":"integration-icons","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1750"},
     {"id":"MAL-2026-1751","name":"Malicious code in inter-site-components (npm)","ecosystem":"npm","package":"inter-site-components","versions":["99.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1751"},
     {"id":"MAL-2026-1753","name":"Malicious code in internal-secret-project-1234 (npm)","ecosystem":"npm","package":"internal-secret-project-1234","versions":["99.99.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1753"},

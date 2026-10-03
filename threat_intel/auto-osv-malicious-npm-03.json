@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-02T12:43:55Z",
+  "_generated_utc": "2026-10-03T11:44:56Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -53920,6 +53920,7 @@
     {"id":"MAL-2026-17443","name":"Malicious code in @zanta/baileys (npm)","ecosystem":"npm","package":"@zanta/baileys","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17443"},
     {"id":"MAL-2026-17449","name":"Malicious code in prastzyy (npm)","ecosystem":"npm","package":"prastzyy","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17449"},
     {"id":"MAL-2026-17451","name":"Malicious code in wailib (npm)","ecosystem":"npm","package":"wailib","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17451"},
+    {"id":"MAL-2026-17456","name":"Malicious code in @smwebserver/static (npm)","ecosystem":"npm","package":"@smwebserver/static","versions":["99.9.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17456"},
     {"id":"MAL-2026-1747","name":"Malicious code in iconicwp-website (npm)","ecosystem":"npm","package":"iconicwp-website","versions":["5.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1747"},
     {"id":"MAL-2026-1754","name":"Malicious code in ipherr (npm)","ecosystem":"npm","package":"ipherr","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1754"},
     {"id":"MAL-2026-1759","name":"Malicious code in karem2 (npm)","ecosystem":"npm","package":"karem2","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1759"},

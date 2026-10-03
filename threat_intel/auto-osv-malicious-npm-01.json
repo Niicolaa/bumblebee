@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-02T12:43:55Z",
+  "_generated_utc": "2026-10-03T11:44:56Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53653,6 +53653,7 @@
     {"id":"MAL-2026-17442","name":"Malicious code in @smart-dev-wa/baileys (npm)","ecosystem":"npm","package":"@smart-dev-wa/baileys","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17442"},
     {"id":"MAL-2026-17447","name":"Malicious code in mikuhostt-baileys (npm)","ecosystem":"npm","package":"mikuhostt-baileys","versions":["1.0.0","1.0.1","1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17447"},
     {"id":"MAL-2026-1745","name":"Malicious code in hydra-consent-sdk (npm)","ecosystem":"npm","package":"hydra-consent-sdk","versions":["99.99.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1745"},
+    {"id":"MAL-2026-17458","name":"Malicious code in translate-base-font (npm)","ecosystem":"npm","package":"translate-base-font","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17458"},
     {"id":"MAL-2026-175","name":"Malicious code in jwtdapp (npm)","ecosystem":"npm","package":"jwtdapp","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-175"},
     {"id":"MAL-2026-1752","name":"Malicious code in internal-api-insights (npm)","ecosystem":"npm","package":"internal-api-insights","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1752"},
     {"id":"MAL-2026-1755","name":"Malicious code in iron-demo-helpers (npm)","ecosystem":"npm","package":"iron-demo-helpers","versions":["5.5.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1755"},
