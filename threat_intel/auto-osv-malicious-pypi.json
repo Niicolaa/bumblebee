@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-10-03T11:45:00Z",
+  "_generated_utc": "2026-10-04T12:28:00Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10804,6 +10804,14 @@
     {"id":"MAL-2026-17461","name":"Malicious code in voxel-tts (PyPI)","ecosystem":"pypi","package":"voxel-tts","versions":["0.5.0","0.5.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17461"},
     {"id":"MAL-2026-17462","name":"Malicious code in echogen (PyPI)","ecosystem":"pypi","package":"echogen","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17462"},
     {"id":"MAL-2026-17463","name":"Malicious code in voxcpmtts3 (PyPI)","ecosystem":"pypi","package":"voxcpmtts3","versions":["0.1.0","0.1.1","0.1.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17463"},
+    {"id":"MAL-2026-17464","name":"Malicious code in voxcpmui3 (PyPI)","ecosystem":"pypi","package":"voxcpmui3","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17464"},
+    {"id":"MAL-2026-17465","name":"Malicious code in voxcpmeval (PyPI)","ecosystem":"pypi","package":"voxcpmeval","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17465"},
+    {"id":"MAL-2026-17466","name":"Malicious code in voxcpmkit (PyPI)","ecosystem":"pypi","package":"voxcpmkit","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17466"},
+    {"id":"MAL-2026-17467","name":"Malicious code in voxcpmui4 (PyPI)","ecosystem":"pypi","package":"voxcpmui4","versions":["0.2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17467"},
+    {"id":"MAL-2026-17468","name":"Malicious code in voxcpmintel (PyPI)","ecosystem":"pypi","package":"voxcpmintel","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17468"},
+    {"id":"MAL-2026-17469","name":"Malicious code in infrabench (PyPI)","ecosystem":"pypi","package":"infrabench","versions":["0.1.0","0.1.1","0.2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17469"},
+    {"id":"MAL-2026-17470","name":"Malicious code in voxcpmruntime (PyPI)","ecosystem":"pypi","package":"voxcpmruntime","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17470"},
+    {"id":"MAL-2026-17471","name":"Malicious code in caoxiltts (PyPI)","ecosystem":"pypi","package":"caoxiltts","versions":["0.1.0","0.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17471"},
     {"id":"MAL-2026-189","name":"Malicious code in oncecall (PyPI)","ecosystem":"pypi","package":"oncecall","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-189"},
     {"id":"MAL-2026-1893","name":"Malicious code in aitrade (PyPI)","ecosystem":"pypi","package":"aitrade","versions":["0.1.2","0.1.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1893"},
     {"id":"MAL-2026-1894","name":"Malicious code in async-substrate-interface-sub (PyPI)","ecosystem":"pypi","package":"async-substrate-interface-sub","versions":["1.5.156","1.5.157"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1894"},
