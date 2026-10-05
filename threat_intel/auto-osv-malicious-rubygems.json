@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the rubygems ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-09-24T11:53:15Z",
+  "_generated_utc": "2026-10-05T14:49:38Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2023-11","name":"Malicious code in microsoft_kiota_http (RubyGems)","ecosystem":"rubygems","package":"microsoft_kiota_http","versions":["6.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2023-11"},
@@ -1675,6 +1675,10 @@
     {"id":"MAL-2026-17150","name":"Malicious code in burndlef (RubyGems)","ecosystem":"rubygems","package":"burndlef","versions":["1.0.20831"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17150"},
     {"id":"MAL-2026-17151","name":"Malicious code in burndler (RubyGems)","ecosystem":"rubygems","package":"burndler","versions":["1.0.66322"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17151"},
     {"id":"MAL-2026-17152","name":"Malicious code in mega-clean-box (RubyGems)","ecosystem":"rubygems","package":"mega-clean-box","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17152"},
+    {"id":"MAL-2026-17567","name":"Malicious code in rate-limit-mini (RubyGems)","ecosystem":"rubygems","package":"rate-limit-mini","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17567"},
+    {"id":"MAL-2026-17568","name":"Malicious code in req-throttle-mini (RubyGems)","ecosystem":"rubygems","package":"req-throttle-mini","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17568"},
+    {"id":"MAL-2026-17569","name":"Malicious code in request-guard (RubyGems)","ecosystem":"rubygems","package":"request-guard","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17569"},
+    {"id":"MAL-2026-17570","name":"Malicious code in throttle-requests (RubyGems)","ecosystem":"rubygems","package":"throttle-requests","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17570"},
     {"id":"MAL-2026-1915","name":"Malicious code in doctolib (RubyGems)","ecosystem":"rubygems","package":"doctolib","versions":["99.0.0","99.0.1","99.0.2","99.0.3","99.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1915"},
     {"id":"MAL-2026-1916","name":"Malicious code in freshworks-ruby (RubyGems)","ecosystem":"rubygems","package":"freshworks-ruby","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1916"},
     {"id":"MAL-2026-1917","name":"Malicious code in kaleido (RubyGems)","ecosystem":"rubygems","package":"kaleido","versions":["5000.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1917"},
