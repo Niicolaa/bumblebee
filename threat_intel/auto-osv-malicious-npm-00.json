@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-05T14:49:34Z",
+  "_generated_utc": "2026-10-06T13:23:08Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -53866,7 +53866,13 @@
     {"id":"MAL-2026-17559","name":"Malicious code in hardhat-kex (npm)","ecosystem":"npm","package":"hardhat-kex","versions":["2.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17559"},
     {"id":"MAL-2026-17560","name":"Malicious code in hardhat-spack (npm)","ecosystem":"npm","package":"hardhat-spack","versions":["3.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17560"},
     {"id":"MAL-2026-17563","name":"Malicious code in risk-detection (npm)","ecosystem":"npm","package":"risk-detection","versions":["99.9.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17563"},
+    {"id":"MAL-2026-17573","name":"Malicious code in css-eqxcdx-polyfill (npm)","ecosystem":"npm","package":"css-eqxcdx-polyfill","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17573"},
+    {"id":"MAL-2026-17575","name":"Malicious code in css-kfvwax-polyfill (npm)","ecosystem":"npm","package":"css-kfvwax-polyfill","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17575"},
+    {"id":"MAL-2026-17577","name":"Malicious code in css-vvgsze-polyfill (npm)","ecosystem":"npm","package":"css-vvgsze-polyfill","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17577"},
     {"id":"MAL-2026-1760","name":"Malicious code in karem3 (npm)","ecosystem":"npm","package":"karem3","versions":["1.0.0","2.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1760"},
+    {"id":"MAL-2026-17621","name":"Malicious code in dzyclutch-libsignal-node (npm)","ecosystem":"npm","package":"dzyclutch-libsignal-node","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17621"},
+    {"id":"MAL-2026-17627","name":"Malicious code in serpacksven2 (npm)","ecosystem":"npm","package":"serpacksven2","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17627"},
+    {"id":"MAL-2026-17634","name":"Malicious code in internallib_v86 (npm)","ecosystem":"npm","package":"internallib_v86","versions":["1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17634"},
     {"id":"MAL-2026-1764","name":"Malicious code in kkkaremm (npm)","ecosystem":"npm","package":"kkkaremm","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1764"},
     {"id":"MAL-2026-1777","name":"Malicious code in libxmljs2147147 (npm)","ecosystem":"npm","package":"libxmljs2147147","versions":["0.30.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1777"},
     {"id":"MAL-2026-1779","name":"Malicious code in libxmljs2as (npm)","ecosystem":"npm","package":"libxmljs2as","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1779"},

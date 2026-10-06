@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-10-05T14:49:38Z",
+  "_generated_utc": "2026-10-06T13:23:11Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -7368,7 +7368,6 @@
     {"id":"MAL-2024-4768","name":"Malicious code in anticheatservice (PyPI)","ecosystem":"pypi","package":"anticheatservice","versions":["0.0.13"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2024-4768"},
     {"id":"MAL-2024-4769","name":"Malicious code in api-hypixel (PyPI)","ecosystem":"pypi","package":"api-hypixel","versions":["1.0.0","1.0.2","1.0.3","1.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2024-4769"},
     {"id":"MAL-2024-4770","name":"Malicious code in api-requester2 (PyPI)","ecosystem":"pypi","package":"api-requester2","versions":["1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2024-4770"},
-    {"id":"MAL-2024-4771","name":"Malicious code in apiclear (PyPI)","ecosystem":"pypi","package":"apiclear","versions":["0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2024-4771"},
     {"id":"MAL-2024-4772","name":"Malicious code in apicolors-advanced (PyPI)","ecosystem":"pypi","package":"apicolors-advanced","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2024-4772"},
     {"id":"MAL-2024-4773","name":"Malicious code in apihypixel (PyPI)","ecosystem":"pypi","package":"apihypixel","versions":["1.0.5","1.0.6","1.0.7"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2024-4773"},
     {"id":"MAL-2024-4774","name":"Malicious code in archiveact (PyPI)","ecosystem":"pypi","package":"archiveact","versions":["0.0.13"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2024-4774"},
@@ -7378,7 +7377,6 @@
     {"id":"MAL-2024-4778","name":"Malicious code in ascicolor (PyPI)","ecosystem":"pypi","package":"ascicolor","versions":["4.1","4.2","4.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2024-4778"},
     {"id":"MAL-2024-4779","name":"Malicious code in ascii-chillah (PyPI)","ecosystem":"pypi","package":"ascii-chillah","versions":["99.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2024-4779"},
     {"id":"MAL-2024-4780","name":"Malicious code in asciicolor (PyPI)","ecosystem":"pypi","package":"asciicolor","versions":["1.0","1.1","1.2","1.3","1.4","1.5","1.6","1.8","1.9","2.9","4.1","4.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2024-4780"},
-    {"id":"MAL-2024-4781","name":"Malicious code in assuredserpentupload (PyPI)","ecosystem":"pypi","package":"assuredserpentupload","versions":["99.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2024-4781"},
     {"id":"MAL-2024-4782","name":"Malicious code in astralnitro (PyPI)","ecosystem":"pypi","package":"astralnitro","versions":["1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2024-4782"},
     {"id":"MAL-2024-4783","name":"Malicious code in async-dispatcher (PyPI)","ecosystem":"pypi","package":"async-dispatcher","versions":["1.2.1","1.2.2","1.2.4","1.2.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2024-4783"},
     {"id":"MAL-2024-4784","name":"Malicious code in asyncio3 (PyPI)","ecosystem":"pypi","package":"asyncio3","versions":["1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2024-4784"},
@@ -10813,6 +10811,8 @@
     {"id":"MAL-2026-17470","name":"Malicious code in voxcpmruntime (PyPI)","ecosystem":"pypi","package":"voxcpmruntime","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17470"},
     {"id":"MAL-2026-17471","name":"Malicious code in caoxiltts (PyPI)","ecosystem":"pypi","package":"caoxiltts","versions":["0.1.0","0.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17471"},
     {"id":"MAL-2026-17472","name":"Malicious code in anthropic-sdk (PyPI)","ecosystem":"pypi","package":"anthropic-sdk","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17472"},
+    {"id":"MAL-2026-17628","name":"Malicious code in erc7730-hackathon (PyPI)","ecosystem":"pypi","package":"erc7730-hackathon","versions":["99.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17628"},
+    {"id":"MAL-2026-17629","name":"Malicious code in zencleaner (PyPI)","ecosystem":"pypi","package":"zencleaner","versions":["1.0.0","1.0.3","1.0.3.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17629"},
     {"id":"MAL-2026-189","name":"Malicious code in oncecall (PyPI)","ecosystem":"pypi","package":"oncecall","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-189"},
     {"id":"MAL-2026-1893","name":"Malicious code in aitrade (PyPI)","ecosystem":"pypi","package":"aitrade","versions":["0.1.2","0.1.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1893"},
     {"id":"MAL-2026-1894","name":"Malicious code in async-substrate-interface-sub (PyPI)","ecosystem":"pypi","package":"async-substrate-interface-sub","versions":["1.5.156","1.5.157"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1894"},

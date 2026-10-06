@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-05T14:49:34Z",
+  "_generated_utc": "2026-10-06T13:23:08Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -53944,9 +53944,14 @@
     {"id":"MAL-2026-17550","name":"Malicious code in css-dwsawd-polyfill (npm)","ecosystem":"npm","package":"css-dwsawd-polyfill","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17550"},
     {"id":"MAL-2026-17561","name":"Malicious code in insomnia-plugin-api-lint-helper (npm)","ecosystem":"npm","package":"insomnia-plugin-api-lint-helper","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17561"},
     {"id":"MAL-2026-17566","name":"Malicious code in unified-platform (npm)","ecosystem":"npm","package":"unified-platform","versions":["99.9.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17566"},
+    {"id":"MAL-2026-17572","name":"Malicious code in checkmate-remediation-assistant (npm)","ecosystem":"npm","package":"checkmate-remediation-assistant","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17572"},
     {"id":"MAL-2026-1759","name":"Malicious code in karem2 (npm)","ecosystem":"npm","package":"karem2","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1759"},
     {"id":"MAL-2026-176","name":"Malicious code in mixpanel-lib (npm)","ecosystem":"npm","package":"mixpanel-lib","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-176"},
+    {"id":"MAL-2026-17618","name":"Malicious code in @diezyclutch/baileys (npm)","ecosystem":"npm","package":"@diezyclutch/baileys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17618"},
+    {"id":"MAL-2026-17619","name":"Malicious code in dzyclutch (npm)","ecosystem":"npm","package":"dzyclutch","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17619"},
+    {"id":"MAL-2026-17624","name":"Malicious code in documenclient (npm)","ecosystem":"npm","package":"documenclient","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17624"},
     {"id":"MAL-2026-1763","name":"Malicious code in karemzz (npm)","ecosystem":"npm","package":"karemzz","versions":["2.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1763"},
+    {"id":"MAL-2026-17637","name":"Malicious code in captchetat-angularv8 (npm)","ecosystem":"npm","package":"captchetat-angularv8","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17637"},
     {"id":"MAL-2026-1768","name":"Malicious code in legacy-shared-frontend (npm)","ecosystem":"npm","package":"legacy-shared-frontend","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1768"},
     {"id":"MAL-2026-177","name":"Malicious code in n8n-nodes-ggdv-hdfvcnnje-uyrokvbkl (npm)","ecosystem":"npm","package":"n8n-nodes-ggdv-hdfvcnnje-uyrokvbkl","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-177"},
     {"id":"MAL-2026-1770","name":"Malicious code in libjs-cqs (npm)","ecosystem":"npm","package":"libjs-cqs","versions":["90.9.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1770"},
