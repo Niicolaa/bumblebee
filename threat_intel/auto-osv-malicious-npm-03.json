@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-06T13:23:08Z",
+  "_generated_utc": "2026-10-07T13:31:43Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -546,7 +546,7 @@
     {"id":"MAL-2022-28","name":"Malicious code in 3exprem (npm)","ecosystem":"npm","package":"3exprem","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-28"},
     {"id":"MAL-2022-2801","name":"Malicious code in eslint-config-mns-core1 (npm)","ecosystem":"npm","package":"eslint-config-mns-core1","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-2801"},
     {"id":"MAL-2022-2803","name":"Malicious code in eslint-config-pagseguro (npm)","ecosystem":"npm","package":"eslint-config-pagseguro","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-2803"},
-    {"id":"MAL-2022-2806","name":"Malicious code in eslint-config-support (npm)","ecosystem":"npm","package":"eslint-config-support","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-2806"},
+    {"id":"MAL-2022-2806","name":"Malicious code in eslint-config-support (npm)","ecosystem":"npm","package":"eslint-config-support","versions":["0.0.1-security","1.0.4","1.0.5","1.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-2806"},
     {"id":"MAL-2022-2808","name":"Malicious code in eslint-conig-prezier (npm)","ecosystem":"npm","package":"eslint-conig-prezier","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-2808"},
     {"id":"MAL-2022-2811","name":"Malicious code in eslint-plugin-azure-sdk (npm)","ecosystem":"npm","package":"eslint-plugin-azure-sdk","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-2811"},
     {"id":"MAL-2022-2812","name":"Malicious code in eslint-plugin-coinbase (npm)","ecosystem":"npm","package":"eslint-plugin-coinbase","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-2812"},
@@ -53952,6 +53952,7 @@
     {"id":"MAL-2026-17624","name":"Malicious code in documenclient (npm)","ecosystem":"npm","package":"documenclient","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17624"},
     {"id":"MAL-2026-1763","name":"Malicious code in karemzz (npm)","ecosystem":"npm","package":"karemzz","versions":["2.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1763"},
     {"id":"MAL-2026-17637","name":"Malicious code in captchetat-angularv8 (npm)","ecosystem":"npm","package":"captchetat-angularv8","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17637"},
+    {"id":"MAL-2026-17643","name":"Malicious code in waie-crash-baileys (npm)","ecosystem":"npm","package":"waie-crash-baileys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17643"},
     {"id":"MAL-2026-1768","name":"Malicious code in legacy-shared-frontend (npm)","ecosystem":"npm","package":"legacy-shared-frontend","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1768"},
     {"id":"MAL-2026-177","name":"Malicious code in n8n-nodes-ggdv-hdfvcnnje-uyrokvbkl (npm)","ecosystem":"npm","package":"n8n-nodes-ggdv-hdfvcnnje-uyrokvbkl","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-177"},
     {"id":"MAL-2026-1770","name":"Malicious code in libjs-cqs (npm)","ecosystem":"npm","package":"libjs-cqs","versions":["90.9.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1770"},
