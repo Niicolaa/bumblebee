@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-08T13:37:31Z",
+  "_generated_utc": "2026-10-09T13:23:50Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -53882,6 +53882,14 @@
     {"id":"MAL-2026-17658","name":"Malicious code in hardhat-bits (npm)","ecosystem":"npm","package":"hardhat-bits","versions":["2.21.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17658"},
     {"id":"MAL-2026-17665","name":"Malicious code in animatecss-tailwind-adapter (npm)","ecosystem":"npm","package":"animatecss-tailwind-adapter","versions":["2.0.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17665"},
     {"id":"MAL-2026-17666","name":"Malicious code in animatecss-tailwind-bridge (npm)","ecosystem":"npm","package":"animatecss-tailwind-bridge","versions":["2.0.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17666"},
+    {"id":"MAL-2026-17673","name":"Malicious code in bottino-baileys (npm)","ecosystem":"npm","package":"bottino-baileys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17673"},
+    {"id":"MAL-2026-17674","name":"Malicious code in brat-generator (npm)","ecosystem":"npm","package":"brat-generator","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17674"},
+    {"id":"MAL-2026-17675","name":"Malicious code in @bellaxchuu/bails (npm)","ecosystem":"npm","package":"@bellaxchuu/bails","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17675"},
+    {"id":"MAL-2026-17682","name":"Malicious code in connector-agent (npm)","ecosystem":"npm","package":"connector-agent","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17682"},
+    {"id":"MAL-2026-17693","name":"Malicious code in @bitwardne/cli (npm)","ecosystem":"npm","package":"@bitwardne/cli","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17693"},
+    {"id":"MAL-2026-17694","name":"Malicious code in @bitwardne/jslib (npm)","ecosystem":"npm","package":"@bitwardne/jslib","versions":["1.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17694"},
+    {"id":"MAL-2026-17695","name":"Malicious code in @dransay/db (npm)","ecosystem":"npm","package":"@dransay/db","versions":["99.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17695"},
+    {"id":"MAL-2026-17709","name":"Malicious code in revine (npm)","ecosystem":"npm","package":"revine","versions":["2.4.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17709"},
     {"id":"MAL-2026-1777","name":"Malicious code in libxmljs2147147 (npm)","ecosystem":"npm","package":"libxmljs2147147","versions":["0.30.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1777"},
     {"id":"MAL-2026-1779","name":"Malicious code in libxmljs2as (npm)","ecosystem":"npm","package":"libxmljs2as","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1779"},
     {"id":"MAL-2026-1780","name":"Malicious code in libxmljs2qaz (npm)","ecosystem":"npm","package":"libxmljs2qaz","versions":["0.30.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1780"},
