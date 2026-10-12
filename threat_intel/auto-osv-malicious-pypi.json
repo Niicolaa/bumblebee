@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-10-10T12:38:51Z",
+  "_generated_utc": "2026-10-12T15:36:02Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10824,6 +10824,8 @@
     {"id":"MAL-2026-17755","name":"Malicious code in agent-vx (PyPI)","ecosystem":"pypi","package":"agent-vx","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17755"},
     {"id":"MAL-2026-17756","name":"Malicious code in pafer (PyPI)","ecosystem":"pypi","package":"pafer","versions":["0.9.7","0.9.8"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17756"},
     {"id":"MAL-2026-17757","name":"Malicious code in webreader (PyPI)","ecosystem":"pypi","package":"webreader","versions":["2.3.8"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17757"},
+    {"id":"MAL-2026-17807","name":"Malicious code in py2ops (PyPI)","ecosystem":"pypi","package":"py2ops","versions":["2.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17807"},
+    {"id":"MAL-2026-17809","name":"Malicious code in minecraftaccfinder (PyPI)","ecosystem":"pypi","package":"minecraftaccfinder","versions":["0.1.0","0.1.1","0.1.2","0.3.0","0.3.1","0.4.0","2.0.0","3.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17809"},
     {"id":"MAL-2026-189","name":"Malicious code in oncecall (PyPI)","ecosystem":"pypi","package":"oncecall","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-189"},
     {"id":"MAL-2026-1893","name":"Malicious code in aitrade (PyPI)","ecosystem":"pypi","package":"aitrade","versions":["0.1.2","0.1.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1893"},
     {"id":"MAL-2026-1894","name":"Malicious code in async-substrate-interface-sub (PyPI)","ecosystem":"pypi","package":"async-substrate-interface-sub","versions":["1.5.156","1.5.157"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1894"},

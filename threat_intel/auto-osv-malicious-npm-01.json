@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-11T12:58:09Z",
+  "_generated_utc": "2026-10-12T15:35:58Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53718,7 +53718,11 @@
     {"id":"MAL-2026-17733","name":"Malicious code in asepxyz-baileys (npm)","ecosystem":"npm","package":"asepxyz-baileys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17733"},
     {"id":"MAL-2026-17754","name":"Malicious code in @library-wide/library-shell (npm)","ecosystem":"npm","package":"@library-wide/library-shell","versions":["99.9.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17754"},
     {"id":"MAL-2026-17758","name":"Malicious code in react-dropzone-v4 (npm)","ecosystem":"npm","package":"react-dropzone-v4","versions":["99.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17758"},
+    {"id":"MAL-2026-17760","name":"Malicious code in @coopeuch/common (npm)","ecosystem":"npm","package":"@coopeuch/common","versions":["1.999.999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17760"},
+    {"id":"MAL-2026-17771","name":"Malicious code in ksp-client-registry (npm)","ecosystem":"npm","package":"ksp-client-registry","versions":["100.100.100","100.100.101"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17771"},
+    {"id":"MAL-2026-17776","name":"Malicious code in pay-methods-kmf (npm)","ecosystem":"npm","package":"pay-methods-kmf","versions":["100.100.100","100.100.101","100.100.102"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17776"},
     {"id":"MAL-2026-178","name":"Malicious code in n8n-nodes-hfgjf-irtuinvcm-lasdqewriit (npm)","ecosystem":"npm","package":"n8n-nodes-hfgjf-irtuinvcm-lasdqewriit","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-178"},
+    {"id":"MAL-2026-17810","name":"Malicious code in @zaka13/zakasite (npm)","ecosystem":"npm","package":"@zaka13/zakasite","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17810"},
     {"id":"MAL-2026-1782","name":"Malicious code in libxmljs2var (npm)","ecosystem":"npm","package":"libxmljs2var","versions":["0.30.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1782"},
     {"id":"MAL-2026-1786","name":"Malicious code in libxmljs9 (npm)","ecosystem":"npm","package":"libxmljs9","versions":["0.30.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1786"},
     {"id":"MAL-2026-1794","name":"Malicious code in my-benefits-web (npm)","ecosystem":"npm","package":"my-benefits-web","versions":["1.0.0","1.0.5","1.0.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1794"},
