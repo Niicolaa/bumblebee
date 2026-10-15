@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-14T11:59:57Z",
+  "_generated_utc": "2026-10-15T11:37:00Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54285,7 +54285,7 @@
     {"id":"MAL-2026-17704","name":"Malicious code in @wxwxtest/testrrrdd (npm)","ecosystem":"npm","package":"@wxwxtest/testrrrdd","versions":["0.0.1","0.1.0","1.0.0","1.0.1","2.0.0","2.0.1","3.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17704"},
     {"id":"MAL-2026-17707","name":"Malicious code in wie888r (npm)","ecosystem":"npm","package":"wie888r","versions":["0.0.1","1.0.0","1.0.1","1.1.0","2.0.0","2.0.1","3.0.0","99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17707"},
     {"id":"MAL-2026-1771","name":"Malicious code in libxmlaboba (npm)","ecosystem":"npm","package":"libxmlaboba","versions":["0.30.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1771"},
-    {"id":"MAL-2026-17710","name":"Malicious code in pxnpm (npm)","ecosystem":"npm","package":"pxnpm","versions":["7.0.0","7.0.0-beta.6","7.0.0-beta.8"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17710"},
+    {"id":"MAL-2026-17710","name":"Malicious code in pxnpm (npm)","ecosystem":"npm","package":"pxnpm","versions":["7.0.0","7.0.0-beta.6","7.0.0-beta.8","7.0.1","7.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17710"},
     {"id":"MAL-2026-17711","name":"Malicious code in wix-reg-poc-bypass (npm)","ecosystem":"npm","package":"wix-reg-poc-bypass","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17711"},
     {"id":"MAL-2026-17716","name":"Malicious code in @brick-v2/form (npm)","ecosystem":"npm","package":"@brick-v2/form","versions":["999.0.1","999.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17716"},
     {"id":"MAL-2026-17717","name":"Malicious code in @brick-v2/icons (npm)","ecosystem":"npm","package":"@brick-v2/icons","versions":["999.0.1","999.0.2","999.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17717"},
@@ -54324,6 +54324,7 @@
     {"id":"MAL-2026-17869","name":"Malicious code in @mntv-analysis/ui (npm)","ecosystem":"npm","package":"@mntv-analysis/ui","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17869"},
     {"id":"MAL-2026-1787","name":"Malicious code in libxmljsololoq (npm)","ecosystem":"npm","package":"libxmljsololoq","versions":["0.30.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1787"},
     {"id":"MAL-2026-17872","name":"Malicious code in @newspage/lib-ng-async-routes-ui (npm)","ecosystem":"npm","package":"@newspage/lib-ng-async-routes-ui","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17872"},
+    {"id":"MAL-2026-17879","name":"Malicious code in @flexmr/ui (npm)","ecosystem":"npm","package":"@flexmr/ui","versions":["99.99.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17879"},
     {"id":"MAL-2026-1788","name":"Malicious code in libxmlrussia2 (npm)","ecosystem":"npm","package":"libxmlrussia2","versions":["0.30.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1788"},
     {"id":"MAL-2026-1789","name":"Malicious code in loyalty-card (npm)","ecosystem":"npm","package":"loyalty-card","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1789"},
     {"id":"MAL-2026-179","name":"Malicious code in n8n-nodes-vbmkajdsa-uehfitvv-ueqjhhhksdlkkmz (npm)","ecosystem":"npm","package":"n8n-nodes-vbmkajdsa-uehfitvv-ueqjhhhksdlkkmz","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-179"},
