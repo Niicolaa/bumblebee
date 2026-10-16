@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-15T11:37:00Z",
+  "_generated_utc": "2026-10-16T11:31:09Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -53931,9 +53931,12 @@
     {"id":"MAL-2026-17849","name":"Malicious code in brass-common (npm)","ecosystem":"npm","package":"brass-common","versions":["99.9.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17849"},
     {"id":"MAL-2026-17855","name":"Malicious code in opencode2-linux-arm64 (npm)","ecosystem":"npm","package":"opencode2-linux-arm64","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17855"},
     {"id":"MAL-2026-17858","name":"Malicious code in opencode2-linux-x64-musl (npm)","ecosystem":"npm","package":"opencode2-linux-x64-musl","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17858"},
-    {"id":"MAL-2026-17873","name":"Malicious code in @newspage/libx-amount (npm)","ecosystem":"npm","package":"@newspage/libx-amount","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17873"},
+    {"id":"MAL-2026-17873","name":"Malicious code in @newspage/libx-amount (npm)","ecosystem":"npm","package":"@newspage/libx-amount","versions":["99.99.4","99.99.41","99.99.42"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17873"},
     {"id":"MAL-2026-17875","name":"Malicious code in monkey-tags-ip (npm)","ecosystem":"npm","package":"monkey-tags-ip","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17875"},
     {"id":"MAL-2026-17876","name":"Malicious code in @xxxfnbs21/hello-demo (npm)","ecosystem":"npm","package":"@xxxfnbs21/hello-demo","versions":["0.0.0-stage","0.1.0","0.1.1","0.1.2","0.1.3","0.1.5","0.1.6","0.1.8"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17876"},
+    {"id":"MAL-2026-17892","name":"Malicious code in xmd-baileys (npm)","ecosystem":"npm","package":"xmd-baileys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17892"},
+    {"id":"MAL-2026-17893","name":"Malicious code in buyerdashboard (npm)","ecosystem":"npm","package":"buyerdashboard","versions":["45.3.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17893"},
+    {"id":"MAL-2026-17894","name":"Malicious code in idlive-face-capture-web-development (npm)","ecosystem":"npm","package":"idlive-face-capture-web-development","versions":["78.8.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17894"},
     {"id":"MAL-2026-1790","name":"Malicious code in manifest-confusion-poc-audit (npm)","ecosystem":"npm","package":"manifest-confusion-poc-audit","versions":["999999999.999999999.999999999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1790"},
     {"id":"MAL-2026-1793","name":"Malicious code in mitel (npm)","ecosystem":"npm","package":"mitel","versions":["999.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1793"},
     {"id":"MAL-2026-1796","name":"Malicious code in netlify-claude-ai (npm)","ecosystem":"npm","package":"netlify-claude-ai","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1796"},
