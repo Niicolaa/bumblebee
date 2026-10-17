@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-16T11:31:09Z",
+  "_generated_utc": "2026-10-17T10:51:09Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54331,6 +54331,9 @@
     {"id":"MAL-2026-17898","name":"Malicious code in @flexmr/survey-client (npm)","ecosystem":"npm","package":"@flexmr/survey-client","versions":["1.0.0","1.0.12","10.0.12","2.0.12","3.0.12"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17898"},
     {"id":"MAL-2026-17899","name":"Malicious code in @flexmr/survey-conversation (npm)","ecosystem":"npm","package":"@flexmr/survey-conversation","versions":["1.0.0","1.0.12","10.0.12","2.0.12","3.0.12"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17899"},
     {"id":"MAL-2026-179","name":"Malicious code in n8n-nodes-vbmkajdsa-uehfitvv-ueqjhhhksdlkkmz (npm)","ecosystem":"npm","package":"n8n-nodes-vbmkajdsa-uehfitvv-ueqjhhhksdlkkmz","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-179"},
+    {"id":"MAL-2026-17903","name":"Malicious code in @beloved-lenora/opencode-btw (npm)","ecosystem":"npm","package":"@beloved-lenora/opencode-btw","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17903"},
+    {"id":"MAL-2026-17908","name":"Malicious code in @beloved-lenora/opencode-stats (npm)","ecosystem":"npm","package":"@beloved-lenora/opencode-stats","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17908"},
+    {"id":"MAL-2026-17910","name":"Malicious code in itsa-react-focuscontainer (npm)","ecosystem":"npm","package":"itsa-react-focuscontainer","versions":["16.0.10"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17910"},
     {"id":"MAL-2026-1792","name":"Malicious code in metro-evaluator (npm)","ecosystem":"npm","package":"metro-evaluator","versions":["1.0.0","1.0.1","1.0.2","1.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1792"},
     {"id":"MAL-2026-1795","name":"Malicious code in nchain-clone (npm)","ecosystem":"npm","package":"nchain-clone","versions":["3.3.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1795"},
     {"id":"MAL-2026-180","name":"Malicious code in shreddit.styles (npm)","ecosystem":"npm","package":"shreddit.styles","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-180"},

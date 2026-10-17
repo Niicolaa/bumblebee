@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-16T11:31:09Z",
+  "_generated_utc": "2026-10-17T10:51:09Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -54003,6 +54003,11 @@
     {"id":"MAL-2026-17891","name":"Malicious code in asistenyorstore (npm)","ecosystem":"npm","package":"asistenyorstore","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17891"},
     {"id":"MAL-2026-17895","name":"Malicious code in web-pixels-manager (npm)","ecosystem":"npm","package":"web-pixels-manager","versions":["76.2.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17895"},
     {"id":"MAL-2026-17896","name":"Malicious code in xapi-lib (npm)","ecosystem":"npm","package":"xapi-lib","versions":["88.2.3","88.2.5","90.2.1","90.3.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17896"},
+    {"id":"MAL-2026-17901","name":"Malicious code in @xatancchii/natabaileys (npm)","ecosystem":"npm","package":"@xatancchii/natabaileys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17901"},
+    {"id":"MAL-2026-17902","name":"Malicious code in parxleys (npm)","ecosystem":"npm","package":"parxleys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17902"},
+    {"id":"MAL-2026-17905","name":"Malicious code in @beloved-lenora/opencode-orchestrator (npm)","ecosystem":"npm","package":"@beloved-lenora/opencode-orchestrator","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17905"},
+    {"id":"MAL-2026-17907","name":"Malicious code in @beloved-lenora/opencode-shell-guard (npm)","ecosystem":"npm","package":"@beloved-lenora/opencode-shell-guard","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17907"},
+    {"id":"MAL-2026-17909","name":"Malicious code in @beloved-lenora/opencode-todo (npm)","ecosystem":"npm","package":"@beloved-lenora/opencode-todo","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17909"},
     {"id":"MAL-2026-1791","name":"Malicious code in meridix (npm)","ecosystem":"npm","package":"meridix","versions":["999.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1791"},
     {"id":"MAL-2026-1802","name":"Malicious code in node-cli-dotenv (npm)","ecosystem":"npm","package":"node-cli-dotenv","versions":["2.4.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1802"},
     {"id":"MAL-2026-181","name":"Malicious code in smintio-portals-component-sdk (npm)","ecosystem":"npm","package":"smintio-portals-component-sdk","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-181"},

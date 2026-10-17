@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-16T11:31:09Z",
+  "_generated_utc": "2026-10-17T10:51:09Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -53938,6 +53938,9 @@
     {"id":"MAL-2026-17893","name":"Malicious code in buyerdashboard (npm)","ecosystem":"npm","package":"buyerdashboard","versions":["45.3.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17893"},
     {"id":"MAL-2026-17894","name":"Malicious code in idlive-face-capture-web-development (npm)","ecosystem":"npm","package":"idlive-face-capture-web-development","versions":["78.8.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17894"},
     {"id":"MAL-2026-1790","name":"Malicious code in manifest-confusion-poc-audit (npm)","ecosystem":"npm","package":"manifest-confusion-poc-audit","versions":["999999999.999999999.999999999"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1790"},
+    {"id":"MAL-2026-17904","name":"Malicious code in @beloved-lenora/opencode-goal (npm)","ecosystem":"npm","package":"@beloved-lenora/opencode-goal","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17904"},
+    {"id":"MAL-2026-17906","name":"Malicious code in @beloved-lenora/opencode-shared-rpc (npm)","ecosystem":"npm","package":"@beloved-lenora/opencode-shared-rpc","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17906"},
+    {"id":"MAL-2026-17911","name":"Malicious code in itsa-react-maskedinput (npm)","ecosystem":"npm","package":"itsa-react-maskedinput","versions":["16.1.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17911"},
     {"id":"MAL-2026-1793","name":"Malicious code in mitel (npm)","ecosystem":"npm","package":"mitel","versions":["999.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1793"},
     {"id":"MAL-2026-1796","name":"Malicious code in netlify-claude-ai (npm)","ecosystem":"npm","package":"netlify-claude-ai","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1796"},
     {"id":"MAL-2026-1797","name":"Malicious code in nextiva-dot-com (npm)","ecosystem":"npm","package":"nextiva-dot-com","versions":["1.1.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1797"},
