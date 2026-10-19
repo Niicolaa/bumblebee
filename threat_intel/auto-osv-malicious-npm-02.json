@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-17T10:51:09Z",
+  "_generated_utc": "2026-10-19T13:27:23Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54088,7 +54088,7 @@
     {"id":"MAL-2026-16345","name":"Malicious code in starbucks-sdk (npm)","ecosystem":"npm","package":"starbucks-sdk","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16345"},
     {"id":"MAL-2026-16347","name":"Malicious code in radio-player-theme (npm)","ecosystem":"npm","package":"radio-player-theme","versions":["0.0.0-stage","1.0.0","2.0.0","3.0.0","4.0.0","5.0.0","6.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16347"},
     {"id":"MAL-2026-1635","name":"Malicious code in @polymarket-developers/clob-client (npm)","ecosystem":"npm","package":"@polymarket-developers/clob-client","versions":["1.0.7","1.0.8","1.0.9","1.1.0","1.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1635"},
-    {"id":"MAL-2026-16355","name":"Malicious code in gemini-computer-use (npm)","ecosystem":"npm","package":"gemini-computer-use","versions":["0.1.2","0.4.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16355"},
+    {"id":"MAL-2026-16355","name":"Malicious code in gemini-computer-use (npm)","ecosystem":"npm","package":"gemini-computer-use","versions":["0.1.2","0.4.3","0.4.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16355"},
     {"id":"MAL-2026-16359","name":"Malicious code in @uh-platform/domain-widget (npm)","ecosystem":"npm","package":"@uh-platform/domain-widget","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16359"},
     {"id":"MAL-2026-16360","name":"Malicious code in @uh-platform/nadaver (npm)","ecosystem":"npm","package":"@uh-platform/nadaver","versions":["102.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16360"},
     {"id":"MAL-2026-16368","name":"Malicious code in mathmain (npm)","ecosystem":"npm","package":"mathmain","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-16368"},
@@ -54335,6 +54335,7 @@
     {"id":"MAL-2026-17908","name":"Malicious code in @beloved-lenora/opencode-stats (npm)","ecosystem":"npm","package":"@beloved-lenora/opencode-stats","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17908"},
     {"id":"MAL-2026-17910","name":"Malicious code in itsa-react-focuscontainer (npm)","ecosystem":"npm","package":"itsa-react-focuscontainer","versions":["16.0.10"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17910"},
     {"id":"MAL-2026-1792","name":"Malicious code in metro-evaluator (npm)","ecosystem":"npm","package":"metro-evaluator","versions":["1.0.0","1.0.1","1.0.2","1.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1792"},
+    {"id":"MAL-2026-17936","name":"Malicious code in mx3dxhgic8xhd6 (npm)","ecosystem":"npm","package":"mx3dxhgic8xhd6","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17936"},
     {"id":"MAL-2026-1795","name":"Malicious code in nchain-clone (npm)","ecosystem":"npm","package":"nchain-clone","versions":["3.3.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1795"},
     {"id":"MAL-2026-180","name":"Malicious code in shreddit.styles (npm)","ecosystem":"npm","package":"shreddit.styles","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-180"},
     {"id":"MAL-2026-1801","name":"Malicious code in no6gg (npm)","ecosystem":"npm","package":"no6gg","versions":["1.0.0","1.0.1","1.0.10","1.0.2","1.0.3","1.0.4","1.0.5","1.0.6","1.0.7","1.0.8","1.0.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1801"},
