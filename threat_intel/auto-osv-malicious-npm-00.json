@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-20T11:45:35Z",
+  "_generated_utc": "2026-10-21T11:57:47Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -53975,7 +53975,7 @@
     {"id":"MAL-2026-18038","name":"Malicious code in v49yzy (npm)","ecosystem":"npm","package":"v49yzy","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18038"},
     {"id":"MAL-2026-18040","name":"Malicious code in x294tn (npm)","ecosystem":"npm","package":"x294tn","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18040"},
     {"id":"MAL-2026-18043","name":"Malicious code in zip-mp3-a-lbum-do-wnload-new-67476-what-we-do-egj2h-bgfgzz (npm)","ecosystem":"npm","package":"zip-mp3-a-lbum-do-wnload-new-67476-what-we-do-egj2h-bgfgzz","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18043"},
-    {"id":"MAL-2026-18054","name":"Malicious code in @decoopus/claude-setup (npm)","ecosystem":"npm","package":"@decoopus/claude-setup","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18054"},
+    {"id":"MAL-2026-18054","name":"Malicious code in @decoopus/claude-setup (npm)","ecosystem":"npm","package":"@decoopus/claude-setup","versions":["1.0.13","1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18054"},
     {"id":"MAL-2026-18057","name":"Malicious code in chatgpt-pro-activator (npm)","ecosystem":"npm","package":"chatgpt-pro-activator","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18057"},
     {"id":"MAL-2026-18060","name":"Malicious code in codex-setup (npm)","ecosystem":"npm","package":"codex-setup","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18060"},
     {"id":"MAL-2026-18068","name":"Malicious code in animatecss-tailwind-binary (npm)","ecosystem":"npm","package":"animatecss-tailwind-binary","versions":["2.0.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18068"},

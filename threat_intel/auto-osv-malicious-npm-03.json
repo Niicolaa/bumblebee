@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-20T11:45:35Z",
+  "_generated_utc": "2026-10-21T11:57:47Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -54038,6 +54038,9 @@
     {"id":"MAL-2026-18081","name":"Malicious code in tailwind-css-keyframes (npm)","ecosystem":"npm","package":"tailwind-css-keyframes","versions":["1.0.7"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18081"},
     {"id":"MAL-2026-18084","name":"Malicious code in tailwind-kinetic (npm)","ecosystem":"npm","package":"tailwind-kinetic","versions":["2.0.6","2.0.8"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18084"},
     {"id":"MAL-2026-181","name":"Malicious code in smintio-portals-component-sdk (npm)","ecosystem":"npm","package":"smintio-portals-component-sdk","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-181"},
+    {"id":"MAL-2026-18105","name":"Malicious code in @securihackbot/depconf-stage-1792484738 (npm)","ecosystem":"npm","package":"@securihackbot/depconf-stage-1792484738","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18105"},
+    {"id":"MAL-2026-18109","name":"Malicious code in rs-lookout-sandbox-poc (npm)","ecosystem":"npm","package":"rs-lookout-sandbox-poc","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18109"},
+    {"id":"MAL-2026-18121","name":"Malicious code in my-auto-follow-eltio (npm)","ecosystem":"npm","package":"my-auto-follow-eltio","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18121"},
     {"id":"MAL-2026-1813","name":"Malicious code in phx-core4 (npm)","ecosystem":"npm","package":"phx-core4","versions":["8.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1813"},
     {"id":"MAL-2026-1818","name":"Malicious code in player-button (npm)","ecosystem":"npm","package":"player-button","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1818"},
     {"id":"MAL-2026-182","name":"Malicious code in yunxohang10 (npm)","ecosystem":"npm","package":"yunxohang10","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-182"},
