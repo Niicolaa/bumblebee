@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the rubygems ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-10-12T15:36:03Z",
+  "_generated_utc": "2026-10-22T11:59:55Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2023-11","name":"Malicious code in microsoft_kiota_http (RubyGems)","ecosystem":"rubygems","package":"microsoft_kiota_http","versions":["6.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2023-11"},
@@ -1741,6 +1741,7 @@
     {"id":"MAL-2026-17800","name":"Malicious code in wallet-hd-derive (RubyGems)","ecosystem":"rubygems","package":"wallet-hd-derive","versions":["0.9.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17800"},
     {"id":"MAL-2026-17801","name":"Malicious code in web3-signer-kit (RubyGems)","ecosystem":"rubygems","package":"web3-signer-kit","versions":["0.9.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17801"},
     {"id":"MAL-2026-17802","name":"Malicious code in xrp-ledger-utils (RubyGems)","ecosystem":"rubygems","package":"xrp-ledger-utils","versions":["0.9.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-17802"},
+    {"id":"MAL-2026-18126","name":"Malicious code in zzhelloworld_socktest (RubyGems)","ecosystem":"rubygems","package":"zzhelloworld_socktest","versions":["0.1.5","0.1.6","0.1.7","0.1.8","0.1.9","0.2.0","0.2.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18126"},
     {"id":"MAL-2026-1915","name":"Malicious code in doctolib (RubyGems)","ecosystem":"rubygems","package":"doctolib","versions":["99.0.0","99.0.1","99.0.2","99.0.3","99.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1915"},
     {"id":"MAL-2026-1916","name":"Malicious code in freshworks-ruby (RubyGems)","ecosystem":"rubygems","package":"freshworks-ruby","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1916"},
     {"id":"MAL-2026-1917","name":"Malicious code in kaleido (RubyGems)","ecosystem":"rubygems","package":"kaleido","versions":["5000.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1917"},

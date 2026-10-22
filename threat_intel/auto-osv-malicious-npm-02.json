@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-21T11:57:47Z",
+  "_generated_utc": "2026-10-22T11:59:51Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54384,7 +54384,11 @@
     {"id":"MAL-2026-18108","name":"Malicious code in rootaccessxvv-bbmarker (npm)","ecosystem":"npm","package":"rootaccessxvv-bbmarker","versions":["1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18108"},
     {"id":"MAL-2026-18115","name":"Malicious code in tellyo-colours (npm)","ecosystem":"npm","package":"tellyo-colours","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18115"},
     {"id":"MAL-2026-1812","name":"Malicious code in phx-core3 (npm)","ecosystem":"npm","package":"phx-core3","versions":["8.0.0","8.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1812"},
+    {"id":"MAL-2026-18128","name":"Malicious code in @sudobility/shaperouter_client (npm)","ecosystem":"npm","package":"@sudobility/shaperouter_client","versions":["0.0.14"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18128"},
     {"id":"MAL-2026-1816","name":"Malicious code in pkgnewfefame1 (npm)","ecosystem":"npm","package":"pkgnewfefame1","versions":["3.2.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1816"},
+    {"id":"MAL-2026-18183","name":"Malicious code in @conduitops/logview-archive (npm)","ecosystem":"npm","package":"@conduitops/logview-archive","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18183"},
+    {"id":"MAL-2026-18184","name":"Malicious code in formatting-subtitles (npm)","ecosystem":"npm","package":"formatting-subtitles","versions":["1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18184"},
+    {"id":"MAL-2026-18187","name":"Malicious code in simplewave (npm)","ecosystem":"npm","package":"simplewave","versions":["0.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18187"},
     {"id":"MAL-2026-1825","name":"Malicious code in proleis-web-app (npm)","ecosystem":"npm","package":"proleis-web-app","versions":["10.0.1","10.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1825"},
     {"id":"MAL-2026-1831","name":"Malicious code in rabbitmq-sdk (npm)","ecosystem":"npm","package":"rabbitmq-sdk","versions":["0.1.0","1.2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1831"},
     {"id":"MAL-2026-1836","name":"Malicious code in react-performance-suite (npm)","ecosystem":"npm","package":"react-performance-suite","versions":["2.0.0","2.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1836"},
