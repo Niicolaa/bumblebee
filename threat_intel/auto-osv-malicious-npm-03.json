@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-23T11:45:35Z",
+  "_generated_utc": "2026-10-24T11:09:48Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -54053,6 +54053,8 @@
     {"id":"MAL-2026-18207","name":"Malicious code in @ecg-internal/aurora-js-formatters (npm)","ecosystem":"npm","package":"@ecg-internal/aurora-js-formatters","versions":["1.0.0","2.0.0","2.0.1","3.0.0","99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18207"},
     {"id":"MAL-2026-1821","name":"Malicious code in portal-lime (npm)","ecosystem":"npm","package":"portal-lime","versions":["2.1.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1821"},
     {"id":"MAL-2026-1822","name":"Malicious code in postcss-hotfix (npm)","ecosystem":"npm","package":"postcss-hotfix","versions":["2.0.0","77.7.7","99.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1822"},
+    {"id":"MAL-2026-18244","name":"Malicious code in @k18k/entrypoint-sdk-darwin-x64 (npm)","ecosystem":"npm","package":"@k18k/entrypoint-sdk-darwin-x64","versions":["0.2.0","0.2.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18244"},
+    {"id":"MAL-2026-18246","name":"Malicious code in orqiva-runtime-win32-x64 (npm)","ecosystem":"npm","package":"orqiva-runtime-win32-x64","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18246"},
     {"id":"MAL-2026-1827","name":"Malicious code in proleis-web-gallery (npm)","ecosystem":"npm","package":"proleis-web-gallery","versions":["10.0.0","10.0.1","10.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1827"},
     {"id":"MAL-2026-1828","name":"Malicious code in proleis-web-scanner (npm)","ecosystem":"npm","package":"proleis-web-scanner","versions":["10.0.0","10.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1828"},
     {"id":"MAL-2026-1830","name":"Malicious code in r1dfg6789 (npm)","ecosystem":"npm","package":"r1dfg6789","versions":["1.0.0","1.0.1","1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1830"},

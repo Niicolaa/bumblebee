@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-23T11:45:35Z",
+  "_generated_utc": "2026-10-24T11:09:48Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53834,9 +53834,10 @@
     {"id":"MAL-2026-18204","name":"Malicious code in @factiii/runner (npm)","ecosystem":"npm","package":"@factiii/runner","versions":["0.28.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18204"},
     {"id":"MAL-2026-18209","name":"Malicious code in @ecg-internal/js-react-i18n (npm)","ecosystem":"npm","package":"@ecg-internal/js-react-i18n","versions":["1.0.0","1.0.1","1.1.0","2.0.0","99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18209"},
     {"id":"MAL-2026-18213","name":"Malicious code in @cecm-web-sdk/core (npm)","ecosystem":"npm","package":"@cecm-web-sdk/core","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18213"},
-    {"id":"MAL-2026-18214","name":"Malicious code in @grabcad/company-server-shared (npm)","ecosystem":"npm","package":"@grabcad/company-server-shared","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18214"},
-    {"id":"MAL-2026-18215","name":"Malicious code in @grabcad/grabcad-shop-shared (npm)","ecosystem":"npm","package":"@grabcad/grabcad-shop-shared","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18215"},
-    {"id":"MAL-2026-18217","name":"Malicious code in @grabcad/user-license (npm)","ecosystem":"npm","package":"@grabcad/user-license","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18217"},
+    {"id":"MAL-2026-18214","name":"Malicious code in @grabcad/company-server-shared (npm)","ecosystem":"npm","package":"@grabcad/company-server-shared","versions":["0.0.1","1.0.0","1.1.0","2.0.0","2.0.1","3.0.0","99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18214"},
+    {"id":"MAL-2026-18215","name":"Malicious code in @grabcad/grabcad-shop-shared (npm)","ecosystem":"npm","package":"@grabcad/grabcad-shop-shared","versions":["1.0.0","1.0.1","1.1.0","2.0.0","2.0.1","3.0.0","99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18215"},
+    {"id":"MAL-2026-18217","name":"Malicious code in @grabcad/user-license (npm)","ecosystem":"npm","package":"@grabcad/user-license","versions":["0.0.1","1.0.0","1.0.1","1.1.0","2.0.0","2.0.1","3.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18217"},
+    {"id":"MAL-2026-18243","name":"Malicious code in @k18k/entrypoint-sdk-darwin-arm64 (npm)","ecosystem":"npm","package":"@k18k/entrypoint-sdk-darwin-arm64","versions":["0.2.0","0.2.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18243"},
     {"id":"MAL-2026-1832","name":"Malicious code in ranko887 (npm)","ecosystem":"npm","package":"ranko887","versions":["1.0.0","1.0.1","1.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1832"},
     {"id":"MAL-2026-1834","name":"Malicious code in rce-pkg-2 (npm)","ecosystem":"npm","package":"rce-pkg-2","versions":["1.0.0","1.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1834"},
     {"id":"MAL-2026-1838","name":"Malicious code in react-router-on-navigation (npm)","ecosystem":"npm","package":"react-router-on-navigation","versions":["999.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1838"},

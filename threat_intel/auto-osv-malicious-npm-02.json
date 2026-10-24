@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-23T11:45:35Z",
+  "_generated_utc": "2026-10-24T11:09:48Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54396,7 +54396,7 @@
     {"id":"MAL-2026-18206","name":"Malicious code in @ecg-internal/adobe-dmp-js (npm)","ecosystem":"npm","package":"@ecg-internal/adobe-dmp-js","versions":["0.0.1","1.0.1","2.0.0","2.0.1","99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18206"},
     {"id":"MAL-2026-18210","name":"Malicious code in @ecg-internal/media-util-js-lib (npm)","ecosystem":"npm","package":"@ecg-internal/media-util-js-lib","versions":["0.0.1","1.0.1","1.1.0","2.0.0","2.0.1","3.0.0","99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18210"},
     {"id":"MAL-2026-18212","name":"Malicious code in @blueskydataplatform/shared-ui (npm)","ecosystem":"npm","package":"@blueskydataplatform/shared-ui","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18212"},
-    {"id":"MAL-2026-18216","name":"Malicious code in @grabcad/preferences-client (npm)","ecosystem":"npm","package":"@grabcad/preferences-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18216"},
+    {"id":"MAL-2026-18216","name":"Malicious code in @grabcad/preferences-client (npm)","ecosystem":"npm","package":"@grabcad/preferences-client","versions":["0.0.1","1.1.0","2.0.0","3.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18216"},
     {"id":"MAL-2026-1825","name":"Malicious code in proleis-web-app (npm)","ecosystem":"npm","package":"proleis-web-app","versions":["10.0.1","10.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1825"},
     {"id":"MAL-2026-1831","name":"Malicious code in rabbitmq-sdk (npm)","ecosystem":"npm","package":"rabbitmq-sdk","versions":["0.1.0","1.2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1831"},
     {"id":"MAL-2026-1836","name":"Malicious code in react-performance-suite (npm)","ecosystem":"npm","package":"react-performance-suite","versions":["2.0.0","2.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1836"},
