@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-24T11:09:48Z",
+  "_generated_utc": "2026-10-25T11:39:29Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -54055,7 +54055,14 @@
     {"id":"MAL-2026-1822","name":"Malicious code in postcss-hotfix (npm)","ecosystem":"npm","package":"postcss-hotfix","versions":["2.0.0","77.7.7","99.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1822"},
     {"id":"MAL-2026-18244","name":"Malicious code in @k18k/entrypoint-sdk-darwin-x64 (npm)","ecosystem":"npm","package":"@k18k/entrypoint-sdk-darwin-x64","versions":["0.2.0","0.2.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18244"},
     {"id":"MAL-2026-18246","name":"Malicious code in orqiva-runtime-win32-x64 (npm)","ecosystem":"npm","package":"orqiva-runtime-win32-x64","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18246"},
+    {"id":"MAL-2026-18249","name":"Malicious code in noelc-css-blender (npm)","ecosystem":"npm","package":"noelc-css-blender","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18249"},
+    {"id":"MAL-2026-18254","name":"Malicious code in appit-cordova-plugin-ionic (npm)","ecosystem":"npm","package":"appit-cordova-plugin-ionic","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18254"},
+    {"id":"MAL-2026-18255","name":"Malicious code in cert-infos (npm)","ecosystem":"npm","package":"cert-infos","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18255"},
+    {"id":"MAL-2026-18257","name":"Malicious code in insta-api-wrapper (npm)","ecosystem":"npm","package":"insta-api-wrapper","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18257"},
+    {"id":"MAL-2026-18264","name":"Malicious code in ocsp-hashes (npm)","ecosystem":"npm","package":"ocsp-hashes","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18264"},
+    {"id":"MAL-2026-18265","name":"Malicious code in p12-pem (npm)","ecosystem":"npm","package":"p12-pem","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18265"},
     {"id":"MAL-2026-1827","name":"Malicious code in proleis-web-gallery (npm)","ecosystem":"npm","package":"proleis-web-gallery","versions":["10.0.0","10.0.1","10.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1827"},
+    {"id":"MAL-2026-18270","name":"Malicious code in youtube-search-without-api-key (npm)","ecosystem":"npm","package":"youtube-search-without-api-key","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18270"},
     {"id":"MAL-2026-1828","name":"Malicious code in proleis-web-scanner (npm)","ecosystem":"npm","package":"proleis-web-scanner","versions":["10.0.0","10.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1828"},
     {"id":"MAL-2026-1830","name":"Malicious code in r1dfg6789 (npm)","ecosystem":"npm","package":"r1dfg6789","versions":["1.0.0","1.0.1","1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1830"},
     {"id":"MAL-2026-1837","name":"Malicious code in react-query-core-utils (npm)","ecosystem":"npm","package":"react-query-core-utils","versions":["4.4.1","4.4.2","4.4.3","4.4.4","4.4.5","4.4.6","4.4.7","4.4.8","4.4.9","4.5.1","4.5.2","4.5.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1837"},

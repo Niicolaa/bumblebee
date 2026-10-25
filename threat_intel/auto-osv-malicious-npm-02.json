@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-24T11:09:48Z",
+  "_generated_utc": "2026-10-25T11:39:29Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54398,6 +54398,10 @@
     {"id":"MAL-2026-18212","name":"Malicious code in @blueskydataplatform/shared-ui (npm)","ecosystem":"npm","package":"@blueskydataplatform/shared-ui","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18212"},
     {"id":"MAL-2026-18216","name":"Malicious code in @grabcad/preferences-client (npm)","ecosystem":"npm","package":"@grabcad/preferences-client","versions":["0.0.1","1.1.0","2.0.0","3.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18216"},
     {"id":"MAL-2026-1825","name":"Malicious code in proleis-web-app (npm)","ecosystem":"npm","package":"proleis-web-app","versions":["10.0.1","10.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1825"},
+    {"id":"MAL-2026-18258","name":"Malicious code in insta-reel-search (npm)","ecosystem":"npm","package":"insta-reel-search","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18258"},
+    {"id":"MAL-2026-18259","name":"Malicious code in ionic-insta-search (npm)","ecosystem":"npm","package":"ionic-insta-search","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18259"},
+    {"id":"MAL-2026-18266","name":"Malicious code in redis-dumper (npm)","ecosystem":"npm","package":"redis-dumper","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18266"},
+    {"id":"MAL-2026-18268","name":"Malicious code in tiktok-video-scraper (npm)","ecosystem":"npm","package":"tiktok-video-scraper","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18268"},
     {"id":"MAL-2026-1831","name":"Malicious code in rabbitmq-sdk (npm)","ecosystem":"npm","package":"rabbitmq-sdk","versions":["0.1.0","1.2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1831"},
     {"id":"MAL-2026-1836","name":"Malicious code in react-performance-suite (npm)","ecosystem":"npm","package":"react-performance-suite","versions":["2.0.0","2.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1836"},
     {"id":"MAL-2026-1839","name":"Malicious code in react-state-optimizer-core (npm)","ecosystem":"npm","package":"react-state-optimizer-core","versions":["1.0.0","1.0.2","1.0.3","1.0.4","1.0.5","1.0.6","1.0.7","1.0.8","1.0.9","3.0.3","3.0.4","3.0.5","3.0.6","3.0.7","3.0.8","3.0.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1839"},

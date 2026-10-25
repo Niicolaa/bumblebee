@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-24T11:09:48Z",
+  "_generated_utc": "2026-10-25T11:39:29Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -54006,7 +54006,11 @@
     {"id":"MAL-2026-18245","name":"Malicious code in @k18k/entrypoint-sdk-linux-x64 (npm)","ecosystem":"npm","package":"@k18k/entrypoint-sdk-linux-x64","versions":["0.2.0","0.2.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18245"},
     {"id":"MAL-2026-18247","name":"Malicious code in @liauto/win32-x64 (npm)","ecosystem":"npm","package":"@liauto/win32-x64","versions":["0.1.2-b2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18247"},
     {"id":"MAL-2026-18248","name":"Malicious code in overarch-windows-x64-yr (npm)","ecosystem":"npm","package":"overarch-windows-x64-yr","versions":["1.4.0","1.5.0","2.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18248"},
+    {"id":"MAL-2026-18252","name":"Malicious code in @eforms/forms-api (npm)","ecosystem":"npm","package":"@eforms/forms-api","versions":["2.0.0-SNAPSHOT"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18252"},
+    {"id":"MAL-2026-18253","name":"Malicious code in appit-cordova-admob (npm)","ecosystem":"npm","package":"appit-cordova-admob","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18253"},
     {"id":"MAL-2026-1826","name":"Malicious code in proleis-web-file-input (npm)","ecosystem":"npm","package":"proleis-web-file-input","versions":["10.0.0","10.0.1","10.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1826"},
+    {"id":"MAL-2026-18260","name":"Malicious code in ionic-sound-cloud-loader-api (npm)","ecosystem":"npm","package":"ionic-sound-cloud-loader-api","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18260"},
+    {"id":"MAL-2026-18262","name":"Malicious code in ionic-youtube-search (npm)","ecosystem":"npm","package":"ionic-youtube-search","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18262"},
     {"id":"MAL-2026-1829","name":"Malicious code in pru-lib-ng (npm)","ecosystem":"npm","package":"pru-lib-ng","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1829"},
     {"id":"MAL-2026-183","name":"Malicious code in yunxohang11 (npm)","ecosystem":"npm","package":"yunxohang11","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-183"},
     {"id":"MAL-2026-1833","name":"Malicious code in rce-pkg-1 (npm)","ecosystem":"npm","package":"rce-pkg-1","versions":["1.0.0","1.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1833"},
