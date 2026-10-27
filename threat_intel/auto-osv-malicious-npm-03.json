@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-26T13:12:03Z",
+  "_generated_utc": "2026-10-27T12:20:00Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -54080,6 +54080,7 @@
     {"id":"MAL-2026-18322","name":"Malicious code in numbors (npm)","ecosystem":"npm","package":"numbors","versions":["1.6.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18322"},
     {"id":"MAL-2026-18323","name":"Malicious code in publish-poc-base (npm)","ecosystem":"npm","package":"publish-poc-base","versions":["1.0.7"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18323"},
     {"id":"MAL-2026-18324","name":"Malicious code in publish-poc-test3 (npm)","ecosystem":"npm","package":"publish-poc-test3","versions":["1.0.15","1.0.18","1.0.19","1.0.21","1.0.22","1.0.26","1.0.27"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18324"},
+    {"id":"MAL-2026-18331","name":"Malicious code in birch-css-utils (npm)","ecosystem":"npm","package":"birch-css-utils","versions":["1.2.2","1.3.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18331"},
     {"id":"MAL-2026-1837","name":"Malicious code in react-query-core-utils (npm)","ecosystem":"npm","package":"react-query-core-utils","versions":["4.4.1","4.4.2","4.4.3","4.4.4","4.4.5","4.4.6","4.4.7","4.4.8","4.4.9","4.5.1","4.5.2","4.5.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1837"},
     {"id":"MAL-2026-1844","name":"Malicious code in shopify-ping-web (npm)","ecosystem":"npm","package":"shopify-ping-web","versions":["99.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1844"},
     {"id":"MAL-2026-1855","name":"Malicious code in ssf-desktop-api-specification (npm)","ecosystem":"npm","package":"ssf-desktop-api-specification","versions":["99.99.1","99.99.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1855"},
