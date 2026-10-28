@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-27T12:20:00Z",
+  "_generated_utc": "2026-10-28T13:03:23Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -54025,6 +54025,9 @@
     {"id":"MAL-2026-18332","name":"Malicious code in harlow-css-mixer (npm)","ecosystem":"npm","package":"harlow-css-mixer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18332"},
     {"id":"MAL-2026-18335","name":"Malicious code in ctf-agent (npm)","ecosystem":"npm","package":"ctf-agent","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18335"},
     {"id":"MAL-2026-1835","name":"Malicious code in react-fast-utilsa (npm)","ecosystem":"npm","package":"react-fast-utilsa","versions":["2.0.1","2.0.2","2.0.3","2.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1835"},
+    {"id":"MAL-2026-18351","name":"Malicious code in csec-crypto-toolkit (npm)","ecosystem":"npm","package":"csec-crypto-toolkit","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18351"},
+    {"id":"MAL-2026-18355","name":"Malicious code in glyphmatrix-fixture (npm)","ecosystem":"npm","package":"glyphmatrix-fixture","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18355"},
+    {"id":"MAL-2026-18358","name":"Malicious code in @testsecuiitytestme/cache-helper (npm)","ecosystem":"npm","package":"@testsecuiitytestme/cache-helper","versions":["1.0.1","1.0.2","1.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18358"},
     {"id":"MAL-2026-1840","name":"Malicious code in ref-selector (npm)","ecosystem":"npm","package":"ref-selector","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1840"},
     {"id":"MAL-2026-1841","name":"Malicious code in safeness-sb-new (npm)","ecosystem":"npm","package":"safeness-sb-new","versions":["0.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1841"},
     {"id":"MAL-2026-1843","name":"Malicious code in shopify-admin-web (npm)","ecosystem":"npm","package":"shopify-admin-web","versions":["99.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1843"},
