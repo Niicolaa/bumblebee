@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-28T13:03:23Z",
+  "_generated_utc": "2026-10-29T13:10:37Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53831,7 +53831,7 @@
     {"id":"MAL-2026-18192","name":"Malicious code in agentic-awesome-skills (npm)","ecosystem":"npm","package":"agentic-awesome-skills","versions":["18.10.0","18.11.0","18.12.0","18.13.0","18.14.0","18.9.0","19.0.0","19.0.1","19.1.0","19.10.1","19.12.0","19.12.1","19.13.0","19.2.0","19.3.0","19.4.0","19.5.0","19.6.0","19.7.0","19.9.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18192"},
     {"id":"MAL-2026-18198","name":"Malicious code in @pkgship/frpc-linux-amd64 (npm)","ecosystem":"npm","package":"@pkgship/frpc-linux-amd64","versions":["0.71.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18198"},
     {"id":"MAL-2026-18199","name":"Malicious code in @pkgship/frps-linux-amd64 (npm)","ecosystem":"npm","package":"@pkgship/frps-linux-amd64","versions":["0.71.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18199"},
-    {"id":"MAL-2026-18204","name":"Malicious code in @factiii/runner (npm)","ecosystem":"npm","package":"@factiii/runner","versions":["0.16.0","0.22.0","0.26.2","0.28.0","0.33.0","0.35.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18204"},
+    {"id":"MAL-2026-18204","name":"Malicious code in @factiii/runner (npm)","ecosystem":"npm","package":"@factiii/runner","versions":["0.16.0","0.17.0","0.17.1","0.18.0","0.18.1","0.19.0","0.20.0","0.20.1","0.21.0","0.22.0","0.22.1","0.23.2","0.25.0","0.26.0","0.26.1","0.26.2","0.28.0","0.33.0","0.35.0","0.36.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18204"},
     {"id":"MAL-2026-18209","name":"Malicious code in @ecg-internal/js-react-i18n (npm)","ecosystem":"npm","package":"@ecg-internal/js-react-i18n","versions":["1.0.0","1.0.1","1.1.0","2.0.0","99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18209"},
     {"id":"MAL-2026-18213","name":"Malicious code in @cecm-web-sdk/core (npm)","ecosystem":"npm","package":"@cecm-web-sdk/core","versions":["1.0.1","1.1.0","3.0.0","99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18213"},
     {"id":"MAL-2026-18214","name":"Malicious code in @grabcad/company-server-shared (npm)","ecosystem":"npm","package":"@grabcad/company-server-shared","versions":["0.0.1","1.0.0","1.0.1","1.1.0","2.0.0","2.0.1","3.0.0","99.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18214"},
@@ -53865,6 +53865,8 @@
     {"id":"MAL-2026-18347","name":"Malicious code in ccsec-crypto-toolkit (npm)","ecosystem":"npm","package":"ccsec-crypto-toolkit","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18347"},
     {"id":"MAL-2026-18350","name":"Malicious code in ccsseecc-form-validator (npm)","ecosystem":"npm","package":"ccsseecc-form-validator","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18350"},
     {"id":"MAL-2026-18357","name":"Malicious code in csvflow-schema (npm)","ecosystem":"npm","package":"csvflow-schema","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18357"},
+    {"id":"MAL-2026-18364","name":"Malicious code in @zaip-ai/cli (npm)","ecosystem":"npm","package":"@zaip-ai/cli","versions":["6.4.0","6.5.0","7.0.0","7.1.0","7.2.0","7.3.0","7.4.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18364"},
+    {"id":"MAL-2026-18366","name":"Malicious code in dsh-redteam-mode (npm)","ecosystem":"npm","package":"dsh-redteam-mode","versions":["0.15.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18366"},
     {"id":"MAL-2026-1838","name":"Malicious code in react-router-on-navigation (npm)","ecosystem":"npm","package":"react-router-on-navigation","versions":["999.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1838"},
     {"id":"MAL-2026-1847","name":"Malicious code in signer-app (npm)","ecosystem":"npm","package":"signer-app","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1847"},
     {"id":"MAL-2026-1849","name":"Malicious code in skyoauth2 (npm)","ecosystem":"npm","package":"skyoauth2","versions":["2.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1849"},

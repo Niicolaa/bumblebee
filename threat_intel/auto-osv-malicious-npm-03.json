@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-28T13:03:23Z",
+  "_generated_utc": "2026-10-29T13:10:37Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -54085,7 +54085,9 @@
     {"id":"MAL-2026-18346","name":"Malicious code in agentenact (npm)","ecosystem":"npm","package":"agentenact","versions":["0.2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18346"},
     {"id":"MAL-2026-18352","name":"Malicious code in csec-form-validator (npm)","ecosystem":"npm","package":"csec-form-validator","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18352"},
     {"id":"MAL-2026-18353","name":"Malicious code in csec-form-validatorr (npm)","ecosystem":"npm","package":"csec-form-validatorr","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18353"},
+    {"id":"MAL-2026-18362","name":"Malicious code in transaction-info-generate-sdk (npm)","ecosystem":"npm","package":"transaction-info-generate-sdk","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18362"},
     {"id":"MAL-2026-1837","name":"Malicious code in react-query-core-utils (npm)","ecosystem":"npm","package":"react-query-core-utils","versions":["4.4.1","4.4.2","4.4.3","4.4.4","4.4.5","4.4.6","4.4.7","4.4.8","4.4.9","4.5.1","4.5.2","4.5.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1837"},
+    {"id":"MAL-2026-18374","name":"Malicious code in dsh-volcengine-provider (npm)","ecosystem":"npm","package":"dsh-volcengine-provider","versions":["0.2.5","0.2.8"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18374"},
     {"id":"MAL-2026-1844","name":"Malicious code in shopify-ping-web (npm)","ecosystem":"npm","package":"shopify-ping-web","versions":["99.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1844"},
     {"id":"MAL-2026-1855","name":"Malicious code in ssf-desktop-api-specification (npm)","ecosystem":"npm","package":"ssf-desktop-api-specification","versions":["99.99.1","99.99.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1855"},
     {"id":"MAL-2026-1858","name":"Malicious code in stnsxmp3 (npm)","ecosystem":"npm","package":"stnsxmp3","versions":["0.30.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1858"},
