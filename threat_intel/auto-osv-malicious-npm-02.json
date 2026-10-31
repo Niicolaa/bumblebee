@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-30T13:03:12Z",
+  "_generated_utc": "2026-10-31T12:41:30Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54441,7 +54441,13 @@
     {"id":"MAL-2026-18398","name":"Malicious code in dowload_ebok_el_piso_mil_el_piso_mil_1_by_katharine_mcgee_h1llc (npm)","ecosystem":"npm","package":"dowload_ebok_el_piso_mil_el_piso_mil_1_by_katharine_mcgee_h1llc","versions":["0.0.0-stage"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18398"},
     {"id":"MAL-2026-184","name":"Malicious code in yunxohang4 (npm)","ecosystem":"npm","package":"yunxohang4","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-184"},
     {"id":"MAL-2026-18401","name":"Malicious code in dowload_ebok_reiki_sviluppa_e_usa_lenergia_reiki_by_matt_harvey_9q55p (npm)","ecosystem":"npm","package":"dowload_ebok_reiki_sviluppa_e_usa_lenergia_reiki_by_matt_harvey_9q55p","versions":["0.0.0-stage"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18401"},
+    {"id":"MAL-2026-18408","name":"Malicious code in grizzly-baileys (npm)","ecosystem":"npm","package":"grizzly-baileys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18408"},
+    {"id":"MAL-2026-18409","name":"Malicious code in tabby-fknat (npm)","ecosystem":"npm","package":"tabby-fknat","versions":["0.1.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18409"},
+    {"id":"MAL-2026-18415","name":"Malicious code in @tops2/digital-assistant-ui (npm)","ecosystem":"npm","package":"@tops2/digital-assistant-ui","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18415"},
+    {"id":"MAL-2026-18417","name":"Malicious code in ssite-mock-server (npm)","ecosystem":"npm","package":"ssite-mock-server","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18417"},
+    {"id":"MAL-2026-18419","name":"Malicious code in vas-tops2-bidmatrix-ui (npm)","ecosystem":"npm","package":"vas-tops2-bidmatrix-ui","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18419"},
     {"id":"MAL-2026-1842","name":"Malicious code in sheinx (npm)","ecosystem":"npm","package":"sheinx","versions":["999.0.101","999.0.102","999.0.103"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1842"},
+    {"id":"MAL-2026-18421","name":"Malicious code in vas-tops2-core-clients-search (npm)","ecosystem":"npm","package":"vas-tops2-core-clients-search","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18421"},
     {"id":"MAL-2026-1845","name":"Malicious code in signalk-bug-poc (npm)","ecosystem":"npm","package":"signalk-bug-poc","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1845"},
     {"id":"MAL-2026-1846","name":"Malicious code in signalk-poc-bug (npm)","ecosystem":"npm","package":"signalk-poc-bug","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1846"},
     {"id":"MAL-2026-1848","name":"Malicious code in sky-enablement (npm)","ecosystem":"npm","package":"sky-enablement","versions":["2.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1848"},

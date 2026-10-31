@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-30T13:03:12Z",
+  "_generated_utc": "2026-10-31T12:41:30Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -54041,7 +54041,13 @@
     {"id":"MAL-2026-18391","name":"Malicious code in m98vip (npm)","ecosystem":"npm","package":"m98vip","versions":["0.0.0-stage"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18391"},
     {"id":"MAL-2026-1840","name":"Malicious code in ref-selector (npm)","ecosystem":"npm","package":"ref-selector","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1840"},
     {"id":"MAL-2026-18400","name":"Malicious code in dowload_ebok_nur_mal_schnell_das_mammut_retten_by_knut_kruger_eva_schoffmann_davidov_ouz6t (npm)","ecosystem":"npm","package":"dowload_ebok_nur_mal_schnell_das_mammut_retten_by_knut_kruger_eva_schoffmann_davidov_ouz6t","versions":["0.0.0-stage"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18400"},
+    {"id":"MAL-2026-18407","name":"Malicious code in @nexlayerlabs/postcss-keyframe-utils (npm)","ecosystem":"npm","package":"@nexlayerlabs/postcss-keyframe-utils","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18407"},
     {"id":"MAL-2026-1841","name":"Malicious code in safeness-sb-new (npm)","ecosystem":"npm","package":"safeness-sb-new","versions":["0.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1841"},
+    {"id":"MAL-2026-18410","name":"Malicious code in apex-fetch (npm)","ecosystem":"npm","package":"apex-fetch","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18410"},
+    {"id":"MAL-2026-18411","name":"Malicious code in neuralwhatsapp (npm)","ecosystem":"npm","package":"neuralwhatsapp","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18411"},
+    {"id":"MAL-2026-18412","name":"Malicious code in ourin-baileys (npm)","ecosystem":"npm","package":"ourin-baileys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18412"},
+    {"id":"MAL-2026-18418","name":"Malicious code in tefeest-npm-com-test (npm)","ecosystem":"npm","package":"tefeest-npm-com-test","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18418"},
+    {"id":"MAL-2026-18420","name":"Malicious code in vas-tops2-core-client-cleanup-ui (npm)","ecosystem":"npm","package":"vas-tops2-core-client-cleanup-ui","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18420"},
     {"id":"MAL-2026-1843","name":"Malicious code in shopify-admin-web (npm)","ecosystem":"npm","package":"shopify-admin-web","versions":["99.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1843"},
     {"id":"MAL-2026-1854","name":"Malicious code in ssf-desktop-api-electron (npm)","ecosystem":"npm","package":"ssf-desktop-api-electron","versions":["99.99.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1854"},
     {"id":"MAL-2026-186","name":"Malicious code in yunxohang6 (npm)","ecosystem":"npm","package":"yunxohang6","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-186"},
