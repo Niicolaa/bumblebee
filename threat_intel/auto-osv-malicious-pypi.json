@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-10-30T13:03:17Z",
+  "_generated_utc": "2026-11-01T13:31:55Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10971,6 +10971,13 @@
     {"id":"MAL-2026-18403","name":"Malicious code in twitter-request-diagnostics (PyPI)","ecosystem":"pypi","package":"twitter-request-diagnostics","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18403"},
     {"id":"MAL-2026-18405","name":"Malicious code in log-utils-sdk (PyPI)","ecosystem":"pypi","package":"log-utils-sdk","versions":["0.4.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18405"},
     {"id":"MAL-2026-18406","name":"Malicious code in stdid-nyxprobe (PyPI)","ecosystem":"pypi","package":"stdid-nyxprobe","versions":["0.0.1","0.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18406"},
+    {"id":"MAL-2026-18426","name":"Malicious code in is-it-ai (PyPI)","ecosystem":"pypi","package":"is-it-ai","versions":["0.1.0","0.1.1","0.1.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18426"},
+    {"id":"MAL-2026-18427","name":"Malicious code in skills-analyzer (PyPI)","ecosystem":"pypi","package":"skills-analyzer","versions":["0.1.0","0.1.1","0.1.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18427"},
+    {"id":"MAL-2026-18428","name":"Malicious code in md-to-slides (PyPI)","ecosystem":"pypi","package":"md-to-slides","versions":["0.1.0","0.1.1","0.1.2","0.1.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18428"},
+    {"id":"MAL-2026-18429","name":"Malicious code in multi-convert (PyPI)","ecosystem":"pypi","package":"multi-convert","versions":["0.1.0","0.1.1","0.1.2","0.1.3","0.1.4","0.1.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18429"},
+    {"id":"MAL-2026-18430","name":"Malicious code in doctreelstm (PyPI)","ecosystem":"pypi","package":"doctreelstm","versions":["1.0.0","10.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18430"},
+    {"id":"MAL-2026-18432","name":"Malicious code in pystr-codec (PyPI)","ecosystem":"pypi","package":"pystr-codec","versions":["0.1.0","0.1.1","0.1.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18432"},
+    {"id":"MAL-2026-18435","name":"Malicious code in privacypass-py (PyPI)","ecosystem":"pypi","package":"privacypass-py","versions":["0.1.100","0.1.101","0.1.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18435"},
     {"id":"MAL-2026-189","name":"Malicious code in oncecall (PyPI)","ecosystem":"pypi","package":"oncecall","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-189"},
     {"id":"MAL-2026-1893","name":"Malicious code in aitrade (PyPI)","ecosystem":"pypi","package":"aitrade","versions":["0.1.2","0.1.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1893"},
     {"id":"MAL-2026-1894","name":"Malicious code in async-substrate-interface-sub (PyPI)","ecosystem":"pypi","package":"async-substrate-interface-sub","versions":["1.5.156","1.5.157"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1894"},

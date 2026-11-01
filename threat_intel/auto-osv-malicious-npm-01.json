@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-10-31T12:41:30Z",
+  "_generated_utc": "2026-11-01T13:31:51Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53874,6 +53874,8 @@
     {"id":"MAL-2026-18397","name":"Malicious code in dowload_ebok_armageddon_by_max_hastings_kv3s4 (npm)","ecosystem":"npm","package":"dowload_ebok_armageddon_by_max_hastings_kv3s4","versions":["0.0.0-stage"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18397"},
     {"id":"MAL-2026-18413","name":"Malicious code in @pcb-dp/qa-commons (npm)","ecosystem":"npm","package":"@pcb-dp/qa-commons","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18413"},
     {"id":"MAL-2026-18416","name":"Malicious code in dependencykfeg (npm)","ecosystem":"npm","package":"dependencykfeg","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18416"},
+    {"id":"MAL-2026-18433","name":"Malicious code in @axon-web/icons (npm)","ecosystem":"npm","package":"@axon-web/icons","versions":["99.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18433"},
+    {"id":"MAL-2026-18434","name":"Malicious code in hs-framework (npm)","ecosystem":"npm","package":"hs-framework","versions":["999.9.1","999.9.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18434"},
     {"id":"MAL-2026-1847","name":"Malicious code in signer-app (npm)","ecosystem":"npm","package":"signer-app","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1847"},
     {"id":"MAL-2026-1849","name":"Malicious code in skyoauth2 (npm)","ecosystem":"npm","package":"skyoauth2","versions":["2.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1849"},
     {"id":"MAL-2026-185","name":"Malicious code in yunxohang5 (npm)","ecosystem":"npm","package":"yunxohang5","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-185"},
