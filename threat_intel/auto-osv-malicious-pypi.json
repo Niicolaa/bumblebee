@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-11-02T16:06:15Z",
+  "_generated_utc": "2026-11-03T14:24:26Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10979,6 +10979,7 @@
     {"id":"MAL-2026-18432","name":"Malicious code in pystr-codec (PyPI)","ecosystem":"pypi","package":"pystr-codec","versions":["0.1.0","0.1.1","0.1.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18432"},
     {"id":"MAL-2026-18435","name":"Malicious code in privacypass-py (PyPI)","ecosystem":"pypi","package":"privacypass-py","versions":["0.1.100","0.1.101","0.1.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18435"},
     {"id":"MAL-2026-18443","name":"Malicious code in wallet-tracking (PyPI)","ecosystem":"pypi","package":"wallet-tracking","versions":["1.0.0","1.0.1","1.0.3","1.0.4","1.0.5","1.0.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18443"},
+    {"id":"MAL-2026-18490","name":"Malicious code in pyprig (PyPI)","ecosystem":"pypi","package":"pyprig","versions":["1.2.0","1.2.1","1.2.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18490"},
     {"id":"MAL-2026-189","name":"Malicious code in oncecall (PyPI)","ecosystem":"pypi","package":"oncecall","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-189"},
     {"id":"MAL-2026-1893","name":"Malicious code in aitrade (PyPI)","ecosystem":"pypi","package":"aitrade","versions":["0.1.2","0.1.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1893"},
     {"id":"MAL-2026-1894","name":"Malicious code in async-substrate-interface-sub (PyPI)","ecosystem":"pypi","package":"async-substrate-interface-sub","versions":["1.5.156","1.5.157"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1894"},

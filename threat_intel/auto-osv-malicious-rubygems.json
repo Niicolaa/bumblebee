@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the rubygems ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-11-02T16:06:15Z",
+  "_generated_utc": "2026-11-03T14:24:27Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2023-11","name":"Malicious code in microsoft_kiota_http (RubyGems)","ecosystem":"rubygems","package":"microsoft_kiota_http","versions":["6.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2023-11"},
@@ -1745,6 +1745,7 @@
     {"id":"MAL-2026-18436","name":"Malicious code in macs-shoaibs-pro17 (RubyGems)","ecosystem":"rubygems","package":"macs-shoaibs-pro17","versions":["90002.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18436"},
     {"id":"MAL-2026-18461","name":"Malicious code in shoaib-unity (RubyGems)","ecosystem":"rubygems","package":"shoaib-unity","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18461"},
     {"id":"MAL-2026-18462","name":"Malicious code in intercom-react-native-example-e2e-tests (RubyGems)","ecosystem":"rubygems","package":"intercom-react-native-example-e2e-tests","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18462"},
+    {"id":"MAL-2026-18518","name":"Malicious code in dopc-client (RubyGems)","ecosystem":"rubygems","package":"dopc-client","versions":["1.0.0","10.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18518"},
     {"id":"MAL-2026-1915","name":"Malicious code in doctolib (RubyGems)","ecosystem":"rubygems","package":"doctolib","versions":["99.0.0","99.0.1","99.0.2","99.0.3","99.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1915"},
     {"id":"MAL-2026-1916","name":"Malicious code in freshworks-ruby (RubyGems)","ecosystem":"rubygems","package":"freshworks-ruby","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1916"},
     {"id":"MAL-2026-1917","name":"Malicious code in kaleido (RubyGems)","ecosystem":"rubygems","package":"kaleido","versions":["5000.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1917"},
