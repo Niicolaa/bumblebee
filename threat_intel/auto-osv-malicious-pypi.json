@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-11-04T14:39:33Z",
+  "_generated_utc": "2026-11-05T14:44:06Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -10985,6 +10985,14 @@
     {"id":"MAL-2026-18582","name":"Malicious code in zyto (PyPI)","ecosystem":"pypi","package":"zyto","versions":["0.2.0","0.2.1","0.2.2","0.2.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18582"},
     {"id":"MAL-2026-18583","name":"Malicious code in ln9qw38745g (PyPI)","ecosystem":"pypi","package":"ln9qw38745g","versions":["0.1.0","0.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18583"},
     {"id":"MAL-2026-18584","name":"Malicious code in protecteda (PyPI)","ecosystem":"pypi","package":"protecteda","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18584"},
+    {"id":"MAL-2026-18625","name":"Malicious code in extera-plugin-runtime (PyPI)","ecosystem":"pypi","package":"extera-plugin-runtime","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18625"},
+    {"id":"MAL-2026-18627","name":"Malicious code in msgpackrpc (PyPI)","ecosystem":"pypi","package":"msgpackrpc","versions":["0.0.0","0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18627"},
+    {"id":"MAL-2026-18633","name":"Malicious code in extera-runtime (PyPI)","ecosystem":"pypi","package":"extera-runtime","versions":["1.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18633"},
+    {"id":"MAL-2026-18657","name":"Malicious code in strands-aidr (PyPI)","ecosystem":"pypi","package":"strands-aidr","versions":["9999.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18657"},
+    {"id":"MAL-2026-18658","name":"Malicious code in rcp-ndcg (PyPI)","ecosystem":"pypi","package":"rcp-ndcg","versions":["9999.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18658"},
+    {"id":"MAL-2026-18704","name":"Malicious code in dbt-adapter (PyPI)","ecosystem":"pypi","package":"dbt-adapter","versions":["0.0.0","0.1.0a2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18704"},
+    {"id":"MAL-2026-18705","name":"Malicious code in teamviewer-mcp-server (PyPI)","ecosystem":"pypi","package":"teamviewer-mcp-server","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18705"},
+    {"id":"MAL-2026-18706","name":"Malicious code in mcp-teamviewer (PyPI)","ecosystem":"pypi","package":"mcp-teamviewer","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18706"},
     {"id":"MAL-2026-189","name":"Malicious code in oncecall (PyPI)","ecosystem":"pypi","package":"oncecall","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-189"},
     {"id":"MAL-2026-1893","name":"Malicious code in aitrade (PyPI)","ecosystem":"pypi","package":"aitrade","versions":["0.1.2","0.1.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1893"},
     {"id":"MAL-2026-1894","name":"Malicious code in async-substrate-interface-sub (PyPI)","ecosystem":"pypi","package":"async-substrate-interface-sub","versions":["1.5.156","1.5.157"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1894"},
