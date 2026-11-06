@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-05T14:44:02Z",
+  "_generated_utc": "2026-11-06T14:22:28Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -54166,6 +54166,9 @@
     {"id":"MAL-2026-18696","name":"Malicious code in solidity-map (npm)","ecosystem":"npm","package":"solidity-map","versions":["2.21.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18696"},
     {"id":"MAL-2026-18697","name":"Malicious code in testtestkjkldfnjdfn (npm)","ecosystem":"npm","package":"testtestkjkldfnjdfn","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18697"},
     {"id":"MAL-2026-187","name":"Malicious code in yunxohang7 (npm)","ecosystem":"npm","package":"yunxohang7","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-187"},
+    {"id":"MAL-2026-18708","name":"Malicious code in @gemshell/win32-x64 (npm)","ecosystem":"npm","package":"@gemshell/win32-x64","versions":["1.2.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18708"},
+    {"id":"MAL-2026-18710","name":"Malicious code in kurobails (npm)","ecosystem":"npm","package":"kurobails","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18710"},
+    {"id":"MAL-2026-18712","name":"Malicious code in oktz-baileys (npm)","ecosystem":"npm","package":"oktz-baileys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18712"},
     {"id":"MAL-2026-1874","name":"Malicious code in wiz-dev (npm)","ecosystem":"npm","package":"wiz-dev","versions":["1.0.2","1.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1874"},
     {"id":"MAL-2026-1876","name":"Malicious code in wiz-production (npm)","ecosystem":"npm","package":"wiz-production","versions":["1.0.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1876"},
     {"id":"MAL-2026-1880","name":"Malicious code in zero-develop-component-library (npm)","ecosystem":"npm","package":"zero-develop-component-library","versions":["99.99.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1880"},

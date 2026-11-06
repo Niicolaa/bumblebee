@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-05T14:44:02Z",
+  "_generated_utc": "2026-11-06T14:22:28Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54514,6 +54514,11 @@
     {"id":"MAL-2026-18685","name":"Malicious code in aemeath-baileys (npm)","ecosystem":"npm","package":"aemeath-baileys","versions":["1.1.13"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18685"},
     {"id":"MAL-2026-18686","name":"Malicious code in cs-core-api-phoenix (npm)","ecosystem":"npm","package":"cs-core-api-phoenix","versions":["5.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18686"},
     {"id":"MAL-2026-18703","name":"Malicious code in synapse-hub (npm)","ecosystem":"npm","package":"synapse-hub","versions":["3.1.0","3.1.1","3.1.2","3.2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18703"},
+    {"id":"MAL-2026-18707","name":"Malicious code in dsh-purge (npm)","ecosystem":"npm","package":"dsh-purge","versions":["1.2.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18707"},
+    {"id":"MAL-2026-18714","name":"Malicious code in plain-lang (npm)","ecosystem":"npm","package":"plain-lang","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18714"},
+    {"id":"MAL-2026-18715","name":"Malicious code in talk-lang (npm)","ecosystem":"npm","package":"talk-lang","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18715"},
+    {"id":"MAL-2026-18717","name":"Malicious code in @exclipz/baileys (npm)","ecosystem":"npm","package":"@exclipz/baileys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18717"},
+    {"id":"MAL-2026-18719","name":"Malicious code in @kora20030101/test-pkg-delete-me (npm)","ecosystem":"npm","package":"@kora20030101/test-pkg-delete-me","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18719"},
     {"id":"MAL-2026-1878","name":"Malicious code in wpt-client (npm)","ecosystem":"npm","package":"wpt-client","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1878"},
     {"id":"MAL-2026-19","name":"Malicious code in jest-config-ibm-cloud-cognitive (npm)","ecosystem":"npm","package":"jest-config-ibm-cloud-cognitive","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19"},
     {"id":"MAL-2026-192","name":"Malicious code in @testfeii/hallo-word (npm)","ecosystem":"npm","package":"@testfeii/hallo-word","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-192"},
