@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-06T14:22:28Z",
+  "_generated_utc": "2026-11-07T13:11:21Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -54119,6 +54119,8 @@
     {"id":"MAL-2026-18709","name":"Malicious code in test1817 (npm)","ecosystem":"npm","package":"test1817","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18709"},
     {"id":"MAL-2026-18713","name":"Malicious code in rafael-bails (npm)","ecosystem":"npm","package":"rafael-bails","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18713"},
     {"id":"MAL-2026-18718","name":"Malicious code in @exclipz/bails (npm)","ecosystem":"npm","package":"@exclipz/bails","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18718"},
+    {"id":"MAL-2026-18721","name":"Malicious code in @needsaudit/nexport (npm)","ecosystem":"npm","package":"@needsaudit/nexport","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18721"},
+    {"id":"MAL-2026-18728","name":"Malicious code in kc-kline-chart (npm)","ecosystem":"npm","package":"kc-kline-chart","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18728"},
     {"id":"MAL-2026-1873","name":"Malicious code in vvvv4234 (npm)","ecosystem":"npm","package":"vvvv4234","versions":["1.0.0","1.0.10","1.0.11","1.0.12","1.0.13","1.0.14","1.0.2","1.0.3","1.0.4","1.0.5","1.0.6","1.0.7","1.0.8","1.0.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1873"},
     {"id":"MAL-2026-188","name":"Malicious code in shopping-cart-service (npm)","ecosystem":"npm","package":"shopping-cart-service","versions":["1.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-188"},
     {"id":"MAL-2026-1881","name":"Malicious code in zip.js-2.8.2 (npm)","ecosystem":"npm","package":"zip.js-2.8.2","versions":["99.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1881"},

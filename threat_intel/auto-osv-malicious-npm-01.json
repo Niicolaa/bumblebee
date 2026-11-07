@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-06T14:22:28Z",
+  "_generated_utc": "2026-11-07T13:11:21Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53962,6 +53962,10 @@
     {"id":"MAL-2026-18711","name":"Malicious code in nishiki-bail (npm)","ecosystem":"npm","package":"nishiki-bail","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18711"},
     {"id":"MAL-2026-18716","name":"Malicious code in @nuri.yavuz.tr.2/my-unique-pinger (npm)","ecosystem":"npm","package":"@nuri.yavuz.tr.2/my-unique-pinger","versions":["1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18716"},
     {"id":"MAL-2026-1872","name":"Malicious code in user_migration (npm)","ecosystem":"npm","package":"user_migration","versions":["9.99.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1872"},
+    {"id":"MAL-2026-18726","name":"Malicious code in arc-contracts (npm)","ecosystem":"npm","package":"arc-contracts","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18726"},
+    {"id":"MAL-2026-18727","name":"Malicious code in evmos-contracts (npm)","ecosystem":"npm","package":"evmos-contracts","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18727"},
+    {"id":"MAL-2026-18731","name":"Malicious code in zero2-baileys (npm)","ecosystem":"npm","package":"zero2-baileys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18731"},
+    {"id":"MAL-2026-18732","name":"Malicious code in monobomber (npm)","ecosystem":"npm","package":"monobomber","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18732"},
     {"id":"MAL-2026-1875","name":"Malicious code in wiz-prod (npm)","ecosystem":"npm","package":"wiz-prod","versions":["1.0.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1875"},
     {"id":"MAL-2026-1877","name":"Malicious code in wiz-redirects (npm)","ecosystem":"npm","package":"wiz-redirects","versions":["99.999.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1877"},
     {"id":"MAL-2026-1879","name":"Malicious code in yahoo-commerce (npm)","ecosystem":"npm","package":"yahoo-commerce","versions":["99.99.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1879"},
