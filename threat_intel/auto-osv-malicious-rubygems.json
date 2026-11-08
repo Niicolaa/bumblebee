@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the rubygems ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-11-04T14:39:33Z",
+  "_generated_utc": "2026-11-08T13:32:50Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2023-11","name":"Malicious code in microsoft_kiota_http (RubyGems)","ecosystem":"rubygems","package":"microsoft_kiota_http","versions":["6.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2023-11"},
@@ -1748,6 +1748,10 @@
     {"id":"MAL-2026-18518","name":"Malicious code in dopc-client (RubyGems)","ecosystem":"rubygems","package":"dopc-client","versions":["1.0.0","10.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18518"},
     {"id":"MAL-2026-18598","name":"Malicious code in brida-frida-hooks (RubyGems)","ecosystem":"rubygems","package":"brida-frida-hooks","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18598"},
     {"id":"MAL-2026-18599","name":"Malicious code in w002yardprobe (RubyGems)","ecosystem":"rubygems","package":"w002yardprobe","versions":["0.0.4","0.0.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18599"},
+    {"id":"MAL-2026-18763","name":"Malicious code in agentic-call-control (RubyGems)","ecosystem":"rubygems","package":"agentic-call-control","versions":["1.1.8"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18763"},
+    {"id":"MAL-2026-18764","name":"Malicious code in control-character-command-injection (RubyGems)","ecosystem":"rubygems","package":"control-character-command-injection","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18764"},
+    {"id":"MAL-2026-18765","name":"Malicious code in donjon-ledger (RubyGems)","ecosystem":"rubygems","package":"donjon-ledger","versions":["2.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18765"},
+    {"id":"MAL-2026-18766","name":"Malicious code in dynamic-object-handler (RubyGems)","ecosystem":"rubygems","package":"dynamic-object-handler","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18766"},
     {"id":"MAL-2026-1915","name":"Malicious code in doctolib (RubyGems)","ecosystem":"rubygems","package":"doctolib","versions":["99.0.0","99.0.1","99.0.2","99.0.3","99.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1915"},
     {"id":"MAL-2026-1916","name":"Malicious code in freshworks-ruby (RubyGems)","ecosystem":"rubygems","package":"freshworks-ruby","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1916"},
     {"id":"MAL-2026-1917","name":"Malicious code in kaleido (RubyGems)","ecosystem":"rubygems","package":"kaleido","versions":["5000.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1917"},
