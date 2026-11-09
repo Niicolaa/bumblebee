@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-07T13:11:21Z",
+  "_generated_utc": "2026-11-09T16:30:14Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54528,6 +54528,8 @@
     {"id":"MAL-2026-18739","name":"Malicious code in modelsdesk (npm)","ecosystem":"npm","package":"modelsdesk","versions":["0.4.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18739"},
     {"id":"MAL-2026-18740","name":"Malicious code in tailwind-animationfound (npm)","ecosystem":"npm","package":"tailwind-animationfound","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18740"},
     {"id":"MAL-2026-1878","name":"Malicious code in wpt-client (npm)","ecosystem":"npm","package":"wpt-client","versions":["100.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1878"},
+    {"id":"MAL-2026-18781","name":"Malicious code in @gqb333/baileys (npm)","ecosystem":"npm","package":"@gqb333/baileys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18781"},
+    {"id":"MAL-2026-18782","name":"Malicious code in @gqb333/based (npm)","ecosystem":"npm","package":"@gqb333/based","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18782"},
     {"id":"MAL-2026-19","name":"Malicious code in jest-config-ibm-cloud-cognitive (npm)","ecosystem":"npm","package":"jest-config-ibm-cloud-cognitive","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19"},
     {"id":"MAL-2026-192","name":"Malicious code in @testfeii/hallo-word (npm)","ecosystem":"npm","package":"@testfeii/hallo-word","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-192"},
     {"id":"MAL-2026-1929","name":"Malicious code in @aifabrix/miso-client (npm)","ecosystem":"npm","package":"@aifabrix/miso-client","versions":["4.7.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1929"},

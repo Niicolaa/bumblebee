@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-08T13:32:45Z",
+  "_generated_utc": "2026-11-09T16:30:14Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -53969,6 +53969,8 @@
     {"id":"MAL-2026-1875","name":"Malicious code in wiz-prod (npm)","ecosystem":"npm","package":"wiz-prod","versions":["1.0.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1875"},
     {"id":"MAL-2026-18757","name":"Malicious code in @htooayelwinict/travis234 (npm)","ecosystem":"npm","package":"@htooayelwinict/travis234","versions":["3.3.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18757"},
     {"id":"MAL-2026-1877","name":"Malicious code in wiz-redirects (npm)","ecosystem":"npm","package":"wiz-redirects","versions":["99.999.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1877"},
+    {"id":"MAL-2026-18773","name":"Malicious code in @ethersphere/bee-js (npm)","ecosystem":"npm","package":"@ethersphere/bee-js","versions":["13.3.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18773"},
+    {"id":"MAL-2026-18774","name":"Malicious code in kafbail (npm)","ecosystem":"npm","package":"kafbail","versions":["2.0.12","2.0.13","2.0.14"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18774"},
     {"id":"MAL-2026-1879","name":"Malicious code in yahoo-commerce (npm)","ecosystem":"npm","package":"yahoo-commerce","versions":["99.99.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1879"},
     {"id":"MAL-2026-1925","name":"Malicious code in jsonify-parser (npm)","ecosystem":"npm","package":"jsonify-parser","versions":["7.4.11","7.4.12","7.4.13","7.4.14","7.4.15","7.4.16"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1925"},
     {"id":"MAL-2026-1937","name":"Malicious code in @dotprompt/promptly-darwin-arm64 (npm)","ecosystem":"npm","package":"@dotprompt/promptly-darwin-arm64","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1937"},

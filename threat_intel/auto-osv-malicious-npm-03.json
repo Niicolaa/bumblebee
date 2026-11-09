@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-07T13:11:21Z",
+  "_generated_utc": "2026-11-09T16:30:14Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -54178,6 +54178,9 @@
     {"id":"MAL-2026-1874","name":"Malicious code in wiz-dev (npm)","ecosystem":"npm","package":"wiz-dev","versions":["1.0.2","1.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1874"},
     {"id":"MAL-2026-18748","name":"Malicious code in dsh-notify-focus (npm)","ecosystem":"npm","package":"dsh-notify-focus","versions":["0.5.0","0.7.0","0.7.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18748"},
     {"id":"MAL-2026-1876","name":"Malicious code in wiz-production (npm)","ecosystem":"npm","package":"wiz-production","versions":["1.0.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1876"},
+    {"id":"MAL-2026-18775","name":"Malicious code in seolibs-package (npm)","ecosystem":"npm","package":"seolibs-package","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18775"},
+    {"id":"MAL-2026-18777","name":"Malicious code in u-chan-secrets (npm)","ecosystem":"npm","package":"u-chan-secrets","versions":["5.2.1","5.2.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18777"},
+    {"id":"MAL-2026-18779","name":"Malicious code in @hello.nrfcloud.com/proto-map (npm)","ecosystem":"npm","package":"@hello.nrfcloud.com/proto-map","versions":["18.0.0","18.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18779"},
     {"id":"MAL-2026-1880","name":"Malicious code in zero-develop-component-library (npm)","ecosystem":"npm","package":"zero-develop-component-library","versions":["99.99.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1880"},
     {"id":"MAL-2026-1928","name":"Malicious code in changelog-logger-wrap (npm)","ecosystem":"npm","package":"changelog-logger-wrap","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1928"},
     {"id":"MAL-2026-1938","name":"Malicious code in @metaplex-foundations/umi-public-keys (npm)","ecosystem":"npm","package":"@metaplex-foundations/umi-public-keys","versions":["1.5.2","1.5.3","1.5.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1938"},
