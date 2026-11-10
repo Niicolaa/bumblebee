@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-11-09T16:30:18Z",
+  "_generated_utc": "2026-11-10T14:58:31Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -11035,6 +11035,7 @@
     {"id":"MAL-2026-1903","name":"Malicious code in loveahmedclose (PyPI)","ecosystem":"pypi","package":"loveahmedclose","versions":["0.0.1","0.0.10","0.0.2","0.0.3","0.0.4","0.0.5","0.0.6","0.0.7","0.0.8","0.0.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1903"},
     {"id":"MAL-2026-1904","name":"Malicious code in loveclose (PyPI)","ecosystem":"pypi","package":"loveclose","versions":["0.0.1","0.0.2","0.0.4","0.0.5","0.0.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1904"},
     {"id":"MAL-2026-1905","name":"Malicious code in loveclose1 (PyPI)","ecosystem":"pypi","package":"loveclose1","versions":["0.0.4","0.0.5","0.0.6","0.0.7","0.0.8","0.0.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1905"},
+    {"id":"MAL-2026-19051","name":"Malicious code in shanks (PyPI)","ecosystem":"pypi","package":"shanks","versions":["0.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19051"},
     {"id":"MAL-2026-1906","name":"Malicious code in loveclose2 (PyPI)","ecosystem":"pypi","package":"loveclose2","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1906"},
     {"id":"MAL-2026-1907","name":"Malicious code in prometheus-analysis (PyPI)","ecosystem":"pypi","package":"prometheus-analysis","versions":["0.1.0","0.1.1","0.1.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1907"},
     {"id":"MAL-2026-1908","name":"Malicious code in prometheus-analysis-1 (PyPI)","ecosystem":"pypi","package":"prometheus-analysis-1","versions":["0.1.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1908"},
