@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-10T14:58:27Z",
+  "_generated_utc": "2026-11-11T14:29:50Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -54043,6 +54043,13 @@
     {"id":"MAL-2026-19064","name":"Malicious code in dowload_ebok_mein_fur_immer_by_b_h_bartsch_jjche (npm)","ecosystem":"npm","package":"dowload_ebok_mein_fur_immer_by_b_h_bartsch_jjche","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19064"},
     {"id":"MAL-2026-19069","name":"Malicious code in moltbook-health (npm)","ecosystem":"npm","package":"moltbook-health","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19069"},
     {"id":"MAL-2026-19071","name":"Malicious code in npm-scanner (npm)","ecosystem":"npm","package":"npm-scanner","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19071"},
+    {"id":"MAL-2026-19079","name":"Malicious code in @solana-common/utils (npm)","ecosystem":"npm","package":"@solana-common/utils","versions":["1.0.0","1.1.0","1.1.1","1.1.2","1.1.3","1.2.2","1.2.3","1.3.0","1.3.1","2.0.0","2.0.1","2.0.10","2.0.11","2.0.12","2.0.2","2.0.3","2.0.4","2.0.5","2.0.6","2.0.7","2.0.8","2.0.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19079"},
+    {"id":"MAL-2026-19084","name":"Malicious code in tchain-api (npm)","ecosystem":"npm","package":"tchain-api","versions":["1.2.2","1.2.3","1.2.4","1.2.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19084"},
+    {"id":"MAL-2026-19089","name":"Malicious code in discord-selfbot-functions (npm)","ecosystem":"npm","package":"discord-selfbot-functions","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19089"},
+    {"id":"MAL-2026-19092","name":"Malicious code in sms-activate.js (npm)","ecosystem":"npm","package":"sms-activate.js","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19092"},
+    {"id":"MAL-2026-19094","name":"Malicious code in health-relay-client (npm)","ecosystem":"npm","package":"health-relay-client","versions":["1.0.3","1.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19094"},
+    {"id":"MAL-2026-19107","name":"Malicious code in yummy-bolts (npm)","ecosystem":"npm","package":"yummy-bolts","versions":["1.0.0","1.1.0","1.2.0","1.3.0","1.3.1","1.4.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19107"},
+    {"id":"MAL-2026-19115","name":"Malicious code in @zhengliyoux/baileys (npm)","ecosystem":"npm","package":"@zhengliyoux/baileys","versions":["0.0.0-stage","1.0.2","1.0.3","1.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19115"},
     {"id":"MAL-2026-1925","name":"Malicious code in jsonify-parser (npm)","ecosystem":"npm","package":"jsonify-parser","versions":["7.4.11","7.4.12","7.4.13","7.4.14","7.4.15","7.4.16"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1925"},
     {"id":"MAL-2026-1937","name":"Malicious code in @dotprompt/promptly-darwin-arm64 (npm)","ecosystem":"npm","package":"@dotprompt/promptly-darwin-arm64","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1937"},
     {"id":"MAL-2026-1942","name":"Malicious code in clob-client-sdks (npm)","ecosystem":"npm","package":"clob-client-sdks","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1942"},

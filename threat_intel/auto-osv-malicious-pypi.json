@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-11-10T14:58:31Z",
+  "_generated_utc": "2026-11-11T14:29:54Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -11043,6 +11043,7 @@
     {"id":"MAL-2026-191","name":"Malicious code in libc-dev (PyPI)","ecosystem":"pypi","package":"libc-dev","versions":["0.0.0","0.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-191"},
     {"id":"MAL-2026-1910","name":"Malicious code in prometheus-quick-analysis (PyPI)","ecosystem":"pypi","package":"prometheus-quick-analysis","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1910"},
     {"id":"MAL-2026-1911","name":"Malicious code in prometheus-quicker-analysis (PyPI)","ecosystem":"pypi","package":"prometheus-quicker-analysis","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1911"},
+    {"id":"MAL-2026-19116","name":"Malicious code in humbility-shared (PyPI)","ecosystem":"pypi","package":"humbility-shared","versions":["0.0.1","0.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19116"},
     {"id":"MAL-2026-1912","name":"Malicious code in quantumania (PyPI)","ecosystem":"pypi","package":"quantumania","versions":["0.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1912"},
     {"id":"MAL-2026-1913","name":"Malicious code in suficloud (PyPI)","ecosystem":"pypi","package":"suficloud","versions":["3.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1913"},
     {"id":"MAL-2026-1914","name":"Malicious code in tabullate (PyPI)","ecosystem":"pypi","package":"tabullate","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1914"},
