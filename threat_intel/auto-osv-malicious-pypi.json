@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-11-11T14:29:54Z",
+  "_generated_utc": "2026-11-12T15:21:44Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -11047,6 +11047,7 @@
     {"id":"MAL-2026-1912","name":"Malicious code in quantumania (PyPI)","ecosystem":"pypi","package":"quantumania","versions":["0.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1912"},
     {"id":"MAL-2026-1913","name":"Malicious code in suficloud (PyPI)","ecosystem":"pypi","package":"suficloud","versions":["3.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1913"},
     {"id":"MAL-2026-1914","name":"Malicious code in tabullate (PyPI)","ecosystem":"pypi","package":"tabullate","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1914"},
+    {"id":"MAL-2026-19147","name":"Malicious code in aurum-pay (PyPI)","ecosystem":"pypi","package":"aurum-pay","versions":["1.2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19147"},
     {"id":"MAL-2026-1933","name":"Malicious code in libavcodec-extra (PyPI)","ecosystem":"pypi","package":"libavcodec-extra","versions":["99.99.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1933"},
     {"id":"MAL-2026-1984","name":"Malicious code in airio (PyPI)","ecosystem":"pypi","package":"airio","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1984"},
     {"id":"MAL-2026-1985","name":"Malicious code in azure-eventhub-checkpointstoretable (PyPI)","ecosystem":"pypi","package":"azure-eventhub-checkpointstoretable","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1985"},
