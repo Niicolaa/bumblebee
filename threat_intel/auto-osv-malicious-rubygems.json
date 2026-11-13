@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the rubygems ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-11-10T14:58:31Z",
+  "_generated_utc": "2026-11-13T14:40:30Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2023-11","name":"Malicious code in microsoft_kiota_http (RubyGems)","ecosystem":"rubygems","package":"microsoft_kiota_http","versions":["6.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2023-11"},
@@ -1754,8 +1754,11 @@
     {"id":"MAL-2026-18766","name":"Malicious code in dynamic-object-handler (RubyGems)","ecosystem":"rubygems","package":"dynamic-object-handler","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-18766"},
     {"id":"MAL-2026-19054","name":"Malicious code in strutil-core (RubyGems)","ecosystem":"rubygems","package":"strutil-core","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19054"},
     {"id":"MAL-2026-1915","name":"Malicious code in doctolib (RubyGems)","ecosystem":"rubygems","package":"doctolib","versions":["99.0.0","99.0.1","99.0.2","99.0.3","99.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1915"},
+    {"id":"MAL-2026-19156","name":"Malicious code in buffer-code-exercise-api (RubyGems)","ecosystem":"rubygems","package":"buffer-code-exercise-api","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19156"},
+    {"id":"MAL-2026-19157","name":"Malicious code in cheesebox (RubyGems)","ecosystem":"rubygems","package":"cheesebox","versions":["10.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19157"},
     {"id":"MAL-2026-1916","name":"Malicious code in freshworks-ruby (RubyGems)","ecosystem":"rubygems","package":"freshworks-ruby","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1916"},
     {"id":"MAL-2026-1917","name":"Malicious code in kaleido (RubyGems)","ecosystem":"rubygems","package":"kaleido","versions":["5000.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1917"},
+    {"id":"MAL-2026-19177","name":"Malicious code in pentest-copilot (RubyGems)","ecosystem":"rubygems","package":"pentest-copilot","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19177"},
     {"id":"MAL-2026-1918","name":"Malicious code in newlogger (RubyGems)","ecosystem":"rubygems","package":"newlogger","versions":["99.9.1","99.9.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1918"},
     {"id":"MAL-2026-1919","name":"Malicious code in rafka-rb (RubyGems)","ecosystem":"rubygems","package":"rafka-rb","versions":["5000.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1919"},
     {"id":"MAL-2026-1920","name":"Malicious code in rails_structured_logging (RubyGems)","ecosystem":"rubygems","package":"rails_structured_logging","versions":["0.0.4","0.1.1","0.1.2","0.2.1","1.0.0","1.0.1","1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1920"},
