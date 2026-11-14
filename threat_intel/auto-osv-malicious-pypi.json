@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-11-13T14:40:29Z",
+  "_generated_utc": "2026-11-14T13:37:34Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -11070,6 +11070,9 @@
     {"id":"MAL-2026-19206","name":"Malicious code in garvisometerui (PyPI)","ecosystem":"pypi","package":"garvisometerui","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19206"},
     {"id":"MAL-2026-19207","name":"Malicious code in qwen3ttsui (PyPI)","ecosystem":"pypi","package":"qwen3ttsui","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19207"},
     {"id":"MAL-2026-19208","name":"Malicious code in voxcpmttslora (PyPI)","ecosystem":"pypi","package":"voxcpmttslora","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19208"},
+    {"id":"MAL-2026-19247","name":"Malicious code in testing1345 (PyPI)","ecosystem":"pypi","package":"testing1345","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19247"},
+    {"id":"MAL-2026-19259","name":"Malicious code in qap793gl4l (PyPI)","ecosystem":"pypi","package":"qap793gl4l","versions":["0.1.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19259"},
+    {"id":"MAL-2026-19289","name":"Malicious code in axiom-dragon-xyz (PyPI)","ecosystem":"pypi","package":"axiom-dragon-xyz","versions":["1.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19289"},
     {"id":"MAL-2026-1933","name":"Malicious code in libavcodec-extra (PyPI)","ecosystem":"pypi","package":"libavcodec-extra","versions":["99.99.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1933"},
     {"id":"MAL-2026-1984","name":"Malicious code in airio (PyPI)","ecosystem":"pypi","package":"airio","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1984"},
     {"id":"MAL-2026-1985","name":"Malicious code in azure-eventhub-checkpointstoretable (PyPI)","ecosystem":"pypi","package":"azure-eventhub-checkpointstoretable","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1985"},
@@ -11081,6 +11084,8 @@
     {"id":"MAL-2026-1991","name":"Malicious code in nsscache (PyPI)","ecosystem":"pypi","package":"nsscache","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1991"},
     {"id":"MAL-2026-1992","name":"Malicious code in perfkitbenchmarker (PyPI)","ecosystem":"pypi","package":"perfkitbenchmarker","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1992"},
     {"id":"MAL-2026-1993","name":"Malicious code in pubsub2inbox (PyPI)","ecosystem":"pypi","package":"pubsub2inbox","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1993"},
+    {"id":"MAL-2026-19930","name":"Malicious code in trezortranslate (PyPI)","ecosystem":"pypi","package":"trezortranslate","versions":["0.0.0","1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19930"},
+    {"id":"MAL-2026-19932","name":"Malicious code in xrfdc (PyPI)","ecosystem":"pypi","package":"xrfdc","versions":["0.0.0","2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19932"},
     {"id":"MAL-2026-1994","name":"Malicious code in spatialmedia (PyPI)","ecosystem":"pypi","package":"spatialmedia","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1994"},
     {"id":"MAL-2026-1999","name":"Malicious code in cfgmgr-syn (PyPI)","ecosystem":"pypi","package":"cfgmgr-syn","versions":["1.0.26","1.0.27"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1999"},
     {"id":"MAL-2026-2000","name":"Malicious code in cfgmgr-sync (PyPI)","ecosystem":"pypi","package":"cfgmgr-sync","versions":["1.0.0","1.0.1","1.0.2","1.0.3","1.0.4","1.0.5","1.0.6","1.0.7","1.0.8","1.0.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2000"},
