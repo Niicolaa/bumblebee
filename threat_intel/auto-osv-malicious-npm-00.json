@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-14T13:37:31Z",
+  "_generated_utc": "2026-11-15T14:00:38Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -54239,7 +54239,7 @@
     {"id":"MAL-2026-19228","name":"Malicious code in zxcvb90-utils-helper (npm)","ecosystem":"npm","package":"zxcvb90-utils-helper","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19228"},
     {"id":"MAL-2026-19230","name":"Malicious code in internallib_v811 (npm)","ecosystem":"npm","package":"internallib_v811","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19230"},
     {"id":"MAL-2026-19232","name":"Malicious code in jsconvict (npm)","ecosystem":"npm","package":"jsconvict","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19232"},
-    {"id":"MAL-2026-19234","name":"Malicious code in @rclaude/darwin-arm64 (npm)","ecosystem":"npm","package":"@rclaude/darwin-arm64","versions":["0.2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19234"},
+    {"id":"MAL-2026-19234","name":"Malicious code in @rclaude/darwin-arm64 (npm)","ecosystem":"npm","package":"@rclaude/darwin-arm64","versions":["0.2.0","0.2.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19234"},
     {"id":"MAL-2026-19235","name":"Malicious code in karma365-mcp (npm)","ecosystem":"npm","package":"karma365-mcp","versions":["2.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19235"},
     {"id":"MAL-2026-19237","name":"Malicious code in berg-fonbock (npm)","ecosystem":"npm","package":"berg-fonbock","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19237"},
     {"id":"MAL-2026-19238","name":"Malicious code in celest-browser (npm)","ecosystem":"npm","package":"celest-browser","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19238"},
@@ -54412,6 +54412,7 @@
     {"id":"MAL-2026-19920","name":"Malicious code in rush-mfa (npm)","ecosystem":"npm","package":"rush-mfa","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19920"},
     {"id":"MAL-2026-19925","name":"Malicious code in @zread/cli-linux-arm64 (npm)","ecosystem":"npm","package":"@zread/cli-linux-arm64","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19925"},
     {"id":"MAL-2026-19929","name":"Malicious code in zread_cli (npm)","ecosystem":"npm","package":"zread_cli","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19929"},
+    {"id":"MAL-2026-19943","name":"Malicious code in @theholocron/holocron-plugin-discord (npm)","ecosystem":"npm","package":"@theholocron/holocron-plugin-discord","versions":["5.0.0-alpha.436"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19943"},
     {"id":"MAL-2026-1997","name":"Malicious code in ty-web-session (npm)","ecosystem":"npm","package":"ty-web-session","versions":["3.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1997"},
     {"id":"MAL-2026-200","name":"Malicious code in wac-react (npm)","ecosystem":"npm","package":"wac-react","versions":["99.99.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-200"},
     {"id":"MAL-2026-2008","name":"Malicious code in nintendoamerica-ncom (npm)","ecosystem":"npm","package":"nintendoamerica-ncom","versions":["1.0.5","99.0.16","99.0.19","99.0.7"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2008"},

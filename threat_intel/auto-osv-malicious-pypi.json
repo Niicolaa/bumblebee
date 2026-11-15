@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-11-14T13:37:34Z",
+  "_generated_utc": "2026-11-15T14:00:41Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -11086,7 +11086,14 @@
     {"id":"MAL-2026-1993","name":"Malicious code in pubsub2inbox (PyPI)","ecosystem":"pypi","package":"pubsub2inbox","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1993"},
     {"id":"MAL-2026-19930","name":"Malicious code in trezortranslate (PyPI)","ecosystem":"pypi","package":"trezortranslate","versions":["0.0.0","1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19930"},
     {"id":"MAL-2026-19932","name":"Malicious code in xrfdc (PyPI)","ecosystem":"pypi","package":"xrfdc","versions":["0.0.0","2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19932"},
+    {"id":"MAL-2026-19933","name":"Malicious code in gateio-client (PyPI)","ecosystem":"pypi","package":"gateio-client","versions":["99.99.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19933"},
+    {"id":"MAL-2026-19934","name":"Malicious code in ps-bool (PyPI)","ecosystem":"pypi","package":"ps-bool","versions":["0.2.0","0.2.1","0.2.3","0.2.4","0.2.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19934"},
+    {"id":"MAL-2026-19935","name":"Malicious code in demo-pingtest-xyz (PyPI)","ecosystem":"pypi","package":"demo-pingtest-xyz","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19935"},
+    {"id":"MAL-2026-19936","name":"Malicious code in gateio-sdk (PyPI)","ecosystem":"pypi","package":"gateio-sdk","versions":["99.99.1","99.99.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19936"},
+    {"id":"MAL-2026-19937","name":"Malicious code in gateio-ws (PyPI)","ecosystem":"pypi","package":"gateio-ws","versions":["99.99.1","99.99.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19937"},
     {"id":"MAL-2026-1994","name":"Malicious code in spatialmedia (PyPI)","ecosystem":"pypi","package":"spatialmedia","versions":["9.9.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1994"},
+    {"id":"MAL-2026-19940","name":"Malicious code in gateio-v4 (PyPI)","ecosystem":"pypi","package":"gateio-v4","versions":["99.99.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19940"},
+    {"id":"MAL-2026-19942","name":"Malicious code in gatepay-sdk-python (PyPI)","ecosystem":"pypi","package":"gatepay-sdk-python","versions":["99.99.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19942"},
     {"id":"MAL-2026-1999","name":"Malicious code in cfgmgr-syn (PyPI)","ecosystem":"pypi","package":"cfgmgr-syn","versions":["1.0.26","1.0.27"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1999"},
     {"id":"MAL-2026-2000","name":"Malicious code in cfgmgr-sync (PyPI)","ecosystem":"pypi","package":"cfgmgr-sync","versions":["1.0.0","1.0.1","1.0.2","1.0.3","1.0.4","1.0.5","1.0.6","1.0.7","1.0.8","1.0.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2000"},
     {"id":"MAL-2026-2004","name":"Malicious code in flyio-token-client-efgh (PyPI)","ecosystem":"pypi","package":"flyio-token-client-efgh","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2004"},

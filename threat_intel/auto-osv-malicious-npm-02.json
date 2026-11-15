@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-14T13:37:31Z",
+  "_generated_utc": "2026-11-15T14:00:38Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -54830,6 +54830,8 @@
     {"id":"MAL-2026-19914","name":"Malicious code in exploring_the_nikon_z6ii_z7ii_a_complete_digital_by_katherin_stuessy_2fszs (npm)","ecosystem":"npm","package":"exploring_the_nikon_z6ii_z7ii_a_complete_digital_by_katherin_stuessy_2fszs","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19914"},
     {"id":"MAL-2026-19922","name":"Malicious code in @jelou/cli-win32-x64 (npm)","ecosystem":"npm","package":"@jelou/cli-win32-x64","versions":["4.24.0","4.26.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19922"},
     {"id":"MAL-2026-19926","name":"Malicious code in @zread/cli-linux-x64 (npm)","ecosystem":"npm","package":"@zread/cli-linux-x64","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19926"},
+    {"id":"MAL-2026-19938","name":"Malicious code in testpackage83 (npm)","ecosystem":"npm","package":"testpackage83","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19938"},
+    {"id":"MAL-2026-19941","name":"Malicious code in node-zserial (npm)","ecosystem":"npm","package":"node-zserial","versions":["1.0.42"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19941"},
     {"id":"MAL-2026-1996","name":"Malicious code in puzzle-gateway (npm)","ecosystem":"npm","package":"puzzle-gateway","versions":["2.4.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1996"},
     {"id":"MAL-2026-1998","name":"Malicious code in delphoi (npm)","ecosystem":"npm","package":"delphoi","versions":["1.8.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1998"},
     {"id":"MAL-2026-20","name":"Malicious code in kid-api (npm)","ecosystem":"npm","package":"kid-api","versions":["99.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20"},

@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-14T13:37:31Z",
+  "_generated_utc": "2026-11-15T14:00:38Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -54283,6 +54283,7 @@
     {"id":"MAL-2026-19921","name":"Malicious code in the_shaolin_workout_by_shi_yan_ming_r43vx (npm)","ecosystem":"npm","package":"the_shaolin_workout_by_shi_yan_ming_r43vx","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19921"},
     {"id":"MAL-2026-19924","name":"Malicious code in @zread/cli-darwin-x64 (npm)","ecosystem":"npm","package":"@zread/cli-darwin-x64","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19924"},
     {"id":"MAL-2026-19927","name":"Malicious code in @zread/cli-win32-arm64 (npm)","ecosystem":"npm","package":"@zread/cli-win32-arm64","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19927"},
+    {"id":"MAL-2026-19939","name":"Malicious code in @crvouga/mockingbird-service-microsoft (npm)","ecosystem":"npm","package":"@crvouga/mockingbird-service-microsoft","versions":["0.14.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19939"},
     {"id":"MAL-2026-1995","name":"Malicious code in bic-seo (npm)","ecosystem":"npm","package":"bic-seo","versions":["2.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1995"},
     {"id":"MAL-2026-2001","name":"Malicious code in laserlogsink (npm)","ecosystem":"npm","package":"laserlogsink","versions":["2.1.0","9000.0.0","9000.0.1","9000.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2001"},
     {"id":"MAL-2026-2002","name":"Malicious code in nflx-cmisc (npm)","ecosystem":"npm","package":"nflx-cmisc","versions":["3.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2002"},
