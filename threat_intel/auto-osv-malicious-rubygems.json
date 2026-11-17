@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the rubygems ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-11-14T13:37:34Z",
+  "_generated_utc": "2026-11-17T16:08:25Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2023-11","name":"Malicious code in microsoft_kiota_http (RubyGems)","ecosystem":"rubygems","package":"microsoft_kiota_http","versions":["6.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2023-11"},
@@ -1767,6 +1767,8 @@
     {"id":"MAL-2026-1923","name":"Malicious code in sq-minimal-feature-flags (RubyGems)","ecosystem":"rubygems","package":"sq-minimal-feature-flags","versions":["13.6.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1923"},
     {"id":"MAL-2026-1924","name":"Malicious code in testcatplzignore (RubyGems)","ecosystem":"rubygems","package":"testcatplzignore","versions":["0.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-1924"},
     {"id":"MAL-2026-19242","name":"Malicious code in tdesign-vue-mono (RubyGems)","ecosystem":"rubygems","package":"tdesign-vue-mono","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-19242"},
+    {"id":"MAL-2026-20019","name":"Malicious code in solana-keypair (RubyGems)","ecosystem":"rubygems","package":"solana-keypair","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20019"},
+    {"id":"MAL-2026-20058","name":"Malicious code in node-test-repo (RubyGems)","ecosystem":"rubygems","package":"node-test-repo","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20058"},
     {"id":"MAL-2026-2259","name":"Malicious code in monolith-twirp-loops-core (RubyGems)","ecosystem":"rubygems","package":"monolith-twirp-loops-core","versions":["1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2259"},
     {"id":"MAL-2026-2260","name":"Malicious code in monolith-twirp-pullsd-pullrequestinfo (RubyGems)","ecosystem":"rubygems","package":"monolith-twirp-pullsd-pullrequestinfo","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2260"},
     {"id":"MAL-2026-2261","name":"Malicious code in monolith-twirp-pullsd-repositories (RubyGems)","ecosystem":"rubygems","package":"monolith-twirp-pullsd-repositories","versions":["1.0.10"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2261"},
