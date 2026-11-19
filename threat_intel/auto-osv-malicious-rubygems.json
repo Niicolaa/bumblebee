@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the rubygems ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-11-18T15:45:24Z",
+  "_generated_utc": "2026-11-19T15:50:42Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2023-11","name":"Malicious code in microsoft_kiota_http (RubyGems)","ecosystem":"rubygems","package":"microsoft_kiota_http","versions":["6.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2023-11"},
@@ -1770,6 +1770,12 @@
     {"id":"MAL-2026-20019","name":"Malicious code in solana-keypair (RubyGems)","ecosystem":"rubygems","package":"solana-keypair","versions":["0.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20019"},
     {"id":"MAL-2026-20058","name":"Malicious code in node-test-repo (RubyGems)","ecosystem":"rubygems","package":"node-test-repo","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20058"},
     {"id":"MAL-2026-20103","name":"Malicious code in vuln-app (RubyGems)","ecosystem":"rubygems","package":"vuln-app","versions":["1.2.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20103"},
+    {"id":"MAL-2026-20137","name":"Malicious code in rechargeapps (RubyGems)","ecosystem":"rubygems","package":"rechargeapps","versions":["999.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20137"},
+    {"id":"MAL-2026-20199","name":"Malicious code in fh-skeleton-web (RubyGems)","ecosystem":"rubygems","package":"fh-skeleton-web","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20199"},
+    {"id":"MAL-2026-20210","name":"Malicious code in aws_sdk_wrapper (RubyGems)","ecosystem":"rubygems","package":"aws_sdk_wrapper","versions":["0.0.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20210"},
+    {"id":"MAL-2026-20211","name":"Malicious code in gmo-payment (RubyGems)","ecosystem":"rubygems","package":"gmo-payment","versions":["0.0.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20211"},
+    {"id":"MAL-2026-20212","name":"Malicious code in gmo-payment-carrier (RubyGems)","ecosystem":"rubygems","package":"gmo-payment-carrier","versions":["0.0.99"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20212"},
+    {"id":"MAL-2026-20213","name":"Malicious code in secretlens (RubyGems)","ecosystem":"rubygems","package":"secretlens","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20213"},
     {"id":"MAL-2026-2259","name":"Malicious code in monolith-twirp-loops-core (RubyGems)","ecosystem":"rubygems","package":"monolith-twirp-loops-core","versions":["1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2259"},
     {"id":"MAL-2026-2260","name":"Malicious code in monolith-twirp-pullsd-pullrequestinfo (RubyGems)","ecosystem":"rubygems","package":"monolith-twirp-pullsd-pullrequestinfo","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2260"},
     {"id":"MAL-2026-2261","name":"Malicious code in monolith-twirp-pullsd-repositories (RubyGems)","ecosystem":"rubygems","package":"monolith-twirp-pullsd-repositories","versions":["1.0.10"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2261"},
