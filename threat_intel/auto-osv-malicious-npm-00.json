@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-25T17:19:48Z",
+  "_generated_utc": "2026-11-26T16:59:53Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -54599,7 +54599,12 @@
     {"id":"MAL-2026-20604","name":"Malicious code in git-crt-creator (npm)","ecosystem":"npm","package":"git-crt-creator","versions":["1.0.2","1.0.3","10.13.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20604"},
     {"id":"MAL-2026-20606","name":"Malicious code in hyjui-klopa (npm)","ecosystem":"npm","package":"hyjui-klopa","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20606"},
     {"id":"MAL-2026-2061","name":"Malicious code in @emilgroup/tenant-sdk-node (npm)","ecosystem":"npm","package":"@emilgroup/tenant-sdk-node","versions":["1.33.1","1.33.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2061"},
+    {"id":"MAL-2026-20619","name":"Malicious code in brightlineelectr (npm)","ecosystem":"npm","package":"brightlineelectr","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20619"},
+    {"id":"MAL-2026-20622","name":"Malicious code in brightlineelectr4 (npm)","ecosystem":"npm","package":"brightlineelectr4","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20622"},
+    {"id":"MAL-2026-20627","name":"Malicious code in signals-embed-pro (npm)","ecosystem":"npm","package":"signals-embed-pro","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20627"},
+    {"id":"MAL-2026-20628","name":"Malicious code in signals-embed-sss (npm)","ecosystem":"npm","package":"signals-embed-sss","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20628"},
     {"id":"MAL-2026-2063","name":"Malicious code in @opengov/form-utils (npm)","ecosystem":"npm","package":"@opengov/form-utils","versions":["0.7.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2063"},
+    {"id":"MAL-2026-20657","name":"Malicious code in safeclamp3 (npm)","ecosystem":"npm","package":"safeclamp3","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20657"},
     {"id":"MAL-2026-2077","name":"Malicious code in @emilgroup/public-api-sdk-node (npm)","ecosystem":"npm","package":"@emilgroup/public-api-sdk-node","versions":["1.35.1","1.35.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2077"},
     {"id":"MAL-2026-2078","name":"Malicious code in @emilgroup/task-sdk (npm)","ecosystem":"npm","package":"@emilgroup/task-sdk","versions":["1.0.2","1.0.3","1.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2078"},
     {"id":"MAL-2026-2081","name":"Malicious code in @thiagoemmanuell/unhandledrejection (npm)","ecosystem":"npm","package":"@thiagoemmanuell/unhandledrejection","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2081"},

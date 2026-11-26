@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the pypi ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-11-25T17:19:52Z",
+  "_generated_utc": "2026-11-26T16:59:56Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2022-7421","name":"Malicious code in ascii2text (PyPI)","ecosystem":"pypi","package":"ascii2text","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2022-7421"},
@@ -11149,6 +11149,12 @@
     {"id":"MAL-2026-20516","name":"Malicious code in oh-my-zelenka (PyPI)","ecosystem":"pypi","package":"oh-my-zelenka","versions":["1.0.0","1.0.1","1.0.2","1.0.3","1.0.5"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20516"},
     {"id":"MAL-2026-20608","name":"Malicious code in alogithms (PyPI)","ecosystem":"pypi","package":"alogithms","versions":["1.0.1","1.0.2","1.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20608"},
     {"id":"MAL-2026-20611","name":"Malicious code in mcp-diag-7f3a (PyPI)","ecosystem":"pypi","package":"mcp-diag-7f3a","versions":["1.0.0","1.1.0","1.2.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20611"},
+    {"id":"MAL-2026-20616","name":"Malicious code in mcp-env-report (PyPI)","ecosystem":"pypi","package":"mcp-env-report","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20616"},
+    {"id":"MAL-2026-20617","name":"Malicious code in mcp-runtime-report (PyPI)","ecosystem":"pypi","package":"mcp-runtime-report","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20617"},
+    {"id":"MAL-2026-20618","name":"Malicious code in mcp-sysinfo-tools (PyPI)","ecosystem":"pypi","package":"mcp-sysinfo-tools","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20618"},
+    {"id":"MAL-2026-20648","name":"Malicious code in cubepath (PyPI)","ecosystem":"pypi","package":"cubepath","versions":["0.0.1","0.1.0","99.0.1","99.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20648"},
+    {"id":"MAL-2026-20650","name":"Malicious code in bloomcredit-python (PyPI)","ecosystem":"pypi","package":"bloomcredit-python","versions":["0.1.0","99.1.0","99.2.0","99.3.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20650"},
+    {"id":"MAL-2026-20653","name":"Malicious code in denowrap (PyPI)","ecosystem":"pypi","package":"denowrap","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20653"},
     {"id":"MAL-2026-2083","name":"Malicious code in anduril-sdk (PyPI)","ecosystem":"pypi","package":"anduril-sdk","versions":["1.0.0","1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2083"},
     {"id":"MAL-2026-2084","name":"Malicious code in license-utils-kit (PyPI)","ecosystem":"pypi","package":"license-utils-kit","versions":["0.1a0","0.1a1","0.1b1","0.1b2","0.1b3","0.1b4","0.1rc1","0.1rc2","0.1rc3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2084"},
     {"id":"MAL-2026-2106","name":"Malicious code in dmclc (PyPI)","ecosystem":"pypi","package":"dmclc","versions":["2.1.0","2.1.1","2.1.10","2.1.2","2.1.3","2.1.5","2.1.6","2.1.7","2.1.9"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2106"},

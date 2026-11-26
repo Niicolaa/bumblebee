@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 2/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-25T17:19:48Z",
+  "_generated_utc": "2026-11-26T16:59:53Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-4","name":"Malicious code in lib-bb-html-sanitizer (npm)","ecosystem":"npm","package":"lib-bb-html-sanitizer","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-4"},
@@ -54454,7 +54454,11 @@
     {"id":"MAL-2026-20603","name":"Malicious code in ep_nxs74552 (npm)","ecosystem":"npm","package":"ep_nxs74552","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20603"},
     {"id":"MAL-2026-20607","name":"Malicious code in paystation-embed-app (npm)","ecosystem":"npm","package":"paystation-embed-app","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20607"},
     {"id":"MAL-2026-20610","name":"Malicious code in web3-mev-error-decoder (npm)","ecosystem":"npm","package":"web3-mev-error-decoder","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20610"},
+    {"id":"MAL-2026-20621","name":"Malicious code in brightlineelectr3 (npm)","ecosystem":"npm","package":"brightlineelectr3","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20621"},
+    {"id":"MAL-2026-20625","name":"Malicious code in global-error-handling (npm)","ecosystem":"npm","package":"global-error-handling","versions":["1.0.0","1.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20625"},
+    {"id":"MAL-2026-20629","name":"Malicious code in @omnirush-ai/cli-win32-x64 (npm)","ecosystem":"npm","package":"@omnirush-ai/cli-win32-x64","versions":["2.8.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20629"},
     {"id":"MAL-2026-2064","name":"Malicious code in @opengov/ppf-backend-types (npm)","ecosystem":"npm","package":"@opengov/ppf-backend-types","versions":["1.141.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2064"},
+    {"id":"MAL-2026-20649","name":"Malicious code in @tty-pt/auren (npm)","ecosystem":"npm","package":"@tty-pt/auren","versions":["1.5.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20649"},
     {"id":"MAL-2026-2072","name":"Malicious code in react-leaflet-heatmap-layer (npm)","ecosystem":"npm","package":"react-leaflet-heatmap-layer","versions":["2.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2072"},
     {"id":"MAL-2026-2080","name":"Malicious code in cit-playwright-tests (npm)","ecosystem":"npm","package":"cit-playwright-tests","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2080"},
     {"id":"MAL-2026-2087","name":"Malicious code in in-app-marketing (npm)","ecosystem":"npm","package":"in-app-marketing","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2087"},
