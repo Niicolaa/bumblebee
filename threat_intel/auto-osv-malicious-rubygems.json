@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the rubygems ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog).",
-  "_generated_utc": "2026-11-26T16:59:56Z",
+  "_generated_utc": "2026-11-27T16:45:29Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2023-11","name":"Malicious code in microsoft_kiota_http (RubyGems)","ecosystem":"rubygems","package":"microsoft_kiota_http","versions":["6.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2023-11"},
@@ -1792,6 +1792,9 @@
     {"id":"MAL-2026-20642","name":"Malicious code in ri18nr (RubyGems)","ecosystem":"rubygems","package":"ri18nr","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20642"},
     {"id":"MAL-2026-20643","name":"Malicious code in ubnlder (RubyGems)","ecosystem":"rubygems","package":"ubnlder","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20643"},
     {"id":"MAL-2026-20644","name":"Malicious code in ubnuler (RubyGems)","ecosystem":"rubygems","package":"ubnuler","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20644"},
+    {"id":"MAL-2026-20684","name":"Malicious code in Dendreo (RubyGems)","ecosystem":"rubygems","package":"Dendreo","versions":["1.1.3","1.1.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20684"},
+    {"id":"MAL-2026-20685","name":"Malicious code in fastlane-plugin-run_tests_firebase_testlab (RubyGems)","ecosystem":"rubygems","package":"fastlane-plugin-run_tests_firebase_testlab","versions":["0.3.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20685"},
+    {"id":"MAL-2026-20686","name":"Malicious code in git_credential_manager (RubyGems)","ecosystem":"rubygems","package":"git_credential_manager","versions":["2.8.0","2.8.1","2.8.2","2.8.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20686"},
     {"id":"MAL-2026-2259","name":"Malicious code in monolith-twirp-loops-core (RubyGems)","ecosystem":"rubygems","package":"monolith-twirp-loops-core","versions":["1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2259"},
     {"id":"MAL-2026-2260","name":"Malicious code in monolith-twirp-pullsd-pullrequestinfo (RubyGems)","ecosystem":"rubygems","package":"monolith-twirp-pullsd-pullrequestinfo","versions":["1.0.1"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2260"},
     {"id":"MAL-2026-2261","name":"Malicious code in monolith-twirp-pullsd-repositories (RubyGems)","ecosystem":"rubygems","package":"monolith-twirp-pullsd-repositories","versions":["1.0.10"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2261"},
