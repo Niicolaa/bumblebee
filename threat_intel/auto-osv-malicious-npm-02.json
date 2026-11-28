@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 3/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-27T16:45:25Z",
+  "_generated_utc": "2026-11-28T15:38:05Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-3","name":"Malicious code in digital-marketing-client (npm)","ecosystem":"npm","package":"digital-marketing-client","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-3"},
@@ -55026,7 +55026,12 @@
     {"id":"MAL-2026-20701","name":"Malicious code in agentkpalive (npm)","ecosystem":"npm","package":"agentkpalive","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20701"},
     {"id":"MAL-2026-20702","name":"Malicious code in ath-gziphugefile (npm)","ecosystem":"npm","package":"ath-gziphugefile","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20702"},
     {"id":"MAL-2026-20712","name":"Malicious code in @nakanoo/baileys (npm)","ecosystem":"npm","package":"@nakanoo/baileys","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20712"},
+    {"id":"MAL-2026-20723","name":"Malicious code in eth-expl (npm)","ecosystem":"npm","package":"eth-expl","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20723"},
+    {"id":"MAL-2026-20732","name":"Malicious code in electric-bails (npm)","ecosystem":"npm","package":"electric-bails","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20732"},
+    {"id":"MAL-2026-20733","name":"Malicious code in https-box (npm)","ecosystem":"npm","package":"https-box","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20733"},
+    {"id":"MAL-2026-20739","name":"Malicious code in npms-search (npm)","ecosystem":"npm","package":"npms-search","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20739"},
     {"id":"MAL-2026-2074","name":"Malicious code in @emilgroup/discount-sdk (npm)","ecosystem":"npm","package":"@emilgroup/discount-sdk","versions":["1.14.0","1.14.1-beta.8","1.14.1-beta.9","1.5.1","1.5.2","1.5.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2074"},
+    {"id":"MAL-2026-20740","name":"Malicious code in ve.zz.vic (npm)","ecosystem":"npm","package":"ve.zz.vic","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20740"},
     {"id":"MAL-2026-2076","name":"Malicious code in @emilgroup/document-uploader (npm)","ecosystem":"npm","package":"@emilgroup/document-uploader","versions":["0.0.10","0.0.11","0.0.12"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2076"},
     {"id":"MAL-2026-2082","name":"Malicious code in unhandledrejection1 (npm)","ecosystem":"npm","package":"unhandledrejection1","versions":["1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2082"},
     {"id":"MAL-2026-2090","name":"Malicious code in netflixid (npm)","ecosystem":"npm","package":"netflixid","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2090"},

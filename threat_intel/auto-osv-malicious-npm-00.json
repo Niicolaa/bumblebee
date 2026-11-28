@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 1/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-27T16:45:25Z",
+  "_generated_utc": "2026-11-28T15:38:05Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-2","name":"Malicious code in dbp-polyfills (npm)","ecosystem":"npm","package":"dbp-polyfills","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-2"},
@@ -54619,6 +54619,8 @@
     {"id":"MAL-2026-20710","name":"Malicious code in react-schedule-it (npm)","ecosystem":"npm","package":"react-schedule-it","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20710"},
     {"id":"MAL-2026-20711","name":"Malicious code in @kingorwot/libsignal-node (npm)","ecosystem":"npm","package":"@kingorwot/libsignal-node","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20711"},
     {"id":"MAL-2026-20713","name":"Malicious code in @selorax/app-sdk (npm)","ecosystem":"npm","package":"@selorax/app-sdk","versions":["2.1.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20713"},
+    {"id":"MAL-2026-20735","name":"Malicious code in @veryflore/discord (npm)","ecosystem":"npm","package":"@veryflore/discord","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20735"},
+    {"id":"MAL-2026-20736","name":"Malicious code in cvcpg-sear (npm)","ecosystem":"npm","package":"cvcpg-sear","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20736"},
     {"id":"MAL-2026-2077","name":"Malicious code in @emilgroup/public-api-sdk-node (npm)","ecosystem":"npm","package":"@emilgroup/public-api-sdk-node","versions":["1.35.1","1.35.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2077"},
     {"id":"MAL-2026-2078","name":"Malicious code in @emilgroup/task-sdk (npm)","ecosystem":"npm","package":"@emilgroup/task-sdk","versions":["1.0.2","1.0.3","1.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2078"},
     {"id":"MAL-2026-2081","name":"Malicious code in @thiagoemmanuell/unhandledrejection (npm)","ecosystem":"npm","package":"@thiagoemmanuell/unhandledrejection","versions":["1.0.0"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2081"},

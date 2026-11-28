@@ -1,7 +1,7 @@
 {
   "schema_version": "0.2.0",
   "_comment": "OSV malicious-packages MAL-* advisories for the npm ecosystem (ossf/malicious-packages, mirrored via osv.dev). Auto-generated; do not hand-edit. Conversion via internal/osv (same as tools/osvcatalog). (shard 4/4, partitioned by FNV32(package) % 4)",
-  "_generated_utc": "2026-11-27T16:45:25Z",
+  "_generated_utc": "2026-11-28T15:38:05Z",
   "_source": "https://github.com/ossf/malicious-packages",
   "entries": [
     {"id":"MAL-2021-1","name":"Malicious code in cxp-jquery (npm)","ecosystem":"npm","package":"cxp-jquery","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2021-1"},
@@ -54636,6 +54636,9 @@
     {"id":"MAL-2026-2071","name":"Malicious code in react-leaflet-cluster-layer (npm)","ecosystem":"npm","package":"react-leaflet-cluster-layer","versions":["0.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2071"},
     {"id":"MAL-2026-20714","name":"Malicious code in biatec-avm-gas-station (npm)","ecosystem":"npm","package":"biatec-avm-gas-station","versions":["1.1.1","1.1.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20714"},
     {"id":"MAL-2026-2073","name":"Malicious code in @airtm/uuid-base32 (npm)","ecosystem":"npm","package":"@airtm/uuid-base32","versions":["1.0.2"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2073"},
+    {"id":"MAL-2026-20734","name":"Malicious code in itsa-jsext (npm)","ecosystem":"npm","package":"itsa-jsext","versions":["2.0.3"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20734"},
+    {"id":"MAL-2026-20737","name":"Malicious code in line-vourfly (npm)","ecosystem":"npm","package":"line-vourfly","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20737"},
+    {"id":"MAL-2026-20743","name":"Malicious code in localedate (npm)","ecosystem":"npm","package":"localedate","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-20743"},
     {"id":"MAL-2026-2075","name":"Malicious code in @emilgroup/document-sdk-node (npm)","ecosystem":"npm","package":"@emilgroup/document-sdk-node","versions":["1.43.1","1.43.2","1.43.3","1.43.4","1.43.5","1.43.6"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2075"},
     {"id":"MAL-2026-2079","name":"Malicious code in @emilgroup/task-sdk-node (npm)","ecosystem":"npm","package":"@emilgroup/task-sdk-node","versions":["1.0.2","1.0.3","1.0.4"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-2079"},
     {"id":"MAL-2026-208","name":"Malicious code in @gwp-gtmt-components/event-listener (npm)","ecosystem":"npm","package":"@gwp-gtmt-components/event-listener","versions":["*"],"severity":"critical","source":"https://osv.dev/vulnerability/MAL-2026-208"},
